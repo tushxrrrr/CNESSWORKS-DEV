@@ -1,6 +1,7 @@
 // Shared CNESSWORKS chrome: header, mobile sheet, footer, quick actions. Same markup as tools/site_chrome.py
 // (the approved static pages); labels and destinations come from content/cness-advantage.json.
 import { SITE } from '@/lib/content';
+import { appPath, asset } from '@/lib/site';
 
 const B = 'https://www.cnessworks.com';
 type Link = { text: string; url?: string; href?: string };
@@ -20,15 +21,22 @@ const SOCIAL: Record<string, React.ReactNode> = {
 };
 const slug = (s: string) => s.toLowerCase().replace(/ /g, '-');
 
-// routes: production URL -> local route for pages served by this app (the certification pages); such links stay in
-// the app and keep their production URL in data-prod-href. section: the menu that holds the current page.
+// Links to pages this app serves (lib/site.ts) stay in the app (local path, same tab); every link keeps its production
+// URL in data-prod-href. routes: production URL -> route for links the page moves between without a reload (the
+// certification pages, data-route). section: the menu that holds the current page.
 export type Routes = Record<string, string>;
 export interface ChromeOpts { current?: string; routes?: Routes; section?: string }
 
 function NavLink({ l, current, routes }: { l: Link; current?: string; routes?: Routes }) {
   const r = l.url ? routes?.[l.url] : undefined;
-  if (r) return <a href={`/${r}`} data-route={r} data-prod-href={l.url}>{l.text}</a>;
-  return <a href={l.url} data-prod-href={l.url} aria-current={l.url === current ? 'page' : undefined}>{l.text}</a>;
+  return <a href={appPath(l.url) ?? l.url} data-route={r} data-prod-href={l.url} aria-current={l.url === current ? 'page' : undefined}>{l.text}</a>;
+}
+/** A link that opens the live site in a new tab, or stays in the app when this app serves the page */
+function OutLink({ url, className, label, children }: { url: string; className?: string; label?: string; children: React.ReactNode }) {
+  const local = appPath(url);
+  return local
+    ? <a className={className} href={local} data-prod-href={url} aria-label={label}>{children}</a>
+    : <a className={className} href={url} data-prod-href={url} target="_blank" rel="noopener" aria-label={label}>{children}</a>;
 }
 
 export function SiteHeader({ current, routes, section }: ChromeOpts) {
@@ -36,7 +44,7 @@ export function SiteHeader({ current, routes, section }: ChromeOpts) {
   return (
     <header className="top" id="top">
       <div className="wrap">
-        <a className="brand" href={H.logo.url}><img src="assets/logo-white.png" width={130} height={32} alt="CNESSWORKS home" /></a>
+        <a className="brand" href={H.logo.url}><img src={asset('assets/logo-white.png')} width={130} height={32} alt="CNESSWORKS home" /></a>
         <nav aria-label="Main">
           <ul className="nav">
             {nav.map(n => n.menu ? (
@@ -99,7 +107,7 @@ export function SiteFooter({ liveHref = `${B}/`, routes }: { liveHref?: string; 
       <div className="wrap">
         <div className="foot">
           <div className="about">
-            <a className="brand" href={`${B}/`} target="_blank" rel="noopener"><img src="assets/logo-white.png" width={130} height={32} alt="CNESSWORKS home" /></a>
+            <a className="brand" href={`${B}/`} target="_blank" rel="noopener"><img src={asset('assets/logo-white.png')} width={130} height={32} alt="CNESSWORKS home" /></a>
             <p>{F.tagline}</p>
             <address>
               <span>{F.address}</span>
@@ -114,7 +122,7 @@ export function SiteFooter({ liveHref = `${B}/`, routes }: { liveHref?: string; 
               <h3>{col.title}</h3>
               <ul>
                 {((('links' in col ? col.links : (col as { items: Link[] }).items) ?? []) as Link[]).map(l => l.href ? (
-                  <li key={l.text}>{l.url && routes?.[l.url] ? <NavLink l={l} routes={routes} /> : <a href={l.url} data-prod-href={l.url} target="_blank" rel="noopener">{l.text}</a>}</li>
+                  <li key={l.text}>{appPath(l.url) ? <NavLink l={l} routes={routes} /> : <a href={l.url} data-prod-href={l.url} target="_blank" rel="noopener">{l.text}</a>}</li>
                 ) : (
                   <li className="pop" key={l.text}>
                     <button type="button" aria-expanded="false" aria-controls={`tip-${slug(l.text)}`}>{l.text}</button>
@@ -136,8 +144,8 @@ export function QuickActions() {
   return (
     <div className="quick">
       <button className="totop" id="totop" type="button" aria-label="Scroll to top" hidden><Ic d={<path d="M12 19V5M6 11l6-6 6 6" />} /></button>
-      <a className="qa" href={a.url} target="_blank" rel="noopener"><span className="lab"><b>{a.text}</b><small>{a.tag}</small></span><span className="ic"><Ic d={<><circle cx="10.5" cy="10.5" r="6" /><path d="M15 15l5.5 5.5" /><path d="M7.5 12l2-2.5 1.8 1.5 2.2-3" /></>} /></span></a>
-      <a className="qa" href={b.url} target="_blank" rel="noopener"><span className="lab"><b>{b.text}</b><small>{b.tag}</small></span><span className="ic"><Ic d={<><rect x="4" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" /></>} /></span></a>
+      <OutLink className="qa" url={a.url}><span className="lab"><b>{a.text}</b><small>{a.tag}</small></span><span className="ic"><Ic d={<><circle cx="10.5" cy="10.5" r="6" /><path d="M15 15l5.5 5.5" /><path d="M7.5 12l2-2.5 1.8 1.5 2.2-3" /></>} /></span></OutLink>
+      <OutLink className="qa" url={b.url}><span className="lab"><b>{b.text}</b><small>{b.tag}</small></span><span className="ic"><Ic d={<><rect x="4" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" /></>} /></span></OutLink>
     </div>
   );
 }

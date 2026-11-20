@@ -11,6 +11,7 @@
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'analyze.html';
 const PAGE = /^https?:\/\//.test(ARG) ? ARG : 'file://' + path.resolve(ROOT, ARG);   // a file, or a URL (e.g. the Next.js export served by npm run serve)
+const { checkAppLinks } = require('./lib/app-links');   // URL mode: links to pages the app serves stay in the app
 const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/analyze.json'), 'utf8'));
 const SITE = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/cness-advantage.json'), 'utf8'));
 const SKIP = new Set(['source', 'captured', 'note', 'rules', 'omitted', 'key', 'id', 'type', 'options']);
@@ -43,7 +44,7 @@ function leaves(o, p = '', out = []) {
     if (v === undefined) { bad(`${it.k}: not in inventory`); continue; }
     if (it.k.startsWith('notice.explore')) {     // the link: label and destination per path
       if (it.text.replace(/\s*→$/, '') !== norm(INV.notice.explore.text) && it.text !== norm(INV.notice.explore.text)) bad(`explore label ${it.text}`);
-      if (!['organization', 'product'].some(t => it.href === INV.notice.explore[t] && it.prod === INV.notice.explore[t])) bad(`explore link ${it.href}`);
+      if (!['organization', 'product'].some(t => it.prod === INV.notice.explore[t] && (it.href === it.prod || /^https?:/.test(PAGE)))) bad(`explore link ${it.href}`);   // the app's local href is checked by checkAppLinks
       covered.add('notice.explore.text'); continue;
     }
     if (typeof v !== 'string') { bad(`${it.k}: not a string`); continue; }
@@ -51,7 +52,7 @@ function leaves(o, p = '', out = []) {
     else if (it.text !== norm(v)) bad(`${it.k}: expected ${JSON.stringify(norm(v).slice(0, 90))} got ${JSON.stringify(it.text.slice(0, 90))}`);
     covered.add(it.k);
   }
-  const explore = await pg.evaluate(() => [...document.querySelectorAll('.notice a.btn')].map(a => [a.closest('.panel').dataset.track, a.getAttribute('href')]));
+  const explore = await pg.evaluate(() => [...document.querySelectorAll('.notice a.btn')].map(a => [a.closest('.panel').dataset.track, (a.getAttribute('data-prod-href') || a.getAttribute('href'))]));
   explore.forEach(([t, h]) => { if (h !== INV.notice.explore[t]) bad(`${t}: Explore Certification goes to ${h}`); else covered.add('notice.explore.' + t); });
   for (const p of got.ph) { const v = get(INV, p.k); if (v !== p.v) bad(`${p.k}: placeholder ${JSON.stringify(p.v)} vs ${JSON.stringify(v)}`); covered.add(p.k); }
   // script-only strings, embedded verbatim
@@ -73,9 +74,9 @@ function leaves(o, p = '', out = []) {
   // shared chrome
   const chrome = await pg.evaluate(() => {
     const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
-    const L = sel => [...document.querySelectorAll(sel)].map(a => [txt(a), a.getAttribute('href'), a.getAttribute('aria-current')]);
-    return { nav: L('header .nav a'), sheet: L('#sheet a'), foot: [...document.querySelectorAll('.foot > div:not(.about)')].map(d => [txt(d.querySelector('h3')), [...d.querySelectorAll('li')].map(li => { const a = li.querySelector(':scope > a'); return a ? [txt(a), a.getAttribute('href')] : [txt(li.querySelector('button'))]; })]),
-      social: [...document.querySelectorAll('.soc a')].map(a => [a.getAttribute('aria-label'), a.getAttribute('href')]), quick: [...document.querySelectorAll('.qa')].map(a => [txt(a.querySelector('b')), txt(a.querySelector('small')), a.getAttribute('href')]),
+    const L = sel => [...document.querySelectorAll(sel)].map(a => [txt(a), (a.getAttribute('data-prod-href') || a.getAttribute('href')), a.getAttribute('aria-current')]);
+    return { nav: L('header .nav a'), sheet: L('#sheet a'), foot: [...document.querySelectorAll('.foot > div:not(.about)')].map(d => [txt(d.querySelector('h3')), [...d.querySelectorAll('li')].map(li => { const a = li.querySelector(':scope > a'); return a ? [txt(a), (a.getAttribute('data-prod-href') || a.getAttribute('href'))] : [txt(li.querySelector('button'))]; })]),
+      social: [...document.querySelectorAll('.soc a')].map(a => [a.getAttribute('aria-label'), (a.getAttribute('data-prod-href') || a.getAttribute('href'))]), quick: [...document.querySelectorAll('.qa')].map(a => [txt(a.querySelector('b')), txt(a.querySelector('small')), (a.getAttribute('data-prod-href') || a.getAttribute('href'))]),
       tagline: txt(document.querySelector('.foot .about p')), copyright: txt(document.querySelector('.legal')), noindex: !!document.querySelector('meta[name="robots"][content*="noindex"]') };
   });
   const H = SITE.header, flat = H.nav.flatMap(n => n.menu ? n.menu : [n]);
@@ -88,6 +89,7 @@ function leaves(o, p = '', out = []) {
   if (chrome.tagline !== F.tagline || chrome.copyright !== F.copyright) bad('footer text differs');
   if (JSON.stringify(chrome.quick) !== JSON.stringify(SITE.quickActions.map(q => [q.text, q.tag, q.url]))) bad('quick actions differ');
   if (!chrome.noindex) bad('noindex meta missing');
+  if (/^https?:/.test(PAGE)) { const L = await checkAppLinks(pg, new URL(PAGE).pathname.replace(/\/analyze\/?$/, '')); L.bad.forEach(m => bad('link: ' + m)); console.log(`App links: ${L.inApp} of ${L.total} links stay in the app, the rest go to the live site.`); }
   await b.close();
   console.log(`${got.items.length} tagged elements, ${got.ph.length} placeholders, ${all.length} approved strings, ${missing.length} not rendered.`);
   console.log(`Shared chrome: ${chrome.nav.length} header links, ${chrome.foot.reduce((n, c) => n + c[1].length, 0)} footer items.`);

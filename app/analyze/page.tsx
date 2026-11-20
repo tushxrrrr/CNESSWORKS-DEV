@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/src/analyze/style.css';
 import { ANALYZE, TRACKS, trackPillars } from '@/lib/content';
+import { pageMetadata } from '@/lib/site';
 import { MobileSheet, QuickActions, SiteFooter, SiteHeader } from '@/components/site/SiteChrome';
 import ChromeBehaviour from '@/components/site/ChromeBehaviour';
 import AnalyzeApp from '@/components/analyze/AnalyzeApp';
@@ -8,11 +9,7 @@ import { TerrainSymbol } from '@/components/analyze/RouteBand';
 
 const CURRENT = 'https://www.cnessworks.com/analyze';
 
-export const metadata: Metadata = {
-  title: 'CNESS Analyze',
-  description: ANALYZE.tracks.organization.heroSubtitle,
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = pageMetadata('analyze', 'CNESS Analyze', ANALYZE.tracks.organization.heroSubtitle);
 
 // Strings the page uses only from script (validation, busy labels, templates), verbatim from content/analyze.json.
 // tools/verify-analyze.js checks this block against the inventory, as on the approved static page.

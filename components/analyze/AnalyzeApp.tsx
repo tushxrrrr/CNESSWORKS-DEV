@@ -5,6 +5,7 @@
 // progress = round(index / pillars * 100), See result opens the details form; no score is shown on the page.
 // This preview is not connected to the CNESS service: a valid submit opens a disclosure instead of sending.
 // Every approved string carries data-k="<path in content/analyze.json>" for tools/verify-analyze.js.
+import { appPath } from '@/lib/site';
 import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { ANALYZE, TRACKS, trackContent, trackFields, trackPillars, type Field, type Track } from '@/lib/content';
 import { message, problems, type FormValues } from '@/lib/analyze/validation';
@@ -227,7 +228,7 @@ const Panel = memo(function Panel({ t, s, active, entering, onEntered, dir, pick
               <p className="lede" data-k="notice.p">{N.p}</p>
               <div className="facts"><div><p className="k3" data-k="notice.sentTo">{N.sentTo}</p><p className="mail">{s.phase === 'notice' ? (s.form.email ?? '').trim() : ''}</p></div><div><p className="k3" data-k="notice.when">{N.when}</p><p data-k="notice.whenBody">{N.whenBody}</p></div></div>
               <p data-k="notice.next">{N.next}</p>
-              <div className="acts"><button type="button" className="btn ghost again" data-k="notice.another" onClick={() => on.again(t)}>{N.another}</button><a className="btn" href={N.explore[t]} data-prod-href={N.explore[t]} target="_blank" rel="noopener" data-k="notice.explore.text">{N.explore.text} <Arr /></a></div>
+              <div className="acts"><button type="button" className="btn ghost again" data-k="notice.another" onClick={() => on.again(t)}>{N.another}</button><a className="btn" href={appPath(N.explore[t]) ?? N.explore[t]} data-prod-href={N.explore[t]} {...(appPath(N.explore[t]) ? {} : { target: '_blank', rel: 'noopener' })} data-k="notice.explore.text">{N.explore.text} <Arr /></a></div>
             </section>
           </div>
         </div>

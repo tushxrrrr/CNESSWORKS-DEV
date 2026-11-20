@@ -1,5 +1,6 @@
 // Decorative graphics of the three certification pages (aria-hidden; inline SVG and CSS, no WebGL).
 // Geometry comes from lib/certification/geometry.ts, which reproduces tools/build-certification.py exactly.
+import { asset } from '@/lib/site';
 import { bloom, canopy, prodDots, TEMPLE_HEIGHTS, vars, wheel, worldMap } from '@/lib/certification/geometry';
 import { v } from './parts';
 
@@ -57,7 +58,7 @@ export const Prod = () => (
     <div className="orb"><svg viewBox="-100 -100 200 200"><path d={prodDots()} /></svg></div>
     <div className="orb comet"><i /></div>
     <div className="scene"><div className="cube">
-      <i className="fc f1"><Check /></i><i className="fc f2"><img src="assets/cness-mark.svg" alt="" /></i><i className="fc f3" /><i className="fc f4" /><i className="fc f5"><Check /></i><i className="fc f6" />
+      <i className="fc f1"><Check /></i><i className="fc f2"><img src={asset('assets/cness-mark.svg')} alt="" /></i><i className="fc f3" /><i className="fc f4" /><i className="fc f5"><Check /></i><i className="fc f6" />
     </div></div>
     <span className="pool" />
   </div>

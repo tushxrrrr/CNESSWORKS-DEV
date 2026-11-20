@@ -4,6 +4,8 @@
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'advantage.html';
 const PAGE = /^https?:\/\//.test(ARG) ? ARG : 'file://' + path.resolve(ROOT, ARG);
+const { checkAppLinks } = require('./lib/app-links');   // URL mode: links to pages the app serves stay in the app
+// Destinations are read as production URLs (data-prod-href, else href), so the app's local links compare equal.
 const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/cness-advantage.json'), 'utf8'));
 (async () => {
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
@@ -11,25 +13,27 @@ const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/cness-advantage.
   await p.goto(PAGE); await p.waitForTimeout(600);
   const got = await p.evaluate(() => {
     const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
-    const main = [...document.querySelectorAll('main [data-c]')].map(e => ({ type: e.dataset.c, text: txt(e), url: e.getAttribute('href') }));
-    const links = sel => [...document.querySelectorAll(sel)].map(a => ({ text: txt(a), url: a.getAttribute('href') }));
+    const main = [...document.querySelectorAll('main [data-c]')].map(e => ({ type: e.dataset.c, text: txt(e), url: e.getAttribute('data-prod-href') || e.getAttribute('href') }));
+    const links = sel => [...document.querySelectorAll(sel)].map(a => ({ text: txt(a), url: (a.getAttribute('data-prod-href') || a.getAttribute('href')) }));
     return {
       main,
       nav: links('header .nav a'), navBtns: [...document.querySelectorAll('header .nav .dd > button')].map(txt),
       sheet: links('#sheet a'), sheetBtns: [...document.querySelectorAll('#sheet .grp > button')].map(txt),
       region: txt(document.querySelector('.region > button')),
       acts: links('header .right-acts a.login, header .right-acts a.btn'), logo: document.querySelector('header .brand').getAttribute('href'),
-      quick: [...document.querySelectorAll('.quick .qa')].map(a => ({ text: txt(a.querySelector('b')), tag: txt(a.querySelector('small')), url: a.getAttribute('href') })),
+      quick: [...document.querySelectorAll('.quick .qa')].map(a => ({ text: txt(a.querySelector('b')), tag: txt(a.querySelector('small')), url: (a.getAttribute('data-prod-href') || a.getAttribute('href')) })),
       foot: {
         tagline: txt(document.querySelector('.foot .about p')), address: txt(document.querySelector('.foot address > span')),
-        phones: links('.foot .cp a'), social: [...document.querySelectorAll('.soc a')].map(a => ({ text: a.getAttribute('aria-label'), url: a.getAttribute('href') })),
-        cols: [...document.querySelectorAll('.foot > div:not(.about)')].map(d => ({ title: txt(d.querySelector('h3')), items: [...d.querySelectorAll('li')].map(li => { const a = li.querySelector(':scope > a'); return a ? { text: txt(a), url: a.getAttribute('href') } : { text: txt(li.querySelector('button')) }; }) })),
+        phones: links('.foot .cp a'), social: [...document.querySelectorAll('.soc a')].map(a => ({ text: a.getAttribute('aria-label'), url: (a.getAttribute('data-prod-href') || a.getAttribute('href')) })),
+        cols: [...document.querySelectorAll('.foot > div:not(.about)')].map(d => ({ title: txt(d.querySelector('h3')), items: [...d.querySelectorAll('li')].map(li => { const a = li.querySelector(':scope > a'); return a ? { text: txt(a), url: (a.getAttribute('data-prod-href') || a.getAttribute('href')) } : { text: txt(li.querySelector('button')) }; }) })),
         copyright: txt(document.querySelector('.legal')) },
       ids: [...document.querySelectorAll('[id]')].map(e => e.id), anchors: [...document.querySelectorAll('a[href^="#"]')].map(a => a.getAttribute('href').slice(1)),
     };
   });
+  const appLinks = /^https?:/.test(PAGE) ? await checkAppLinks(p, new URL(PAGE).pathname.replace(/\/cness-advantage\/?$/, '')) : null;
   await b.close();
-  const diffs = []; const eq = (where, a, b) => { if (a !== b) diffs.push(`${where}: expected ${JSON.stringify(a)} got ${JSON.stringify(b)}`); };
+  const diffs = [];
+  if (appLinks) { appLinks.bad.forEach(m => diffs.push('link: ' + m)); console.log(`App links: ${appLinks.inApp} of ${appLinks.total} links stay in the app, the rest go to the live site.`); } const eq = (where, a, b) => { if (a !== b) diffs.push(`${where}: expected ${JSON.stringify(a)} got ${JSON.stringify(b)}`); };
   // main content, in order
   eq('main item count', INV.main.length, got.main.length);
   INV.main.forEach((it, i) => { const g = got.main[i] || {}; eq(`main[${i}] type`, it.type, g.type); eq(`main[${i}] text`, it.text, g.text); if (it.type === 'a') eq(`main[${i}] url`, it.url, g.url); });

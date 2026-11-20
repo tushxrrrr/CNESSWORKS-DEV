@@ -3,6 +3,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { CERT_MENU, PAGES, ROUTES, SECTIONS } from '@/lib/certification/content';
+import { appPath } from '@/lib/site';
 
 const keyFor = (path: string) => PAGES.find(p => path.replace(/\.html$|\/$/, '') === `/${p.route}`)?.key ?? 'moc';
 
@@ -10,7 +11,7 @@ export function Switcher() {
   return (
     <nav className="switch" aria-label="Certification"><div className="wrap"><ul>{CERT_MENU.map((l, i) => {
       const r = ROUTES[l.url]!;
-      return <li key={r}><a href={`/${r}`} data-route={r} data-prod-href={l.url}><span className="ix" aria-hidden="true">0{i + 1}</span>{l.text}</a></li>;
+      return <li key={r}><a href={appPath(l.url)!} data-route={r} data-prod-href={l.url}><span className="ix" aria-hidden="true">0{i + 1}</span>{l.text}</a></li>;
     })}</ul></div></nav>
   );
 }

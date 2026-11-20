@@ -11,7 +11,11 @@
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
 const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'certification.html';
 const APP = /^https?:\/\//.test(ARG) ? ARG.replace(/\/$/, '') : null, PAGE = APP ? null : path.resolve(ROOT, ARG);
-const R = r => (APP ? '/' : '#') + r;   // where a link to another certification page points
+const BASE = APP ? new URL(APP).pathname.replace(/\/$/, '') : '';
+const R = r => (APP ? BASE + '/' : '#') + r;   // where a link to another certification page points
+const { checkAppLinks } = require('./lib/app-links');   // URL mode: links to pages the app serves stay in the app
+const IN_APP = ['cness-advantage', 'analyze'].map(r => 'https://www.cnessworks.com/' + r);
+const want = url => ROUTES[url] ? R(ROUTES[url]) : APP && IN_APP.includes(url) ? `${BASE}/${url.slice('https://www.cnessworks.com/'.length)}` : url;
 const B = 'https://www.cnessworks.com';
 const INV = { moc: 'mother-of-certification', org: 'cness-certification', prd: 'product-certification' };
 const DATA = Object.fromEntries(Object.entries(INV).map(([k, f]) => [k, JSON.parse(fs.readFileSync(path.join(ROOT, 'content', f + '.json'), 'utf8'))]));
@@ -48,13 +52,13 @@ function leaves(o, p = '', out = []) {
       if (v === undefined) { bad(`${route}: ${p} not in inventory`); continue; }
       if (typeof v === 'string' && /\.url$/.test(p)) {          // whole-card links: destination check
         if (it.prod !== v) bad(`${route}: ${p} links to ${it.prod}, expected ${v}`);
-        if (ROUTES[v] ? it.href !== R(ROUTES[v]) : it.href !== v) bad(`${route}: ${p} href ${it.href}`);
+        if (it.href !== want(v)) bad(`${route}: ${p} href ${it.href}`);
         covered.add(p); continue;
       }
       if (v && typeof v === 'object' && 'url' in v) {           // labelled links
         if (it.text !== norm(v.text)) bad(`${route}: ${p}.text expected ${JSON.stringify(v.text)} got ${JSON.stringify(it.text)}`);
         if (it.prod !== v.url) bad(`${route}: ${p} production URL ${it.prod}, expected ${v.url}`);
-        if (ROUTES[v.url] ? (it.href !== R(ROUTES[v.url]) || it.route !== ROUTES[v.url]) : it.href !== v.url) bad(`${route}: ${p} href ${it.href} for ${v.url}`);
+        if (it.href !== want(v.url) || (ROUTES[v.url] && it.route !== ROUTES[v.url])) bad(`${route}: ${p} href ${it.href} for ${v.url}`);
         covered.add(p + '.text'); covered.add(p + '.url'); continue;
       }
       if (typeof v !== 'string') { bad(`${route}: ${p} is not a string`); continue; }
@@ -67,6 +71,7 @@ function leaves(o, p = '', out = []) {
     // reading order: tagged elements in DOM order must follow the inventory order
     const pos = new Map(order.map((p, i) => [p, i])); let last = -1, inv = 0;
     for (const it of got.items) { const p = it.k.slice(key.length + 1); if (/\.url$/.test(p)) continue; const i = pos.has(p) ? pos.get(p) : pos.get(p + '.text'); if (i == null) continue; if (i < last) { inv++; if (inv <= 30) bad(`${route}: order: ${p} appears after a later item`); } last = Math.max(last, i); }
+    if (APP) { const L = await checkAppLinks(pg, BASE); L.bad.forEach(m => bad(`${route}: link: ${m}`)); report.push(`${route}: ${L.inApp} of ${L.total} links stay in the app, the rest go to the live site`); }
     report.push(`${route}: ${got.items.length} tagged elements, ${order.length} approved strings, ${missing.length} not rendered, ${inv} out of order`);
   }
   // shared chrome
@@ -74,7 +79,7 @@ function leaves(o, p = '', out = []) {
     const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
     const L = sel => [...document.querySelectorAll(sel)].map(a => [txt(a), a.getAttribute('data-prod-href') || a.getAttribute('href'), a.getAttribute('href')]);
     return { nav: L('header .nav a'), sheet: L('#sheet a'), foot: [...document.querySelectorAll('.foot > div:not(.about)')].map(d => [txt(d.querySelector('h3')), [...d.querySelectorAll('li')].map(li => { const a = li.querySelector(':scope > a'); return a ? [txt(a), a.getAttribute('data-prod-href') || a.getAttribute('href')] : [txt(li.querySelector('button'))]; })]),
-      social: [...document.querySelectorAll('.soc a')].map(a => [a.getAttribute('aria-label'), a.getAttribute('href')]), quick: [...document.querySelectorAll('.qa')].map(a => [txt(a.querySelector('b')), txt(a.querySelector('small')), a.getAttribute('href')]),
+      social: [...document.querySelectorAll('.soc a')].map(a => [a.getAttribute('aria-label'), (a.getAttribute('data-prod-href') || a.getAttribute('href'))]), quick: [...document.querySelectorAll('.qa')].map(a => [txt(a.querySelector('b')), txt(a.querySelector('small')), (a.getAttribute('data-prod-href') || a.getAttribute('href'))]),
       tagline: txt(document.querySelector('.foot .about p')), copyright: txt(document.querySelector('.legal')), routed: [...document.querySelectorAll('a[data-route]')].map(a => [a.getAttribute('href'), a.getAttribute('data-prod-href')]) };
   });
   const H = SITE.header, flat = H.nav.flatMap(n => n.menu ? n.menu : [n]);

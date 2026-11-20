@@ -1,6 +1,7 @@
 // B. Organization Certification (content/cness-certification.json): hero with pillar chips and stats, community
 // logos, why chart, the six pillars with their dialogs, benefits, how-it-works steps, spotlight testimonials,
 // levels and FAQ tabs, then the closing daylight. Behaviour lives in lib/certification/motion.ts.
+import { asset } from '@/lib/site';
 import { Fragment } from 'react';
 import { ORG } from '@/lib/certification/content';
 import { Arr, Cta, I, k, linkProps, Sec, v, Words, type P } from './parts';
@@ -16,7 +17,7 @@ export default function OrgPage() {
   const evIndex = (r: string[]) => { const lab = dash(`${r[0]} ${r[1]}`); return titles.findIndex(t => t.startsWith(lab.split(' &')[0]!) || t === lab); };
   type Level = typeof lv.items[number];
   const lcard = (i: number, x: Level, cls = '') => (
-    <article className={`lvc${cls}`} data-level={i} key={i}><img className="em" src={`assets/emblem-${x.emblem}.svg`} width={64} height={64} alt="" decoding="async" />
+    <article className={`lvc${cls}`} data-level={i} key={i}><img className="em" src={asset(`assets/emblem-${x.emblem}.svg`)} width={64} height={64} alt="" loading="lazy" decoding="async" />
       <span className="tier" {...k(p, 'levels', 'items', i, 'tier')}>{x.tier}</span><h3 {...k(p, 'levels', 'items', i, 'name')}>{x.name}</h3><p className="tg" {...k(p, 'levels', 'items', i, 'tagline')}>{x.tagline}</p>
       <div style={{ display: 'grid', gap: '.9rem', alignContent: 'start' }}><h4 {...k(p, 'levels', 'items', i, 'showsLabel')}>{x.showsLabel}</h4><ul>{x.shows.map((s, j) => <li key={j} {...k(p, 'levels', 'items', i, 'shows', j)}>{s}</li>)}</ul>
         <h4 {...k(p, 'levels', 'items', i, 'advLabel')}>{x.advLabel}</h4><ul className="adv">{x.advantages.map((s, j) => <li key={j} {...k(p, 'levels', 'items', i, 'advantages', j)}>{s}</li>)}</ul></div>
@@ -42,7 +43,7 @@ export default function OrgPage() {
       <Sec id="org-community" label={cm.h2} scene={1}>
         <div className="wrap"><div className="glass pad" data-in="">
           <div className="comm-h"><h2 {...k(p, 'community', 'h2')}>{cm.h2}</h2><a className="btn ghost sm" {...linkProps(cm.explore.url)} {...k(p, 'community', 'explore')}>{cm.explore.text} <Arr /></a></div>
-          <ul className="logos">{cm.logos.map((l, i) => <li key={i}><a {...linkProps(l.url)} {...k(p, 'community', 'logos', i, 'url')} aria-label={l.name}><img src={l.img} alt="" loading="lazy" decoding="async" /></a></li>)}</ul></div></div>
+          <ul className="logos">{cm.logos.map((l, i) => <li key={i}><a {...linkProps(l.url)} {...k(p, 'community', 'logos', i, 'url')} aria-label={l.name}><img src={asset(l.img)} alt="" loading="lazy" decoding="async" /></a></li>)}</ul></div></div>
       </Sec>
       <Sec id="org-why" label={w.kicker} scene={2} side="l">
         <div className="wrap why">
@@ -88,7 +89,7 @@ export default function OrgPage() {
         <div className="wrap spot">
           <div className="txt" style={{ display: 'grid', gap: '1.1rem' }} data-in=""><h2 className="h-md"><span {...k(p, 'spotlight', 'h2', 0)}>{sp.h2[0]}</span> <span className="g" {...k(p, 'spotlight', 'h2', 1)}>{sp.h2[1]}</span></h2><p className="lede" {...k(p, 'spotlight', 'p')}>{sp.p}</p></div>
           <div className="glass pad" data-in=""><div className="car" aria-roledescription="carousel" aria-label={`${sp.h2[0]} ${sp.h2[1]}`}>{sp.items.map((t, i) => (
-            <figure className="slide" id={`sl-${i}`} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${sp.items.length}`} aria-hidden={i === 0 ? 'false' : 'true'} key={i}><div className="ph"><img src={t.img} alt={t.name} loading="lazy" decoding="async" /></div><div><figcaption><b {...k(p, 'spotlight', 'items', i, 'name')}>{t.name}</b><span {...k(p, 'spotlight', 'items', i, 'role')}>{t.role}</span></figcaption><blockquote {...k(p, 'spotlight', 'items', i, 'quote')}>{t.quote}</blockquote></div></figure>
+            <figure className="slide" id={`sl-${i}`} role="group" aria-roledescription="slide" aria-label={`${i + 1} / ${sp.items.length}`} aria-hidden={i === 0 ? 'false' : 'true'} key={i}><div className="ph"><img src={asset(t.img)} alt={t.name} loading="lazy" decoding="async" /></div><div><figcaption><b {...k(p, 'spotlight', 'items', i, 'name')}>{t.name}</b><span {...k(p, 'spotlight', 'items', i, 'role')}>{t.role}</span></figcaption><blockquote {...k(p, 'spotlight', 'items', i, 'quote')}>{t.quote}</blockquote></div></figure>
           ))}</div>
             <div className="car-ctl"><span className="dots2" aria-hidden="true"><i className="on" /><i /></span><button className="icb" type="button" data-car="-1" aria-label={sp.controls.prev}>{I.prev}</button><button className="icb" type="button" data-car="1" aria-label={sp.controls.next}>{I.next}</button></div></div>
         </div>
@@ -115,7 +116,7 @@ export default function OrgPage() {
       </Sec>
       <Sec id="org-begin" label={bg.h3} scene={9} cls="dawn final">
         <div className="sunrise"><div className="in">
-          <img className="mk" src="assets/cness-mark.svg" width={64} height={64} alt="" decoding="async" />
+          <img className="mk" src={asset('assets/cness-mark.svg')} width={64} height={64} alt="" loading="lazy" decoding="async" />
           <h3 className="h-lg" {...k(p, 'begin', 'h3')}>{bg.h3}</h3><p {...k(p, 'begin', 'p')}>{bg.p}</p>
           <div className="acts"><Cta page={p} path={['begin', 'cta']} l={bg.cta} cls="btn dark" /></div>
         </div></div>

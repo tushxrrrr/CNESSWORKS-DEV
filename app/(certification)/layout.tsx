@@ -8,9 +8,10 @@ import ChromeBehaviour from '@/components/site/ChromeBehaviour';
 import { DotNavs, Switcher } from '@/components/certification/CertShell';
 import CertificationBehaviour from '@/components/certification/CertificationBehaviour';
 import { PAGES, ROUTES } from '@/lib/certification/content';
+import { BASE_PATH } from '@/lib/site';
 
 // Before first paint (as the approved page does): mark scripting for the entrances, and pick this page's sky
-const EARLY = `(function(){var d=document.documentElement,m=${JSON.stringify(Object.fromEntries(PAGES.map(p => ['/' + p.route, p.key])))},k=m[location.pathname.replace(/\\.html$|\\/$/,'')];d.classList.add('js');if(k)d.dataset.pg=k;})()`;
+const EARLY = `(function(){var d=document.documentElement,m=${JSON.stringify(Object.fromEntries(PAGES.map(p => ['/' + p.route, p.key])))},k=m[location.pathname.slice(${JSON.stringify(BASE_PATH)}.length).replace(/\\.html$|\\/$/,'')];d.classList.add('js');if(k)d.dataset.pg=k;})()`;
 
 export default function CertificationLayout({ children }: { children: ReactNode }) {
   return (

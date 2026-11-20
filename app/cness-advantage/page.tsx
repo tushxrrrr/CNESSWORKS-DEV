@@ -1,15 +1,12 @@
 import type { Metadata } from 'next';
 import { ADVANTAGE, ADVANTAGE_URL } from '@/lib/advantage/model';
+import { pageMetadata } from '@/lib/site';
 import { MobileSheet, QuickActions, SiteFooter, SiteHeader } from '@/components/site/SiteChrome';
 import ChromeBehaviour from '@/components/site/ChromeBehaviour';
 import AdvantageSections, { SectionDots } from '@/components/advantage/AdvantageSections';
 import AdvantageMotion from '@/components/advantage/AdvantageMotion';
 
-export const metadata: Metadata = {
-  title: 'CNESS Advantage',
-  description: ADVANTAGE.hero.lede,
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = pageMetadata('cness-advantage', 'CNESS Advantage', ADVANTAGE.hero.lede);
 
 export default function AdvantagePage() {
   return (

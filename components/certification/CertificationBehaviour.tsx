@@ -16,9 +16,14 @@ export default function CertificationBehaviour() {
   const router = useRouter();
   const first = useRef(true);
 
-  // routed links: leave, then navigate inside the app
+  // routed links: leave, then navigate inside the app. A page is prefetched once the visitor shows intent (pointer
+  // over, focus or touch on a link to it), not on every load, so phones don't download pages nobody opens.
   useEffect(() => {
-    PAGES.forEach(p => router.prefetch(`/${p.route}`));
+    const warm = new Set<string>();
+    const intent = (e: Event) => { const a = (e.target as Element | null)?.closest?.<HTMLAnchorElement>('a[data-route]'); const r = a?.dataset.route;
+      if (r && !warm.has(r) && PAGES.some(p => p.route === r)) { warm.add(r); router.prefetch(`/${r}`); } };
+    const evs = ['pointerover', 'focusin', 'touchstart'] as const;
+    evs.forEach(ev => document.addEventListener(ev, intent, { passive: true }));
     let t: ReturnType<typeof setTimeout> | undefined;
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -31,7 +36,7 @@ export default function CertificationBehaviour() {
       t = setTimeout(() => router.push(`/${route}`, { scroll: false }), 170);
     };
     document.addEventListener('click', onClick);
-    return () => { document.removeEventListener('click', onClick); clearTimeout(t); };
+    return () => { document.removeEventListener('click', onClick); evs.forEach(ev => document.removeEventListener(ev, intent)); clearTimeout(t); };
   }, [router]);
 
   // the page on screen: navigation state, arrival, motion
@@ -46,7 +51,8 @@ export default function CertificationBehaviour() {
     root.dataset.pg = key;
     if (!first.current) {
       const id = decodeURIComponent(location.hash.slice(1)), target = id ? document.getElementById(id) : null;
-      if (target) target.scrollIntoView({ block: 'start' }); else scrollTo(0, 0);
+      // jump, don't glide: the page has just been replaced (Next.js 16 leaves the page's smooth scrolling on during navigation)
+      if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' }); else scrollTo({ top: 0, behavior: 'instant' });
       if (!still()) { pg.classList.remove('entering'); void pg.offsetWidth; pg.classList.add('entering'); }
       pg.querySelector<HTMLElement>('h1')?.focus({ preventScroll: true });
     } else {

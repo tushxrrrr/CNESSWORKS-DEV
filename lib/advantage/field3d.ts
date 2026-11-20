@@ -68,8 +68,12 @@ export function startField3D(CW: FieldState, host: HTMLElement, fallback: HTMLCa
   let W = 0, H = 0, wide = true;
   const resize = () => { W = host.clientWidth; H = host.clientHeight; if (!W || !H) return; renderer.setSize(W, H, false); camera.aspect = W / H; camera.updateProjectionMatrix(); wide = W / H > 1.05; U.uScale.value = Math.max(.7, Math.min(1.4, H / 820)); CW.dirty = true; CW.wake(); };
   const ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), v2 = new THREE.Vector2(), hit = new THREE.Vector3();
+  // GPU context lost (a phone backgrounding the tab, a driver reset): draw the 2D field until it comes back
+  let lost = false;
+  const onLost = (e: Event) => { e.preventDefault(); lost = true; CW.has3D = false; canvas.style.display = 'none'; fallback.style.display = ''; CW.dirty = true; CW.wake(); };
+  const onRestored = () => { lost = false; CW.has3D = true; canvas.style.display = ''; fallback.style.display = 'none'; resize(); };
   const render = () => {
-    if (CW.covered && !CW.dirty) return false;
+    if (lost || (CW.covered && !CW.dirty)) return false;
     const ps = pose(CW.scene.x, CW.time, wide);
     rig.position.set(ps.x, ps.y, 0); rig.scale.setScalar(ps.sc);
     rig.rotation.set(ps.tilt + CW.py.x * .15, ps.rot + CW.px.x * .25, 0);
@@ -80,6 +84,7 @@ export function startField3D(CW: FieldState, host: HTMLElement, fallback: HTMLCa
     return false;
   };
   const canvas = renderer.domElement;
+  canvas.addEventListener('webglcontextlost', onLost); canvas.addEventListener('webglcontextrestored', onRestored);
   canvas.setAttribute('aria-hidden', 'true');
   host.appendChild(canvas);
   CW.has3D = true; window.__webgl = true; fallback.style.display = 'none';
@@ -88,6 +93,7 @@ export function startField3D(CW: FieldState, host: HTMLElement, fallback: HTMLCa
   CW.wake();
   return () => {
     CW.hooks.delete(render); ro.disconnect(); CW.has3D = false; fallback.style.display = '';
+    canvas.removeEventListener('webglcontextlost', onLost); canvas.removeEventListener('webglcontextrestored', onRestored);
     canvas.remove(); geo.dispose(); mat.dispose(); renderer.dispose();
   };
 }

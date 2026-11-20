@@ -1,6 +1,7 @@
 // C. Product Certification (content/product-certification.json): hero with the 108-place ring, the idea, the CNESS
 // 108, seven pillars, why certify, the market evidence deck (behaviour in lib/certification/motion.ts), the journey
 // and the closing daylight.
+import { asset } from '@/lib/site';
 import { Fragment } from 'react';
 import { PRD } from '@/lib/certification/content';
 import { fx } from '@/lib/certification/geometry';
@@ -119,7 +120,7 @@ export default function ProductPage() {
       </Sec>
       <Sec id="prd-pathways" label={pw.h2} scene={7} cls="dawn final">
         <div className="sunrise"><div className="in">
-          <img className="mk" src="assets/cness-mark.svg" width={64} height={64} alt="" decoding="async" />
+          <img className="mk" src={asset('assets/cness-mark.svg')} width={64} height={64} alt="" loading="lazy" decoding="async" />
           <p className="k2" {...k(p, 'pathways', 'h2')}>{pw.h2}</p><h2 {...k(p, 'pathways', 'h3')}>{pw.h3}</h2>
           <p {...k(p, 'pathways', 'p', 0)}>{pw.p[0]}</p><p {...k(p, 'pathways', 'p', 1)}>{pw.p[1]}</p><p className="motto" {...k(p, 'pathways', 'p', 2)}>{pw.p[2]}</p>
           <div className="acts"><Cta page={p} path={['pathways', 'ctas', 0]} l={pw.ctas[0]!} cls="btn dark" /><a className="btn line-dark" {...linkProps(pw.ctas[1]!.url)} {...k(p, 'pathways', 'ctas', 1)}>{pw.ctas[1]!.text}</a></div>

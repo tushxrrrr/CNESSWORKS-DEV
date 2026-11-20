@@ -1,6 +1,7 @@
 // A. Mother of Certification (content/mother-of-certification.json): hero with the canopy, industry table with
 // region filters, search and Show more (behaviour in lib/certification/motion.ts), the compare pair, two cards
 // and the closing daylight.
+import { asset } from '@/lib/site';
 import { MOC } from '@/lib/certification/content';
 import { Arr, Cta, I, k, linkProps, Sec, Words, type P } from './parts';
 import { Canopy, Join, WorldMap } from './Art';
@@ -22,7 +23,7 @@ export default function MotherPage() {
       <Sec id="moc-industry" label={ind.label} scene={1} side="r">
         <div className="wrap">
           <div className="moc-ind">
-            <figure className="fig" data-in=""><img src={ind.image.src} width={960} height={639} alt={ind.image.alt} loading="lazy" decoding="async" /></figure>
+            <figure className="fig" data-in=""><img src={asset(ind.image.src)} width={960} height={639} alt={ind.image.alt} loading="lazy" decoding="async" /></figure>
             <div className="txt" style={{ display: 'grid', gap: '1.1rem' }} data-in="">
               <span className="k2" {...k(p, 'industry', 'label')}>{ind.label}</span>
               <h2 className="h-md" {...k(p, 'industry', 'h2')}>{ind.h2}</h2>
@@ -67,7 +68,7 @@ export default function MotherPage() {
       </Sec>
       <Sec id="moc-close" label={c.label} scene={4} cls="dawn final">
         <div className="sunrise"><div className="in">
-          <img className="mk" src="assets/cness-mark.svg" width={64} height={64} alt="" decoding="async" />
+          <img className="mk" src={asset('assets/cness-mark.svg')} width={64} height={64} alt="" loading="lazy" decoding="async" />
           <span className="k2" {...k(p, 'closing', 'label')}>{c.label}</span>
           <h2 {...k(p, 'closing', 'h2')}>{c.h2}</h2>
           <p {...k(p, 'closing', 'p', 0)}>{c.p[0]}</p><p className="motto" {...k(p, 'closing', 'p', 1)}>{c.p[1]}</p>

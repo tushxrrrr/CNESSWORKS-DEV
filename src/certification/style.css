@@ -570,8 +570,8 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 .ch-meters .axis { display: flex; justify-content: space-between; font: 400 .6875rem/1 var(--mono); color: rgba(185, 179, 226, .7); }
 .ch-meters .axis i { font-style: normal; }
 /* columns */
-.ch-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: clamp(11rem, 20vw, 14rem) auto; column-gap: clamp(.6rem, 2vw, 1.4rem); }
-.cc { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: .7rem; min-width: 0; }
+.ch-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(.6rem, 2vw, 1.4rem); }
+.cc { display: grid; grid-template-rows: calc(clamp(11rem, 20vw, 14rem) - .35rem) auto; row-gap: .7rem; min-width: 0; }   /* same tracks as the earlier subgrid layout (it took half the gap from the bars), without needing subgrid */
 .cb { position: relative; border-bottom: 1px solid rgba(246, 243, 255, .25); }
 .cb i { position: absolute; left: 14%; right: 14%; bottom: 0; height: calc(var(--v) * 100%); border-radius: 4px 4px 0 0; background: var(--lo); transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1s var(--ease); }
 .cc.hi .cb i { background: var(--gold); }

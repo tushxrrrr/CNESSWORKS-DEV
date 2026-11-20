@@ -3,13 +3,16 @@
 // (src/advantage.html); every approved string carries data-c="<type>" for tools/verify-advantage.js.
 // Headline and statement words are pre-split into spans here (the static page splits them in script), so the
 // browser never re-writes React's markup.
+import { appPath, asset } from '@/lib/site';
 import { Fragment, type CSSProperties } from 'react';
 import { ADVANTAGE, type Block, type Link, type Offering, type PlanCard } from '@/lib/advantage/model';
 import { Icon } from './Icons';
 
 const Arr = () => <span className="arr" aria-hidden="true">→</span>;
+// Calls to action: pages this app serves open in the app, the rest open the live site in a new tab
+const out = (url: string) => { const local = appPath(url); return local ? { href: local, 'data-prod-href': url } : { href: url, 'data-prod-href': url, target: '_blank', rel: 'noopener' }; };
 const Cta = ({ l, cls = 'btn' }: { l: Link; cls?: string }) => (
-  <a className={cls} data-c="a" href={l.url} target="_blank" rel="noopener">{l.text} <Arr /></a>
+  <a className={cls} data-c="a" {...out(l.url)}>{l.text} <Arr /></a>
 );
 const v = (o: Record<string, string | number>) => o as CSSProperties;
 
@@ -43,7 +46,7 @@ function OfferingSection({ o }: { o: Offering }) {
     <section className={o.flip ? 'off flip' : 'off'} id={o.id} data-scene={o.scene} data-hi={o.hi} data-name={o.eyebrow} aria-labelledby={`h-${o.id}`}>
       <div className="wrap">
         <div className="intro"><div className="txt" data-in="">
-          {o.emblem && <img className="emb" src={`assets/emblem-${o.emblem}.svg`} width={76} height={76} alt="" decoding="async" />}
+          {o.emblem && <img className="emb" src={asset(`assets/emblem-${o.emblem}.svg`)} width={76} height={76} alt="" loading="lazy" decoding="async" />}
           <span className="tag" data-c="eyebrow">{o.eyebrow}</span>
           <h3 id={`h-${o.id}`} data-c="h3">{o.h3}</h3>
           <p className="desc" data-c="p">{o.desc}</p>
@@ -109,10 +112,10 @@ function BlockView({ b }: { b: Block }) {
     case 'final': return (
       <section className="final" id="start" data-scene="10" data-name={b.h2} aria-labelledby="h-start">
         <div className="sunrise"><div className="in">
-          <img className="mk" src="assets/cness-mark.svg" width={64} height={64} alt="" decoding="async" />
+          <img className="mk" src={asset('assets/cness-mark.svg')} width={64} height={64} alt="" loading="lazy" decoding="async" />
           <h2 id="h-start" data-c="h2">{b.h2}</h2>
           <p data-c="p">{b.p}</p>
-          <div className="acts"><Cta l={b.primary} cls="btn dark" /><a className="btn line-dark" data-c="a" href={b.secondary.url} target="_blank" rel="noopener">{b.secondary.text}</a></div>
+          <div className="acts"><Cta l={b.primary} cls="btn dark" /><a className="btn line-dark" data-c="a" {...out(b.secondary.url)}>{b.secondary.text}</a></div>
         </div></div>
       </section>
     );
