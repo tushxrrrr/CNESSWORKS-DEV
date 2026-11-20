@@ -7,9 +7,10 @@
 //  4. Every approved string is rendered or embedded somewhere (no omissions); template strings are checked live.
 //  5. Shared header, footer and quick actions keep the site's labels and destinations.
 //  6. Text that is not approved copy (the preview disclosure) is listed separately.
-// Usage: node tools/verify-analyze.js [page.html]  (default analyze.html). Exit 1 on any difference.
+// Usage: node tools/verify-analyze.js [page.html | URL]  (default analyze.html). Exit 1 on any difference.
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
-const ROOT = path.resolve(__dirname, '..'); const PAGE = path.resolve(ROOT, process.argv[2] || 'analyze.html');
+const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'analyze.html';
+const PAGE = /^https?:\/\//.test(ARG) ? ARG : 'file://' + path.resolve(ROOT, ARG);   // a file, or a URL (e.g. the Next.js export served by npm run serve)
 const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/analyze.json'), 'utf8'));
 const SITE = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/cness-advantage.json'), 'utf8'));
 const SKIP = new Set(['source', 'captured', 'note', 'rules', 'omitted', 'key', 'id', 'type', 'options']);
@@ -24,7 +25,7 @@ function leaves(o, p = '', out = []) {
 (async () => {
   const b = await chromium.launch(); const pg = await b.newPage({ viewport: { width: 1440, height: 900 } });
   const diffs = []; const bad = m => diffs.push(m);
-  await pg.goto('file://' + PAGE); await pg.waitForTimeout(400);
+  await pg.goto(PAGE); await pg.waitForTimeout(400);
   const got = await pg.evaluate(() => {
     const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
     return {

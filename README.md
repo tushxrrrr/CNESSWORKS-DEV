@@ -1,7 +1,7 @@
 # CNESSWORKS (development)
 
 The approved CNESSWORKS page designs, signed off on 20 November 2026 (git tag `approved-2026-11-20`).
-This repository is the starting point for the production build (Next.js + TypeScript). The earlier test
+This repository is the starting point for the production build (Next.js + TypeScript; see "Next.js app" below). The earlier test
 repository (tushxrrrr/cnessworks) keeps the full design history, including the unapproved variants.
 
 | Page | Built file | Source | Approved |
@@ -17,6 +17,25 @@ Each approved version was compared with its source file at seeding: all four are
 - **Verify.** `node tools/verify-advantage.js`, `node tools/verify-certification.js`, `node tools/verify-analyze.js` and `node tools/test-analyze.js` (Playwright). The `*-source.js` tools re-check the content against the live site (read-only; the Analyze check blocks every non-GET request).
 - **Search engines.** `robots.txt` and the `noindex` meta tag keep this site out of search engines. Remove both only at go-live.
 - **Known live-site text issue.** Two Product pillar descriptions on the live Analyze page contain a broken dash ("productâ€”not", "lifecycleâ€”from"). Under the content lock they are reproduced verbatim in `content/analyze.json`; fix them on the live site, then re-capture.
+
+## Next.js app (production build, in progress)
+The approved pages are being ported to **Next.js 16 (App Router) with strict TypeScript**, one page at a time. A page counts as ported only when the Next.js version passes the same checks as the approved static page.
+
+| Page | Next.js route | Status |
+| --- | --- | --- |
+| Analyze | `/analyze` (`app/analyze/page.tsx`) | Ported and verified |
+| First Light | | To do |
+| CNESS Advantage | | To do |
+| Certification (three pages) | | To do |
+
+- **Run.** `npm install`, then `npm run dev` (http://localhost:3000/analyze). `npm run build` writes a static export to `out/` (`out/analyze.html`): plain HTML, CSS and JS that can be hosted anywhere or handed over as files. `npm run serve` serves `out/` at http://localhost:3100. `npm run typecheck` runs `tsc`.
+- **Structure.** `app/` routes; `components/site/` the shared header, mobile menu, footer and quick actions (`SiteChrome.tsx`) and their behaviour (`ChromeBehaviour.tsx`); `components/analyze/` the Analyze page (`AnalyzeApp.tsx`: paths, steps, ratings, form, preview disclosure; `RouteBand.tsx`: the survey-terrain graphic); `lib/content.ts` typed access to the locked content; `lib/analyze/validation.ts` the live page's field rules.
+- **Content.** Components read the same locked inventories as the static pages (`content/*.json`); no copy is typed into components. The terrain graphic's geometry comes from `lib/analyze/graphic.json`, written by `python3 tools/export-analyze-graphic.py` from the same generator as the static page.
+- **Styles and assets.** The approved stylesheets are imported as they are (`src/advantage/style.css`, `src/analyze/style.css`). `assets/` stays the single source for images; `scripts/sync-assets.mjs` copies it (and `robots.txt`) into `public/` before `dev` and `build`.
+- **Choices that keep the approved quality.** Fonts load from Google Fonts as on the approved pages (not `next/font`), so the tuned fallback faces still prevent text re-wrapping on load. Animation stays in CSS (transform and opacity) and the graphic's lens is positioned from measured layout, not re-rendered per frame. The page's sections are memoised so a click re-renders only what changed. Browser storage and the address hash are read after the page loads, so server and browser render the same markup.
+- **Verified (Analyze, against `npm run build` + `npm run serve`).** `node tools/verify-analyze.js http://localhost:3100/analyze`: all 515 approved strings and the shared chrome, no differences. `node tools/test-analyze.js http://localhost:3100/analyze`: 45 of 45 behaviour checks. axe-core: no WCAG 2.2 AA violations (five states per path, desktop and phone). No horizontal overflow at 1440, 768, 390 and 320 px. Load layout shift 0.001. Scrolling at 60 fps with the CPU slowed 4x. Screenshots of four states at desktop and phone width match the approved static page pixel for pixel, apart from anti-aliasing on one heading (under 0.005% of pixels). Clicks cost about 2-3 ms more script time than the static page at normal CPU speed (React's own work); no long tasks.
+- **Tests need Playwright** (`npm i -D playwright && npx playwright install chromium` on a new machine) and, for the accessibility check, axe-core.
+- **Not connected to CNESS.** As in the approved preview, a valid submit opens a "Preview only" disclosure. Connecting the form to the live service needs the CNESS endpoint and its owners' approval.
 
 ## First Light (`immersive.html`)
 A cinematic, condensed version of the same content. Copy is shortened but every statement comes from CONTENT.md.

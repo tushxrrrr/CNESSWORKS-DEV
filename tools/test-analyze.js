@@ -1,16 +1,18 @@
 #!/usr/bin/env node
-// Functional tests for the Analyze preview (both paths). Usage: node tools/test-analyze.js [page.html]
+// Functional tests for the Analyze preview (both paths). Usage: node tools/test-analyze.js [page.html | URL]
 // Checks: initial state, rating rules, progress text, back/forward retention, keyboard rating, See result -> form,
 // path separation and retention, validation messages and focus (live rules), no network on submit, the preview
 // disclosure, the confirmation screen, Analyze Another, reload persistence, layout stability while typing.
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
-const ROOT = path.resolve(__dirname, '..'); const PAGE = 'file://' + path.resolve(ROOT, process.argv[2] || 'analyze.html');
+const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'analyze.html';
+const PAGE = /^https?:\/\//.test(ARG) ? ARG : 'file://' + path.resolve(ROOT, ARG);   // a file, or a URL (e.g. the Next.js export served by npm run serve)
 const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/analyze.json'), 'utf8')), V = INV.validation;
 let pass = 0; const fails = []; const ok = (c, m) => { if (c) pass++; else fails.push(m); };
 (async () => {
   const b = await chromium.launch(); const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } }); const p = await ctx.newPage();
   const errs = [], net = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type() === 'error' && errs.push(m.text()));
-  p.on('request', r => { const u = r.url(); if (!u.startsWith('file:') && !u.startsWith('data:') && !/fonts\.(googleapis|gstatic)\.com/.test(u)) net.push(r.method() + ' ' + u); });
+  const ORIGIN = /^https?:/.test(PAGE) ? new URL(PAGE).origin : null;
+  p.on('request', r => { const u = r.url(); if (ORIGIN && r.method() === 'GET' && u.startsWith(ORIGIN)) return; if (!u.startsWith('file:') && !u.startsWith('data:') && !/fonts\.(googleapis|gstatic)\.com/.test(u)) net.push(r.method() + ' ' + u); });
   await p.goto(PAGE); await p.waitForTimeout(600);
   const O = '#panel-organization', P = '#panel-product';
   const st = sel => p.evaluate(sel => { const q = s => document.querySelector(sel + ' ' + s); return {

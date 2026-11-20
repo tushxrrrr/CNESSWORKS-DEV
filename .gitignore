@@ -1,1 +1,8 @@
 __pycache__/
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+public/assets/
+public/robots.txt
