@@ -16,6 +16,7 @@ Each approved version was compared with its source file at seeding: all four are
 - **Build.** Pages are body fragments in `src/`; `./build.sh` wraps them into the root `*.html` files. Advantage, Certification and Analyze are generated from the locked content in `content/` by `tools/build-*.py`; never edit their `src/*.html` by hand.
 - **Verify.** `node tools/verify-advantage.js`, `node tools/verify-certification.js`, `node tools/verify-analyze.js` and `node tools/test-analyze.js` (Playwright). The `*-source.js` tools re-check the content against the live site (read-only; the Analyze check blocks every non-GET request).
 - **Search engines.** `robots.txt` and the `noindex` meta tag keep this site out of search engines. Remove both only at go-live.
+- **Approved change from the live copy (20 Nov 2026).** CNESS Advantage, SuperApp section: the paragraph now ends "…meet people with shared interests across the global conscious community." (live: "…meet people with shared interests."). It is in `content/cness-advantage.json`, so `tools/verify-advantage.js` checks the new wording; a live re-check will report this one sentence until the live site is updated.
 - **Known live-site text issue.** Two Product pillar descriptions on the live Analyze page contain a broken dash ("productâ€”not", "lifecycleâ€”from"). Under the content lock they are reproduced verbatim in `content/analyze.json`; fix them on the live site, then re-capture.
 
 ## Next.js app (production build, in progress)
