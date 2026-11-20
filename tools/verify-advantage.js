@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 // Compares the rendered CNESS Advantage page with the locked inventory (content/cness-advantage.json).
-// Usage: node tools/verify-advantage.js [page.html]   (default: advantage.html). Exit 1 on any difference.
+// Usage: node tools/verify-advantage.js [page.html | URL]   (default: advantage.html; a URL checks e.g. the Next.js export served by npm run serve). Exit 1 on any difference.
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
-const ROOT = path.resolve(__dirname, '..'); const PAGE = path.resolve(ROOT, process.argv[2] || 'advantage.html');
+const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'advantage.html';
+const PAGE = /^https?:\/\//.test(ARG) ? ARG : 'file://' + path.resolve(ROOT, ARG);
 const INV = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/cness-advantage.json'), 'utf8'));
 (async () => {
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
   await p.route('https://cdn.jsdelivr.net/**', r => r.abort());
-  await p.goto('file://' + PAGE); await p.waitForTimeout(600);
+  await p.goto(PAGE); await p.waitForTimeout(600);
   const got = await p.evaluate(() => {
     const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); };
     const main = [...document.querySelectorAll('main [data-c]')].map(e => ({ type: e.dataset.c, text: txt(e), url: e.getAttribute('href') }));

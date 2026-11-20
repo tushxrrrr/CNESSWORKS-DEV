@@ -5,9 +5,10 @@ import '@/src/advantage/style.css';
 // are tuned to these files, which keeps headlines from re-wrapping when the web fonts arrive.
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 
+// suppressHydrationWarning on <html>: pages may add the "js" class to it before React hydrates (see app/cness-advantage).
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

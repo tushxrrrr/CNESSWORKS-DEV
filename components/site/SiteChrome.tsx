@@ -84,7 +84,8 @@ export function MobileSheet({ current }: { current: string }) {
   );
 }
 
-export function SiteFooter() {
+// liveHref: where the notes for live-only services point (the Advantage page links back to itself on the live site)
+export function SiteFooter({ liveHref = `${B}/` }: { liveHref?: string } = {}) {
   const F = SITE.footer;
   return (
     <footer>
@@ -110,7 +111,7 @@ export function SiteFooter() {
                 ) : (
                   <li className="pop" key={l.text}>
                     <button type="button" aria-expanded="false" aria-controls={`tip-${slug(l.text)}`}>{l.text}</button>
-                    <span className="tip" id={`tip-${slug(l.text)}`} role="status" hidden>{l.text} opens on the live cnessworks.com site. <a href={`${B}/`} target="_blank" rel="noopener">Open cnessworks.com</a></span>
+                    <span className="tip" id={`tip-${slug(l.text)}`} role="status" hidden>{l.text} opens on the live cnessworks.com site. <a href={liveHref} target="_blank" rel="noopener">Open cnessworks.com</a></span>
                   </li>
                 ))}
               </ul>
