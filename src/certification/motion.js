@@ -116,7 +116,7 @@
 
   /* ---------- Shared small interactions ---------- */
   const glow = el => el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
-  $$('.lcard, .pbtn, .p7 li, .opp6 li').forEach(glow);
+  $$('.lcard, .pbtn, .p7 li').forEach(glow);
   // hover on mouse, focus on keyboard, tap on touch: each list lights its own graphic
   const linkHi = (els, set) => els.forEach(el => {
     el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') set(el); });
@@ -129,10 +129,9 @@
   linkHi($$('.chip6'), el => temple.forEach((c, k) => c.classList.toggle('on', !!el && k === +el.dataset.col)));
   const turn = k => { if (!wheel) return; attr(wheel, k); if (k == null) return; let t = -30 - 60 * k; while (t - wAng > 180) t -= 360; while (wAng - t > 180) t += 360; wAng = t; wrot.style.setProperty('--rot', t + 'deg'); };
   linkHi($$('.pbtn'), el => turn(el ? +el.dataset.pillar : null));
-  // Product: petals, hub
-  const bloom = $('.bloom'), hub = $('.hub');
+  // Product: petals
+  const bloom = $('.bloom');
   linkHi($$('.p7 li'), el => attr(bloom, el ? (el.classList.contains('total') ? 'all' : el.dataset.pillar) : null));
-  linkHi($$('.opp6 li'), el => attr(hub, el ? el.dataset.way : null));
 
   $$('[data-copy]').forEach(b => b.addEventListener('click', () => { const done = t => { b.textContent = t; setTimeout(() => b.textContent = 'Copy', 1600); };
     const fb = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
@@ -188,6 +187,93 @@
     const tabs = $$('.faq-t [role="tab"]');
     const sel = (t, focus) => { tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; }); if (focus) t.focus(); };
     tabs.forEach((t, i) => { t.addEventListener('click', () => sel(t)); t.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (e.key === 'Home') sel(tabs[0], true); if (e.key === 'End') sel(tabs[tabs.length - 1], true); if (d) { e.preventDefault(); sel(tabs[(i + d + tabs.length) % tabs.length], true); } }); });
+  })();
+
+  /* ---------- C. Product Certification: market evidence deck ---------- */
+  // Tabs, arrows, drag/swipe and sideways trackpad scroll all move one track. A drag follows the pointer 1:1
+  // (rubber-banding past the ends); on release the gesture's velocity projects where it was heading and hands
+  // over to a critically damped spring, which a new gesture can catch at any moment. Under reduced motion or
+  // the pause button the track moves without animation.
+  (() => {
+    const deck = $('[data-deck]'); if (!deck) return;
+    const view = $('.deck-view', deck), track = $('.deck-track', deck), slides = $$('.mslide', deck), tabs = $$('[role="tab"]', deck);
+    const [prev, next] = $$('.da', deck), count = $('.dc b', deck), prog = $('.deck-prog i', deck), live = $('[data-deck-status]', deck);
+    const N = slides.length, RESP = .42;
+    let k = 0, W = view.clientWidth, x = 0, v = 0, target = 0, zeta = 1, raf = 0, last = 0;
+    const set = px => { x = px; track.style.transform = `translate3d(${px.toFixed(2)}px, 0, 0)`; };
+    const rubber = (o, d) => (o * d * .55) / (d + .55 * o);
+    const project = vel => vel / 1000 * .998 / (1 - .998);
+    const step = now => {
+      const dt = Math.min(.034, (now - last) / 1000 || .016), w = 2 * Math.PI / RESP; last = now;
+      for (let i = 0; i < 4; i++) { const h = dt / 4; v += (-w * w * (x - target) - 2 * zeta * w * v) * h; x += v * h; }
+      if (Math.abs(x - target) < .4 && Math.abs(v) < 10) { v = 0; raf = 0; set(target); return; }
+      set(x); raf = requestAnimationFrame(step);
+    };
+    const settle = (vel = 0, z = 1) => {
+      target = -k * W;
+      if (CW.still || !W) { cancelAnimationFrame(raf); raf = 0; v = 0; set(target); return; }
+      v = vel; zeta = z; if (!raf) { last = performance.now(); raf = requestAnimationFrame(step); }
+    };
+    const go = (n, o = {}) => {
+      n = clamp(n, 0, N - 1); const changed = n !== k; k = n;
+      slides.forEach((s, i) => { const on = i === k; s.classList.toggle('on', on); s.inert = !on; });
+      tabs.forEach((t, i) => { const on = i === k; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+      const had = document.activeElement; prev.disabled = k === 0; next.disabled = k === N - 1;
+      if (had && had.disabled) (had === prev ? next : prev).focus();
+      count.textContent = String(k + 1).padStart(2, '0'); prog.style.setProperty('--p', ((k + 1) / N).toFixed(4));
+      if (changed && o.say) live.textContent = `${k + 1} of ${N}: ${$('[data-k]', tabs[k]).textContent}`;
+      if (o.tab) tabs[k].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      settle(o.v || 0, o.z || 1);
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => go(i));
+      t.addEventListener('keydown', e => {
+        const n = e.key === 'ArrowRight' ? k + 1 : e.key === 'ArrowLeft' ? k - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? N - 1 : null;
+        if (n == null) return; e.preventDefault(); go((n + N) % N, { tab: true }); tabs[k].focus();
+      });
+    });
+    [prev, next].forEach(b => b.addEventListener('click', () => go(k + +b.dataset.step, { say: true, tab: true })));
+
+    // drag and swipe: horizontal intent only (vertical stays page scroll), 10px before committing to an axis
+    let drag = null, dragged = false;
+    view.addEventListener('pointerdown', e => {
+      if (e.button !== 0 || !e.isPrimary) return;
+      drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, from: x, k0: k, axis: null, hist: [[e.clientX, e.timeStamp]] }; dragged = false;
+    });
+    view.addEventListener('pointermove', e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.axis) {
+        const dx = e.clientX - drag.x0, dy = e.clientY - drag.y0; if (Math.hypot(dx, dy) < 10) return;
+        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
+        drag.axis = 'x'; dragged = true; view.setPointerCapture(e.pointerId); view.classList.add('drag'); getSelection()?.removeAllRanges();
+        cancelAnimationFrame(raf); raf = 0; drag.from = x; drag.x0 = e.clientX;   // catch the track where it is, mid-flight included
+      }
+      const min = -(N - 1) * W; let p = drag.from + (e.clientX - drag.x0);
+      if (p > 0) p = rubber(p, W); else if (p < min) p = min - rubber(min - p, W);
+      set(p); drag.hist.push([e.clientX, e.timeStamp]); if (drag.hist.length > 6) drag.hist.shift();
+    });
+    const end = e => {
+      if (!drag || e.pointerId !== drag.id) return; const d = drag; drag = null; view.classList.remove('drag'); if (!d.axis) return;
+      const a = d.hist[0], b = d.hist[d.hist.length - 1], dt = (b[1] - a[1]) / 1000;
+      const vel = e.type === 'pointerup' && dt > 0 && e.timeStamp - b[1] < 90 ? (b[0] - a[0]) / dt : 0;
+      const n = clamp(Math.round(-(x + project(vel)) / W), d.k0 - 1, d.k0 + 1);
+      go(n, { v: vel, z: Math.abs(vel) > 400 ? .82 : 1, say: true, tab: true });
+    };
+    view.addEventListener('pointerup', end); view.addEventListener('pointercancel', end);
+    view.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
+    view.addEventListener('dragstart', e => e.preventDefault());
+
+    // sideways trackpad scroll glides one statistic per gesture (momentum tail ignored until it goes quiet)
+    let acc = 0, quietAt = 0;
+    view.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; e.preventDefault();
+      const now = performance.now(); if (now < quietAt) { quietAt = now + 180; return; }
+      acc += e.deltaX; if (Math.abs(acc) < 36) return;
+      const n = k + Math.sign(acc); acc = 0; quietAt = now + 450; if (n >= 0 && n < N) go(n, { say: true, tab: true });
+    }, { passive: false });
+
+    new ResizeObserver(() => { const w = view.clientWidth; if (w === W) return; W = w; cancelAnimationFrame(raf); raf = 0; v = 0; target = -k * W; set(target); }).observe(view);
+    go(0);
   })();
 
   route(false);

@@ -373,7 +373,7 @@ footer ul a:hover, footer ul button:hover { color: var(--pearl); }
    come from src/advantage/style.css). Each page has its own graphics (inline SVG and CSS, no WebGL):
    Mother of Certification: canopy, world map, joined rings. Organization: columns of light, pillar wheel,
    step runner, level staircase. Product: turning product inside 108 places, invitation, seven petals,
-   document fan, six-way hub. Motion is transform and opacity only, plays once on arrival or loops while
+   a deck of market statistics to swipe through. Motion is transform and opacity only, plays once on arrival or loops while
    on screen, and stops entirely under reduced motion or the pause button. ===== */
 
 /* Routed pages */
@@ -700,24 +700,8 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 .j7 li.on::before { background: var(--gold); color: var(--ink); }
 .j7 li span { font-weight: 300; }
 .one { margin-top: 1.4rem; padding: 1.2rem 1.4rem; border-radius: 18px; border: 1px solid rgba(255, 200, 26, .38); background: rgba(255, 200, 26, .06); color: var(--pearl); font-weight: 300; }
-.ev { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem clamp(2rem, 5vw, 5rem); align-items: start; }
-@media (max-width: 860px) { .ev { grid-template-columns: minmax(0, 1fr); } }
-.docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
-@media (max-width: 520px) { .docs { grid-template-columns: minmax(0, 1fr); } }
-.docs li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: .7rem; align-items: center; padding: .8rem .95rem; border-radius: 14px; border: 1px solid var(--line); background: rgba(10, 7, 34, .78); font-size: .9375rem; transition: border-color .3s, transform .4s var(--ease); }
-.docs li:hover, .docs li.on { border-color: rgba(255, 200, 26, .55); transform: translateX(4px); }
-.docs svg { width: 20px; height: 20px; color: var(--gold); }
-.opp6 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 28px; overflow: hidden; margin-top: 1.6rem; }
-@media (max-width: 960px) { .opp6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .opp6 { grid-template-columns: minmax(0, 1fr); } }
-.opp6 li { padding: clamp(1.3rem, 2.4vw, 2rem); background: rgba(10, 7, 34, .88); display: grid; gap: .55rem; align-content: start; position: relative; outline-offset: -4px; }
-.opp6 li::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s; background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 200, 26, .14), transparent 65%); }
-.opp6 li:hover::before, .opp6 li.on::before { opacity: 1; }
-.opp6 .n { font: 200 2.6rem/1 var(--display); color: rgba(255, 200, 26, .6); }
-.opp6 .t { font: 400 1.3rem/1.2 var(--display); }
-.opp6 .d { color: var(--haze); font-weight: 300; font-size: .9375rem; }
 
-@media (prefers-reduced-transparency: reduce) { .glass, .stat, .pbtn, .lvc, .tbl, .ring button, .p7 li, .docs li, .opp6 li { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--ink); } }
+@media (prefers-reduced-transparency: reduce) { .glass, .stat, .pbtn, .lvc, .tbl, .ring button, .p7 li { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--ink); } }
 @media (max-width: 860px) { .pg-hero .stage, .org-hero .stage { grid-template-columns: minmax(0, 1fr); } }
 
 /* ===================== Page graphics and smooth motion ===================== */
@@ -900,30 +884,100 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 .bloom[data-on="all"] b, .bloom[data-on="0"] b[data-i="0"], .bloom[data-on="1"] b[data-i="1"], .bloom[data-on="2"] b[data-i="2"], .bloom[data-on="3"] b[data-i="3"], .bloom[data-on="4"] b[data-i="4"], .bloom[data-on="5"] b[data-i="5"], .bloom[data-on="6"] b[data-i="6"] { color: var(--ink); opacity: 1; }
 @media (max-width: 860px) { .bloom { width: min(100%, 15rem); } }
 
-/* Evidence: a fanned stack of documents */
-.fan { width: 13rem; height: 11.5rem; margin-top: 1.2rem; }
-.fan .sh { position: absolute; left: 50%; bottom: 0; width: 7.4rem; height: 9.6rem; margin-left: -3.7rem; border-radius: 10px; background: linear-gradient(170deg, #F6F3FF, #D9D4F4); box-shadow: 0 18px 30px -16px rgba(0, 0, 0, .85); transform-origin: 50% 100%; display: grid; align-content: start; gap: 8px; padding: 18px 14px; transition: transform 1s var(--ease); }
-.fan .sh i { display: block; height: 4px; border-radius: 2px; background: rgba(26, 17, 64, .18); }
-.fan .sh i:first-child { height: 6px; width: 62%; background: #E0A400; }
-.fan .sh i:nth-child(3) { width: 80%; } .fan .sh i:nth-child(4) { width: 55%; }
-.fan .sh:last-child::after { content: "✓"; position: absolute; right: 10px; bottom: 10px; width: 26px; height: 26px; border-radius: 50%; background: #FFC81A; color: #1A1140; display: grid; place-items: center; font-weight: 700; font-size: .875rem; }
-.fan.in .sh:nth-child(1) { transform: translate3d(-18px, 0, 0) rotate(-15deg); transition-delay: .1s; }
-.fan.in .sh:nth-child(2) { transform: rotate(-2deg); transition-delay: .2s; }
-.fan.in .sh:nth-child(3) { transform: translate3d(18px, 0, 0) rotate(12deg); transition-delay: .3s; }
-.ev:has(.docs li:hover) .fan.in .sh:nth-child(3) { transform: translate3d(22px, -10px, 0) rotate(15deg); transition-delay: 0s; }
+/* Market evidence: a deck of statistics. The track follows the finger 1:1 and settles on a spring (script);
+   each chart plays once its slide is current and the deck is on screen. Highlighted measure in gold,
+   comparison in a muted violet, every mark labelled directly. */
+.mkt { display: grid; gap: clamp(1.6rem, 3vw, 2.4rem); }
+.mkt-h { display: grid; gap: 1rem; max-width: 46rem; }
+.deck { --lo: #8F88C7; position: relative; border-radius: 28px; border: 1px solid var(--line); background: rgba(10, 7, 34, .82); overflow: hidden; }
+.deck-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1rem; padding: clamp(.8rem, 1.8vw, 1.1rem) clamp(1rem, 2.4vw, 1.6rem); border-bottom: 1px solid var(--line); }
+.deck-tabs { display: flex; gap: .35rem; min-width: 0; max-width: 100%; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.deck-tabs::-webkit-scrollbar { display: none; }
+.deck-tabs button { flex: none; min-height: 40px; display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: 999px; border: 1px solid transparent; background: none; color: var(--haze); font: 500 .8125rem/1 var(--text); cursor: pointer; touch-action: manipulation; transition: color .25s, border-color .25s, background-color .25s, transform 100ms ease-out; }
+.deck-tabs .tn { font: 500 .6875rem/1 var(--mono); color: rgba(255, 200, 26, .75); font-variant-numeric: tabular-nums; }
+.deck-tabs button:hover { color: var(--pearl); }
+.deck-tabs button[aria-selected="true"] { color: var(--pearl); border-color: rgba(255, 200, 26, .6); background: rgba(40, 28, 110, .7); }
+.deck-tabs button:active, .da:active:not(:disabled) { transform: scale(.96); }
+.deck-arrows { display: flex; align-items: center; gap: .5rem; margin-left: auto; }
+.da { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(20, 14, 58, .6); color: var(--pearl); cursor: pointer; touch-action: manipulation; transition: border-color .25s, opacity .25s, transform 100ms ease-out; }
+.da svg { width: 18px; height: 18px; }
+.da:hover:not(:disabled) { border-color: var(--gold); }
+.da:disabled { opacity: .35; cursor: default; }
+.dc { min-width: 4.6em; text-align: center; font: 500 .75rem/1 var(--mono); letter-spacing: .08em; color: var(--haze); font-variant-numeric: tabular-nums; }
+.dc b { color: var(--pearl); font-weight: 500; }
+.deck-view { overflow: hidden; touch-action: pan-y; cursor: grab; }
+.deck-view.drag { cursor: grabbing; -webkit-user-select: none; user-select: none; }
+.deck-track { display: flex; will-change: transform; }
+.mslide { flex: 0 0 100%; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "st sv" "src src"; grid-template-rows: minmax(0, 1fr) auto; gap: 1.4rem clamp(1.5rem, 4vw, 4rem); align-items: center; padding: clamp(1.5rem, 3.6vw, 3rem) clamp(1.2rem, 3.6vw, 3rem) clamp(1.1rem, 2.2vw, 1.6rem); transition: opacity .45s var(--ease); }
+.mslide:not(.on) { opacity: .3; }
+.st { grid-area: st; display: grid; gap: .8rem; align-content: center; }
+.big { font: 200 clamp(4rem, 9.5vw, 8.25rem)/.9 var(--display); color: var(--gold); letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.sti { font: 400 clamp(1.2rem, 1.9vw, 1.55rem)/1.28 var(--display); color: var(--pearl); max-width: 27rem; }
+.std { color: var(--haze); font-weight: 300; max-width: 31rem; }
+.js .deck .mslide .st > * { transition: transform .7s var(--ease), opacity .5s ease; }
+.js .deck .mslide:not(.on) .st > * { transform: translate3d(0, 12px, 0); }
+.js .deck .mslide.on .sti { transition-delay: .06s; } .js .deck .mslide.on .std { transition-delay: .12s; }
+.sv { grid-area: sv; min-width: 0; }
+.src { grid-area: src; display: flex; flex-wrap: wrap; gap: .35rem .6rem; align-items: baseline; padding-top: .9rem; border-top: 1px dashed rgba(246, 243, 255, .12); font: 400 .75rem/1.5 var(--mono); letter-spacing: .02em; color: var(--haze); }
+.src .srl { color: var(--gold); text-transform: uppercase; letter-spacing: .14em; font-size: .6875rem; }
+.src a { display: inline-block; padding: .2rem 0; color: var(--haze); text-decoration: underline; text-decoration-color: rgba(255, 200, 26, .5); text-underline-offset: 3px; }
+.src a:hover { color: var(--pearl); }
+.deck-prog { height: 2px; background: rgba(246, 243, 255, .08); }
+.deck-prog i { display: block; height: 100%; background: var(--gold); transform-origin: 0 50%; transform: scaleX(var(--p)); transition: transform .5s var(--ease); }
+.mkt-note { max-width: 52rem; }
+@media (max-width: 860px) { .mslide { grid-template-columns: minmax(0, 1fr); grid-template-areas: "st" "sv" "src"; grid-template-rows: auto auto minmax(0, 1fr); align-items: start; } .src { align-self: end; } .deck-arrows { margin-left: 0; } .deck-bar { justify-content: center; } }
 
-/* Six ways out from one certified centre */
-.hub { width: min(100%, 20rem); aspect-ratio: 1; justify-self: center; }
-.hub svg { width: 100%; height: 100%; overflow: visible; }
-.hub .rim { fill: none; stroke: rgba(246, 243, 255, .16); stroke-dasharray: 3 6; }
-.hub .sp { stroke: rgba(255, 200, 26, .4); stroke-width: 1.3; stroke-dasharray: 78; stroke-dashoffset: 78; transition: stroke-dashoffset 1s var(--ease), stroke .3s; transition-delay: calc(var(--i) * 110ms + .1s), 0s; }
-.hub.in .sp { stroke-dashoffset: 0; }
-.hub .ctr { fill: #FFC81A; }
-.hub .nd { fill: #0D0930; stroke: #FFC81A; stroke-width: 1.5; transition: fill .3s; }
-.hub[data-on="0"] .nd[data-i="0"], .hub[data-on="1"] .nd[data-i="1"], .hub[data-on="2"] .nd[data-i="2"], .hub[data-on="3"] .nd[data-i="3"], .hub[data-on="4"] .nd[data-i="4"], .hub[data-on="5"] .nd[data-i="5"] { fill: #FFC81A; }
-.hub[data-on="0"] .sp[data-i="0"], .hub[data-on="1"] .sp[data-i="1"], .hub[data-on="2"] .sp[data-i="2"], .hub[data-on="3"] .sp[data-i="3"], .hub[data-on="4"] .sp[data-i="4"], .hub[data-on="5"] .sp[data-i="5"] { stroke: #FFE7A3; }
-.hub .pulse { position: absolute; left: 50%; top: 50%; width: 16%; aspect-ratio: 1; margin: -8%; border-radius: 50%; border: 1.5px solid rgba(255, 200, 26, .6); animation: ping 3.2s ease-out infinite; }
-@media (max-width: 860px) { .hub { width: min(100%, 14rem); } }
+/* Charts */
+.ch { position: relative; font: 400 .8125rem/1.3 var(--text); color: var(--haze); }
+.ch .mv { font: 500 .9375rem/1 var(--mono); color: var(--pearl); font-variant-numeric: tabular-nums; }
+.ch .ml { color: var(--haze); }
+/* paired meters */
+.ch-meters { display: grid; gap: 1.5rem; }
+.mr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .55rem 1rem; align-items: baseline; grid-template-areas: "ml mv" "mt mt"; }
+.mr .ml { grid-area: ml; } .mr .mv { grid-area: mv; } .mr .mt { grid-area: mt; }
+.mt { grid-column: 1 / -1; height: 14px; border-radius: 4px; background: rgba(246, 243, 255, .07); overflow: hidden; }
+.mt i { display: block; height: 100%; width: calc(var(--v) * 100%); border-radius: 0 4px 4px 0; background: var(--lo); transform-origin: 0 50%; transform: scaleX(0); transition: transform 1.1s var(--ease); }
+.mr.hi .mt i { background: var(--gold); transition-delay: .18s; }
+.ch-meters .axis { display: flex; justify-content: space-between; font: 400 .6875rem/1 var(--mono); color: rgba(185, 179, 226, .7); }
+.ch-meters .axis i { font-style: normal; }
+/* columns */
+.ch-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: clamp(11rem, 20vw, 14rem) auto; column-gap: clamp(.6rem, 2vw, 1.4rem); }
+.cc { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: .7rem; min-width: 0; }
+.cb { position: relative; border-bottom: 1px solid rgba(246, 243, 255, .25); }
+.cb i { position: absolute; left: 14%; right: 14%; bottom: 0; height: calc(var(--v) * 100%); border-radius: 4px 4px 0 0; background: var(--lo); transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1s var(--ease); }
+.cc.hi .cb i { background: var(--gold); }
+.cc:nth-child(2) .cb i { transition-delay: .1s; } .cc:nth-child(3) .cb i { transition-delay: .2s; }
+.cb .mv { position: absolute; left: 0; right: 0; bottom: calc(var(--v) * 100% + .5rem); text-align: center; opacity: 0; transition: opacity .4s ease .7s; }
+.cc .ml { text-align: center; font-size: .75rem; }
+/* slope */
+.ch-slope { padding-right: clamp(8.5rem, 16vw, 10.5rem); }
+.sl { position: relative; height: clamp(11rem, 19vw, 13.5rem); }
+.sl svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.sl line { stroke-width: 2.5; stroke-linecap: round; }
+.sl .base { stroke: rgba(246, 243, 255, .25); stroke-width: 1; }
+.sl .hi { stroke: var(--gold); } .sl .lo { stroke: var(--lo); }
+.sl .rise { transform-box: view-box; transform-origin: 0 93.333%; transform: scaleY(0); transition: transform 1.1s var(--ease); }
+.se { position: absolute; left: calc(100% + 14px); top: var(--y); translate: 0 -50%; display: grid; gap: .2rem; width: clamp(7.5rem, 15vw, 9.5rem); opacity: 0; transition: opacity .4s ease .8s; }
+.se::before { content: ""; position: absolute; left: -19px; top: calc(50% - 4px); width: 8px; height: 8px; border-radius: 50%; background: var(--lo); box-shadow: 0 0 0 2px #0B0824; }
+.se.hi::before { background: var(--gold); }
+.se .ml { font-size: .75rem; }
+@media (max-width: 560px) { .ch-slope { padding-right: 9.75rem; } .sl { height: 14rem; } .se { width: 9.25rem; } }
+/* 100-unit grids */
+.grid100 { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: clamp(4px, .7vw, 7px); max-width: 16rem; }
+.grid100 i { aspect-ratio: 1; border-radius: 50%; background: rgba(246, 243, 255, .1); }
+.ch-dots .grid100 i.on { background: var(--gold); transform: scale(.2); opacity: 0; transition: transform .5s var(--ease), opacity .3s ease; transition-delay: calc(var(--d) * 32ms); }
+.ch-tiles .grid100 i { border-radius: 3px; background: var(--lo); }
+.ch-tiles .grid100 i.on { background: none; box-shadow: inset 0 0 0 1.5px var(--gold); transform: rotateY(90deg); transition: transform .5s var(--ease); transition-delay: calc(var(--d) * 32ms); }
+.gl { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: 1.1rem; }
+.gl::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); }
+.ch-tiles .gl::before { border-radius: 3px; background: none; box-shadow: inset 0 0 0 1.5px var(--gold); }
+@media (max-width: 860px) { .grid100 { max-width: 14rem; } }
+/* play: the current slide, once the deck has arrived on screen */
+.deck.in .mslide.on .mt i, .deck.in .mslide.on .cb i, .deck.in .mslide.on .rise, .deck.in .mslide.on .grid100 i.on { transform: none; opacity: 1; }
+.deck.in .mslide.on .cb .mv, .deck.in .mslide.on .se { opacity: 1; }
+.still .deck *, .still .deck *::before { transition: none !important; }
+@media (forced-colors: active) { .mt i, .cb i, .grid100 i.on, .gl::before, .se::before { background: CanvasText; forced-color-adjust: none; } .ch-tiles .grid100 i.on { background: none; border: 2px solid CanvasText; } }
+@media (prefers-reduced-transparency: reduce) { .deck { background: var(--ink); } }
 
 /* Closing daylight: the sun rises once, as a single scaled layer (no per-frame repaint) */
 .dawn .sunrise { clip-path: none; background: none; isolation: isolate; overflow: hidden; }
@@ -933,7 +987,7 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 
 /* Pause button and reduced motion: everything rests in its final state */
 .still .art, .still .art *, .still .art *::before, .still .art *::after, .still .dawn .sunrise::before, .still [data-in] { animation: none !important; transition: none !important; }
-.still .canopy .motes, .still .temple li i, .still .wheel .sweep, .still .hub .pulse, .still .wmap i::after, .still .prod .comet { display: none; }
+.still .canopy .motes, .still .temple li i, .still .wheel .sweep, .still .wmap i::after, .still .prod .comet { display: none; }
 .still .dawn .sunrise::before { transform: none; }
 
 /* The page switcher steps aside while reading down and returns on the way up (or on focus) */
@@ -971,7 +1025,7 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
   <div class="regions" role="group" aria-label="Region"><a href="https://www.cnessworks.com/en-in" lang="en"><span class="code">IN</span>English (India)</a><a href="https://www.cnessworks.com/en-ca" lang="en"><span class="code">CA</span>English (Canada)</a><a href="https://www.cnessworks.com/en-us" lang="en"><span class="code">US</span>English (US)</a><a href="https://www.cnessworks.com/en-eu" lang="en"><span class="code">EU</span>English (Europe)</a><a href="https://www.cnessworks.com/en-au" lang="en"><span class="code">AU</span>English (Australia)</a><a href="https://www.cnessworks.com/ja-jp" lang="ja"><span class="code">JA</span>日本語 (Japanese)</a></div>
   <div class="acts"><a href="https://www.cnessworks.com/login?redirect=%2Fcness-advantage">Log In</a><a class="btn" href="https://www.cnessworks.com/signup">Start Journey</a></div>
 </nav></div>
-<nav aria-label="Sections" class="dotnav" data-for="moc"><ul class="dots"><li><a href="#moc-top"><span>Why this exists</span></a></li><li><a href="#moc-industry"><span>By industry</span></a></li><li><a href="#moc-compare"><span>Take ISO 9001</span></a></li><li><a href="#moc-cards"><span>Find businesses you can actually check</span></a></li><li><a href="#moc-close"><span>THE MOTHER OF CERTIFICATION</span></a></li></ul></nav><nav aria-label="Sections" class="dotnav" data-for="org" hidden><ul class="dots"><li><a href="#org-top"><span>Business Certification for Conscious Organizations</span></a></li><li><a href="#org-community"><span>Our Conscious Business Community</span></a></li><li><a href="#org-why"><span>Why Choose CNESS Business Certification?</span></a></li><li><a href="#org-evaluate"><span>Core Pillars of the CNESS Framework</span></a></li><li><a href="#org-benefits"><span>Benefits of CNESS Certification</span></a></li><li><a href="#org-how"><span>How CNESS Certification Works</span></a></li><li><a href="#org-spotlight"><span>Spotlight On Impact-Driven</span></a></li><li><a href="#org-levels"><span>Certification Levels</span></a></li><li><a href="#org-faq"><span>Frequently Asked Questions about Sustainability Certification for Companies</span></a></li><li><a href="#org-begin"><span>Begin your Growth Journey Today</span></a></li></ul></nav><nav aria-label="Sections" class="dotnav" data-for="prd" hidden><ul class="dots"><li><a href="#prd-top"><span>An exclusive 1111 Invitation</span></a></li><li><a href="#prd-idea"><span>The Idea</span></a></li><li><a href="#prd-founding"><span>The Founding 108</span></a></li><li><a href="#prd-evaluate"><span>Seven Foundational Pillars</span></a></li><li><a href="#prd-why"><span>Why Certify your Product?</span></a></li><li><a href="#prd-journey"><span>Begin your Product Certification Journey</span></a></li><li><a href="#prd-evidence"><span>What You May Be Asked to Submit</span></a></li><li><a href="#prd-opportunity"><span>Why Participate in the 11✦11 Founding Launch?</span></a></li><li><a href="#prd-pathways"><span>Explore CNESS Certification Pathways</span></a></li></ul></nav>
+<nav aria-label="Sections" class="dotnav" data-for="moc"><ul class="dots"><li><a href="#moc-top"><span>Why this exists</span></a></li><li><a href="#moc-industry"><span>By industry</span></a></li><li><a href="#moc-compare"><span>Take ISO 9001</span></a></li><li><a href="#moc-cards"><span>Find businesses you can actually check</span></a></li><li><a href="#moc-close"><span>THE MOTHER OF CERTIFICATION</span></a></li></ul></nav><nav aria-label="Sections" class="dotnav" data-for="org" hidden><ul class="dots"><li><a href="#org-top"><span>Business Certification for Conscious Organizations</span></a></li><li><a href="#org-community"><span>Our Conscious Business Community</span></a></li><li><a href="#org-why"><span>Why Choose CNESS Business Certification?</span></a></li><li><a href="#org-evaluate"><span>Core Pillars of the CNESS Framework</span></a></li><li><a href="#org-benefits"><span>Benefits of CNESS Certification</span></a></li><li><a href="#org-how"><span>How CNESS Certification Works</span></a></li><li><a href="#org-spotlight"><span>Spotlight On Impact-Driven</span></a></li><li><a href="#org-levels"><span>Certification Levels</span></a></li><li><a href="#org-faq"><span>Frequently Asked Questions about Sustainability Certification for Companies</span></a></li><li><a href="#org-begin"><span>Begin your Growth Journey Today</span></a></li></ul></nav><nav aria-label="Sections" class="dotnav" data-for="prd" hidden><ul class="dots"><li><a href="#prd-top"><span>CNESS Conscious Product Certification™</span></a></li><li><a href="#prd-idea"><span>The Idea</span></a></li><li><a href="#prd-founding"><span>The CNESS 108</span></a></li><li><a href="#prd-evaluate"><span>Seven Foundational Pillars</span></a></li><li><a href="#prd-why"><span>Why Certify your Product?</span></a></li><li><a href="#prd-market"><span>Market Evidence</span></a></li><li><a href="#prd-journey"><span>Begin your Product Certification Journey</span></a></li><li><a href="#prd-pathways"><span>Explore CNESS Certification Pathways</span></a></li></ul></nav>
 <p class="sr" id="route-status" aria-live="polite"></p>
 
 <main id="main">
@@ -1178,12 +1232,12 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 <article class="pg" id="product-certification" data-page="prd" data-title="Product Certification" hidden>
 <section class="pg-hero p-hero" id="prd-top" data-scene="0" aria-labelledby="h-prd">
   <div class="wrap stage"><div class="txt">
-    <span class="chip" data-k="prd:hero.eyebrow">An exclusive 1111 Invitation</span>
-    <h1 id="h-prd" class="h-lg" tabindex="-1"><span class="ln" data-k="prd:hero.h1.0"><span class="w" style="--i:0">Become</span> <span class="w" style="--i:1">one</span> <span class="w" style="--i:2">of</span> <span class="w" style="--i:3">the</span></span> <span class="ln g2" data-k="prd:hero.h1.1"><span class="w" style="--i:0">World&#x27;s</span> <span class="w" style="--i:1">First</span> <span class="w" style="--i:2">108</span></span> <span class="ln" data-k="prd:hero.h1.2"><span class="w" style="--i:0">CNESS</span> <span class="w" style="--i:1">Conscious</span> <span class="w" style="--i:2">Products</span></span></h1>
+    <span class="chip" data-k="prd:hero.eyebrow">CNESS Conscious Product Certification™</span>
+    <h1 id="h-prd" class="h-lg" tabindex="-1"><span class="ln" data-k="prd:hero.h1.0"><span class="w" style="--i:0">Get</span> <span class="w" style="--i:1">Your</span> <span class="w" style="--i:2">Product</span></span> <span class="ln g2" data-k="prd:hero.h1.1"><span class="w" style="--i:0">Certified</span> <span class="w" style="--i:1">Conscious</span></span> <span class="ln" data-k="prd:hero.h1.2"><span class="w" style="--i:0">Today</span></span></h1>
     <p class="tg" data-k="prd:hero.tagline">Where Consciousness Meets Commerce</p>
-    <p class="lede" data-k="prd:hero.p">On November 11, 2026, CNESSWORKS and the Declaration of Consciousness Movement will mark 1111 World Consciousness Day for Humanity through a global activation of Random Acts of Consciousness introducing the inaugural CNESS Conscious Product Certification™. Purpose-led organizations are invited to place one clearly defined product before a universal seven-pillar assessment of how consciously it has been conceived, created, sourced, delivered, experienced and continuously improved.</p>
+    <p class="lede" data-k="prd:hero.p">Show customers proof, not promises. CNESS assesses one product across seven pillars and 700 points, from design and sourcing to manufacturing, packaging and presentation, and certifies what the evidence supports.</p>
     <div class="acts"><a class="btn" href="https://www.cnessworks.com/signup?intent=product" data-prod-href="https://www.cnessworks.com/signup?intent=product" target="_blank" rel="noopener" data-k="prd:hero.ctas.0">Apply for Product Certification <span class="arr" aria-hidden="true">→</span></a><a class="btn ghost" href="https://www.cnessworks.com/contact-us" data-prod-href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener" data-k="prd:hero.ctas.1">Request a Private Consultation <span class="arr" aria-hidden="true">→</span></a></div>
-    <div class="c108"><span class="v" data-k="prd:hero.stat.value">108</span><span class="t" data-k="prd:hero.stat.title">Founding Products</span><span class="d" data-k="prd:hero.stat.desc">Inaugural 11✦11 cohort</span></div>
+    <div class="c108"><span class="v" data-k="prd:hero.stat.value">108</span><span class="t" data-k="prd:hero.stat.title">Featured Products</span><span class="d" data-k="prd:hero.stat.desc">Showcased across CNESS platforms</span></div>
   </div><div class="art prod" data-par aria-hidden="true">
       <div class="orb"><svg viewBox="-100 -100 200 200"><path d="M0.0 -92.0h0M5.35 -91.84h0M10.68 -91.38h0M15.98 -90.6h0M21.22 -89.52h0M26.39 -88.14h0M31.47 -86.45h0M36.44 -84.48h0M41.29 -82.21h0M46.0 -79.67h0M50.55 -76.86h0M54.94 -73.8h0M59.14 -70.48h0M63.13 -66.92h0M66.92 -63.13h0M70.48 -59.14h0M73.8 -54.94h0M76.86 -50.55h0M79.67 -46.0h0M82.21 -41.29h0M84.48 -36.44h0M86.45 -31.47h0M88.14 -26.39h0M89.52 -21.22h0M90.6 -15.98h0M91.38 -10.68h0M91.84 -5.35h0M92.0 -0.0h0M91.84 5.35h0M91.38 10.68h0M90.6 15.98h0M89.52 21.22h0M88.14 26.39h0M86.45 31.47h0M84.48 36.44h0M82.21 41.29h0M79.67 46.0h0M76.86 50.55h0M73.8 54.94h0M70.48 59.14h0M66.92 63.13h0M63.13 66.92h0M59.14 70.48h0M54.94 73.8h0M50.55 76.86h0M46.0 79.67h0M41.29 82.21h0M36.44 84.48h0M31.47 86.45h0M26.39 88.14h0M21.22 89.52h0M15.98 90.6h0M10.68 91.38h0M5.35 91.84h0M0.0 92.0h0M-5.35 91.84h0M-10.68 91.38h0M-15.98 90.6h0M-21.22 89.52h0M-26.39 88.14h0M-31.47 86.45h0M-36.44 84.48h0M-41.29 82.21h0M-46.0 79.67h0M-50.55 76.86h0M-54.94 73.8h0M-59.14 70.48h0M-63.13 66.92h0M-66.92 63.13h0M-70.48 59.14h0M-73.8 54.94h0M-76.86 50.55h0M-79.67 46.0h0M-82.21 41.29h0M-84.48 36.44h0M-86.45 31.47h0M-88.14 26.39h0M-89.52 21.22h0M-90.6 15.98h0M-91.38 10.68h0M-91.84 5.35h0M-92.0 0.0h0M-91.84 -5.35h0M-91.38 -10.68h0M-90.6 -15.98h0M-89.52 -21.22h0M-88.14 -26.39h0M-86.45 -31.47h0M-84.48 -36.44h0M-82.21 -41.29h0M-79.67 -46.0h0M-76.86 -50.55h0M-73.8 -54.94h0M-70.48 -59.14h0M-66.92 -63.13h0M-63.13 -66.92h0M-59.14 -70.48h0M-54.94 -73.8h0M-50.55 -76.86h0M-46.0 -79.67h0M-41.29 -82.21h0M-36.44 -84.48h0M-31.47 -86.45h0M-26.39 -88.14h0M-21.22 -89.52h0M-15.98 -90.6h0M-10.68 -91.38h0M-5.35 -91.84h0"/></svg></div>
       <div class="orb comet"><i></i></div>
@@ -1197,11 +1251,11 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
     <div class="idea" data-in><p class="first" data-k="prd:idea.p.0">A product is not conscious in the human sense. Yet every decision embedded within it can reflect awareness, responsibility, dignity, transparency and long-term care.</p><div class="rest"><p data-k="prd:idea.p.1">Every material selected, person involved, process controlled, claim communicated, customer supported and impact created reveals something about the consciousness behind the product.</p><p data-k="prd:idea.p.2">CNESS Conscious Product Certification examines whether responsible intent has become visible through credible practices, appropriate evidence, trustworthy outcomes and a commitment to improvement.</p><p data-k="prd:idea.p.3">This is more than a certification badge. It is an opportunity to demonstrate that your organization creates not only commercial value, but responsible and conscious value for humanity.</p></div></div>
   </div>
 </section>
-<section class="sec" id="prd-founding" data-scene="2" data-side=r aria-label="The Founding 108">
+<section class="sec" id="prd-founding" data-scene="2" data-side=r aria-label="The CNESS 108">
   <div class="wrap">
-    <div class="stage"><div class="txt" data-in><h2 class="k2" data-k="prd:founding.h2">The Founding 108</h2><h3 class="h-md" data-k="prd:founding.h3">The First 108 Conscious Products</h3>
-      <p class="lede"><span data-k="prd:founding.p.0">For the inaugural 11✦11 launch, CNESSWORKS will invite eligible organizations to submit products for consideration as one of the first 108 Founding Conscious Products, the opening chapter of a movement advancing responsible, transparent, human-centred and conscious commerce.</span><br><span data-k="prd:founding.p.1">Founding status recognises participation in the inaugural cohort. It does not lower the assessment threshold, replace evidence requirements or guarantee media inclusion.</span></p></div><div class="art invite" aria-hidden="true"><div class="env"><span class="back"></span><span class="card"><b>11✦11</b><i></i><i></i><i></i></span><svg class="front" viewBox="0 0 100 60" preserveAspectRatio="none"><defs><linearGradient id="ivg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2488"/><stop offset="1" stop-color="#19125A"/></linearGradient></defs><path d="M0 4Q0 0 3 1.5L50 34L97 1.5Q100 0 100 4V56Q100 60 96 60H4Q0 60 0 56Z" fill="url(#ivg)" stroke="rgba(255,200,26,.45)" stroke-width=".4" vector-effect="non-scaling-stroke"/></svg><span class="flap"></span><span class="seal">✦</span></div></div></div>
-    <div class="found" data-in><div class="glass ticks2"><ul><li data-k="prd:founding.lists.0.0">✔ Universal seven-pillar CNESS assessment</li><li data-k="prd:founding.lists.0.1">✔ Founding Conscious Product recognition</li><li data-k="prd:founding.lists.0.2">✔ Approved certification seal and usage toolkit</li><li data-k="prd:founding.lists.0.3">✔ QR-verifiable Product Trust Profile</li></ul><ul><li data-k="prd:founding.lists.1.0">✔ Seven-pillar performance summary</li><li data-k="prd:founding.lists.1.1">✔ Conscious Improvement Roadmap</li><li data-k="prd:founding.lists.1.2">✔ Certified-product directory listing</li><li data-k="prd:founding.lists.1.3">✔ Selected 11✦11 launch, campaign and storytelling opportunities</li></ul></div><p class="note" data-k="prd:founding.note">Participation in launch or media activities is subject to selection, scheduling, editorial considerations, and the applicable participation agreement.</p><div class="acts"><a class="btn" href="https://www.cnessworks.com/signup?intent=product" data-prod-href="https://www.cnessworks.com/signup?intent=product" target="_blank" rel="noopener" data-k="prd:founding.cta">Apply for Product Certification <span class="arr" aria-hidden="true">→</span></a></div></div>
+    <div class="stage"><div class="txt" data-in><h2 class="k2" data-k="prd:founding.h2">The CNESS 108</h2><h3 class="h-md" data-k="prd:founding.h3">The World&#x27;s Best 108 Conscious Products</h3>
+      <p class="lede"><span data-k="prd:founding.p.0">CNESS will feature 108 of the best internationally acclaimed products across all its platforms, selected for consciousness and the full CNESS certification criteria.</span><br><span data-k="prd:founding.p.1">Every featured product meets the same seven-pillar assessment and evidence standard.</span></p></div><div class="art invite" aria-hidden="true"><div class="env"><span class="back"></span><span class="card"><b>108</b><i></i><i></i><i></i></span><svg class="front" viewBox="0 0 100 60" preserveAspectRatio="none"><defs><linearGradient id="ivg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2488"/><stop offset="1" stop-color="#19125A"/></linearGradient></defs><path d="M0 4Q0 0 3 1.5L50 34L97 1.5Q100 0 100 4V56Q100 60 96 60H4Q0 60 0 56Z" fill="url(#ivg)" stroke="rgba(255,200,26,.45)" stroke-width=".4" vector-effect="non-scaling-stroke"/></svg><span class="flap"></span><span class="seal">✦</span></div></div></div>
+    <div class="found" data-in><div class="glass ticks2"><ul><li data-k="prd:founding.lists.0.0">✔ Universal seven-pillar CNESS assessment</li><li data-k="prd:founding.lists.0.1">✔ Featured Conscious Product recognition</li><li data-k="prd:founding.lists.0.2">✔ Approved certification seal and usage toolkit</li><li data-k="prd:founding.lists.0.3">✔ QR-verifiable Product Trust Profile</li></ul><ul><li data-k="prd:founding.lists.1.0">✔ Seven-pillar performance summary</li><li data-k="prd:founding.lists.1.1">✔ Conscious Improvement Roadmap</li><li data-k="prd:founding.lists.1.2">✔ Certified-product directory listing</li><li data-k="prd:founding.lists.1.3">✔ Selected 11✦11 launch, campaign and storytelling opportunities</li></ul></div><p class="note" data-k="prd:founding.note">Featuring across CNESS platforms is subject to selection, scheduling, editorial considerations and the applicable participation agreement.</p><div class="acts"><a class="btn" href="https://www.cnessworks.com/signup?intent=product" data-prod-href="https://www.cnessworks.com/signup?intent=product" target="_blank" rel="noopener" data-k="prd:founding.cta">Apply for Product Certification <span class="arr" aria-hidden="true">→</span></a></div></div>
   </div>
 </section>
 <section class="sec" id="prd-evaluate" data-scene="3" data-side=l aria-label="Seven Foundational Pillars">
@@ -1216,31 +1270,55 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
     <div class="glass pad" data-in><p class="q" data-k="prd:why.p">The public result should help customers and partners understand the certified scope, seven-pillar strengths, important limitations, evidence basis, validity and current status. The internal CIS-P 700 result supports evaluator consistency and improvement; it should not be used as a simplistic ranking across unrelated products, markets or sectors.</p></div>
   </div>
 </section>
-<section class="sec" id="prd-journey" data-scene="5" data-side=l aria-label="Begin your Product Certification Journey">
+<section class="sec" id="prd-market" data-scene="5" data-side=l aria-label="Market Evidence">
+  <div class="wrap mkt">
+    <div class="mkt-h" data-in><span class="k2" data-k="prd:market.label">Market Evidence</span><h2 class="h-md" data-k="prd:market.h2">Proof Is Where the Market Is Moving</h2><p class="lede" data-k="prd:market.p">Customers reward products that can show their values and question the ones that only claim them. Swipe, drag or use the arrows to explore the research.</p></div>
+    <div class="deck" data-in data-deck role="region" aria-roledescription="carousel" aria-label="Proof Is Where the Market Is Moving">
+      <div class="deck-bar">
+        <div class="deck-tabs" role="tablist" aria-label="Market Evidence"><button type="button" role="tab" id="mk-t0" aria-controls="mk-s0" aria-selected="true" tabindex="0"><span class="tn" aria-hidden="true">01</span><span data-k="prd:market.tabs.0">Growth</span></button><button type="button" role="tab" id="mk-t1" aria-controls="mk-s1" aria-selected="false" tabindex="-1"><span class="tn" aria-hidden="true">02</span><span data-k="prd:market.tabs.1">Speed</span></button><button type="button" role="tab" id="mk-t2" aria-controls="mk-s2" aria-selected="false" tabindex="-1"><span class="tn" aria-hidden="true">03</span><span data-k="prd:market.tabs.2">Claims</span></button><button type="button" role="tab" id="mk-t3" aria-controls="mk-s3" aria-selected="false" tabindex="-1"><span class="tn" aria-hidden="true">04</span><span data-k="prd:market.tabs.3">Premium</span></button><button type="button" role="tab" id="mk-t4" aria-controls="mk-s4" aria-selected="false" tabindex="-1"><span class="tn" aria-hidden="true">05</span><span data-k="prd:market.tabs.4">Proof</span></button></div>
+        <div class="deck-arrows"><button type="button" class="da" data-step="-1" aria-label="Previous statistic" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="dc" aria-hidden="true"><b>01</b> / 05</span><button type="button" class="da" data-step="1" aria-label="Next statistic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      </div>
+      <div class="deck-view"><div class="deck-track" style="--n:5">
+      <div class="mslide on" id="mk-s0" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t0">
+        <div class="st"><p class="big" data-k="prd:market.items.0.value">44.9%</p><p class="sti" data-k="prd:market.items.0.title">of US consumer-goods growth came from products marketed as sustainable</p><p class="std" data-k="prd:market.items.0.detail">They hold 25.4% of the market, yet delivered 44.9% of its growth from 2013 to 2025.</p></div>
+        <div class="sv" aria-hidden="true"><div class="ch ch-meters"><div class="mr" style="--v:0.254"><b class="mv" data-k="prd:market.items.0.chart.0.value">25.4%</b><span class="ml" data-k="prd:market.items.0.chart.0.label">Share of the market</span><span class="mt"><i></i></span></div><div class="mr hi" style="--v:0.449"><b class="mv" data-k="prd:market.items.0.chart.1.value">44.9%</b><span class="ml" data-k="prd:market.items.0.chart.1.label">Share of the growth</span><span class="mt"><i></i></span></div><span class="axis"><i>0</i><i>50%</i><i>100%</i></span></div></div>
+        <p class="src"><span class="srl">Source</span> <a href="https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index" data-prod-href="https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index" target="_blank" rel="noopener" data-k="prd:market.items.0.source">NYU Stern Center for Sustainable Business and Circana, Sustainable Market Share Index 2025</a></p>
+      </div><div class="mslide" id="mk-s1" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t1" inert>
+        <div class="st"><p class="big" data-k="prd:market.items.1.value">4.9×</p><p class="sti" data-k="prd:market.items.1.title">faster growth than conventionally marketed products</p><p class="std" data-k="prd:market.items.1.detail">Five-year compound annual growth: 10.9% for products marketed as sustainable, 4.0% for the total market and 2.2% for conventional products.</p></div>
+        <div class="sv" aria-hidden="true"><div class="ch ch-cols"><div class="cc hi" style="--v:0.908"><span class="cb"><i></i><b class="mv" data-k="prd:market.items.1.chart.0.value">10.9%</b></span><span class="ml" data-k="prd:market.items.1.chart.0.label">Marketed as sustainable</span></div><div class="cc" style="--v:0.333"><span class="cb"><i></i><b class="mv" data-k="prd:market.items.1.chart.1.value">4.0%</b></span><span class="ml" data-k="prd:market.items.1.chart.1.label">Total market</span></div><div class="cc" style="--v:0.183"><span class="cb"><i></i><b class="mv" data-k="prd:market.items.1.chart.2.value">2.2%</b></span><span class="ml" data-k="prd:market.items.1.chart.2.label">Conventional</span></div></div></div>
+        <p class="src"><span class="srl">Source</span> <a href="https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index" data-prod-href="https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index" target="_blank" rel="noopener" data-k="prd:market.items.1.source">NYU Stern Center for Sustainable Business and Circana, Sustainable Market Share Index 2025</a></p>
+      </div><div class="mslide" id="mk-s2" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t2" inert>
+        <div class="st"><p class="big" data-k="prd:market.items.2.value">28%</p><p class="sti" data-k="prd:market.items.2.title">five-year growth for products making ESG-related claims, against 20% for products making none</p><p class="std" data-k="prd:market.items.2.detail">Products making ESG-related claims accounted for 56% of all growth across the products studied.</p></div>
+        <div class="sv" aria-hidden="true"><div class="ch ch-slope"><div class="sl"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><line class="base" x1="0" y1="56" x2="100" y2="56" vector-effect="non-scaling-stroke"/><g class="rise"><line class="hi" x1="0" y1="56" x2="100" y2="12.25" vector-effect="non-scaling-stroke"/><line class="lo" x1="0" y1="56" x2="100" y2="24.75" vector-effect="non-scaling-stroke"/></g></svg><span class="se hi" style="--y:20.42%"><b class="mv" data-k="prd:market.items.2.chart.0.value">28%</b><span class="ml" data-k="prd:market.items.2.chart.0.label">With ESG-related claims</span></span><span class="se" style="--y:41.25%"><b class="mv" data-k="prd:market.items.2.chart.1.value">20%</b><span class="ml" data-k="prd:market.items.2.chart.1.label">Without such claims</span></span></div></div></div>
+        <p class="src"><span class="srl">Source</span> <a href="https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/consumers-care-about-sustainability-and-back-it-up-with-their-wallets" data-prod-href="https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/consumers-care-about-sustainability-and-back-it-up-with-their-wallets" target="_blank" rel="noopener" data-k="prd:market.items.2.source">McKinsey &amp; Company and NielsenIQ, 2023</a></p>
+      </div><div class="mslide" id="mk-s3" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t3" inert>
+        <div class="st"><p class="big" data-k="prd:market.items.3.value">9.7%</p><p class="sti" data-k="prd:market.items.3.title">more is what consumers say they would pay, on average, for sustainably produced or sourced goods</p><p class="std" data-k="prd:market.items.3.detail">80% of consumers surveyed say they are willing to pay more, even as cost-of-living pressures weigh.</p></div>
+        <div class="sv" aria-hidden="true"><div class="ch ch-dots"><div class="grid100"><i class=on style="--d:0"></i><i class=on style="--d:1"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:1"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:13"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:13"></i><i class=on style="--d:14"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:13"></i><i class=on style="--d:14"></i><i class=on style="--d:15"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:13"></i><i class=on style="--d:14"></i><i class=on style="--d:15"></i><i class=on style="--d:16"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:18"></i></div><p class="gl"><b class="mv" data-k="prd:market.items.3.chart.0.value">80%</b> <span class="ml" data-k="prd:market.items.3.chart.0.label">Willing to pay more</span></p></div></div>
+        <p class="src"><span class="srl">Source</span> <a href="https://www.pwc.com/gx/en/news-room/press-releases/2024/pwc-2024-voice-of-consumer-survey.html" data-prod-href="https://www.pwc.com/gx/en/news-room/press-releases/2024/pwc-2024-voice-of-consumer-survey.html" target="_blank" rel="noopener" data-k="prd:market.items.3.source">PwC Voice of the Consumer Survey 2024</a></p>
+      </div><div class="mslide" id="mk-s4" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t4" inert>
+        <div class="st"><p class="big" data-k="prd:market.items.4.value">53%</p><p class="sti" data-k="prd:market.items.4.title">of environmental claims examined in the EU were vague, misleading or unfounded</p><p class="std" data-k="prd:market.items.4.detail">40% had no supporting evidence. Evidence-based certification is how a product shows the difference.</p></div>
+        <div class="sv" aria-hidden="true"><div class="ch ch-tiles"><div class="grid100"><i class=on style="--d:0"></i><i class=on style="--d:1"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:1"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:2"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:3"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:4"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i class=on style="--d:8"></i><i class=on style="--d:9"></i><i class=on style="--d:10"></i><i class=on style="--d:11"></i><i class=on style="--d:12"></i><i class=on style="--d:13"></i><i class=on style="--d:5"></i><i class=on style="--d:6"></i><i class=on style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:6"></i><i style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:7"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:16"></i><i style="--d:8"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:9"></i><i style="--d:10"></i><i style="--d:11"></i><i style="--d:12"></i><i style="--d:13"></i><i style="--d:14"></i><i style="--d:15"></i><i style="--d:16"></i><i style="--d:17"></i><i style="--d:18"></i></div><p class="gl"><b class="mv" data-k="prd:market.items.4.chart.0.value">53%</b> <span class="ml" data-k="prd:market.items.4.chart.0.label">Vague, misleading or unfounded</span></p></div></div>
+        <p class="src"><span class="srl">Source</span> <a href="https://environment.ec.europa.eu/topics/circular-economy-topics/green-claims_en" data-prod-href="https://environment.ec.europa.eu/topics/circular-economy-topics/green-claims_en" target="_blank" rel="noopener" data-k="prd:market.items.4.source">European Commission, 2020 study on environmental claims</a></p>
+      </div>
+      </div></div>
+      <div class="deck-prog" aria-hidden="true"><i style="--p:0.2000"></i></div>
+      <p class="sr" aria-live="polite" data-deck-status></p>
+    </div>
+    <p class="note mkt-note" data-k="prd:market.note">Independent research on products marketed as sustainable or making ESG-related claims. These figures describe the wider market, not results for CNESS-certified products.</p>
+  </div>
+</section>
+<section class="sec" id="prd-journey" data-scene="6" data-side=r aria-label="Begin your Product Certification Journey">
   <div class="wrap journey">
     <div data-in><h2 class="h-md" data-k="prd:journey.h2">Begin your Product Certification Journey</h2></div>
     <div data-in><ol class="j7" data-fill><li data-stepi="0"><span data-k="prd:journey.steps.0">Define the exact product, service, component, software version, subscription or approved product family.</span></li><li data-stepi="1"><span data-k="prd:journey.steps.1">Confirm legal eligibility and the applicable certification boundary.</span></li><li data-stepi="2"><span data-k="prd:journey.steps.2">Complete the universal core questions across the seven pillars.</span></li><li data-stepi="3"><span data-k="prd:journey.steps.3">Attach the most relevant evidence available for each material answer.</span></li><li data-stepi="4"><span data-k="prd:journey.steps.4">Respond only to targeted evaluator clarifications or evidence gaps</span></li><li data-stepi="5"><span data-k="prd:journey.steps.5">Receive an independent review and certification decision.</span></li><li data-stepi="6"><span data-k="prd:journey.steps.6">Publish a time-bound Product Trust Profile and follow the Conscious Improvement Roadmap.</span></li><li class="run" aria-hidden="true"></li></ol>
       <p class="one" data-k="prd:journey.p">CNESS awards one public status: CNESS Conscious Product Certified™. Products that are not yet ready receive a confidential improvement pathway and may return after corrective action.</p></div>
   </div>
 </section>
-<section class="sec" id="prd-evidence" data-scene="6" data-side=r aria-label="What You May Be Asked to Submit">
-  <div class="wrap ev">
-    <div style="display:grid;gap:1rem" data-in><span class="k2" data-k="prd:evidence.label">Evidence-based</span><h3 class="h-md" data-k="prd:evidence.h3">What You May Be Asked to Submit</h3><div class="art fan" aria-hidden="true"><span class="sh"><i></i><i></i><i></i><i></i></span><span class="sh"><i></i><i></i><i></i><i></i></span><span class="sh"><i></i><i></i><i></i><i></i></span></div></div>
-    <div data-in><ul class="docs"><li data-doc="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.0">Ingredient / material declarations</span></li><li data-doc="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.1">Supplier declarations</span></li><li data-doc="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.2">ISO, GMP, HACCP &amp; others</span></li><li data-doc="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.3">Product manuals</span></li><li data-doc="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.4">Sustainability / environmental reports</span></li><li data-doc="5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.5">Customer-support &amp; complaint policies</span></li><li data-doc="6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.6">Product labels &amp; packaging</span></li><li data-doc="7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.7">Manufacturing certifications</span></li><li data-doc="8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.8">Factory photographs / videos</span></li><li data-doc="9"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.9">Batch &amp; traceability records</span></li><li data-doc="10"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.10">CSR / social-impact reports</span></li><li data-doc="11"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h6M9.5 15.5h6"/></svg><span data-k="prd:evidence.items.11">Scientific reports for product claims</span></li></ul>
-      <p class="note" style="margin-top:1.2rem" data-k="prd:evidence.p">CNESSWORKS evaluates the transparency, relevance, and validity of submitted supporting documentation rather than performing laboratory testing itself.</p></div>
-  </div>
-</section>
-<section class="sec" id="prd-opportunity" data-scene="7" data-side=l aria-label="Why Participate in the 11✦11 Founding Launch?">
-  <div class="wrap">
-    <div class="stage l"><div class="art hub" aria-hidden="true"><svg viewBox="-100 -100 200 200"><path class="rim" d="M0.0 -78.0L67.55 -39.0L67.55 39.0L0.0 78.0L-67.55 39.0L-67.55 -39.0Z"/><line class="sp" data-i="0" style="--i:0" x1="0" y1="0" x2="0.0" y2="-78.0"/><line class="sp" data-i="1" style="--i:1" x1="0" y1="0" x2="67.55" y2="-39.0"/><line class="sp" data-i="2" style="--i:2" x1="0" y1="0" x2="67.55" y2="39.0"/><line class="sp" data-i="3" style="--i:3" x1="0" y1="0" x2="0.0" y2="78.0"/><line class="sp" data-i="4" style="--i:4" x1="0" y1="0" x2="-67.55" y2="39.0"/><line class="sp" data-i="5" style="--i:5" x1="0" y1="0" x2="-67.55" y2="-39.0"/><circle class="ctr" r="16"/><circle class="nd" data-i="0" cx="0.0" cy="-78.0" r="7"/><circle class="nd" data-i="1" cx="67.55" cy="-39.0" r="7"/><circle class="nd" data-i="2" cx="67.55" cy="39.0" r="7"/><circle class="nd" data-i="3" cx="0.0" cy="78.0" r="7"/><circle class="nd" data-i="4" cx="-67.55" cy="39.0" r="7"/><circle class="nd" data-i="5" cx="-67.55" cy="-39.0" r="7"/></svg><span class="pulse"></span></div><div class="txt" data-in><span class="k2" data-k="prd:opportunity.label">The Opportunity</span><h3 class="h-lg" data-k="prd:opportunity.h3">Why Participate in the 11✦11 Founding Launch?</h3></div></div>
-    <ul class="opp6" data-in><li data-way="0"><span class="n" data-k="prd:opportunity.items.0.n">01</span><span class="t" data-k="prd:opportunity.items.0.title">Founding Recognition</span><p class="d" data-k="prd:opportunity.items.0.desc">Join the inaugural 108 products helping establish a new category of conscious commerce</p></li><li data-way="1"><span class="n" data-k="prd:opportunity.items.1.n">02</span><span class="t" data-k="prd:opportunity.items.1.title">Trust Made Visible</span><p class="d" data-k="prd:opportunity.items.1.desc">Translate responsible intent and existing good practice into a structured, evidence backed profile</p></li><li data-way="2"><span class="n" data-k="prd:opportunity.items.2.n">03</span><span class="t" data-k="prd:opportunity.items.2.title">Meaningful Differentiation</span><p class="d" data-k="prd:opportunity.items.2.desc">Demonstrate responsibility across the complete product value journey rather than through isolated claims.</p></li><li data-way="3"><span class="n" data-k="prd:opportunity.items.3.n">04</span><span class="t" data-k="prd:opportunity.items.3.title">Customer Confidence</span><p class="d" data-k="prd:opportunity.items.3.desc">Give buyers clearer information about verified strengths, accountable practices and material limitations.</p></li><li data-way="4"><span class="n" data-k="prd:opportunity.items.4.n">05</span><span class="t" data-k="prd:opportunity.items.4.title">Continuous Improvement</span><p class="d" data-k="prd:opportunity.items.4.desc">Receive an evaluator-led roadmap that converts gaps into practical action.</p></li><li data-way="5"><span class="n" data-k="prd:opportunity.items.5.n">06</span><span class="t" data-k="prd:opportunity.items.5.title">11✦11 Visibility</span><p class="d" data-k="prd:opportunity.items.5.desc">Participate in selected global launch, directory, campaign and storytelling opportunities.</p></li></ul>
-  </div>
-</section>
-<section class="dawn final" id="prd-pathways" data-scene="8" aria-label="Explore CNESS Certification Pathways">
+<section class="dawn final" id="prd-pathways" data-scene="7" aria-label="Explore CNESS Certification Pathways">
   <div class="sunrise"><div class="in">
     <img class="mk" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzEiIGhlaWdodD0iOTciIHZpZXdCb3g9IjAgMCA3MSA5NyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQ3LjQ3NzQgNTcuODY1OUM1Mi44ODE3IDU3Ljg2NTkgNTcuMjU5NCA1My40ODgyIDU3LjI1OTQgNDguMDgzOEM1Ny4yNTk0IDQyLjY3OTUgNTIuODgxNyAzOC4zMDE4IDQ3LjQ3NzQgMzguMzAxOEM0Mi4wNzMgMzguMzAxOCAzNy42OTUzIDQyLjY3OTUgMzcuNjk1MyA0OC4wODM4QzM3LjY5NTMgNTMuNDg4MiA0Mi4wNzMgNTcuODY1OSA0Ny40Nzc0IDU3Ljg2NTlaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMTA3MzRfMTA3OCkiLz4KPHBhdGggZD0iTTM0Ljk1MjYgNjAuNzYwOUMzNC45NTI2IDYwLjc2MDkgMzQuOTI5IDYwLjczNzMgMzQuOTE3MiA2MC43MjU1QzMxLjQ4OTMgNTcuMTAzIDI5Ljc3MjUgNTIuODcyNyAyOS43NzI1IDQ4LjAzNDhDMjkuNzcyNSA0NS42MTU4IDMwLjIwOSA0My4zMzg1IDMxLjA3NjMgNDEuMjIwNEMzMS45NDM2IDM5LjA5NjQgMzMuMjIzOSAzNy4xNjcxIDM0LjkyMzEgMzUuNDMyNkMzNi42NCAzMy43MzkzIDM4LjU2MzMgMzIuNDUzMSA0MC42OTMyIDMxLjU3NEM0Mi44MjkgMzAuNjk0OSA0NS4xMDYzIDMwLjI1MjQgNDcuNTI1MyAzMC4yNTI0QzUwLjA5NzcgMzAuMjUyNCA1Mi41Mjg0IDMwLjc2NTcgNTQuODIzNSAzMS43ODA1QzU3LjExODYgMzIuNzk1MyA1OS4xMDY5IDM0LjI0MDggNjAuNzg4MyAzNi4xMDUyQzYyLjMyMjMgMzcuODA0MyA2My40ODQ2IDM5Ljc0NTQgNjQuMjgxMSA0MS45MjI1QzY0LjM5OTEgNDIuMjM1MiA2NC4xNTcyIDQyLjU2NTYgNjMuODIwOSA0Mi41NjU2SDYwLjc3MDZDNjAuNTc1OSA0Mi41NjU2IDYwLjQwNDggNDIuNDQ3NiA2MC4zMjgxIDQyLjI3NjVDNTkuNjMxOSA0MC42NTk5IDU4LjY2NDQgMzkuMjM4IDU3LjQzMTMgMzguMDA0OUM1Ni4xMjE1IDM2LjY5NTEgNTQuNjE3IDM1LjY5MjIgNTIuOTE3OCAzNC45NzgzQzUxLjIxMjcgMzQuMjcwMyA0OS40MTkyIDMzLjkxNjMgNDcuNTMxMiAzMy45MTYzQzQ0LjkzNTMgMzMuOTE2MyA0Mi41NzUzIDM0LjUzNTggNDAuNDM5NSAzNS43ODA3QzM4LjMwMzcgMzcuMDI1NSAzNi42MjIzIDM4LjcyNDcgMzUuMzg5MiA0MC44NzgyQzM0LjE1NjEgNDMuMDMxNyAzMy41NDI1IDQ1LjQxNTIgMzMuNTQyNSA0OC4wMzQ4QzMzLjU0MjUgNTAuNjU0NCAzNC4xNTYxIDUzLjAzNzkgMzUuMzg5MiA1NS4yMDkxQzM2LjYyMjMgNTcuMzc0NCAzOC4zMDk2IDU5LjA3OTQgNDAuNDU3MiA2MC4zNDJDNDIuNjA0OCA2MS41OTg3IDQ0Ljk1ODkgNjIuMjI0MSA0Ny41MzEyIDYyLjIyNDFDNDkuNDE5MiA2Mi4yMjQxIDUxLjIxMjcgNjEuODcwMSA1Mi45MTc4IDYxLjE2MjFDNTQuNjIyOSA2MC40NTQxIDU2LjEyNzQgNTkuNDQ1MiA1Ny40MzEzIDU4LjEzNTRDNTguNjY0NCA1Ni45MDI0IDU5LjYzMTkgNTUuNDkyMyA2MC4zMjgxIDUzLjg5MzRDNjAuNDA0OCA1My43MTY0IDYwLjU3NTkgNTMuNjA0MyA2MC43NzA2IDUzLjYwNDNINjMuODIwOUM2NC4xNTcyIDUzLjYwNDMgNjQuMzkzMiA1My45MzQ3IDY0LjI3NTIgNTQuMjQ3NEM2My40Nzg3IDU2LjQwNjggNjIuMzE2NCA1OC4zMzYxIDYwLjc4ODMgNjAuMDM1MkM1OS4xMDY5IDYxLjg5OTYgNTcuMTE4NiA2My4zMzkyIDU0LjgyMzUgNjQuMzU5OUM1Mi41Mjg0IDY1LjM3NDYgNTAuMDk3NyA2NS44ODc5IDQ3LjUyNTMgNjUuODg3OUM0Mi43NDY0IDY1Ljg4NzkgMzguNTU3NCA2NC4xODI5IDM0Ljk0NjcgNjAuNzY2OEwzNC45NTI2IDYwLjc2MDlaIiBmaWxsPSIjMjkxQjg5Ii8+CjxwYXRoIGQ9Ik01OC43MjMgNjguNTEzMUw1Ni4yODYzIDY5Ljc0MDNDNTYuMDUwMyA2OS44NTgzIDU1Ljk1IDcwLjE1MzMgNTYuMDczOSA3MC4zODkzTDY2LjcyMzMgOTEuNTg3N0M2Ni44NDEzIDkxLjgyMzcgNjcuMTM2MiA5MS45MjQgNjcuMzcyMiA5MS44MDAxTDY5LjgwODkgOTAuNTcyOUM3MC4wNDQ5IDkwLjQ1NDkgNzAuMTQ1MiA5MC4xNTk5IDcwLjAyMTMgODkuOTIzOUw1OS4zNzE5IDY4LjcyNTVDNTkuMjU0IDY4LjQ4MzYgNTguOTU5IDY4LjM4OTIgNTguNzIzIDY4LjUwNzJWNjguNTEzMVoiIGZpbGw9IiMyOTFCODkiLz4KPHBhdGggZD0iTTQyLjM5NDMgNzEuNzYxM0wzOS43NTExIDk1LjMzNzRDMzkuNzIxNiA5NS42MDI5IDM5LjkxMDQgOTUuODQ0OCA0MC4xNzU5IDk1Ljg3NDNMNDIuODgzOSA5Ni4xNzUyQzQzLjE0OTQgOTYuMjA0NyA0My4zOTEzIDk2LjAxNTkgNDMuNDIwOCA5NS43NTA0TDQ2LjA2NCA3Mi4xNzQzQzQ2LjA5MzUgNzEuOTA4OCA0NS45MDQ3IDcxLjY2NjkgNDUuNjM5MiA3MS42Mzc0TDQyLjkzMTEgNzEuMzM2NUM0Mi42NjU2IDcxLjMwNyA0Mi40MjM4IDcxLjQ5NTggNDIuMzk0MyA3MS43NjEzWiIgZmlsbD0iIzI5MUI4OSIvPgo8cGF0aCBkPSJNMzAuMTcyIDY1LjQ0NzJMMTUuMDk3NyA4My43NjY1QzE0LjkyNjYgODMuOTczIDE0Ljk1NjEgODQuMjc5OCAxNS4xNjI2IDg0LjQ0NUwxNy4yNjg5IDg2LjE3OTZDMTcuNDc1MyA4Ni4zNTA3IDE3Ljc4MjEgODYuMzIxMSAxNy45NDczIDg2LjExNDZMMzMuMDIxNiA2Ny43OTU0QzMzLjE5MjcgNjcuNTg4OSAzMy4xNjMyIDY3LjI4MjEgMzIuOTU2NyA2Ny4xMTY5TDMwLjg1MDUgNjUuMzgyNEMzMC42NDQgNjUuMjExMyAzMC4zMzcyIDY1LjI0MDcgMzAuMTcyIDY1LjQ0NzJaIiBmaWxsPSIjMjkxQjg5Ii8+CjxwYXRoIGQ9Ik0yMy4zODE2IDUzLjQ5OTNMMC43NTU0NDMgNjAuNjMyNEMwLjUwMTc0NyA2MC43MTUgMC4zNjAxNDQgNjAuOTg2MyAwLjQzNjg0MyA2MS4yNEwxLjI1NjkyIDYzLjg0MTlDMS4zMzk1MiA2NC4wOTU2IDEuNjEwOTIgNjQuMjM3MiAxLjg2NDYxIDY0LjE2MDVMMjQuNDkwOCA1Ny4wMjc1QzI0Ljc0NDUgNTYuOTQ0OSAyNC44ODYxIDU2LjY3MzUgMjQuODA5NCA1Ni40MTk4TDIzLjk4OTMgNTMuODE3OUMyMy45MDY3IDUzLjU2NDIgMjMuNjM1MyA1My40MjI2IDIzLjM4MTYgNTMuNDk5M1oiIGZpbGw9IiMyOTFCODkiLz4KPHBhdGggZD0iTTAuNzQ5Mjg4IDMzLjc0NjFMMC4wMTc3MDQ0IDM2LjM3MTZDLTAuMDUzMDk0NiAzNi42MzEyIDAuMDk0Mzg5NyAzNi44OTY2IDAuMzUzOTg2IDM2Ljk2NzRMMjMuMjEwMyA0My4zMzM1QzIzLjQ2OTkgNDMuNDA0MyAyMy43MzU0IDQzLjI1NjggMjMuODA2MiA0Mi45OTcyTDI0LjUzNzggNDAuMzcxN0MyNC42MDg2IDQwLjExMjEgMjQuNDYxMSAzOS44NDY2IDI0LjIwMTUgMzkuNzc1OEwxLjM0NTE5IDMzLjQwOThDMS4wODU1OSAzMy4zMzkgMC44MjAwODcgMzMuNDg2NSAwLjc0OTI4OCAzMy43NDYxWiIgZmlsbD0iIzI5MUI4OSIvPgo8cGF0aCBkPSJNMTYuMDExNyAxMC44NzYyTDEzLjk2NDQgMTIuNjgxNkMxMy43NjM4IDEyLjg1ODYgMTMuNzQ2MSAxMy4xNjU0IDEzLjkyMzEgMTMuMzY2TDI5LjYwNTEgMzEuMTcxOUMyOS43ODIxIDMxLjM3MjUgMzAuMDg4OSAzMS4zOTAyIDMwLjI4OTUgMzEuMjEzMkwzMi4zMzY3IDI5LjQwNzlDMzIuNTM3MyAyOS4yMzA5IDMyLjU1NSAyOC45MjQxIDMyLjM3OCAyOC43MjM1TDE2LjY5NiAxMC45MTc1QzE2LjUxOTEgMTAuNzE2OSAxNi4yMTIzIDEwLjY5OTIgMTYuMDExNyAxMC44NzYyWiIgZmlsbD0iIzI5MUI4OSIvPgo8cGF0aCBkPSJNNDEuMjgyIDAuMDA1ODIxNTdMMzguNTg1OCAwLjQwMTEyNEMzOC4zMjAzIDAuNDQyNDIzIDM4LjEzNzQgMC42ODQzMTYgMzguMTc4NyAwLjk0OTgxMkw0MS42MDY1IDI0LjQyNTZDNDEuNjQ3OCAyNC42OTExIDQxLjg4OTcgMjQuODc0IDQyLjE1NTIgMjQuODMyN0w0NC44NTE1IDI0LjQzNzRDNDUuMTE3IDI0LjM5NjEgNDUuMjk5OSAyNC4xNTQyIDQ1LjI1ODYgMjMuODg4N0w0MS44MzA3IDAuNDEyOTE3QzQxLjc4OTQgMC4xNDc0MjEgNDEuNTQ3NSAtMC4wMzU0Nzc4IDQxLjI4MiAwLjAwNTgyMTU3WiIgZmlsbD0iIzI5MUI4OSIvPgo8cGF0aCBkPSJNNjUuMjQ3OCAzLjgxOThMNTUuMzEyMyAyNS4zNjYzQzU1LjIwMDIgMjUuNjA4MiA1NS4zMTIzIDI1Ljg5NzMgNTUuNTQ4MyAyNi4wMDk0TDU4LjAyNjMgMjcuMTU0QzU4LjI2ODIgMjcuMjY2MSA1OC41NTcyIDI3LjE1NCA1OC42NjkzIDI2LjkxOEw2OC42MDQ4IDUuMzcxNDZDNjguNzE2OSA1LjEyOTU3IDY4LjYwNDggNC44NDA0NyA2OC4zNjg4IDQuNzI4MzdMNjUuODkwOSAzLjU4Mzc5QzY1LjY0OSAzLjQ3MTY5IDY1LjM1OTkgMy41ODM4IDY1LjI0NzggMy44MTk4WiIgZmlsbD0iIzI5MUI4OSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzEwNzM0XzEwNzgiIHgxPSIzMy45MjUyIiB5MT0iMzUuMzk5IiB4Mj0iNTUuNzU0OSIgeTI9IjUzLjk4MzgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agb2Zmc2V0PSIwLjQyIiBzdG9wLWNvbG9yPSIjRjhCODE0Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0YyODcwNSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=" width="64" height="64" alt="" decoding="async">
     <p class="k2" data-k="prd:pathways.h2">Explore CNESS Certification Pathways</p><h2 data-k="prd:pathways.h3">How consciously is a product created and brought into the world?</h2>
-    <p data-k="prd:pathways.p.0">The world has created standards for quality, safety, performance and sustainability. CNESSWORKS advances the next question: can the complete value journey of a product demonstrate conscious intent, responsible creation, trustworthy experience and accountable impact?</p><p data-k="prd:pathways.p.1">On 11✦11, 108 Founding Conscious Products will help open that question to the world - not by claiming perfection, but by making responsibility visible, evidence-led and continuously improvable.</p><p class="motto" data-k="prd:pathways.p.2">One Earth. One Humanity. One Consciousness. One Shared Future.</p>
+    <p data-k="prd:pathways.p.0">The world has created standards for quality, safety, performance and sustainability. CNESSWORKS advances the next question: can the complete value journey of a product demonstrate conscious intent, responsible creation, trustworthy experience and accountable impact?</p><p data-k="prd:pathways.p.1">CNESS-certified products help answer it, not by claiming perfection, but by making responsibility visible, evidence-led and continuously improvable.</p><p class="motto" data-k="prd:pathways.p.2">One Earth. One Humanity. One Consciousness. One Shared Future.</p>
     <div class="acts"><a class="btn dark" href="https://www.cnessworks.com/signup?intent=product" data-prod-href="https://www.cnessworks.com/signup?intent=product" target="_blank" rel="noopener" data-k="prd:pathways.ctas.0">Apply for Certification <span class="arr" aria-hidden="true">→</span></a><a class="btn line-dark" href="https://www.cnessworks.com/contact-us" data-prod-href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener" data-k="prd:pathways.ctas.1">Schedule a Consultation</a></div>
   </div></div>
 </section>
@@ -1386,7 +1464,7 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
 
   /* ---------- Shared small interactions ---------- */
   const glow = el => el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
-  $$('.lcard, .pbtn, .p7 li, .opp6 li').forEach(glow);
+  $$('.lcard, .pbtn, .p7 li').forEach(glow);
   // hover on mouse, focus on keyboard, tap on touch: each list lights its own graphic
   const linkHi = (els, set) => els.forEach(el => {
     el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') set(el); });
@@ -1399,10 +1477,9 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
   linkHi($$('.chip6'), el => temple.forEach((c, k) => c.classList.toggle('on', !!el && k === +el.dataset.col)));
   const turn = k => { if (!wheel) return; attr(wheel, k); if (k == null) return; let t = -30 - 60 * k; while (t - wAng > 180) t -= 360; while (wAng - t > 180) t += 360; wAng = t; wrot.style.setProperty('--rot', t + 'deg'); };
   linkHi($$('.pbtn'), el => turn(el ? +el.dataset.pillar : null));
-  // Product: petals, hub
-  const bloom = $('.bloom'), hub = $('.hub');
+  // Product: petals
+  const bloom = $('.bloom');
   linkHi($$('.p7 li'), el => attr(bloom, el ? (el.classList.contains('total') ? 'all' : el.dataset.pillar) : null));
-  linkHi($$('.opp6 li'), el => attr(hub, el ? el.dataset.way : null));
 
   $$('[data-copy]').forEach(b => b.addEventListener('click', () => { const done = t => { b.textContent = t; setTimeout(() => b.textContent = 'Copy', 1600); };
     const fb = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
@@ -1458,6 +1535,93 @@ dialog.pd[open] { animation: dgin .38s var(--ease) both; transform-origin: var(-
     const tabs = $$('.faq-t [role="tab"]');
     const sel = (t, focus) => { tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; }); if (focus) t.focus(); };
     tabs.forEach((t, i) => { t.addEventListener('click', () => sel(t)); t.addEventListener('keydown', e => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (e.key === 'Home') sel(tabs[0], true); if (e.key === 'End') sel(tabs[tabs.length - 1], true); if (d) { e.preventDefault(); sel(tabs[(i + d + tabs.length) % tabs.length], true); } }); });
+  })();
+
+  /* ---------- C. Product Certification: market evidence deck ---------- */
+  // Tabs, arrows, drag/swipe and sideways trackpad scroll all move one track. A drag follows the pointer 1:1
+  // (rubber-banding past the ends); on release the gesture's velocity projects where it was heading and hands
+  // over to a critically damped spring, which a new gesture can catch at any moment. Under reduced motion or
+  // the pause button the track moves without animation.
+  (() => {
+    const deck = $('[data-deck]'); if (!deck) return;
+    const view = $('.deck-view', deck), track = $('.deck-track', deck), slides = $$('.mslide', deck), tabs = $$('[role="tab"]', deck);
+    const [prev, next] = $$('.da', deck), count = $('.dc b', deck), prog = $('.deck-prog i', deck), live = $('[data-deck-status]', deck);
+    const N = slides.length, RESP = .42;
+    let k = 0, W = view.clientWidth, x = 0, v = 0, target = 0, zeta = 1, raf = 0, last = 0;
+    const set = px => { x = px; track.style.transform = `translate3d(${px.toFixed(2)}px, 0, 0)`; };
+    const rubber = (o, d) => (o * d * .55) / (d + .55 * o);
+    const project = vel => vel / 1000 * .998 / (1 - .998);
+    const step = now => {
+      const dt = Math.min(.034, (now - last) / 1000 || .016), w = 2 * Math.PI / RESP; last = now;
+      for (let i = 0; i < 4; i++) { const h = dt / 4; v += (-w * w * (x - target) - 2 * zeta * w * v) * h; x += v * h; }
+      if (Math.abs(x - target) < .4 && Math.abs(v) < 10) { v = 0; raf = 0; set(target); return; }
+      set(x); raf = requestAnimationFrame(step);
+    };
+    const settle = (vel = 0, z = 1) => {
+      target = -k * W;
+      if (CW.still || !W) { cancelAnimationFrame(raf); raf = 0; v = 0; set(target); return; }
+      v = vel; zeta = z; if (!raf) { last = performance.now(); raf = requestAnimationFrame(step); }
+    };
+    const go = (n, o = {}) => {
+      n = clamp(n, 0, N - 1); const changed = n !== k; k = n;
+      slides.forEach((s, i) => { const on = i === k; s.classList.toggle('on', on); s.inert = !on; });
+      tabs.forEach((t, i) => { const on = i === k; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+      const had = document.activeElement; prev.disabled = k === 0; next.disabled = k === N - 1;
+      if (had && had.disabled) (had === prev ? next : prev).focus();
+      count.textContent = String(k + 1).padStart(2, '0'); prog.style.setProperty('--p', ((k + 1) / N).toFixed(4));
+      if (changed && o.say) live.textContent = `${k + 1} of ${N}: ${$('[data-k]', tabs[k]).textContent}`;
+      if (o.tab) tabs[k].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      settle(o.v || 0, o.z || 1);
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => go(i));
+      t.addEventListener('keydown', e => {
+        const n = e.key === 'ArrowRight' ? k + 1 : e.key === 'ArrowLeft' ? k - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? N - 1 : null;
+        if (n == null) return; e.preventDefault(); go((n + N) % N, { tab: true }); tabs[k].focus();
+      });
+    });
+    [prev, next].forEach(b => b.addEventListener('click', () => go(k + +b.dataset.step, { say: true, tab: true })));
+
+    // drag and swipe: horizontal intent only (vertical stays page scroll), 10px before committing to an axis
+    let drag = null, dragged = false;
+    view.addEventListener('pointerdown', e => {
+      if (e.button !== 0 || !e.isPrimary) return;
+      drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, from: x, k0: k, axis: null, hist: [[e.clientX, e.timeStamp]] }; dragged = false;
+    });
+    view.addEventListener('pointermove', e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      if (!drag.axis) {
+        const dx = e.clientX - drag.x0, dy = e.clientY - drag.y0; if (Math.hypot(dx, dy) < 10) return;
+        if (Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
+        drag.axis = 'x'; dragged = true; view.setPointerCapture(e.pointerId); view.classList.add('drag'); getSelection()?.removeAllRanges();
+        cancelAnimationFrame(raf); raf = 0; drag.from = x; drag.x0 = e.clientX;   // catch the track where it is, mid-flight included
+      }
+      const min = -(N - 1) * W; let p = drag.from + (e.clientX - drag.x0);
+      if (p > 0) p = rubber(p, W); else if (p < min) p = min - rubber(min - p, W);
+      set(p); drag.hist.push([e.clientX, e.timeStamp]); if (drag.hist.length > 6) drag.hist.shift();
+    });
+    const end = e => {
+      if (!drag || e.pointerId !== drag.id) return; const d = drag; drag = null; view.classList.remove('drag'); if (!d.axis) return;
+      const a = d.hist[0], b = d.hist[d.hist.length - 1], dt = (b[1] - a[1]) / 1000;
+      const vel = e.type === 'pointerup' && dt > 0 && e.timeStamp - b[1] < 90 ? (b[0] - a[0]) / dt : 0;
+      const n = clamp(Math.round(-(x + project(vel)) / W), d.k0 - 1, d.k0 + 1);
+      go(n, { v: vel, z: Math.abs(vel) > 400 ? .82 : 1, say: true, tab: true });
+    };
+    view.addEventListener('pointerup', end); view.addEventListener('pointercancel', end);
+    view.addEventListener('click', e => { if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; } }, true);
+    view.addEventListener('dragstart', e => e.preventDefault());
+
+    // sideways trackpad scroll glides one statistic per gesture (momentum tail ignored until it goes quiet)
+    let acc = 0, quietAt = 0;
+    view.addEventListener('wheel', e => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; e.preventDefault();
+      const now = performance.now(); if (now < quietAt) { quietAt = now + 180; return; }
+      acc += e.deltaX; if (Math.abs(acc) < 36) return;
+      const n = k + Math.sign(acc); acc = 0; quietAt = now + 450; if (n >= 0 && n < N) go(n, { say: true, tab: true });
+    }, { passive: false });
+
+    new ResizeObserver(() => { const w = view.clientWidth; if (w === W) return; W = w; cancelAnimationFrame(raf); raf = 0; v = 0; target = -k * W; set(target); }).observe(view);
+    go(0);
   })();
 
   route(false);

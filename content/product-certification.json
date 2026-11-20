@@ -3,14 +3,14 @@
  "route": "product-certification",
  "captured": "2026-11-19",
  "hero": {
-  "eyebrow": "An exclusive 1111 Invitation",
+  "eyebrow": "CNESS Conscious Product Certification™",
   "h1": [
-   "Become one of the",
-   "World's First 108",
-   "CNESS Conscious Products"
+   "Get Your Product",
+   "Certified Conscious",
+   "Today"
   ],
   "tagline": "Where Consciousness Meets Commerce",
-  "p": "On November 11, 2026, CNESSWORKS and the Declaration of Consciousness Movement will mark 1111 World Consciousness Day for Humanity through a global activation of Random Acts of Consciousness introducing the inaugural CNESS Conscious Product Certification™. Purpose-led organizations are invited to place one clearly defined product before a universal seven-pillar assessment of how consciously it has been conceived, created, sourced, delivered, experienced and continuously improved.",
+  "p": "Show customers proof, not promises. CNESS assesses one product across seven pillars and 700 points, from design and sourcing to manufacturing, packaging and presentation, and certifies what the evidence supports.",
   "ctas": [
    {
     "text": "Apply for Product Certification",
@@ -25,8 +25,8 @@
   ],
   "stat": {
    "value": "108",
-   "title": "Founding Products",
-   "desc": "Inaugural 11✦11 cohort"
+   "title": "Featured Products",
+   "desc": "Showcased across CNESS platforms"
   }
  },
  "idea": {
@@ -40,16 +40,16 @@
   ]
  },
  "founding": {
-  "h2": "The Founding 108",
-  "h3": "The First 108 Conscious Products",
+  "h2": "The CNESS 108",
+  "h3": "The World's Best 108 Conscious Products",
   "p": [
-   "For the inaugural 11✦11 launch, CNESSWORKS will invite eligible organizations to submit products for consideration as one of the first 108 Founding Conscious Products, the opening chapter of a movement advancing responsible, transparent, human-centred and conscious commerce.",
-   "Founding status recognises participation in the inaugural cohort. It does not lower the assessment threshold, replace evidence requirements or guarantee media inclusion."
+   "CNESS will feature 108 of the best internationally acclaimed products across all its platforms, selected for consciousness and the full CNESS certification criteria.",
+   "Every featured product meets the same seven-pillar assessment and evidence standard."
   ],
   "lists": [
    [
     "✔ Universal seven-pillar CNESS assessment",
-    "✔ Founding Conscious Product recognition",
+    "✔ Featured Conscious Product recognition",
     "✔ Approved certification seal and usage toolkit",
     "✔ QR-verifiable Product Trust Profile"
    ],
@@ -60,7 +60,7 @@
     "✔ Selected 11✦11 launch, campaign and storytelling opportunities"
    ]
   ],
-  "note": "Participation in launch or media activities is subject to selection, scheduling, editorial considerations, and the applicable participation agreement.",
+  "note": "Featuring across CNESS platforms is subject to selection, scheduling, editorial considerations and the applicable participation agreement.",
   "cta": {
    "text": "Apply for Product Certification",
    "href": "/signup?intent=product",
@@ -115,6 +115,112 @@
   "h3": "One Certification. Transparent Evidence.",
   "p": "The public result should help customers and partners understand the certified scope, seven-pillar strengths, important limitations, evidence basis, validity and current status. The internal CIS-P 700 result supports evaluator consistency and improvement; it should not be used as a simplistic ranking across unrelated products, markets or sectors."
  },
+ "market": {
+  "label": "Market Evidence",
+  "h2": "Proof Is Where the Market Is Moving",
+  "p": "Customers reward products that can show their values and question the ones that only claim them. Swipe, drag or use the arrows to explore the research.",
+  "tabs": [
+   "Growth",
+   "Speed",
+   "Claims",
+   "Premium",
+   "Proof"
+  ],
+  "items": [
+   {
+    "value": "44.9%",
+    "title": "of US consumer-goods growth came from products marketed as sustainable",
+    "detail": "They hold 25.4% of the market, yet delivered 44.9% of its growth from 2013 to 2025.",
+    "chart": [
+     {
+      "value": "25.4%",
+      "label": "Share of the market"
+     },
+     {
+      "value": "44.9%",
+      "label": "Share of the growth"
+     }
+    ],
+    "source": {
+     "text": "NYU Stern Center for Sustainable Business and Circana, Sustainable Market Share Index 2025",
+     "url": "https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index"
+    }
+   },
+   {
+    "value": "4.9×",
+    "title": "faster growth than conventionally marketed products",
+    "detail": "Five-year compound annual growth: 10.9% for products marketed as sustainable, 4.0% for the total market and 2.2% for conventional products.",
+    "chart": [
+     {
+      "value": "10.9%",
+      "label": "Marketed as sustainable"
+     },
+     {
+      "value": "4.0%",
+      "label": "Total market"
+     },
+     {
+      "value": "2.2%",
+      "label": "Conventional"
+     }
+    ],
+    "source": {
+     "text": "NYU Stern Center for Sustainable Business and Circana, Sustainable Market Share Index 2025",
+     "url": "https://www.stern.nyu.edu/experience-stern/about/departments-centers-initiatives/centers-of-research/center-sustainable-business/research/csb-sustainable-market-share-index"
+    }
+   },
+   {
+    "value": "28%",
+    "title": "five-year growth for products making ESG-related claims, against 20% for products making none",
+    "detail": "Products making ESG-related claims accounted for 56% of all growth across the products studied.",
+    "chart": [
+     {
+      "value": "28%",
+      "label": "With ESG-related claims"
+     },
+     {
+      "value": "20%",
+      "label": "Without such claims"
+     }
+    ],
+    "source": {
+     "text": "McKinsey & Company and NielsenIQ, 2023",
+     "url": "https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/consumers-care-about-sustainability-and-back-it-up-with-their-wallets"
+    }
+   },
+   {
+    "value": "9.7%",
+    "title": "more is what consumers say they would pay, on average, for sustainably produced or sourced goods",
+    "detail": "80% of consumers surveyed say they are willing to pay more, even as cost-of-living pressures weigh.",
+    "chart": [
+     {
+      "value": "80%",
+      "label": "Willing to pay more"
+     }
+    ],
+    "source": {
+     "text": "PwC Voice of the Consumer Survey 2024",
+     "url": "https://www.pwc.com/gx/en/news-room/press-releases/2024/pwc-2024-voice-of-consumer-survey.html"
+    }
+   },
+   {
+    "value": "53%",
+    "title": "of environmental claims examined in the EU were vague, misleading or unfounded",
+    "detail": "40% had no supporting evidence. Evidence-based certification is how a product shows the difference.",
+    "chart": [
+     {
+      "value": "53%",
+      "label": "Vague, misleading or unfounded"
+     }
+    ],
+    "source": {
+     "text": "European Commission, 2020 study on environmental claims",
+     "url": "https://environment.ec.europa.eu/topics/circular-economy-topics/green-claims_en"
+    }
+   }
+  ],
+  "note": "Independent research on products marketed as sustainable or making ESG-related claims. These figures describe the wider market, not results for CNESS-certified products."
+ },
  "journey": {
   "h2": "Begin your Product Certification Journey",
   "steps": [
@@ -128,67 +234,12 @@
   ],
   "p": "CNESS awards one public status: CNESS Conscious Product Certified™. Products that are not yet ready receive a confidential improvement pathway and may return after corrective action."
  },
- "evidence": {
-  "label": "Evidence-based",
-  "h3": "What You May Be Asked to Submit",
-  "items": [
-   "Ingredient / material declarations",
-   "Supplier declarations",
-   "ISO, GMP, HACCP & others",
-   "Product manuals",
-   "Sustainability / environmental reports",
-   "Customer-support & complaint policies",
-   "Product labels & packaging",
-   "Manufacturing certifications",
-   "Factory photographs / videos",
-   "Batch & traceability records",
-   "CSR / social-impact reports",
-   "Scientific reports for product claims"
-  ],
-  "p": "CNESSWORKS evaluates the transparency, relevance, and validity of submitted supporting documentation rather than performing laboratory testing itself."
- },
- "opportunity": {
-  "label": "The Opportunity",
-  "h3": "Why Participate in the 11✦11 Founding Launch?",
-  "items": [
-   {
-    "n": "01",
-    "title": "Founding Recognition",
-    "desc": "Join the inaugural 108 products helping establish a new category of conscious commerce"
-   },
-   {
-    "n": "02",
-    "title": "Trust Made Visible",
-    "desc": "Translate responsible intent and existing good practice into a structured, evidence backed profile"
-   },
-   {
-    "n": "03",
-    "title": "Meaningful Differentiation",
-    "desc": "Demonstrate responsibility across the complete product value journey rather than through isolated claims."
-   },
-   {
-    "n": "04",
-    "title": "Customer Confidence",
-    "desc": "Give buyers clearer information about verified strengths, accountable practices and material limitations."
-   },
-   {
-    "n": "05",
-    "title": "Continuous Improvement",
-    "desc": "Receive an evaluator-led roadmap that converts gaps into practical action."
-   },
-   {
-    "n": "06",
-    "title": "11✦11 Visibility",
-    "desc": "Participate in selected global launch, directory, campaign and storytelling opportunities."
-   }
-  ]
- },
  "pathways": {
   "h2": "Explore CNESS Certification Pathways",
   "h3": "How consciously is a product created and brought into the world?",
   "p": [
    "The world has created standards for quality, safety, performance and sustainability. CNESSWORKS advances the next question: can the complete value journey of a product demonstrate conscious intent, responsible creation, trustworthy experience and accountable impact?",
-   "On 11✦11, 108 Founding Conscious Products will help open that question to the world - not by claiming perfection, but by making responsibility visible, evidence-led and continuously improvable.",
+   "CNESS-certified products help answer it, not by claiming perfection, but by making responsibility visible, evidence-led and continuously improvable.",
    "One Earth. One Humanity. One Consciousness. One Shared Future."
   ],
   "ctas": [

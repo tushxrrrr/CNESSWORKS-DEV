@@ -116,7 +116,7 @@ def art_prod():
     </div>'''
 
 def art_invite(mark):
-    """Product founding cohort: an invitation that opens as it arrives."""
+    """Product 108: an invitation that opens as it arrives."""
     return f'<div class="art invite" aria-hidden="true"><div class="env"><span class="back"></span><span class="card"><b>{E(mark)}</b><i></i><i></i><i></i></span><svg class="front" viewBox="0 0 100 60" preserveAspectRatio="none"><defs><linearGradient id="ivg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2488"/><stop offset="1" stop-color="#19125A"/></linearGradient></defs><path d="M0 4Q0 0 3 1.5L50 34L97 1.5Q100 0 100 4V56Q100 60 96 60H4Q0 60 0 56Z" fill="url(#ivg)" stroke="rgba(255,200,26,.45)" stroke-width=".4" vector-effect="non-scaling-stroke"/></svg><span class="flap"></span><span class="seal">✦</span></div></div>'
 
 def art_bloom(ns):
@@ -127,19 +127,6 @@ def art_bloom(ns):
         petals.append(f'<path class="pet" data-i="{k}" style="--i:{k}" d="M0 0Q{L[0]} {L[1]} {V[0]} {V[1]}Q{Rr[0]} {Rr[1]} 0 0Z"/>')
     nums = ''.join(f'<b data-i="{k}" style="--x:{50 + pt(30, k * 360 / 7)[0]:.1f}%;--y:{50 + pt(30, k * 360 / 7)[1]:.1f}%">{E(n)}</b>' for k, n in enumerate(ns))
     return f'<div class="art bloom" aria-hidden="true"><svg viewBox="-104 -104 208 208"><circle class="halo" r="100"/>{"".join(petals)}<circle class="core" r="9"/></svg>{nums}</div>'
-
-def art_fan():
-    """Product evidence: a fanned stack of documents."""
-    sheet = '<span class="sh"><i></i><i></i><i></i><i></i></span>'
-    return f'<div class="art fan" aria-hidden="true">{sheet * 3}</div>'
-
-def art_hub():
-    """Product opportunity: six ways out from one certified centre."""
-    nodes = [pt(78, k * 60) for k in range(6)]
-    lines = ''.join(f'<line class="sp" data-i="{k}" style="--i:{k}" x1="0" y1="0" x2="{x}" y2="{y}"/>' for k, (x, y) in enumerate(nodes))
-    ring = '<path class="rim" d="M' + 'L'.join(f'{x} {y}' for x, y in nodes) + 'Z"/>'
-    dots = ''.join(f'<circle class="nd" data-i="{k}" cx="{x}" cy="{y}" r="7"/>' for k, (x, y) in enumerate(nodes))
-    return f'<div class="art hub" aria-hidden="true"><svg viewBox="-100 -100 200 200">{ring}{lines}<circle class="ctr" r="16"/>{dots}</svg><span class="pulse"></span></div>'
 
 def sec(page, sid, label, scene, inner, cls='sec', side=''):
     SEC.append((page, sid, label))
@@ -299,6 +286,56 @@ def org():
   </div></div>''', cls='dawn final'))
     return '\n'.join(o)
 
+def chart(P, i, rows):
+    """One small chart per statistic. Labels and values are tagged copy; the figure itself is hidden from
+    assistive technology because the slide text states the same figures."""
+    k = lambda r, f: K(P, 'market', 'items', i, 'chart', r, f)
+    num = lambda v: float(v.rstrip('%'))
+    if i == 0:   # paired meters on a 0-100 scale: share of the market vs share of the growth
+        body = ''.join(f'<div class="mr{" hi" if r == 1 else ""}" style="--v:{num(x["value"]) / 100:.3f}"><b class="mv"{k(r, "value")}>{E(x["value"])}</b><span class="ml"{k(r, "label")}>{E(x["label"])}</span><span class="mt"><i></i></span></div>' for r, x in enumerate(rows))
+        return f'<div class="ch ch-meters">{body}<span class="axis"><i>0</i><i>50%</i><i>100%</i></span></div>'
+    if i == 1:   # columns: five-year compound annual growth
+        top = 12
+        body = ''.join(f'<div class="cc{" hi" if r == 0 else ""}" style="--v:{num(x["value"]) / top:.3f}"><span class="cb"><i></i><b class="mv"{k(r, "value")}>{E(x["value"])}</b></span><span class="ml"{k(r, "label")}>{E(x["label"])}</span></div>' for r, x in enumerate(rows))
+        return f'<div class="ch ch-cols">{body}</div>'
+    if i == 2:   # slope from a shared start: growth over five years with and without ESG-related claims
+        y = lambda v: 56 - v / 32 * 50
+        lines = ''.join(f'<line class="{"hi" if r == 0 else "lo"}" x1="0" y1="56" x2="100" y2="{y(num(x["value"])):.2f}" vector-effect="non-scaling-stroke"/>' for r, x in enumerate(rows))
+        ends = ''.join(f'<span class="se{" hi" if r == 0 else ""}" style="--y:{y(num(x["value"])) / 60 * 100:.2f}%"><b class="mv"{k(r, "value")}>{E(x["value"])}</b><span class="ml"{k(r, "label")}>{E(x["label"])}</span></span>' for r, x in enumerate(rows))
+        return f'<div class="ch ch-slope"><div class="sl"><svg viewBox="0 0 100 60" preserveAspectRatio="none"><line class="base" x1="0" y1="56" x2="100" y2="56" vector-effect="non-scaling-stroke"/><g class="rise">{lines}</g></svg>{ends}</div></div>'
+    x = rows[0]; n = round(num(x['value']))
+    cls = 'ch-dots' if i == 3 else 'ch-tiles'
+    cells = ''.join(f'<i{" class=on" if c < n else ""} style="--d:{c % 10 + c // 10}"></i>' for c in range(100))
+    return f'<div class="ch {cls}"><div class="grid100">{cells}</div><p class="gl"><b class="mv"{k(0, "value")}>{E(x["value"])}</b> <span class="ml"{k(0, "label")}>{E(x["label"])}</span></p></div>'
+
+def market(P, m):
+    """Product: market research as a deck of statistics to swipe, drag, scroll sideways or step through."""
+    n = len(m['items'])
+    tabs = ''.join(f'<button type="button" role="tab" id="mk-t{i}" aria-controls="mk-s{i}" aria-selected="{"true" if i == 0 else "false"}" tabindex="{0 if i == 0 else -1}"><span class="tn" aria-hidden="true">{i + 1:02d}</span><span{K(P, "market", "tabs", i)}>{E(t)}</span></button>' for i, t in enumerate(m['tabs']))
+    slides = []
+    for i, x in enumerate(m['items']):
+        src = x['source']
+        slides.append(f'''<div class="mslide{" on" if i == 0 else ""}" id="mk-s{i}" role="tabpanel" aria-roledescription="slide" aria-labelledby="mk-t{i}"{"" if i == 0 else " inert"}>
+        <div class="st"><p class="big"{K(P, 'market', 'items', i, 'value')}>{E(x['value'])}</p><p class="sti"{K(P, 'market', 'items', i, 'title')}>{E(x['title'])}</p><p class="std"{K(P, 'market', 'items', i, 'detail')}>{E(x['detail'])}</p></div>
+        <div class="sv" aria-hidden="true">{chart(P, i, x['chart'])}</div>
+        <p class="src"><span class="srl">Source</span> <a {href(src['url'])}{K(P, 'market', 'items', i, 'source')}>{E(src['text'])}</a></p>
+      </div>''')
+    return sec(P, 'prd-market', m['label'], 5, f'''  <div class="wrap mkt">
+    <div class="mkt-h" data-in><span class="k2"{K(P, 'market', 'label')}>{E(m['label'])}</span><h2 class="h-md"{K(P, 'market', 'h2')}>{E(m['h2'])}</h2><p class="lede"{K(P, 'market', 'p')}>{E(m['p'])}</p></div>
+    <div class="deck" data-in data-deck role="region" aria-roledescription="carousel" aria-label="{E(m['h2'])}">
+      <div class="deck-bar">
+        <div class="deck-tabs" role="tablist" aria-label="{E(m['label'])}">{tabs}</div>
+        <div class="deck-arrows"><button type="button" class="da" data-step="-1" aria-label="Previous statistic" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="dc" aria-hidden="true"><b>01</b> / {n:02d}</span><button type="button" class="da" data-step="1" aria-label="Next statistic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      </div>
+      <div class="deck-view"><div class="deck-track" style="--n:{n}">
+      {"".join(slides)}
+      </div></div>
+      <div class="deck-prog" aria-hidden="true"><i style="--p:{1 / n:.4f}"></i></div>
+      <p class="sr" aria-live="polite" data-deck-status></p>
+    </div>
+    <p class="note mkt-note"{K(P, 'market', 'note')}>{E(m['note'])}</p>
+  </div>''', side='l')
+
 # ======================= C. Product Certification =======================
 def product():
     P, R = 'prd', PRD; h = R['hero']; o = []
@@ -323,7 +360,7 @@ def product():
     lists = ''.join(tick_list(a, l) for a, l in enumerate(f['lists']))
     o.append(sec(P, 'prd-founding', f['h2'], 2, f'''  <div class="wrap">
     <div class="stage"><div class="txt" data-in><h2 class="k2"{K(P,'founding','h2')}>{E(f['h2'])}</h2><h3 class="h-md"{K(P,'founding','h3')}>{E(f['h3'])}</h3>
-      <p class="lede"><span{K(P,'founding','p',0)}>{E(f['p'][0])}</span><br><span{K(P,'founding','p',1)}>{E(f['p'][1])}</span></p></div>{art_invite('11✦11')}</div>
+      <p class="lede"><span{K(P,'founding','p',0)}>{E(f['p'][0])}</span><br><span{K(P,'founding','p',1)}>{E(f['p'][1])}</span></p></div>{art_invite('108')}</div>
     <div class="found" data-in><div class="glass ticks2">{lists}</div><p class="note"{K(P,'founding','note')}>{E(f['note'])}</p><div class="acts">{cta(P,('founding','cta'),f['cta'])}</div></div>
   </div>''', side='r'))
     ev = R['evaluate']
@@ -337,25 +374,15 @@ def product():
     <div style="display:grid;gap:1rem" data-in><h2 class="k2"{K(P,'why','h2')}>{E(wy['h2'])}</h2><h3 class="h-md"{K(P,'why','h3')}>{E(wy['h3'])}</h3></div>
     <div class="glass pad" data-in><p class="q"{K(P,'why','p')}>{E(wy['p'])}</p></div>
   </div>''', side='r'))
+    o.append(market(P, R['market']))
     j = R['journey']
-    o.append(sec(P, 'prd-journey', j['h2'], 5, f'''  <div class="wrap journey">
+    o.append(sec(P, 'prd-journey', j['h2'], 6, f'''  <div class="wrap journey">
     <div data-in><h2 class="h-md"{K(P,'journey','h2')}>{E(j['h2'])}</h2></div>
     <div data-in><ol class="j7" data-fill>{''.join(f'<li data-stepi="{i}"><span{K(P,"journey","steps",i)}>{E(s)}</span></li>' for i, s in enumerate(j['steps']))}<li class="run" aria-hidden="true"></li></ol>
       <p class="one"{K(P,'journey','p')}>{E(j['p'])}</p></div>
-  </div>''', side='l'))
-    e = R['evidence']
-    o.append(sec(P, 'prd-evidence', e['h3'], 6, f'''  <div class="wrap ev">
-    <div style="display:grid;gap:1rem" data-in><span class="k2"{K(P,'evidence','label')}>{E(e['label'])}</span><h3 class="h-md"{K(P,'evidence','h3')}>{E(e['h3'])}</h3>{art_fan()}</div>
-    <div data-in><ul class="docs">{''.join(f'<li data-doc="{i}">{I["doc"]}<span{K(P,"evidence","items",i)}>{E(x)}</span></li>' for i, x in enumerate(e['items']))}</ul>
-      <p class="note" style="margin-top:1.2rem"{K(P,'evidence','p')}>{E(e['p'])}</p></div>
   </div>''', side='r'))
-    op = R['opportunity']
-    o.append(sec(P, 'prd-opportunity', op['h3'], 7, f'''  <div class="wrap">
-    <div class="stage l">{art_hub()}<div class="txt" data-in><span class="k2"{K(P,'opportunity','label')}>{E(op['label'])}</span><h3 class="h-lg"{K(P,'opportunity','h3')}>{E(op['h3'])}</h3></div></div>
-    <ul class="opp6" data-in>{''.join(f'<li data-way="{i}"><span class="n"{K(P,"opportunity","items",i,"n")}>{E(x["n"])}</span><span class="t"{K(P,"opportunity","items",i,"title")}>{E(x["title"])}</span><p class="d"{K(P,"opportunity","items",i,"desc")}>{E(x["desc"])}</p></li>' for i, x in enumerate(op['items']))}</ul>
-  </div>''', side='l'))
     pw = R['pathways']
-    o.append(sec(P, 'prd-pathways', pw['h2'], 8, f'''  <div class="sunrise"><div class="in">
+    o.append(sec(P, 'prd-pathways', pw['h2'], 7, f'''  <div class="sunrise"><div class="in">
     <img class="mk" src="assets/cness-mark.svg" width="64" height="64" alt="" decoding="async">
     <p class="k2"{K(P,'pathways','h2')}>{E(pw['h2'])}</p><h2{K(P,'pathways','h3')}>{E(pw['h3'])}</h2>
     <p{K(P,'pathways','p',0)}>{E(pw['p'][0])}</p><p{K(P,'pathways','p',1)}>{E(pw['p'][1])}</p><p class="motto"{K(P,'pathways','p',2)}>{E(pw['p'][2])}</p>
