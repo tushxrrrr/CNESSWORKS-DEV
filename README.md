@@ -4,14 +4,14 @@ The approved CNESSWORKS page designs, signed off on 20 November 2026 (git tag `a
 This repository is the starting point for the production build (Next.js + TypeScript). The earlier test
 repository (tushxrrrr/cnessworks) keeps the full design history, including the unapproved variants.
 
-| Page | Built file | Source | Approved preview |
+| Page | Built file | Source | Approved |
 | --- | --- | --- | --- |
-| First Light (landing page) | `immersive.html` | `src/immersive.html` | https://claude.ai/artifact/6Be8YtSUQL9zt8MYG6nBK8 |
-| CNESS Advantage | `advantage.html` | `src/advantage.html` (generated) | https://claude.ai/artifact/KtPtnJvi2XVgYnc1dUe5Yz |
-| Certification (Mother of Certification, Organization, Product) | `certification.html` | `src/certification.html` (generated) | https://claude.ai/artifact/Xjo8zUZKjFY2VQ8YzJVjsd |
-| Analyze (Organization and Product paths) | `analyze.html` | `src/analyze.html` (generated) | https://claude.ai/artifact/B6q5VhuW72PsNajyZzModf |
+| First Light (landing page) | `immersive.html` | `src/immersive.html` | 20 Nov 2026 |
+| CNESS Advantage | `advantage.html` | `src/advantage.html` (generated) | 20 Nov 2026 |
+| Certification (Mother of Certification, Organization, Product) | `certification.html` | `src/certification.html` (generated) | 20 Nov 2026 |
+| Analyze (Organization and Product paths) | `analyze.html` | `src/analyze.html` (generated) | 20 Nov 2026 |
 
-Each approved preview was compared with its source file at seeding: all four are identical.
+Each approved version was compared with its source file at seeding: all four are identical.
 
 - **Build.** Pages are body fragments in `src/`; `./build.sh` wraps them into the root `*.html` files. Advantage, Certification and Analyze are generated from the locked content in `content/` by `tools/build-*.py`; never edit their `src/*.html` by hand.
 - **Verify.** `node tools/verify-advantage.js`, `node tools/verify-certification.js`, `node tools/verify-analyze.js` and `node tools/test-analyze.js` (Playwright). The `*-source.js` tools re-check the content against the live site (read-only; the Analyze check blocks every non-GET request).
