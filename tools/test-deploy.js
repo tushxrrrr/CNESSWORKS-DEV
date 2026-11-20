@@ -3,6 +3,7 @@
 //  - every page loads at /route and /route/ with no failed request (images, fonts, scripts) and no console error;
 //  - nothing is requested from a third party at load (fonts are self-hosted; only links point elsewhere);
 //  - favicon, canonical URL and noindex are present;
+//  - the first-screen fonts are preloaded, and each font file is downloaded once (the preload is the file the CSS uses);
 //  - certification pages: no page is prefetched until a visitor shows intent; a page switch jumps to the top of the
 //    new page instead of gliding;
 //  - CNESS Advantage: the particle field survives a lost WebGL context (2D drawing takes over, WebGL returns).
@@ -16,7 +17,8 @@ let pass = 0, fail = 0; const ok = (c, m) => { c ? pass++ : fail++; console.log(
   const br = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
   for (const route of PAGES) for (const slash of ['', '/']) {
     const p = await br.newPage({ viewport: { width: 1440, height: 900 } });
-    const failed = [], third = [], errors = [];
+    const failed = [], third = [], errors = [], fontReqs = [];
+    p.on('request', r => { if (r.resourceType() === 'font') fontReqs.push(r.url().replace(ORIGIN, '')); });
     p.on('response', r => { if (r.status() >= 400) failed.push(`${r.status()} ${r.url().replace(ORIGIN, '')}`); });
     p.on('requestfailed', r => failed.push(`failed ${r.url().replace(ORIGIN, '')}`));
     p.on('request', r => { if (!r.url().startsWith(ORIGIN) && !r.url().startsWith('data:')) third.push(r.url()); });
@@ -25,6 +27,7 @@ let pass = 0, fail = 0; const ok = (c, m) => { c ? pass++ : fail++; console.log(
     await p.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } });   // lazy images too
     await p.waitForTimeout(600);
     const head = await p.evaluate(() => ({ icon: !!document.querySelector('link[rel="icon"]'), canonical: document.querySelector('link[rel="canonical"]')?.href, robots: document.querySelector('meta[name="robots"]')?.content,
+      preloads: [...document.querySelectorAll('link[rel="preload"][as="font"]')].map(l => new URL(l.href).pathname),
       images: [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.loading !== 'lazy').map(i => i.getAttribute('src')),
       fonts: [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family).filter((f, i, a) => a.indexOf(f) === i).sort().join(', ') }));
     ok(!failed.length && !head.images.length, `${route}${slash}: every request succeeds ${failed.concat(head.images).slice(0, 4).join(' | ')}`);
@@ -32,6 +35,8 @@ let pass = 0, fail = 0; const ok = (c, m) => { c ? pass++ : fail++; console.log(
     ok(!errors.length, `${route}${slash}: no console errors ${errors.slice(0, 2).join(' | ')}`);
     if (!slash) {
       ok(head.icon && head.canonical === `https://www.cnessworks.com/${route}` && /noindex/.test(head.robots || ''), `${route}: favicon, canonical ${head.canonical}, robots "${head.robots}"`);
+      const twice = fontReqs.filter((u, i, a) => a.indexOf(u) !== i), unused = head.preloads.filter(u => fontReqs.filter(r => r === u).length !== 1);
+      ok(head.preloads.length === 3 && !twice.length && !unused.length, `${route}: ${head.preloads.length} fonts preloaded, each font file downloaded once ${twice.concat(unused).join(' | ')}`);
       ok(/DM Mono/.test(head.fonts) && /Fraunces/.test(head.fonts) && /Onest/.test(head.fonts), `${route}: web fonts loaded from the app (${head.fonts})`);
     }
     await p.close();
