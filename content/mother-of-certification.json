@@ -1,0 +1,870 @@
+{
+ "source": "https://www.cnessworks.com/mother-of-certification",
+ "route": "mother-of-certification",
+ "captured": "2026-11-19",
+ "hero": {
+  "eyebrow": "CNESS - Mother of Certification",
+  "label": "Why this exists",
+  "h1": "The Conscious Umbrella That Adds Value to Every Certification",
+  "p": [
+   "CNESS brings together organization, product, quality, knowledge, recognition, greater good intent and global business connectivity under one conscious ecosystem.",
+   "It is the foundation that connects certifications to continuous improvement, credibility, and real-world impact."
+  ]
+ },
+ "industry": {
+  "label": "By industry",
+  "h2": "What People In Your Sector Already Expect",
+  "p": "Some things you already have. Some things specialists look for. The gap left open is where CNESS sits. Not just another badge, but the value those certificates don’t show.",
+  "ctas": [
+   {
+    "text": "Get Certified",
+    "href": "/cness-certification",
+    "url": "https://www.cnessworks.com/cness-certification"
+   },
+   {
+    "text": "Explore Directory",
+    "href": "/globaldirectory",
+    "url": "https://www.cnessworks.com/globaldirectory"
+   }
+  ],
+  "image": {
+   "src": "assets/cert/mother-of-certification.jpg",
+   "alt": "Mother of Certification — overall organizational trust and responsibility",
+   "origin": "https://www.cnessworks.com/about/mother-of-certification.jpg"
+  },
+  "search": {
+   "placeholder": "Search industry or certificate…",
+   "matches": "trimmed, case-insensitive substring of any column except Region"
+  },
+  "filters": [
+   "All",
+   "India",
+   "Canada",
+   "USA",
+   "Europe",
+   "Australia",
+   "Japan"
+  ],
+  "columns": [
+   "Region",
+   "Industry",
+   "Primary mandatory / gatekeeping",
+   "Important voluntary / commercial",
+   "Positioning gap left open",
+   "Best-fit CNESS level"
+  ],
+  "rows": [
+   [
+    "India",
+    "Software / SaaS",
+    "ISO/IEC 27001",
+    "ISO 9001; CMMI; SOC 2 (for global buyers)",
+    "Leadership trust, ethics, culture, stakeholder-led purpose",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "IT Services / BPO",
+    "ISO/IEC 27001",
+    "ISO 9001; CMMI; SOC 2",
+    "Human-centered culture, purpose, trust in service conduct",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Fintech",
+    "Regulatory approvals depend on model (RBI / SEBI / etc.)",
+    "ISO/IEC 27001; SOC 2; PCI DSS",
+    "Responsible innovation, trust, consumer fairness",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Payments",
+    "Sector approvals / licences as applicable",
+    "PCI DSS; ISO/IEC 27001; SOC 2",
+    "Ethical growth, consumer trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Food Manufacturing",
+    "FSSAI",
+    "HACCP; ISO 22000; ISO 9001",
+    "Food safety, ethics, supplier responsibility",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Restaurants / QSR",
+    "FSSAI",
+    "Hygiene ratings; ISO 22000 (larger chains)",
+    "Food safety, ethics, community impact",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Pharma Manufacturing",
+    "CDSCO / drug licences as applicable",
+    "WHO-GMP; ISO 9001; ISO 14001",
+    "Governance, ethics, societal responsibility",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Medical Devices",
+    "CDSCO licensing",
+    "ISO 13485; ISO 9001",
+    "Trustworthy leadership and patient-centered quality",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Hospitals",
+    "Clinical establishment / legal approvals",
+    "NABH; ISO 9001",
+    "Care culture, ethics, human dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Diagnostics Labs",
+    "Applicable health registrations",
+    "NABL; ISO 15189",
+    "Integrity, service ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "EdTech",
+    "None universal",
+    "ISO/IEC 27001; ISO 9001",
+    "Learner wellbeing, pedagogy ethics",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Schools / Institutions",
+    "Board / education approvals",
+    "ISO 21001; ISO 9001",
+    "Values-led education culture",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Manufacturing — General",
+    "Factory / legal permits as applicable",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Culture, worker wellbeing, social impact",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Automotive Suppliers",
+    "Sector legal approvals as applicable",
+    "IATF 16949; ISO 14001",
+    "Trust, governance, responsible manufacturing",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Aerospace / Defense Suppliers",
+    "Sector clearances as applicable",
+    "AS9100; ISO 27001",
+    "Mission ethics, leadership credibility",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Construction / EPC",
+    "Contractor licences as applicable",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker safety culture, stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Real Estate Developers",
+    "RERA registration",
+    "ISO 9001; ISO 14001",
+    "Transparency, community responsibility",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Logistics / Supply Chain",
+    "Transport / legal permits as applicable",
+    "ISO 9001; ISO 28000; ISO 45001",
+    "Dependability and ethical service",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "E-commerce",
+    "Legal licences as applicable",
+    "ISO/IEC 27001; PCI DSS; ISO 9001",
+    "Fair marketplace conduct, customer experience ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Retail",
+    "India trade / GST etc. as applicable",
+    "ISO 9001; HACCP for food retail",
+    "Worker welfare, sustainability, trust",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Textiles / Apparel",
+    "Export / legal permits as applicable",
+    "ISO 9001; SA8000; OEKO-TEX (product); GOTS (if organic)",
+    "Worker welfare and sustainability",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Agriculture / Organic",
+    "APEDA / NPOP organics as applicable",
+    "GlobalG.A.P.; organic certifications",
+    "Soil / community stewardship",
+    "Aspiring / Inspired"
+   ],
+   [
+    "India",
+    "Chemicals",
+    "Pollution / control licences",
+    "ISO 14001; ISO 45001; Responsible Care",
+    "Responsible operations and transparency",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Energy / Utilities",
+    "Sector licences as applicable",
+    "ISO 14001; ISO 45001; ISO 50001",
+    "Public trust, sustainability",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "Renewable Energy",
+    "Project / sector approvals",
+    "ISO 14001; ISO 45001; ISO 9001",
+    "Climate responsibility and impact",
+    "Inspired / Luminary"
+   ],
+   [
+    "India",
+    "NGOs / Social Enterprises",
+    "Statutory registrations",
+    "Credibility / impact audits; ISO 9001",
+    "Mission integrity, impact transparency",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Canada",
+    "Software / SaaS",
+    "PIPEDA / provincial privacy obligations",
+    "SOC 2; ISO/IEC 27001",
+    "Leadership trust, governance, culture",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Fintech",
+    "Federal / provincial licensing depends on model",
+    "SOC 2; PCI DSS; ISO/IEC 27001",
+    "Responsible finance and consumer trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Healthcare Providers",
+    "Provincial health compliance",
+    "Accreditation Canada; quality accreditation",
+    "Care culture and dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Medical Devices",
+    "Health Canada medical device licence as applicable",
+    "ISO 13485",
+    "Patient-first quality",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Food Manufacturing",
+    "CFIA / food safety rules as applicable",
+    "HACCP; SQF / BRCGS; ISO 22000",
+    "Transparency and values-led sourcing",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Canada",
+    "Manufacturing — General",
+    "Federal / provincial safety and environmental rules",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker wellbeing and responsible growth",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Energy / Utilities",
+    "Sector licences as applicable",
+    "ISO 14001; ISO 45001; ISO 50001",
+    "Public trust and stewardship",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Mining / Resources",
+    "Provincial mining / environmental permits",
+    "ISO 14001; ISO 45001",
+    "Community impact and responsible extraction",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Construction",
+    "Provincial contractor licensing",
+    "ISO 9001; ISO 45001",
+    "Safety culture and worker dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "Education / EdTech",
+    "Provincial education approvals as applicable",
+    "ISO/IEC 27001; SOC 2",
+    "Learner-centered values",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Canada",
+    "Retail / Consumer Brands",
+    "Federal consumer and product rules",
+    "ISO 9001; social / environmental certs",
+    "Responsible brand behavior",
+    "Inspired / Luminary"
+   ],
+   [
+    "Canada",
+    "NGOs / Charities",
+    "CRA charity registration",
+    "Imagine Canada; impact reporting",
+    "Mission integrity",
+    "Aspiring / Inspired"
+   ],
+   [
+    "USA",
+    "Software / SaaS",
+    "None universal",
+    "SOC 2; ISO/IEC 27001",
+    "Leadership trust, governance, culture",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Cloud / Managed Services",
+    "None universal",
+    "SOC 2; ISO/IEC 27001; ISO 20000",
+    "Reliability, ethics, stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Fintech",
+    "Sector licensing depends on model",
+    "SOC 2; PCI DSS; ISO/IEC 27001",
+    "Responsible finance and consumer trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Healthcare Providers",
+    "State / federal compliance",
+    "Joint Commission / NABH equivalent; quality accreditation",
+    "Care culture and dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Medical Devices",
+    "FDA registration / listing as applicable pathway",
+    "ISO 13485",
+    "Patient-first quality",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Food Manufacturing",
+    "FDA / USDA compliance depending on product",
+    "SQF / BRCGS; HACCP; ISO 22000",
+    "Transparency and values-led sourcing",
+    "Aspiring / Inspired"
+   ],
+   [
+    "USA",
+    "Restaurants",
+    "Health permits",
+    "ISO 9001 / HACCP programs",
+    "Service values and community impact",
+    "Aspiring / Inspired"
+   ],
+   [
+    "USA",
+    "Retail / Consumer Brands",
+    "Legal product compliance",
+    "ISO 9001; product / social certifications by category",
+    "Responsible brand behavior",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Automotive Suppliers",
+    "None universal",
+    "IATF 16949",
+    "Safety culture and supply stewardship",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Aerospace / Defense",
+    "ITAR / sectoral obligations as applicable",
+    "AS9100; CMMC / ISO 27001 where relevant",
+    "Mission-responsible leadership",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Construction",
+    "State / local contractor licensing",
+    "ISO 9001; ISO 45001",
+    "Safety culture, worker dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Real Estate",
+    "Licensing by activity",
+    "BOMI / green building certifications",
+    "Community and transparency",
+    "Aspiring / Inspired"
+   ],
+   [
+    "USA",
+    "Logistics",
+    "DOT / FMCSA and other applicable requirements",
+    "ISO 9001; TAPA; ISO 28000",
+    "Dependability, ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Manufacturing — General",
+    "OSHA / EPA / local compliance",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker wellbeing and responsible growth",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Energy / Utilities",
+    "Sector compliance",
+    "ISO 50001; ISO 14001; ISO 45001",
+    "Stewardship and trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Renewable Energy",
+    "Project / regulatory approvals",
+    "ISO 14001; ISO 45001",
+    "Climate impact and responsibility",
+    "Inspired / Luminary"
+   ],
+   [
+    "USA",
+    "Education / EdTech",
+    "State approvals as applicable",
+    "SOC 2; ISO 27001",
+    "Learner-centered values",
+    "Aspiring / Inspired"
+   ],
+   [
+    "USA",
+    "NGOs / Foundations",
+    "Tax-exempt and governance filings",
+    "Impact reporting; BBB Wise Giving etc.",
+    "Mission integrity",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Europe",
+    "Software / SaaS",
+    "No universal single certification",
+    "ISO/IEC 27001; SOC 2 for US buyers",
+    "Governance and stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Medical Devices",
+    "CE marking under MDR / IVDR",
+    "ISO 13485",
+    "Patient trust and ethical leadership",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Food Manufacturing",
+    "EU food hygiene / HACCP obligations",
+    "BRCGS / SQF; ISO 22000",
+    "Transparency and values-led sourcing",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Europe",
+    "Manufacturing — General",
+    "CE / sector laws where applicable",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker and stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Automotive Suppliers",
+    "Type-approval / product rules as applicable",
+    "IATF 16949",
+    "Responsible manufacturing culture",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Aerospace / Defense",
+    "Sector requirements",
+    "AS9100; ISO 27001",
+    "Mission ethics and stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Construction / Infrastructure",
+    "National permits and CE for products where needed",
+    "ISO 9001; ISO 45001; ISO 14001",
+    "Safety culture and public trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Energy / Utilities",
+    "National / EU compliance",
+    "ISO 14001; ISO 45001; ISO 50001",
+    "Climate and public stewardship",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Renewable Energy",
+    "Project and grid approvals",
+    "ISO 14001; EMAS",
+    "Climate purpose and ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Logistics / Supply Chain",
+    "Transport / security regulations",
+    "ISO 28000; TAPA",
+    "Dependability and ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Retail / Consumer Goods",
+    "Product conformity / labelling compliance",
+    "ISO 9001; social / environmental certs",
+    "Responsible consumer brand",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Europe",
+    "Textiles / Apparel",
+    "Product chemical / labelling compliance",
+    "OEKO-TEX; GOTS; ISO 14001",
+    "Worker welfare and sustainability",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Agriculture / Organic",
+    "EU organic rules if claimed",
+    "GlobalG.A.P.; organic certifications",
+    "Stewardship and transparency",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Europe",
+    "Hospitals / Clinics",
+    "National healthcare compliance",
+    "National accreditations; ISO 9001",
+    "Care culture and dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Europe",
+    "Education / EdTech",
+    "National approvals as applicable",
+    "ISO 21001; ISO/IEC 27001",
+    "Human-centered learning values",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Software / SaaS",
+    "Privacy Act / Australian Privacy Principles",
+    "ISO/IEC 27001; SOC 2",
+    "Leadership trust, governance, culture",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Fintech",
+    "ASIC / APRA licensing as applicable",
+    "SOC 2; ISO/IEC 27001; PCI DSS",
+    "Responsible finance and consumer trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Healthcare Providers",
+    "AHPRA / national safety and quality standards",
+    "NSQHS accreditation; ISO 9001",
+    "Care culture and dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Medical Devices",
+    "TGA inclusion as applicable",
+    "ISO 13485",
+    "Patient-first quality",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Food Manufacturing",
+    "FSANZ / food safety rules as applicable",
+    "HACCP; SQF / BRCGS; ISO 22000",
+    "Transparency and values-led sourcing",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Australia",
+    "Mining / Resources",
+    "State mining and environmental licences",
+    "ISO 14001; ISO 45001",
+    "Community impact and responsible extraction",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Manufacturing — General",
+    "WHS / environmental compliance",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker wellbeing and responsible growth",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Construction",
+    "State contractor licensing",
+    "ISO 9001; ISO 45001",
+    "Safety culture and worker dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Energy / Utilities",
+    "Sector / project approvals",
+    "ISO 14001; ISO 45001; ISO 50001",
+    "Climate and public stewardship",
+    "Inspired / Luminary"
+   ],
+   [
+    "Australia",
+    "Agriculture / Organic",
+    "DAFF / organic claims as applicable",
+    "GlobalG.A.P.; organic certifications",
+    "Stewardship and transparency",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Australia",
+    "Education / EdTech",
+    "TEQSA / ASQA approvals as applicable",
+    "ISO/IEC 27001; SOC 2",
+    "Learner-centered values",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Australia",
+    "NGOs / Charities",
+    "ACNC registration",
+    "Impact reporting; governance reviews",
+    "Mission integrity",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Japan",
+    "Software / SaaS",
+    "APPI privacy obligations",
+    "ISMS / ISO/IEC 27001",
+    "Leadership trust, governance, culture",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Automotive Suppliers",
+    "Type-approval / product rules as applicable",
+    "IATF 16949; ISO 14001",
+    "Safety culture and responsible manufacturing",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Manufacturing — General",
+    "Industrial Safety and Health Act / environmental rules",
+    "ISO 9001; ISO 14001; ISO 45001",
+    "Worker wellbeing and stakeholder trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Electronics / Hardware",
+    "PSE / product safety rules as applicable",
+    "ISO 9001; ISO 14001",
+    "Product integrity and responsible growth",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Medical Devices",
+    "PMDA / MHLW approvals as applicable",
+    "ISO 13485",
+    "Patient trust and ethical leadership",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Food Manufacturing",
+    "Food Sanitation Act; HACCP",
+    "ISO 22000; JFS",
+    "Transparency and values-led sourcing",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Japan",
+    "Hospitals / Clinics",
+    "MHLW healthcare compliance",
+    "Hospital accreditation; ISO 9001",
+    "Care culture and dignity",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Construction",
+    "Construction Business Act licence",
+    "ISO 9001; ISO 45001",
+    "Safety culture and public trust",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Energy / Utilities",
+    "METI / sector licences as applicable",
+    "ISO 14001; ISO 45001; ISO 50001",
+    "Climate and public stewardship",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Logistics / Supply Chain",
+    "Transport regulations as applicable",
+    "ISO 9001; ISO 28000",
+    "Dependability and ethics",
+    "Inspired / Luminary"
+   ],
+   [
+    "Japan",
+    "Retail / Consumer Goods",
+    "Product labelling / safety compliance",
+    "ISO 9001; social / environmental certs",
+    "Responsible consumer brand",
+    "Aspiring / Inspired"
+   ],
+   [
+    "Japan",
+    "Education / EdTech",
+    "MEXT approvals as applicable",
+    "ISO/IEC 27001; ISO 21001",
+    "Human-centered learning values",
+    "Inspired / Luminary"
+   ]
+  ],
+  "empty": "No industries match that filter.",
+  "collapsedRows": 5,
+  "more": "Show more",
+  "less": "Show less"
+ },
+ "compare": [
+  {
+   "label": "Take ISO 9001",
+   "h3": "It says a lot about quality. It does not say everything.",
+   "p": [
+    "If you run a serious quality system, that matters. It tells us you can deliver consistently, keep improving, and look after the customer experience.",
+    "It does not, on its own, tell us how you treat people, what you do for your community, whether your product is kind to the planet, or whether integrity holds across the whole business."
+   ]
+  },
+  {
+   "label": "Take B Corp",
+   "h3": "A strong signal — not a finished score",
+   "p": [
+    "Being a B Corp is something we take seriously. It speaks to trust, responsibility, greater good, accountability and how you treat the people around you.",
+    "We still check the scope and whether it is current. And we may still ask for more, because one framework should never become a shortcut to “we’re done.”"
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "h3": "Find businesses you can actually check",
+   "p": "Who they are, what they do, what they are certified for, what evidence sits behind it, and what CNESS has looked at independently.",
+   "label": "Explore Directory",
+   "href": "/globaldirectory",
+   "url": "https://www.cnessworks.com/globaldirectory"
+  },
+  {
+   "h3": "CNESS Advantage",
+   "p": "Recognition and discovery that rest on verified evidence — not on collecting one more competing logo.",
+   "label": "Learn more",
+   "href": "/cness-advantage",
+   "url": "https://www.cnessworks.com/cness-advantage"
+  }
+ ],
+ "closing": {
+  "label": "THE MOTHER OF CERTIFICATION",
+  "h2": "CNESS Brings Your Certifications Together to Show What Your Organization Stands For",
+  "p": [
+   "Your CNESS assessment, audits, licences and existing certifications come together in one clear view - recognizing what each represents, the evidence behind it and its contribution to your organization’s credibility.",
+   "See how your purpose becomes visible in the way you lead, operate and serve."
+  ],
+  "cta": {
+   "text": "Get Started",
+   "href": "/signup",
+   "url": "https://www.cnessworks.com/signup"
+  }
+ }
+}

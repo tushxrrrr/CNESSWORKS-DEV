@@ -1,0 +1,610 @@
+{
+ "source": "https://www.cnessworks.com/cness-certification",
+ "route": "cness-certification",
+ "captured": "2026-11-19",
+ "hero": {
+  "h1": "Business Certification for Conscious Organizations",
+  "p": "CNESSWORKS is a global platform of conscious business confluence that certifies & recognises organization in conscious excellence. Empowering organizations to connect with each other in trust, dependability and reliability, CNESSWORKS uplifts the core ethos of business, industries and organizations.",
+  "cta": {
+   "text": "Earn Conscious Excellence",
+   "href": "/signup?intent=org",
+   "url": "https://www.cnessworks.com/signup?intent=org"
+  },
+  "glimpse": "Glimpse of Benefits",
+  "ring": [
+   [
+    "Conscious",
+    "Leadership"
+   ],
+   [
+    "Products &",
+    "Services"
+   ],
+   [
+    "Human–Centric Value &",
+    "Team Cohesion"
+   ],
+   [
+    "Brand Vision &",
+    "Collaboration"
+   ],
+   [
+    "Community & Conscious",
+    "Social Impact"
+   ],
+   [
+    "Customers &",
+    "Clients"
+   ]
+  ],
+  "stats": [
+   {
+    "value": "54%",
+    "title": [
+     "Higher Customer Value"
+    ],
+    "desc": "Consumers are willing to pay more for sustainable brands.",
+    "source": "IBM Institute for Business Value"
+   },
+   {
+    "value": "69%",
+    "title": [
+     "Employer of Choice"
+    ],
+    "desc": "Professionals are more likely to join environmentally responsible organizations.",
+    "source": "IBM Institute for Business Value"
+   },
+   {
+    "value": "73%",
+    "title": [
+     "Consciousness",
+     "Builds Brands"
+    ],
+    "desc": "Authentic brands earn greater consumer trust.",
+    "source": "Edelman Trust Barometer 2025"
+   }
+  ]
+ },
+ "community": {
+  "h2": "Our Conscious Business Community",
+  "explore": {
+   "text": "Explore All",
+   "href": "/globaldirectory",
+   "url": "https://www.cnessworks.com/globaldirectory"
+  },
+  "logos": [
+   {
+    "slug": "shriram-capital",
+    "name": "Shriram Capital",
+    "img": "assets/cert/logo-shriram-capital.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/f653cab20e7d8ff31a949cb22c5cbf035b688107.png",
+    "text": "Shriram Capital",
+    "href": "/company-directory/shriram-capital",
+    "url": "https://www.cnessworks.com/company-directory/shriram-capital"
+   },
+   {
+    "slug": "adyar-ananda-bhavan",
+    "name": "Adyar Ananda Bhavan",
+    "img": "assets/cert/logo-adyar-ananda-bhavan.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/df19903382c75ad6e88653dbe21b8eaa3f676207.png",
+    "text": "Adyar Ananda Bhavan",
+    "href": "/company-directory/adyar-ananda-bhavan",
+    "url": "https://www.cnessworks.com/company-directory/adyar-ananda-bhavan"
+   },
+   {
+    "slug": "biodynamic-association",
+    "name": "Biodynamic Association of India",
+    "img": "assets/cert/logo-biodynamic-association.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/b09a13f18a0bb61fd960cb7034aee07994ea50a5.png",
+    "text": "Biodynamic Association of India",
+    "href": "/company-directory/biodynamic-association",
+    "url": "https://www.cnessworks.com/company-directory/biodynamic-association"
+   },
+   {
+    "slug": "india-builders",
+    "name": "India Builders (Chennai) Limited",
+    "img": "assets/cert/logo-india-builders.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/cd653a775cb3e9983612b205c74017c5a9b5f1c0.png",
+    "text": "India Builders (Chennai) Limited",
+    "href": "/company-directory/india-builders",
+    "url": "https://www.cnessworks.com/company-directory/india-builders"
+   },
+   {
+    "slug": "rajan-eye-care",
+    "name": "Rajan Eye Care Hospital",
+    "img": "assets/cert/logo-rajan-eye-care.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/c35f24d298892ec96012315cd19ea16886f9746c.png",
+    "text": "Rajan Eye Care Hospital",
+    "href": "/company-directory/rajan-eye-care",
+    "url": "https://www.cnessworks.com/company-directory/rajan-eye-care"
+   },
+   {
+    "slug": "sf-enterprises",
+    "name": "SF Enterprises & Engineering",
+    "img": "assets/cert/logo-sf-enterprises.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/f781e3a315c1b013e8904b6c42f3a6b1c89672bd.png",
+    "text": "SF Enterprises & Engineering",
+    "href": "/company-directory/sf-enterprises",
+    "url": "https://www.cnessworks.com/company-directory/sf-enterprises"
+   },
+   {
+    "slug": "global-speakers-talk",
+    "name": "Global Speakers Talk",
+    "img": "assets/cert/logo-global-speakers-talk.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/8a623df1851bb38137d6dc3ebd6434fb90b030b9.png",
+    "text": "Global Speakers Talk",
+    "href": "/company-directory/global-speakers-talk",
+    "url": "https://www.cnessworks.com/company-directory/global-speakers-talk"
+   },
+   {
+    "slug": "prasanna-international",
+    "name": "Prasanna International",
+    "img": "assets/cert/logo-prasanna-international.webp",
+    "origin": "https://cdn.cnessworks.com/b2b_certification/d475c355fb892141187dea6451e90e0e2f05055e.png",
+    "text": "Prasanna International",
+    "href": "/company-directory/prasanna-international",
+    "url": "https://www.cnessworks.com/company-directory/prasanna-international"
+   }
+  ]
+ },
+ "why": {
+  "kicker": "Why Choose CNESS Business Certification?",
+  "heading": [
+   "People Prefer Products",
+   "Verified Against Credible Standards"
+  ],
+  "p": "CNESS Certified Organizations outperform across every key area that drives long-term success",
+  "chart": [
+   {
+    "label": "CNESS Certified",
+    "value": "81%"
+   },
+   {
+    "label": "Uncertified",
+    "value": "22%"
+   }
+  ]
+ },
+ "evaluate": {
+  "h2": "What Does CNESS Organization Certification Evaluate?",
+  "h3": "Organizations Are Assessed Across Key Dimensions of Responsible & High-Performing Business Practices",
+  "label": "Core Pillars of the CNESS Framework",
+  "pillars": [
+   {
+    "n": "01",
+    "title": "Conscious Leadership",
+    "subtitle": "Leading with Values, Accountability, Governance Integrity & the Greater Good",
+    "dialog": {
+     "title": "Conscious Leadership",
+     "subtitle": "Leading with Values, Accountability, Governance Integrity & the Greater Good",
+     "description": "Conscious leadership establishes the foundation for every organization. It reflects how leaders guide with purpose, make responsible decisions, uphold governance, and create a culture of trust, accountability, and long-term value.",
+     "points": [
+      "1. Purposeful Vision – Lead with clarity, values, purpose, and long-term responsibility.",
+      "2. Conscious Decision-Making – Make intentional decisions with wisdom and fortitude that positively impact people, culture, and the future.",
+      "3. Accountability & Ownership – Take responsibility for decisions, actions, and measurable outcomes.",
+      "4. Ethical Governance – Embed transparency, integrity, trust, and responsible stewardship throughout the organization.",
+      "5. People-Centered Leadership – Inspire individuals to achieve extraordinary results through empowerment, alignment, and shared purpose.",
+      "6. Resilient Organizational Impact – Build a culture of trust, excellence, sustainable growth, and enduring value."
+     ]
+    }
+   },
+   {
+    "n": "02",
+    "title": "Human-Centric Value & Team Cohesion",
+    "subtitle": "Enhancing Collaboration through Alignment, Trust & Shared Purpose",
+    "dialog": {
+     "title": "Human-Centric Value & Team Cohesion",
+     "subtitle": "Enhancing Collaboration through Alignment, Trust & Shared Purpose",
+     "description": "Great organizations are built by people who feel valued, trusted, and connected to a common purpose. This pillar focuses on creating an environment where individuals grow, collaborate, and contribute to collective success.",
+     "points": [
+      "1. Purposeful People – Unite individuals around a meaningful vision, shared values, and collective success.",
+      "2. Trust & Psychological Safety – Foster transparency, respect, wellbeing, and an environment where people thrive.",
+      "3. Collaboration & Team Cohesion – Encourage open communication, shared responsibility, accountability, and teamwork.",
+      "4. Empowerment & Growth – Invest in continuous learning, leadership development, and human potential.",
+      "5. Culture of Belonging – Value every individual and cultivate healthy, respectful workplace relationships.",
+      "6. High-Performing Teams – Build resilient, adaptable teams that achieve excellence through unity and conscious collaboration."
+     ]
+    }
+   },
+   {
+    "n": "03",
+    "title": "Products & Services",
+    "subtitle": "Driving Responsible Innovation & Long-Term Value Creation",
+    "dialog": {
+     "title": "Products & Services",
+     "subtitle": "Driving Responsible Innovation & Long-Term Value Creation",
+     "description": "Products and services reflect an organization's purpose in action. This pillar recognizes organizations that innovate responsibly, create meaningful solutions, and deliver lasting value to customers and society.",
+     "points": [
+      "1. Purposeful Innovation – Create solutions that address real needs and deliver meaningful value.",
+      "2. Customer-Centric Excellence – Design products and services that enhance user experience, satisfaction, and trust.",
+      "3. Quality & Reliability – Uphold the highest standards of performance, consistency, safety, and dependability.",
+      "4. Responsible Value Creation – Develop offerings that positively benefit customers, society, and the wider ecosystem.",
+      "5. Sustainable Differentiation – Innovate with integrity to create lasting competitive advantage and relevance.",
+      "6. Enduring Impact – Deliver products and services that strengthen trust, inspire loyalty, and sustainable growth."
+     ]
+    }
+   },
+   {
+    "n": "04",
+    "title": "Customers & Clients",
+    "subtitle": "Building Trust Through Quality, Dependability, Reliability & Meaningful Relationships",
+    "dialog": {
+     "title": "Customers & Clients",
+     "subtitle": "Building Trust Through Quality, Dependability, Reliability & Meaningful Relationships",
+     "description": "Long-term success is built through trusted relationships. This pillar recognizes organizations that consistently deliver value, communicate with integrity, and cultivate enduring partnerships.",
+     "points": [
+      "1. Purposeful Relationships – Build enduring partnerships founded on trust, respect, usefulness, and shared success.",
+      "2. Customer-Centric Excellence – Deliver consistent quality, value, responsiveness, dependable after-sales support, and exceptional customer experiences.",
+      "3. Transparency & Integrity – Communicate honestly, set clear expectations, and honor every commitment.",
+      "4. Engagement & Responsiveness – Listen actively, embrace feedback, and continuously improve products, services, and customer experiences.",
+      "5. Trust & Accountability – Take ownership of customer outcomes and strengthen confidence through reliable performance.",
+      "6. Enduring Loyalty & Growth – Foster long-term relationships that create mutual value, advocacy, and sustainable success."
+     ]
+    }
+   },
+   {
+    "n": "05",
+    "title": "Community & Conscious Social Impact",
+    "subtitle": "Connecting Business Success with Positive Societal Contribution",
+    "dialog": {
+     "title": "Community & Conscious Social Impact",
+     "subtitle": "Connecting Business Success with Positive Societal Contribution",
+     "description": "Conscious organizations recognize that lasting success includes creating positive value for society. This pillar measures how purpose is translated into meaningful, measurable, and sustainable contributions to communities and the greater good.",
+     "points": [
+      "1. Purposeful Contribution – Advance the greater good through meaningful and sustained community engagement.",
+      "2. Conscious Responsibility – Integrate social, environmental, and ethical responsibility into everyday business practices.",
+      "3. Community Partnerships – Collaborate with communities, institutions, and stakeholders to create lasting positive outcomes.",
+      "4. Empowered Participation – Encourage employees to contribute through volunteerism, service, innovation, and shared responsibility.",
+      "5. Sustainable Impact – Deliver measurable, long-term benefits that strengthen communities and build public trust.",
+      "6. Shared Prosperity & Legacy – Create enduring value that uplifts society, supports future generations, and reflects the organization's higher purpose."
+     ]
+    }
+   },
+   {
+    "n": "06",
+    "title": "Brand Vision & Strategic Collaborations",
+    "subtitle": "Building Resilient Brands Through Alignment & Strategic Partnerships",
+    "dialog": {
+     "title": "Brand Vision & Strategic Collaborations",
+     "subtitle": "Building Resilient Brands Through Alignment & Strategic Partnerships",
+     "description": "A resilient brand emerges when purpose, performance, and partnerships are aligned. This pillar recognizes organizations that inspire trust, cultivate strategic collaborations, and create lasting influence through authentic leadership.",
+     "points": [
+      "1. Purposeful Brand Vision – Define and communicate a clear purpose, values, and long-term direction that inspire trust and confidence.",
+      "2. Authentic Brand Identity – Align leadership, culture, operations, and customer experiences to consistently reflect the organization's purpose.",
+      "3. Strategic Partnerships – Build meaningful collaborations that foster innovation, shared value, and sustainable growth.",
+      "4. Reputation & Credibility – Strengthen brand trust through integrity, consistency, transparency, and responsible leadership.",
+      "5. Global Influence & Adaptability – Expand reach through collaboration, innovation, resilience, and responsiveness to a changing world.",
+      "6. Enduring Legacy – Create a brand that positively influences industries, communities, and future generations through conscious leadership and shared purpose."
+     ]
+    }
+   }
+  ],
+  "dialogControls": {
+   "prev": "Show previous pillar",
+   "next": "Show next pillar",
+   "close": "Close"
+  }
+ },
+ "benefits": {
+  "h2": "Benefits of CNESS Certification",
+  "heading": [
+   "Grow Your Business While",
+   "Creating Conscious",
+   "Global Impact"
+  ],
+  "p": "CNESS enables organizations to build stronger brands, earn stakeholder trust, and demonstrate measurable impact through structured certification and ecosystem visibility.",
+  "stats": [
+   {
+    "value": "62%",
+    "title": "Changing Consumer Behavior",
+    "desc": "Consumers are changing purchasing habits to support sustainability.",
+    "source": "IBM Institute for Business Value (2021)"
+   },
+   {
+    "value": "49%",
+    "title": "Sustainable Purchases",
+    "desc": "Consumers have paid more for environmentally responsible products.",
+    "source": "IBM Institute for Business Value (2022)"
+   },
+   {
+    "value": "77%",
+    "title": "Growing Demand",
+    "desc": "Consumers want to make more sustainable choices every day.",
+    "source": "IBM Institute for Business Value (2022)"
+   }
+  ],
+  "label": "Benefits",
+  "items": [
+   {
+    "n": "01",
+    "title": "Global Connectivity",
+    "desc": "Strategic partnerships that strengthen credibility and market presence"
+   },
+   {
+    "n": "02",
+    "title": "Conscious Recognition",
+    "desc": "Increased visibility, brand positioning, trust building & effective advertising"
+   },
+   {
+    "n": "03",
+    "title": "Brand Multiplier",
+    "desc": "The certification mark that multiplies brand trust, reach, and influence"
+   },
+   {
+    "n": "04",
+    "title": "Social Connection",
+    "desc": "Social media amplification through CNESS platforms and partner networks"
+   }
+  ]
+ },
+ "how": {
+  "h2": "How CNESS Certification Works",
+  "h3": "A Conscious Path to Certification & Growth",
+  "steps": [
+   {
+    "n": "1",
+    "title": "Register",
+    "desc": "Create your organization profile and begin your certification journey."
+   },
+   {
+    "n": "2",
+    "title": "Evaluation",
+    "desc": "Your practices are reviewed against the CNESS framework, 6 Pillars and certification standards."
+   },
+   {
+    "n": "3",
+    "title": "Get Certified",
+    "desc": "Earn your certification level and strengthen your organization's trust profile."
+   },
+   {
+    "n": "4",
+    "title": "Amplify Your Brand",
+    "desc": "Showcase your recognition through CNESS platforms, badges, and ecosystem visibility."
+   },
+   {
+    "n": "5",
+    "title": "Grow Your Impact",
+    "desc": "Continue improving, sharing best practices, and building measurable long-term value."
+   }
+  ],
+  "ctas": [
+   {
+    "text": "Earn Conscious Excellence",
+    "href": "/signup?intent=org",
+    "url": "https://www.cnessworks.com/signup?intent=org",
+    "note": "shown on desktop only on the live page"
+   },
+   {
+    "text": "Book a Call",
+    "href": "/contact-us",
+    "url": "https://www.cnessworks.com/contact-us"
+   }
+  ]
+ },
+ "spotlight": {
+  "h2": [
+   "Spotlight On Impact-Driven",
+   "Conscious Organizations"
+  ],
+  "p": "We recognize organizations that demonstrate responsible leadership, measurable impact, and industry-leading practices.",
+  "controls": {
+   "prev": "Previous testimonial",
+   "next": "Next testimonial"
+  },
+  "items": [
+   {
+    "name": "Pooja Srinivasa Raja",
+    "role": "Executive Director, Adyar Ananda Bhavan",
+    "quote": "Our company is deeply rooted with value. It's not just a business built around numbers & profits but about giving back to the society in a very meaningful way. Our management goal is to do our best every day for our 17,000 employees, 10,000 suppliers and customers.",
+    "img": "assets/cert/pooja.webp",
+    "origin": "https://cdn.cnessworks.com/Cness-Works-Partner-A2B-%20Pooja.png"
+   },
+   {
+    "name": "Sushant K Choudhury",
+    "role": "CEO, Conscious Leadership Institute",
+    "quote": "CNESS certification has helped us build a culture of accountability and purpose. Our stakeholders trust us more than ever, and our employees are proud to be part of a consciously certified organization.",
+    "img": "assets/cert/sushant.webp",
+    "origin": "https://cdn.cnessworks.com/Sushant.png"
+   }
+  ]
+ },
+ "levels": {
+  "h2": "Certification Levels",
+  "p": "Each level describes where an organization stands, and what opens as conscious practice grows.",
+  "items": [
+   {
+    "tier": "Foundation Level",
+    "name": "Aspiring",
+    "tagline": "Building the foundations of conscious and responsible business.",
+    "showsLabel": "What this level shows",
+    "shows": [
+     "A clear commitment to conscious business principles",
+     "Foundational systems, practices, and intent are in place"
+    ],
+    "advLabel": "Key advantages",
+    "advantages": [
+     "Foundational certification recognition",
+     "Baseline credibility with customers, partners, and investors",
+     "Listing in the CNESS Global Directory",
+     "A practical roadmap for improvement across the core pillars",
+     "Entry into the wider CNESS ecosystem and advancement pathway"
+    ],
+    "progress": "Progress toward Inspired by strengthening evidence, systems, and visible business impact.",
+    "progressEmphasis": "Progress toward Inspired",
+    "emblem": "aspiring"
+   },
+   {
+    "tier": "Intermediate Level",
+    "name": "Inspired",
+    "tagline": "Turning conscious intent into impactful practice.",
+    "showsLabel": "What this level shows",
+    "shows": [
+     "Conscious principles are actively reflected in business practice",
+     "Systems, evidence, and stakeholder value are becoming more visible"
+    ],
+    "advLabel": "Key advantages",
+    "advantages": [
+     "Everything gained at the Aspiring level, with stronger validated practice",
+     "Enhanced brand differentiation and stakeholder confidence",
+     "Elevated visibility across the Directory and partner channels",
+     "Stronger employer-value and talent attraction signal",
+     "Readiness for best-practice spotlight and collaboration opportunities"
+    ],
+    "progress": "Progress toward Luminary by demonstrating leadership, measurable impact, and ecosystem influence.",
+    "progressEmphasis": "Progress toward Luminary",
+    "emblem": "inspired"
+   },
+   {
+    "tier": "Advanced Level",
+    "name": "Luminary",
+    "tagline": "Pioneering by example and setting the standard for consciousness in business.",
+    "showsLabel": "What this level shows",
+    "shows": [
+     "The organization leads by example with mature conscious business practices",
+     "Its impact, credibility, and influence are visible across the wider ecosystem"
+    ],
+    "advLabel": "Key advantages",
+    "advantages": [
+     "Highest CNESS recognition for advanced conscious business leadership",
+     "Premium positioning with customers, partners, investors, and talent",
+     "Priority showcase across the Global Directory and recognition channels",
+     "Benchmark status as a model others can learn from",
+     "Access to higher-order collaboration, visibility, and leadership pathways"
+    ],
+    "progress": "Lead the movement by inspiring others, shaping standards, and amplifying conscious business impact.",
+    "progressEmphasis": "Lead the movement",
+    "emblem": "luminary"
+   },
+   {
+    "tier": "Premier Visibility Layer",
+    "name": "Luminary Premium",
+    "tagline": "Amplifying advanced conscious leadership through elevated branding, premium visibility, and market distinction.",
+    "showsLabel": "What this level shows",
+    "shows": [
+     "The organization is already Luminary-certified and ready for stronger public positioning",
+     "Its story, impact, and leadership are prepared for amplified visibility across business channels"
+    ],
+    "advLabel": "Key advantages",
+    "advantages": [
+     "Everything in Luminary, plus enhanced brand-storytelling support",
+     "Premium showcase placement across the Global Directory and recognition channels",
+     "Higher-order advertising visibility and campaign participation",
+     "Featured best-practice spotlight and thought-leadership exposure",
+     "Stronger market differentiation with customers, partners, investors, and talent"
+    ],
+    "progress": "Progress toward Pinnacle by deepening influence, expanding visibility, and strengthening flagship market presence.",
+    "progressEmphasis": "Progress toward Pinnacle",
+    "emblem": "luminary"
+   },
+   {
+    "tier": "Signature Leadership Layer",
+    "name": "Luminary Pinnacle",
+    "tagline": "The highest showcase tier for organizations shaping standards, visibility, and influence.",
+    "showsLabel": "What this level shows",
+    "shows": [
+     "The organization stands among the most visible and exemplary conscious business leaders",
+     "Its brand, impact, and ecosystem leadership are ready for flagship-level global amplification"
+    ],
+    "advLabel": "Key advantages",
+    "advantages": [
+     "Everything in Luminary Premium, with flagship recognition and hero positioning",
+     "Signature advertising, editorial, and showcase opportunities across CNESS channels",
+     "Priority placement in campaigns, features, and high-visibility recognition moments",
+     "Benchmark authority as a category-shaping example for the ecosystem",
+     "Access to elite collaboration, speaking, partnership, and market-positioning pathways"
+    ],
+    "progress": "Set the benchmark by shaping standards, amplifying influence, and leading conscious business at the highest level.",
+    "progressEmphasis": "Set the benchmark",
+    "emblem": "luminary"
+   }
+  ]
+ },
+ "faq": {
+  "h3": "Frequently Asked Questions about Sustainability Certification for Companies",
+  "p": "Find answers about CNESS certification, eligibility, pricing, and the conscious enterprise journey.",
+  "tabs": [
+   {
+    "name": "Certification",
+    "items": [
+     {
+      "q": "What is CNESS Certification?",
+      "a": "CNESS Certification recognizes who your organization is, what it stands for, and how it creates value across six key pillars. It provides a structured pathway to strengthen credibility, amplify growth, and become recognized as a Global Conscious Organization."
+     },
+     {
+      "q": "How do I get certified?",
+      "a": "The process is simple. Create your organization profile, complete the required certification steps, and submit your information for evaluation. Through the process of assessing your organization, you also strengthen your practices, build your brand, and advance your organizational growth."
+     },
+     {
+      "q": "Will my existing certifications affect my eligibility?",
+      "a": "No. Existing certifications do not affect your eligibility for CNESS Certification. They can complement the CNESS framework, add value to your organization's profile, and contribute positively to its overall recognition."
+     }
+    ]
+   },
+   {
+    "name": "General",
+    "items": [
+     {
+      "q": "What is CNESS?",
+      "a": "CNESS is a global Consciousness Ecosystem that connects and recognizes Global Conscious Organizations. It helps organizations:\n\n• Build credibility and trust\n• Strengthen global visibility\n• Demonstrate conscious business practices\n• Connect with aligned organizations and stakeholders\n• Create long-term value and measurable impact"
+     },
+     {
+      "q": "What is CNESSWORKS?",
+      "a": "CNESSWORKS is the digital platform where organizations begin their certification journey, create their Trust Profile, and become visible in the Global Directory. It brings certification, recognition, visibility, and access to a global ecosystem together in one platform."
+     },
+     {
+      "q": "Who can use CNESSWORKS?",
+      "a": "CNESSWORKS is designed for businesses, institutions, startups, service providers, and organizations of every size. Organizations seeking to become recognized conscious organizations can use the platform to strengthen trust, improve credibility, and showcase their impact."
+     }
+    ]
+   },
+   {
+    "name": "Global Directory",
+    "items": [
+     {
+      "q": "What is the Global Directory?",
+      "a": "The CNESSWORKS Global Directory is where organizations showcase their conscious profile, credibility, certification status, and Consciousness Impact Score. Being listed connects your organization to the global community of Global Conscious Organizations (GCO)."
+     },
+     {
+      "q": "Why should my organization be listed in the Global Directory?",
+      "a": "The Global Directory features organizations recognized for their dependability and conscious practices across the six CNESS pillars. A listing helps your organization:\n\n• Build greater credibility and visibility\n• Connect with the global conscious business community\n• Reach new customers across international markets\n• Serve conscious customers around the world\n• Attract aligned professionals and strengthen talent acquisition\n• Enhance brand promotion, discoverability, and business opportunities"
+     },
+     {
+      "q": "Do I need to be certified to appear in the Global Directory?",
+      "a": "Organizations may appear in the Global Directory before completing certification. However, certification unlocks greater credibility, enhanced visibility, access to the Consciousness Impact Score, and recognition as a Global Conscious Organization."
+     }
+    ]
+   },
+   {
+    "name": "Partner",
+    "items": [
+     {
+      "q": "What is the CNESSWORKS Partner Program?",
+      "a": "The CNESSWORKS Partner Program enables individuals, organizations, institutions, and platforms to support conscious business growth through referrals, media, implementation, and strategic collaboration. It empowers partners to become a meaningful part of the positive change they wish to see in the world."
+     },
+     {
+      "q": "Who can become a CNESSWORKS Partner?",
+      "a": "Conscious pioneers, prominent individuals, consultants, advisors, media platforms, institutions, service providers, and organizations creating meaningful impact can apply. The program is designed for those who can introduce, support, promote, or guide organizations within the CNESSWORKS ecosystem."
+     },
+     {
+      "q": "How can I become a partner?",
+      "a": "Becoming a partner is a simple process. Select the pathway that best matches your expertise, network, and goals, submit your application, and the CNESSWORKS team will review it and guide you through the next steps."
+     }
+    ]
+   }
+  ],
+  "origin": "GET https://cness-b2b-emergent.onrender.com/api/faqs"
+ },
+ "begin": {
+  "h3": "Begin your Growth Journey Today",
+  "p": "Start taking intentional steps toward becoming more conscious, purposeful, and impactful.",
+  "cta": {
+   "text": "Get Started",
+   "href": "/signup?intent=org",
+   "url": "https://www.cnessworks.com/signup?intent=org"
+  }
+ },
+ "omitted": [
+  "A second \"Earn Conscious Excellence\" link (/signup?intent=org) inside \"Why Choose\" is in the DOM but not displayed at desktop or mobile widths.",
+  "An empty link to /contact-us beside the hero button has no text or visible content."
+ ]
+}

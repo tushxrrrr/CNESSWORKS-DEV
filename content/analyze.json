@@ -1,0 +1,772 @@
+{
+ "source": "https://www.cnessworks.com/analyze",
+ "captured": "2026-11-20",
+ "note": "Copied from the live page: visible text, the page's English i18n strings and the component's own string literals for states that render only on interaction (validation, submission). Not edited.",
+ "tabs": {
+  "organization": "Organization",
+  "product": "Product"
+ },
+ "scorer": {
+  "yourRating": "Your rating",
+  "outOf": "10",
+  "none": "—",
+  "progress": "Pillar {n} of {total}",
+  "completed": "% completed",
+  "pillarTitle": "Pillar {n} — {name}",
+  "scaleLow": "1 = Early practice",
+  "scaleHigh": "10 = Strong practice",
+  "back": "Back",
+  "next": "Next pillar",
+  "finish": "See result",
+  "ratingGroup": "Rate {name}",
+  "rateFirst": {
+   "title": "Rate this pillar",
+   "description": "Choose a self-score from 1 to 10 before continuing."
+  }
+ },
+ "validation": {
+  "title": "Required",
+  "all": "Please fill all required fields",
+  "email": "Please enter a deliverable email address where you can receive your analysis report",
+  "orgName": "Organization name is required",
+  "websiteInvalid": "Enter a valid website URL (e.g. https://www.company.com)",
+  "websiteRequired": "Website link is required",
+  "productFields": "Organization, product name, and description are required"
+ },
+ "finishFirst": {
+  "title": "Finish the pillar steps first",
+  "description": "Rate every pillar and open your result. Then submit the form so we can email that score."
+ },
+ "emailError": {
+  "title": "Email not sent",
+  "description": "Could not send the score email. Your result is still on this page."
+ },
+ "notice": {
+  "kicker": "Submission successful",
+  "h2": "Thank you for completing your analysis!",
+  "p": "Your responses have been successfully submitted. Your CNESS analysis score will be shared with you via email.",
+  "sentTo": "Your results will be sent to",
+  "when": "Within 24 hours",
+  "whenBody": "We’ll email your score and a results link.",
+  "next": "Discover the next step in your CNESS journey.",
+  "another": "Analyze Another",
+  "explore": {
+   "text": "Explore Certification",
+   "organization": "https://www.cnessworks.com/signup?intent=org",
+   "product": "https://www.cnessworks.com/signup?intent=product"
+  }
+ },
+ "categories": [
+  "Agriculture & Farming",
+  "Automotive & Mobility",
+  "Beauty & Personal Care",
+  "Construction & Real Estate",
+  "Consumer Goods",
+  "Education",
+  "Energy & Utilities",
+  "Financial Services",
+  "Food & Beverage",
+  "Healthcare & Life Sciences",
+  "Hospitality & Tourism",
+  "Logistics & Transportation",
+  "Manufacturing",
+  "Media & Entertainment",
+  "Professional Services",
+  "Retail & E-commerce",
+  "Software & SaaS",
+  "Telecommunications",
+  "Textiles & Apparel",
+  "Other"
+ ],
+ "countries": [
+  "Afghanistan",
+  "Aland Islands",
+  "Albania",
+  "Algeria",
+  "American Samoa",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua And Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bermuda",
+  "Bhutan",
+  "Bolivia",
+  "Bonaire, Sint Eustatius and Saba",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Bouvet Island",
+  "Brazil",
+  "British Indian Ocean Territory",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Cayman Islands",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Christmas Island",
+  "Cocos (Keeling) Islands",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Cook Islands",
+  "Costa Rica",
+  "Cote D'Ivoire (Ivory Coast)",
+  "Croatia",
+  "Cuba",
+  "Curaçao",
+  "Cyprus",
+  "Czech Republic",
+  "Democratic Republic of the Congo",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "East Timor",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Ethiopia",
+  "Falkland Islands",
+  "Faroe Islands",
+  "Fiji Islands",
+  "Finland",
+  "France",
+  "French Guiana",
+  "French Polynesia",
+  "French Southern Territories",
+  "Gabon",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Gibraltar",
+  "Greece",
+  "Greenland",
+  "Grenada",
+  "Guadeloupe",
+  "Guam",
+  "Guatemala",
+  "Guernsey and Alderney",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Heard Island and McDonald Islands",
+  "Honduras",
+  "Hong Kong S.A.R.",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jersey",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kosovo",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macau S.A.R.",
+  "Macedonia",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Man (Isle of)",
+  "Marshall Islands",
+  "Martinique",
+  "Mauritania",
+  "Mauritius",
+  "Mayotte",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Montserrat",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Caledonia",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "Niue",
+  "Norfolk Island",
+  "North Korea",
+  "Northern Mariana Islands",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestinian Territory Occupied",
+  "Panama",
+  "Papua new Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Pitcairn Island",
+  "Poland",
+  "Portugal",
+  "Puerto Rico",
+  "Qatar",
+  "Reunion",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Helena",
+  "Saint Kitts And Nevis",
+  "Saint Lucia",
+  "Saint Pierre and Miquelon",
+  "Saint Vincent And The Grenadines",
+  "Saint-Barthelemy",
+  "Saint-Martin (French part)",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Sint Maarten (Dutch part)",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Georgia",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Svalbard And Jan Mayen Islands",
+  "Swaziland",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "The Bahamas",
+  "The Gambia",
+  "Togo",
+  "Tokelau",
+  "Tonga",
+  "Trinidad And Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Turks And Caicos Islands",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "United States Minor Outlying Islands",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City State (Holy See)",
+  "Venezuela",
+  "Vietnam",
+  "Virgin Islands (British)",
+  "Virgin Islands (US)",
+  "Wallis And Futuna Islands",
+  "Western Sahara",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe"
+ ],
+ "tracks": {
+  "organization": {
+   "heroTitle": "CNESS Organization Analysis",
+   "heroSubtitle": "Explore how your organization leads, supports people and puts purpose into practice. Get a free, initial view of strengths and opportunities across the six CNESS pillars.",
+   "trackLabel": "Organization Certification",
+   "subjectFallback": "Your organization",
+   "rateLabel": "Rate your organization",
+   "pillars": [
+    {
+     "name": "Conscious Leadership",
+     "summary": "Leading with Values, Accountability, Governance Integrity & the Greater Good",
+     "paragraphs": [
+      "Conscious leadership establishes the foundation for every organization. It reflects how leaders guide with purpose, make responsible decisions, uphold governance, and create a culture of trust, accountability, and long-term value.",
+      "1. Purposeful Vision & Values – Lead with clarity, values, purpose, and long-term responsibility.",
+      "2. Conscious Decision-Making – Make intentional decisions with wisdom and fortitude that positively impact people, culture, and the future.",
+      "3. Greater Good – Humanity served, meaningful problem solved and positive impact.",
+      "4. Transparency & Trust – Embed transparency, integrity, trust, and responsible stewardship throughout the organization.",
+      "5. Inclusive, Empowering Leadership – Human potential, mentoring, teamwork and shared success.",
+      "6. Conscious, Sustainable Growth – Organizational wellbeing, lasting values and responsible growth."
+     ]
+    },
+    {
+     "name": "Human-Centric Value & Team Cohesion",
+     "summary": "Enhancing Collaboration through Alignment, Trust & Shared Purpose",
+     "paragraphs": [
+      "Great organizations are built by people who feel valued, trusted, and connected to a common purpose. This pillar focuses on creating an environment where individuals grow, collaborate, and contribute to collective success.",
+      "1. Trust & Wellbeing – Unite people around a meaningful vision and shared values, building a transparent, respectful workplace where everyone feels safe, supported and able to thrive and contribute to collective success.",
+      "2. Empowerment & Growth – Encourage open communication, shared responsibility, accountability and teamwork while investing in continuous learning and leadership development to help people reach their full potential.",
+      "3. Culture of Belonging – Value every individual and cultivate healthy, respectful workplace relationships.",
+      "4. Collective Excellence – Build resilient, adaptable teams that achieve excellence through unity and conscious collaboration.",
+      "5. Retirement & Family Welfare – Help employees prepare for retirement and life beyond work, with opportunities to stay connected, keep learning and pursue what matters to them."
+     ]
+    },
+    {
+     "name": "Products & Services",
+     "summary": "Driving Responsible Innovation & Long-Term Value Creation",
+     "paragraphs": [
+      "Products and services reflect an organization's purpose in action. This pillar recognizes organizations that innovate responsibly, create meaningful solutions, and deliver lasting value to customers and society.",
+      "1. Conscious Innovation – Develop meaningful products and services that solve real problems, address unmet needs and improve human wellbeing, delivering reliable performance throughout their lifecycle and lasting value beyond profit.",
+      "2. Quality & Integrity – Uphold uncompromising standards of quality, safety, reliability and transparency so every offering performs consistently, delivers its promised value and earns customer confidence.",
+      "3. Responsible Value Creation – Develop offerings that positively benefit customers, society, and the wider ecosystem.",
+      "4. Sustainable Differentiation – Innovate with integrity to create lasting competitive advantage and relevance.",
+      "5. Enduring Impact – Deliver products and services that strengthen trust, inspire loyalty, and sustainable growth."
+     ]
+    },
+    {
+     "name": "Customers & Clients",
+     "summary": "Building Trust Through Quality, Dependability, Reliability & Meaningful Relationships",
+     "paragraphs": [
+      "Long-term success is built through trusted relationships. This pillar recognizes organizations that consistently deliver value, communicate with integrity, and cultivate enduring partnerships.",
+      "1. Purposeful Relationships – Build enduring partnerships founded on trust, respect, usefulness, and shared success.",
+      "2. Customer-Centric Excellence – Deliver consistent quality, value, responsiveness, dependable after-sales support, and exceptional customer experiences.",
+      "3. Trust & Accountability – Build customer confidence through honest communication, clear expectations and reliable performance, honoring every commitment and taking ownership of customer outcomes.",
+      "4. Engagement & Responsiveness – Listen actively, embrace feedback, and continuously improve products, services, and customer experiences.",
+      "5. Loyalty & Growth – Foster long-term relationships that create mutual value, advocacy, and sustainable success."
+     ]
+    },
+    {
+     "name": "Community & Conscious Social Impact",
+     "summary": "Connecting Business Success with Positive Societal Contribution",
+     "paragraphs": [
+      "Conscious organizations recognize that lasting success includes creating positive value for society. This pillar measures how purpose is translated into meaningful, measurable, and sustainable contributions to communities and the greater good.",
+      "1. Purposeful Social Contribution – Align organizational purpose, resources, and capabilities with the greater good by addressing genuine societal needs, uplifting underserved communities, and contributing meaningfully to human wellbeing.",
+      "2. Conscious Responsibility – Integrate social, environmental, and ethical responsibility into everyday business practices.",
+      "3. Community Partnerships – Collaborate with communities, institutions, and stakeholders to create lasting positive outcomes.",
+      "4. Empowered Participation – Encourage employees to contribute through volunteered service, innovation, and shared responsibility.",
+      "5. Sustainable Impact – Deliver measurable, long-term benefits that strengthen communities and build public trust.",
+      "6. Prosperity & Legacy – Create enduring value that uplifts society, supports future generations, and reflects the organization's higher purpose."
+     ]
+    },
+    {
+     "name": "Brand Vision & Strategic Collaborations",
+     "summary": "Building Resilient Brands Through Alignment & Strategic Partnerships",
+     "paragraphs": [
+      "A resilient brand emerges when purpose, performance, and partnerships are aligned. This pillar recognizes organizations that inspire trust, cultivate strategic collaborations, and create lasting influence through authentic leadership.",
+      "1. Vision & Purpose – Define, document and communicate your purpose, values and long-term direction, supported by measurable commitments that build trust and confidence.",
+      "2. Authentic Brand Identity – Align leadership, culture, operations, and customer experiences to consistently reflect the organization's purpose.",
+      "3. Strategic Partnerships – Build meaningful collaborations that foster innovation, shared value, and sustainable growth.",
+      "4. Reputation & Credibility – Strengthen brand image through trust, integrity, consistency, transparency, and responsible leadership.",
+      "5. Adaptable Global Influence – Expand reach through collaboration, innovation, resilience, and responsiveness to a changing world.",
+      "6. Enduring Legacy – Create a brand that positively influences industries, communities, and future generations through conscious leadership and shared purpose."
+     ]
+    }
+   ],
+   "eligibility": {
+    "heading": "Certification Eligibility & Ineligibility",
+    "eligibleHeader": "Eligible to Proceed",
+    "ineligibleHeader": "Ineligible / Cannot Proceed",
+    "rows": [
+     [
+      "Your organization's identity, business activity and assessment scope are clearly defined.",
+      "Organization identity, business activity or assessment scope cannot be established."
+     ],
+     [
+      "A responsible contact is identified and legal eligibility is confirmed.",
+      "A responsible contact or legal eligibility cannot be confirmed."
+     ],
+     [
+      "Information is accurate and relevant evidence supports your claims.",
+      "False information requires further review; unsupported claims cannot be certified."
+     ],
+     [
+      "You agree to the required assessment and evidence review.",
+      "You decline the required assessment or evidence review."
+     ],
+     [
+      "No critical safety or harm concern remains unresolved within the assessment scope.",
+      "Unresolved critical safety or harm concerns prevent certification."
+     ]
+    ],
+    "lowScoreNote": "A low score can highlight areas for improvement. It does not automatically mean ineligibility."
+   },
+   "coverage": {
+    "heading": "What the Analysis Covers",
+    "pillarHeader": "CNESS Pillar",
+    "focusHeader": "What We Explore",
+    "rows": [
+     [
+      "Conscious Leadership",
+      "Purposeful leadership, clear accountability and responsible governance."
+     ],
+     [
+      "Human-Centric Value & Team Cohesion",
+      "How people are supported, valued and brought together as a team."
+     ],
+     [
+      "Products & Services",
+      "Responsible practices behind your organization's products and services."
+     ],
+     [
+      "Customers & Clients",
+      "Care and responsibility in customer and client relationships."
+     ],
+     [
+      "Community & Conscious Social Impact",
+      "Community contribution and credible evidence of social impact."
+     ],
+     [
+      "Brand Vision & Strategic Collaborations",
+      "Clear brand direction and purposeful strategic partnerships."
+     ]
+    ]
+   },
+   "expect": {
+    "heading": "What to Expect",
+    "body": [
+     "Enter your organization’s name and your email (website and description optional). Rate 6 pillars in a free 6-minute self-assessment. We’ll email your score and a results link within 24 hours."
+    ]
+   },
+   "certification": {
+    "heading": "From Analysis to Certification",
+    "body": "Use your analysis to understand where you stand and where to focus next. Organization Certification is a separate process involving eligibility checks, a complete assessment, evidence review and a certification decision."
+   },
+   "form": {
+    "heading": "Organization details",
+    "intro": "Enter your organization’s name and your email (website and description optional). Rate 6 pillars in a free 6-minute self-assessment. We’ll email your score and a results link within 24 hours.",
+    "submit": "Start your Organization Analysis",
+    "busy": "Preparing…",
+    "fields": [
+     {
+      "key": "org_name",
+      "id": "org-name",
+      "label": "Organization Name *",
+      "required": true,
+      "placeholder": "e.g., Patagonia, Tata Group"
+     },
+     {
+      "key": "website",
+      "id": "website",
+      "label": "Website link (optional)",
+      "placeholder": "https://www.company.com"
+     },
+     {
+      "key": "about_org",
+      "id": "about",
+      "label": "Description (optional)",
+      "placeholder": "Describe the organization, its products/services, values...",
+      "type": "textarea"
+     },
+     {
+      "key": "industry",
+      "id": "industry",
+      "label": "Category (optional)",
+      "type": "select",
+      "options": "categories",
+      "empty": "Select category"
+     },
+     {
+      "key": "country",
+      "id": "country",
+      "label": "Country (optional)",
+      "type": "select",
+      "options": "countries",
+      "empty": "Select country"
+     },
+     {
+      "key": "email",
+      "id": "email",
+      "label": "Email Address *",
+      "required": true,
+      "placeholder": "you@company.com",
+      "type": "email"
+     }
+    ]
+   }
+  },
+  "product": {
+   "heroTitle": "CNESS Product Analysis",
+   "heroSubtitle": "Explore how your product serves people, solves real problems and reflects responsible practice. Get a free, initial view of its readiness for CNESS Product Certification across seven pillars.",
+   "trackLabel": "Product Certification",
+   "subjectFallback": "Your product",
+   "rateLabel": "Rate your product",
+   "pillars": [
+    {
+     "name": "Product Integrity and Safety",
+     "summary": "Built to fulfil its intended purpose. Designed to reduce avoidable harm. Governed responsibly as it changes.",
+     "paragraphs": [
+      "At its heart, this pillar asks whether the product can be trusted to be what it claims to be.",
+      "It considers whether the product's identity, purpose, intended use and important risks are clearly understood and responsibly managed. It looks at the safeguards built into its design, creation, delivery and use, as well as how the organization responds when defects, incidents, complaints or material changes arise.",
+      "For a physical product, this may concern materials, safe use and traceability. For a digital product or service, it may include reliability, privacy, security and responsible operation. The principle remains the same: the organization should understand where harm may occur, take reasonable steps to prevent it and act responsibly when something goes wrong.",
+      "This pillar does not replace legally required safety or regulatory approvals. It examines whether integrity and care are genuinely embedded in the product's journey."
+     ]
+    },
+    {
+     "name": "Human Value and Wellbeing",
+     "summary": "Created with people in mind. Respectful of dignity, access and wellbeing. Considerate of everyone it touches.",
+     "paragraphs": [
+      "Every product enters human lives. It is conceived, created, supplied, delivered, used and supported by people.",
+      "This pillar considers whether the organization has thoughtfully understood the people connected to the productânot only the customer, but also workers, suppliers, delivery partners, service teams, vulnerable users and communities that may be affected by it.",
+      "It looks at dignity, fairness, inclusion, accessibility, privacy, wellbeing, safe participation and the ability of people to raise concerns without fear. It also considers whether the product is designed and delivered in a way that respects different abilities, circumstances, cultures and lived realities.",
+      "A consciously developed product should not create convenience or value for one group by quietly transferring unreasonable harm, exclusion or pressure to another. Human value is present when people are treated not merely as labour, users or transactions, but as human beings whose rights and wellbeing matter."
+     ]
+    },
+    {
+     "name": "Ethical Sourcing & Responsible Value Chain",
+     "summary": "Know where it comes from. Choose partners with care. Create through fair and responsible practice.",
+     "paragraphs": [
+      "Every product carries the story of what went into it and who helped bring it into the world.",
+      "This pillar looks at whether the organization understands the important parts of that story: its materials, ingredients, components, data, labour, suppliers, contractors, production partners and distribution relationships.",
+      "It considers whether suppliers and partners are selected responsibly, whether ethical expectations are communicated, whether significant risks are examined and whether concerns are followed through rather than ignored. For a manufacturer, this may relate to materials, labour and production conditions. For a distributor, it may concern supplier selection, product provenance and responsible handling. For a digital product or service, it may include technology vendors, content providers, data sources and outsourced operations.",
+      "The expectation is not perfect visibility into every distant activity from the first day. It is a credible commitment to understand the value chain, identify the most serious risks, improve traceability and act when practices fall short of the organization's stated values."
+     ]
+    },
+    {
+     "name": "Environmental Responsibility & Sustainability",
+     "summary": "Use resources with restraint. Reduce waste and avoidable impact. Consider the whole lifecycle.",
+     "paragraphs": [
+      "Environmental responsibility is more than a packaging statement, a recycling symbol or a broad green claim.",
+      "This pillar considers the product's most meaningful effects on the natural world throughout its lifecycleâfrom sourcing and creation to distribution, use, maintenance and end of life. Depending on the nature of the product, this may include materials, energy, water, emissions, pollution, packaging, transport, digital infrastructure, waste, repair, reuse, recovery or responsible disposal.",
+      "The assessment is guided by relevance. A software platform, a manufactured component, a food product and a professional service will not have identical environmental concerns. Each should be examined according to the impacts that are genuinely material to its own value journey.",
+      "The purpose is not to demand environmental perfection. It is to understand whether the organization knows where its significant impacts arise, takes practical steps to reduce avoidable harm and continues to improve how resources are used and consequences are managed."
+     ]
+    },
+    {
+     "name": "Quality Performance & Lifecycle Value",
+     "summary": "Do what it promises. Deliver consistently and reliably. Learn, improve and endure.",
+     "paragraphs": [
+      "A product's purpose has meaning only when the product can fulfil it.",
+      "This pillar examines whether the product, service or solution performs its intended function with appropriate quality, consistency and reliability. It considers how expectations are defined, how performance is checked, how defects or service failures are handled and how learning is used to make the product better over time.",
+      "For physical products, this may include durability, functionality, maintenance and dependable performance. For digital products, it may include availability, usability, updates, security and support continuity. For services and distribution models, it may concern consistent delivery, fulfilment accuracy, responsiveness and the ability to meet the promised outcome.",
+      "Quality does not mean that a product can never fail. It means the organization has taken responsible steps to make performance dependable, to identify weaknesses honestly and to correct recurring problems. Conscious intent becomes credible when it is matched by a product that works, lasts appropriately and continues to improve."
+     ]
+    },
+    {
+     "name": "Customer Trust & Support",
+     "summary": "Speak clearly and truthfully. Make choice and use understandable. Stand by the customer after the sale.",
+     "paragraphs": [
+      "Trust begins before a customer chooses a product and continues long after the transaction is complete.",
+      "This pillar looks at whether the product is represented honestly and whether customers receive the information they reasonably need to make an informed decision. It considers claims, labels, pricing, terms, instructions, known limitations, privacy, consent, warranties, returns, cancellations, customer support, complaints and access to fair resolution.",
+      "A customer should be able to understand what the product is, what it is intended to do, what it may not do, what it will cost and where to turn when help is needed. Important information should not be hidden behind vague language, misleading impressions or unnecessary complexity.",
+      "Customer responsibility is demonstrated when an organization communicates with honesty, avoids manipulation, listens when customers experience difficulty and accepts responsibility for resolving genuine concerns fairly. Transparency is not simply the amount of information disclosed; it is the clarity, relevance and truthfulness of what the customer is told."
+     ]
+    },
+    {
+     "name": "Utility & Pain-Point Solutions",
+     "summary": "Create value beyond the transaction. Understand the wider consequences. Improve impact with purpose and humility.",
+     "paragraphs": [
+      "Every product leaves an imprint beyond the moment it is bought or used.",
+      "This pillar considers whether the product serves a meaningful purpose, addresses a genuine need and creates value without overlooking its wider effects on people, communities and society. It may include access, affordability, inclusion, local opportunity, responsible innovation, community value and the product's contribution to a more equitable or sustainable future.",
+      "Positive impact does not always need to be large, charitable or dramatic. A product may create conscious value simply by solving an important everyday problem well, reaching people who are often excluded, improving dignity, reducing unnecessary burden or enabling others to live and work more effectively.",
+      "What matters is that the organization understands the difference between intention and impact. Social claims should be honest and proportionate, adverse consequences should not be ignored and improvement should be supported by learning and meaningful evidence. Conscious impact is purpose translated into responsible choices, real outcomes and continuing accountability."
+     ]
+    }
+   ],
+   "eligibility": {
+    "heading": "Certification Eligibility & Ineligibility",
+    "intro": "Product Certification may cover a clearly defined product, service, component, software version, subscription or approved product family. These requirements apply to formal certification and are reviewed separately from your free analysis.",
+    "eligibleHeader": "Eligible to Proceed",
+    "ineligibleHeader": "Ineligible / Cannot Proceed",
+    "rows": [
+     [
+      "The product, its intended use and assessment scope are clearly defined.",
+      "Product identity, intended use or assessment scope cannot be established."
+     ],
+     [
+      "The responsible organization is identified and legal eligibility is confirmed.",
+      "Responsibility for the product or legal eligibility cannot be confirmed."
+     ],
+     [
+      "Product information is accurate and relevant evidence supports its claims.",
+      "Deliberately misleading information requires further review; unsupported claims cannot be certified."
+     ],
+     [
+      "Product safety can be assessed and critical harm concerns have been addressed.",
+      "Unresolved critical safety or harm concerns prevent certification."
+     ],
+     [
+      "You participate in the assessment, provide required evidence and respond to evaluator questions.",
+      "You decline the required assessment, evidence review or evaluator questions."
+     ]
+    ],
+    "lowScoreNote": "A low score can highlight areas for improvement. It does not automatically mean ineligibility."
+   },
+   "coverage": {
+    "heading": "What the Analysis Covers",
+    "pillarHeader": "CNESS Pillar",
+    "focusHeader": "What We Explore",
+    "rows": [
+     [
+      "Product Integrity and Safety",
+      "Product purpose, safety, harm prevention and responsible governance."
+     ],
+     [
+      "Human Value and Wellbeing",
+      "Respect for dignity, wellbeing, accessibility, privacy and inclusion."
+     ],
+     [
+      "Ethical Sourcing & Responsible Value Chain",
+      "Responsible sourcing, ethical supplier relationships and value chain transparency."
+     ],
+     [
+      "Environmental Responsibility & Sustainability",
+      "Resource use, waste and environmental impact throughout the product lifecycle."
+     ],
+     [
+      "Quality Performance & Lifecycle Value",
+      "Quality, reliable performance and customer value throughout the product lifecycle."
+     ],
+     [
+      "Customer Trust & Support",
+      "Honest communication, responsive support and responsible handling of customer complaints."
+     ],
+     [
+      "Utility & Pain-Point Solutions",
+      "How the product solves real problems and creates value for users."
+     ]
+    ]
+   },
+   "expect": {
+    "heading": "What to Expect",
+    "body": [
+     "Start with your organization and product details, the product's intended use and its website. The Consciousness Index System (CIS) considers these details and available public information to provide an initial indication of readiness, information gaps or concerns.",
+     "Your result helps you identify what may need attention before pursuing certification."
+    ]
+   },
+   "certification": {
+    "heading": "From Analysis to Certification",
+    "body": "Your analysis provides guidance on readiness. Product Certification is a separate process involving scope and eligibility checks, assessment across seven pillars, evidence review, evaluator clarification and an independent certification decision."
+   },
+   "form": {
+    "heading": "Start your Product Analysis",
+    "intro": "Enter basic product details and a website. Results appear after you confirm.",
+    "note": "CNESS will send you the score email within 24 hours. The email shows your result and includes a CNESS link that opens this score on the site.",
+    "submit": "Start your Product Analysis",
+    "busy": "Analyzing…",
+    "fields": [
+     {
+      "key": "org_name",
+      "id": "product-org",
+      "label": "Organization Name *",
+      "required": true,
+      "placeholder": "e.g., Acme Foods"
+     },
+     {
+      "key": "product_name",
+      "id": "product-name",
+      "label": "Product Name *",
+      "required": true,
+      "placeholder": "e.g., Everyday Olive Oil"
+     },
+     {
+      "key": "website",
+      "id": "product-website",
+      "label": "Website link *",
+      "required": true,
+      "placeholder": "https://www.company.com/product"
+     },
+     {
+      "key": "product_description",
+      "id": "product-about",
+      "label": "Product Description *",
+      "required": true,
+      "placeholder": "What it is, who it is for, key claims, materials or ingredients...",
+      "type": "textarea"
+     },
+     {
+      "key": "category",
+      "id": "product-category",
+      "label": "Category (optional)",
+      "type": "select",
+      "options": "categories",
+      "empty": "Select category"
+     },
+     {
+      "key": "market",
+      "id": "product-market",
+      "label": "Country (optional)",
+      "type": "select",
+      "options": "countries",
+      "empty": "Select country"
+     },
+     {
+      "key": "email",
+      "id": "product-email",
+      "label": "Email Address *",
+      "required": true,
+      "placeholder": "you@company.com",
+      "type": "email"
+     }
+    ]
+   }
+  }
+ },
+ "rules": {
+  "scale": "Single value 1 to 10 per pillar; nothing preselected; Next is disabled until the current pillar is rated.",
+  "progress": "Pillar n of N; percent completed = round(index / N * 100) where index is the 0-based current pillar (0% on pillar 1, 83% on pillar 6 of 6).",
+  "finish": "On the last pillar the button reads See result; it opens the details form. No score is shown on the page; the score is emailed.",
+  "organizationRequired": "Organization Name and a deliverable email are required; website optional but must be a valid http(s) URL when given; description, category and country optional.",
+  "productRequired": "Organization Name, Product Name, Website link (valid http(s) URL), Product Description and a deliverable email are required; category and country optional.",
+  "deliverableEmail": "name@domain.tld; rejects top-level example/test/invalid/localhost and the listed disposable domains (mailinator.com, guerrillamail.com, guerrillamail.net, guerrillamail.org, tempmail.com, temp-mail.org, yopmail.com, throwaway.email, 10minutemail.com, trashmail.com, fakeinbox.com, getnada.com, dispostable.com, maildrop.cc, sharklasers.com).",
+  "validationMessage": "More than one problem: all; one problem: email -> email; org name -> orgName; website -> websiteInvalid (if text given) else websiteRequired; product name/description -> productFields. The first invalid field is focused.",
+  "retention": "Each path keeps its own ratings, current pillar and form fields; switching paths returns to where that path was left.",
+  "submission": "Live page POSTs the ratings and contact details to its API and then shows the Submission successful notice. Not available in this preview."
+ },
+ "omitted": {
+  "mailedScoreView": "The ?id= score-link view loads a stored score from the CNESS API; not reachable without a real emailed link.",
+  "legacy": "Component code also contains an older AI-analysis flow (confirm/verify/polling, PDF download) and an on-page results table, sign-up prompt and Analyze another dialog. None of these render in the current flow (See result opens the form directly), so they are not reproduced.",
+  "toastPosition": "Live shows validation as toasts; the preview shows the same title and message inline beside the submit button (plus the same red required marks and field focus)."
+ }
+}

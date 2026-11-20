@@ -1,0 +1,974 @@
+<title>CNESSWORKS First Light</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="CNESSWORKS assesses organizations and products against clear pillars of responsible practice, certifies those that meet the CNESS standard, and helps customers and partners find them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=Onest:wght@300..700&display=swap">
+<style>
+/* Layout: one fixed field of light behind the whole page; each chapter pins for a few screens while the field
+   re-forms into that chapter's shape. Night for the story, daylight only at the very end. Single dark world by choice. */
+:root {
+  --night: #060417;
+  --ink: #0B0824;
+  --pearl: #F6F3FF;
+  --haze: #B4AEDD;
+  --gold: #FFC81A;
+  --dawn: #FFF3D1;
+  --day-ink: #1A1140;
+  --line: rgba(246, 243, 255, .16);
+  --glass: rgba(9, 6, 32, .62);
+  --sky: #060417;
+  color-scheme: dark;
+
+  --display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --text: "Onest", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "DM Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --t-mega: clamp(3.1rem, 10.4vw, 10.5rem);
+  --t-big: clamp(2.5rem, 6.6vw, 6.25rem);
+  --t-mid: clamp(1.75rem, 3.4vw, 3rem);
+  --t-lede: clamp(1.0625rem, 1.5vw, 1.3125rem);
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--night); color: var(--pearl); font: 400 1.0625rem/1.6 var(--text); overflow-x: clip; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--night); }
+img { max-width: 100%; height: auto; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, p, blockquote, figure { margin: 0; }
+h1, h2, h3 { font-family: var(--display); font-weight: 300; text-wrap: balance; font-optical-sizing: auto; }
+i.g, em.g { font-style: italic; color: var(--gold); font-weight: 300; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+.skip { position: absolute; left: var(--gl); top: -100px; z-index: 100; background: var(--gold); color: var(--ink); padding: .6rem 1rem; border-radius: 999px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
+.wrap { width: 100%; max-width: 1360px; margin-inline: auto; padding-left: var(--gl); padding-right: var(--gr); }
+@media (min-width: 760px) { .wrap { padding-left: max(48px, env(safe-area-inset-left, 0px)); padding-right: max(48px, env(safe-area-inset-right, 0px)); } }
+.tag { font: 500 .6875rem/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--haze); display: inline-flex; gap: .7rem; align-items: center; }
+.tag::before { content: ""; width: 22px; height: 1px; background: var(--gold); }
+.mono { font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; }
+
+.btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 52px; padding: .8rem 1.5rem; border-radius: 999px; border: 1px solid transparent; background: var(--gold); color: var(--ink); font-weight: 600; text-decoration: none; cursor: pointer; white-space: nowrap; transition: transform 120ms ease-out, box-shadow .35s, border-color .25s; }
+.btn:hover { box-shadow: 0 10px 40px -8px rgba(255, 200, 26, .6); }
+.btn:active { transform: scale(.96); transition-duration: 60ms; }
+.btn .arr { transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+.btn:hover .arr { transform: translateX(4px); }
+.btn.ghost { background: rgba(246, 243, 255, .04); color: var(--pearl); border-color: var(--line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.btn.ghost:hover { border-color: var(--pearl); box-shadow: none; }
+.btn.dark { background: var(--day-ink); color: var(--dawn); }
+.btn.dark:hover { box-shadow: 0 10px 40px -10px rgba(26, 17, 64, .6); }
+.btn.line-dark { background: transparent; color: var(--day-ink); border-color: rgba(26, 17, 64, .35); }
+.acts { display: flex; flex-wrap: wrap; gap: .75rem; }
+.tl { color: var(--gold); text-decoration: none; font-weight: 500; background: linear-gradient(currentColor 0 0) 0 100% / 0 1px no-repeat; transition: background-size .3s; }
+.tl:hover { background-size: 100% 1px; }
+
+/* ---------- The field ---------- */
+.sky { position: fixed; inset: 0; z-index: -3; background: var(--sky); }
+.sky::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 40%, transparent 40%, rgba(0, 0, 0, .55) 100%); }
+.field { position: fixed; inset: 0; z-index: -2; }
+.field canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.grain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- Chrome ---------- */
+.top { position: fixed; inset: 0 0 auto; z-index: 50; padding-top: env(safe-area-inset-top, 0px); pointer-events: none; }
+.top .wrap { display: flex; align-items: center; gap: 1rem; height: 76px; }
+.top a, .top button { pointer-events: auto; }
+.brand img { height: 34px; width: auto; display: block; }
+.top .where { margin-left: auto; color: var(--haze); display: flex; gap: .8rem; align-items: center; }
+.top .where b { color: var(--pearl); font-weight: 500; }
+.top .btn { min-height: 42px; padding: .5rem 1.1rem; font-size: .9375rem; }
+.day .top .where, .day .top .where b { color: var(--day-ink); }
+.day .brand img { filter: brightness(0) saturate(100%) invert(9%) sepia(60%) saturate(2400%) hue-rotate(244deg); }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; height: 2px; z-index: 50; background: var(--gold); transform-origin: 0 50%; transform: scaleX(0); }
+.motion { display: inline-flex; align-items: center; gap: .5rem; min-height: 42px; padding: .45rem .9rem; border-radius: 999px; border: 1px solid var(--line); background: rgba(9, 6, 32, .4); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor: pointer; font: 500 .6875rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.motion svg { width: 11px; height: 11px; }
+.motion .play, .still .motion .pause { display: none; }
+.still .motion .play { display: block; }
+.day .motion { color: var(--day-ink); border-color: rgba(26, 17, 64, .3); background: rgba(255, 243, 209, .5); }
+@media (max-width: 760px) { .top .where span, .top .btn { display: none; } .brand img { height: 28px; } }
+.dots { position: fixed; z-index: 49; right: max(18px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); display: grid; gap: .2rem; list-style: none; margin: 0; padding: 0; }
+.dots a { display: flex; align-items: center; justify-content: flex-end; gap: .7rem; height: 26px; text-decoration: none; font: 500 .625rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--haze); }
+.dots a span { opacity: 0; transform: translateX(6px); transition: opacity .25s, transform .25s; }
+.dots a::after { content: ""; width: 7px; height: 7px; border-radius: 50%; border: 1px solid currentColor; transition: background-color .25s, transform .25s, border-color .25s; }
+.dots a:hover span, .dots a:focus-visible span { opacity: 1; transform: none; }
+.dots a[aria-current="true"] { color: var(--gold); }
+.dots a[aria-current="true"]::after { background: var(--gold); transform: scale(1.5); }
+.day .dots a { color: var(--day-ink); }
+@media (max-width: 1100px) { .dots { display: none; } }
+
+/* ---------- Chapters ---------- */
+.ch { position: relative; height: calc(var(--len, 3) * 100vh); --p: 0; }
+.pin { position: sticky; top: 0; height: 100vh; height: 100svh; display: grid; align-items: center; overflow: hidden; padding-block: calc(env(safe-area-inset-top, 0px) + 84px) 2.5rem; }
+.pin > .wrap { display: grid; gap: 1.6rem; }
+.pin .col { max-width: 36rem; display: grid; gap: 1.4rem; }
+.pin.right .col { margin-left: auto; }
+.pin h2 { font-size: var(--t-big); line-height: .98; letter-spacing: -.035em; }
+.lede { font-size: var(--t-lede); line-height: 1.55; color: var(--haze); max-width: 34rem; font-weight: 300; }
+.lede strong { color: var(--pearl); font-weight: 500; }
+@media (max-width: 860px) {
+  .pin { align-items: end; }
+  .pin .col { max-width: none; }
+  .pin.right .col { margin-left: 0; }
+  .pin::before { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(180deg, transparent, rgba(6, 4, 23, .82) 45%); pointer-events: none; }
+  .pin > .wrap { position: relative; }
+}
+
+/* Lines that rise as a chapter arrives (scrubbed by --in, set per chapter) */
+.js .rise { display: block; overflow: hidden; padding-bottom: .12em; margin-bottom: -.12em; }
+.js .rise > span { display: block; transform: translateY(calc((1 - var(--in, 1)) * 105%)) rotate(calc((1 - var(--in, 1)) * 4deg)); transform-origin: 0 100%; will-change: transform; }
+.js .rise:nth-child(2) > span { transform: translateY(calc((1 - var(--in2, 1)) * 105%)) rotate(calc((1 - var(--in2, 1)) * 4deg)); }
+.js .rise:nth-child(3) > span { transform: translateY(calc((1 - var(--in3, 1)) * 105%)) rotate(calc((1 - var(--in3, 1)) * 4deg)); }
+.js .fadein { opacity: calc(.0 + var(--in3, 1)); transform: translateY(calc((1 - var(--in3, 1)) * 24px)); }
+
+/* Stacked steps: one visible at a time, driven by scroll */
+.stack { display: grid; gap: 1.5rem; }
+.js .stack { position: relative; display: block; min-height: var(--sh, 15rem); }
+.js .stack > * { position: absolute; inset: 0 0 auto 0; opacity: 0; transform: translateY(46px); filter: blur(12px); pointer-events: none; transition: opacity .45s ease, transform .7s cubic-bezier(.2, .8, .2, 1), filter .45s ease; }
+.js .stack > .past { transform: translateY(-46px); }
+.js .stack > .on { opacity: 1; transform: none; filter: none; pointer-events: auto; }
+.step { display: grid; gap: .7rem; }
+.step .n { font: 500 .6875rem/1 var(--mono); letter-spacing: .16em; color: var(--gold); text-transform: uppercase; }
+.step h3 { font-size: var(--t-mid); line-height: 1.04; letter-spacing: -.025em; }
+.step p { color: var(--haze); font-weight: 300; font-size: var(--t-lede); line-height: 1.5; max-width: 30rem; }
+.ticks { display: flex; gap: 6px; }
+.ticks i { width: 28px; height: 2px; background: var(--line); transition: background-color .3s, width .4s cubic-bezier(.2, .8, .2, 1); }
+.ticks i.on { background: var(--gold); width: 52px; }
+
+/* ---------- 0 Hero ---------- */
+.hero .pin { align-items: end; padding-bottom: clamp(2rem, 6vh, 4.5rem); }
+.hero .inner { display: grid; gap: clamp(1.4rem, 3vh, 2.2rem); opacity: calc(1 - var(--p) * 1.9); transform: translateY(calc(var(--p) * -90px)); }
+.hero h1 { font-size: var(--t-mega); line-height: .9; letter-spacing: -.045em; max-width: 13ch; }
+.hero h1 .w { display: inline-block; }
+.js .hero h1 .w { animation: up 1.1s cubic-bezier(.16, .9, .2, 1) both; animation-delay: calc(var(--i) * 70ms + 250ms); }
+@keyframes up { from { transform: translateY(.6em) rotate(5deg); opacity: .001; filter: blur(14px); } }
+.hero .row { display: grid; grid-template-columns: minmax(0, 34rem) auto; gap: 1.5rem 3rem; align-items: end; justify-content: space-between; }
+.hero .note { font-size: .875rem; color: var(--haze); }
+.cue { display: inline-flex; align-items: center; gap: .8rem; color: var(--haze); text-decoration: none; }
+.cue i { width: 1px; height: 46px; background: linear-gradient(var(--gold), transparent); animation: cue 2.4s cubic-bezier(.6, 0, .3, 1) infinite; transform-origin: 50% 0; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+.still .cue i { animation: none; }
+@media (max-width: 860px) { .hero .row { grid-template-columns: minmax(0, 1fr); } .cue { display: none; } }
+
+/* ---------- 2 Paths: horizontal travel ---------- */
+.paths .pin { align-items: stretch; }
+.paths .pin > .wrap { grid-template-rows: auto 1fr; grid-template-columns: minmax(0, 1fr); max-width: none; padding-right: 0; }
+.paths .head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 3rem; padding-right: var(--gr); }
+.paths .head p { max-width: 26rem; color: var(--haze); font-weight: 300; }
+.rail { display: flex; align-items: center; min-height: 0; min-width: 0; }
+.track { flex: none; }
+.track { display: flex; gap: 1.25rem; will-change: transform; padding-right: 12vw; }
+.card { flex: 0 0 min(82vw, 30rem); min-height: min(52vh, 25rem); padding: clamp(1.4rem, 2.6vw, 2.2rem); border-radius: 28px; display: grid; align-content: space-between; gap: 1.5rem; text-decoration: none; background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); position: relative; overflow: hidden; transition: border-color .3s, transform 120ms ease-out; }
+.card:hover { border-color: rgba(255, 200, 26, .6); }
+.card:active { transform: scale(.985); }
+.card::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 200, 26, .16), transparent 60%); }
+.card:hover::before { opacity: 1; }
+.card .k { font: 500 .6875rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.card h3 { font-size: var(--t-mid); line-height: 1.02; letter-spacing: -.03em; margin-top: .8rem; }
+.card p { color: var(--haze); font-weight: 300; }
+.card .go { font-weight: 500; display: inline-flex; gap: .5rem; align-items: center; }
+.card .go .arr { transition: transform .3s; }
+.card:hover .go .arr { transform: translateX(5px); }
+.card.plain { background: transparent; border: 1px dashed rgba(246, 243, 255, .35); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.card.plain h3 { font-size: clamp(1.5rem, 2.4vw, 2.1rem); line-height: 1.1; }
+.neq { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font: 500 .75rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.neq span { padding: .45rem .75rem; border: 1px solid var(--line); border-radius: 999px; }
+.neq b { color: var(--gold); font-weight: 500; }
+
+/* ---------- 4 Levels ---------- */
+.lv { display: grid; gap: .9rem; }
+.lv img { width: 92px; height: 92px; }
+.lv h3 { font-size: var(--t-big); line-height: .95; letter-spacing: -.04em; }
+.lv .q { font: italic 300 clamp(1.25rem, 2vw, 1.6rem)/1.35 var(--display); color: var(--pearl); max-width: 26rem; }
+.lv ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
+.lv li { display: grid; gap: .15rem; padding-left: 1rem; border-left: 1px solid var(--gold); }
+.lv li b { font: 400 1.5rem/1.1 var(--display); letter-spacing: -.01em; }
+.lv li span { color: var(--haze); font-weight: 300; font-size: .9375rem; }
+.lv small { color: var(--haze); font-size: .875rem; }
+
+/* ---------- Statement ---------- */
+.say { min-height: 100vh; display: grid; align-items: center; padding-block: 16vh; }
+.say blockquote { font: 300 clamp(2rem, 5.6vw, 5.25rem)/1.06 var(--display); letter-spacing: -.03em; max-width: 19ch; }
+.js .say .wd { opacity: var(--o, 1); transition: opacity .3s; }
+.say .gd { color: var(--gold); font-style: italic; }
+.say cite { display: block; margin-top: 2.2rem; font-style: normal; color: var(--haze); }
+
+/* ---------- Flow sections on glass ---------- */
+.flow { padding-block: clamp(4rem, 9vw, 7rem); }
+.panel { border-radius: 28px; background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); padding: clamp(1.4rem, 3vw, 2.4rem); display: grid; gap: 1.2rem; align-content: start; }
+.panel h3 { font-size: var(--t-mid); line-height: 1.04; letter-spacing: -.025em; }
+.panel p { color: var(--haze); font-weight: 300; }
+.panel p b, .panel p strong { color: var(--pearl); font-weight: 500; }
+.g2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.g3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+@media (max-width: 900px) { .g2, .g3 { grid-template-columns: minmax(0, 1fr); } }
+.founding { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 1.2rem 2rem; }
+.founding .big { font: 200 clamp(5rem, 11vw, 9rem)/.8 var(--display); letter-spacing: -.06em; color: var(--gold); }
+@media (max-width: 560px) { .founding { grid-template-columns: minmax(0, 1fr); } }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips span { padding: .4rem .75rem; border-radius: 999px; border: 1px solid var(--line); font-size: .8125rem; }
+.fine { font-size: .875rem; border-left: 1px solid var(--gold); padding-left: 1rem; }
+.profile { border-radius: 18px; padding: 1.1rem; background: linear-gradient(160deg, rgba(60, 44, 170, .5), rgba(9, 6, 32, .7)); border: 1px solid var(--line); display: grid; gap: .9rem; will-change: transform; }
+.pstage { perspective: 900px; }
+.profile .t { display: flex; align-items: center; gap: .8rem; }
+.profile .av { width: 42px; height: 42px; border-radius: 12px; background: var(--gold); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+.profile .sub { font: 400 .6875rem/1.4 var(--mono); color: var(--haze); }
+.profile .ill { margin-left: auto; font: 500 .625rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; padding: .4rem .55rem; border-radius: 6px; border: 1px dashed var(--haze); color: var(--haze); }
+.profile .st { display: flex; justify-content: space-between; gap: .8rem; flex-wrap: wrap; font-size: .8125rem; padding: .7rem .8rem; border-radius: 12px; background: rgba(246, 243, 255, .06); }
+.profile .st span:first-child { display: inline-flex; gap: .5rem; align-items: center; color: var(--gold); font-weight: 500; }
+.profile .st img { width: 18px; height: 18px; }
+.profile .st span:last-child { color: var(--haze); }
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.plans h4 { margin: 0 0 .6rem; font: 500 .6875rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.plans ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; font-size: .9375rem; color: var(--haze); font-weight: 300; }
+@media (max-width: 480px) { .plans { grid-template-columns: minmax(0, 1fr); } }
+.marquee { overflow: hidden; padding-block: 2.2rem; margin-block: clamp(3rem, 6vw, 5rem); border-block: 1px solid var(--line); }
+.marquee ul { list-style: none; margin: 0; padding: 0; display: flex; width: max-content; animation: mq 60s linear infinite; }
+.marquee:hover ul, .marquee:focus-within ul { animation-play-state: paused; }
+.marquee li { display: flex; align-items: center; }
+.marquee li::after { content: "✦"; color: var(--gold); margin-inline: 2.4rem; font-size: 1rem; }
+.marquee a { font: 300 clamp(2rem, 5vw, 4.25rem)/1.1 var(--display); letter-spacing: -.03em; text-decoration: none; white-space: nowrap; transition: color .2s; }
+.marquee a:hover { color: var(--gold); font-style: italic; }
+@keyframes mq { to { transform: translateX(-50%); } }
+.still .marquee ul { animation: none; flex-wrap: wrap; width: auto; row-gap: .6rem; padding-inline: var(--gl); }
+.still .marquee li[aria-hidden="true"] { display: none; }
+.quote blockquote { font: italic 300 clamp(1.6rem, 3.4vw, 3rem)/1.2 var(--display); letter-spacing: -.02em; max-width: 26ch; }
+.quote figcaption { margin-top: 1.4rem; color: var(--haze); }
+.quote figcaption b { color: var(--pearl); font-weight: 500; }
+.roles { display: flex; flex-wrap: wrap; gap: .4rem; }
+.roles span { font-size: .8125rem; padding: .45rem .8rem; border-radius: 999px; border: 1px solid var(--line); }
+.member b { font: 300 2.4rem/1 var(--display); letter-spacing: -.03em; }
+.member .mono { color: var(--haze); text-transform: uppercase; letter-spacing: .12em; font-size: .625rem; }
+.faq { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 2rem clamp(2rem, 6vw, 6rem); }
+.faq h2 { font-size: var(--t-big); line-height: .98; letter-spacing: -.035em; }
+@media (max-width: 860px) { .faq { grid-template-columns: minmax(0, 1fr); } }
+details { border-top: 1px solid var(--line); }
+details:last-child { border-bottom: 1px solid var(--line); }
+summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.3rem 0; font: 400 clamp(1.15rem, 1.8vw, 1.5rem)/1.25 var(--display); letter-spacing: -.01em; }
+summary::-webkit-details-marker { display: none; }
+summary i { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); position: relative; transition: transform .4s cubic-bezier(.2, .8, .2, 1), background-color .25s; }
+summary i::before, summary i::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1px; margin-left: -5.5px; background: currentColor; }
+summary i::after { transform: rotate(90deg); transition: transform .4s; }
+details[open] summary i { transform: rotate(180deg); background: var(--gold); color: var(--ink); border-color: var(--gold); }
+details[open] summary i::after { transform: none; }
+details p { color: var(--haze); font-weight: 300; padding-bottom: 1.4rem; max-width: 40rem; }
+details::details-content { height: 0; overflow: clip; transition: height .4s cubic-bezier(.2, .8, .2, 1), content-visibility .4s allow-discrete; }
+details[open]::details-content { height: auto; }
+@supports (interpolate-size: allow-keywords) { :root { interpolate-size: allow-keywords; } }
+.sec-h { display: grid; gap: 1.2rem; margin-bottom: clamp(2rem, 4vw, 3.5rem); max-width: 50rem; }
+.sec-h h2 { font-size: var(--t-big); line-height: .98; letter-spacing: -.035em; }
+
+/* ---------- Final: first light ---------- */
+.final { --p: 1; }
+.final .pin { padding: 0; }
+.sunrise { position: absolute; inset: 0; background: radial-gradient(90% 70% at 50% 62%, #FFFFFF 0%, var(--dawn) 45%, #FFD98A 100%); color: var(--day-ink); clip-path: circle(calc(var(--p) * 150vmax) at 50% 62%); display: grid; place-items: center; text-align: center; }
+.sunrise .in { display: grid; gap: 1.6rem; justify-items: center; padding-inline: var(--gl) var(--gr); transform: scale(calc(.86 + var(--p) * .14)); }
+.sunrise h2 { font-size: var(--t-mega); line-height: .9; letter-spacing: -.045em; }
+.sunrise h2 i { font-style: italic; color: #A86A00; }
+.sunrise p { max-width: 32rem; font-size: var(--t-lede); font-weight: 300; }
+.sunrise .tag { color: var(--day-ink); }
+.sunrise .tag::before { background: var(--day-ink); }
+.sunrise .acts { justify-content: center; }
+footer { background: var(--night); color: var(--haze); padding-block: 4rem calc(2.5rem + env(safe-area-inset-bottom, 0px)); font-size: .9375rem; position: relative; }
+.foot { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.foot .about { display: grid; gap: 1.1rem; align-content: start; }
+.foot address { font-style: normal; display: grid; gap: .45rem; }
+.cp { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.cp button { border: 1px solid var(--line); background: transparent; color: var(--pearl); border-radius: 999px; font: 500 .625rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: .4rem .6rem; cursor: pointer; }
+footer h4 { margin: 0 0 1rem; color: var(--pearl); font: 500 .6875rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+footer ul a { text-decoration: none; transition: color .2s; }
+footer ul a:hover { color: var(--pearl); }
+.legal { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .8125rem; }
+.legal div { display: flex; gap: 1.2rem; }
+.legal a { text-decoration: none; }
+@media (max-width: 900px) { .foot { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot .about { grid-column: 1 / -1; } }
+@media (max-width: 420px) { .foot { grid-template-columns: minmax(0, 1fr); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .12s !important; }
+}
+.still .stack > * { transition-duration: .12s; filter: none; transform: none; }
+@media (prefers-reduced-transparency: reduce) {
+  .card, .panel, .btn.ghost, .motion { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--ink); }
+}
+@media (prefers-contrast: more) { :root { --line: rgba(246, 243, 255, .5); --haze: #E4E0FF; } }
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"></div>
+<div class="field" id="field" aria-hidden="true"><canvas id="f2d"></canvas></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo-white.png" width="138" height="34" alt="CNESSWORKS, Global Conscious Organizations"></a>
+    <div class="where mono" aria-hidden="true"><span><b id="chNo">01</b> / 08</span><span id="chName">First light</span></div>
+    <button class="motion" id="motionBtn" type="button" aria-pressed="false">
+      <svg class="pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      <svg class="play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5l7 4.5-7 4.5z" fill="currentColor"/></svg>
+      <span id="motionLbl">Pause motion</span>
+    </button>
+    <a class="btn" href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener">Free analysis <span class="arr" aria-hidden="true">→</span></a>
+  </div>
+</header>
+<nav aria-label="Chapters">
+  <ul class="dots" id="dots">
+    <li><a href="#top"><span>First light</span></a></li>
+    <li><a href="#pillars"><span>Six pillars</span></a></li>
+    <li><a href="#paths"><span>Four paths</span></a></li>
+    <li><a href="#journey"><span>Five steps</span></a></li>
+    <li><a href="#levels"><span>Three levels</span></a></li>
+    <li><a href="#products"><span>Products</span></a></li>
+    <li><a href="#directory"><span>Directory</span></a></li>
+    <li><a href="#start"><span>Start</span></a></li>
+  </ul>
+</nav>
+<div class="bar" id="bar" aria-hidden="true"></div>
+
+<main id="main">
+
+<!-- 0 · FIRST LIGHT -->
+<section class="ch hero" data-scene="0" data-name="First light" style="--len:1.5" aria-labelledby="h-hero">
+  <div class="pin">
+    <div class="wrap inner">
+      <span class="tag">Everything begins with consciousness</span>
+      <h1 id="h-hero" data-words>Make the care behind your business <i class="g">visible.</i></h1>
+      <div class="row">
+        <div style="display:grid;gap:1.3rem">
+          <p class="lede"><strong>CNESSWORKS</strong> is the business platform of CNESS. We assess organizations and products against clear pillars of responsible practice, certify those that meet the standard, and help customers and partners find them.</p>
+          <div class="acts">
+            <a class="btn" href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener">Start a free analysis <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn ghost" href="#journey">How certification works</a>
+          </div>
+          <p class="note">The free analysis is a first look. It is not a certification.</p>
+        </div>
+        <a class="cue mono" href="#pillars"><i aria-hidden="true"></i>Scroll</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1 · SIX PILLARS -->
+<section class="ch" id="pillars" data-scene="1" data-name="Six pillars" data-hi="0" style="--len:5" aria-labelledby="h-pillars">
+  <div class="pin">
+    <div class="wrap">
+      <div class="col">
+        <span class="tag">Organization Certification</span>
+        <h2 id="h-pillars"><span class="rise"><span>Six pillars.</span></span><span class="rise"><span>One <i class="g">clear</i> view.</span></span></h2>
+        <ol class="stack" style="--sh:13rem;list-style:none;margin:0;padding:0">
+          <li class="step" data-step><span class="n">Pillar 01 / 06</span><h3>Conscious Leadership</h3><p>Purposeful leadership, clear accountability and responsible governance.</p></li>
+          <li class="step" data-step><span class="n">Pillar 02 / 06</span><h3>Human-Centric Value &amp; Team Cohesion</h3><p>How people are supported, valued and brought together as a team.</p></li>
+          <li class="step" data-step><span class="n">Pillar 03 / 06</span><h3>Products &amp; Services</h3><p>Responsible practices behind your organization’s products and services.</p></li>
+          <li class="step" data-step><span class="n">Pillar 04 / 06</span><h3>Customers &amp; Clients</h3><p>Care and responsibility in customer and client relationships.</p></li>
+          <li class="step" data-step><span class="n">Pillar 05 / 06</span><h3>Community &amp; Conscious Social Impact</h3><p>Community contribution and credible evidence of social impact.</p></li>
+          <li class="step" data-step><span class="n">Pillar 06 / 06</span><h3>Brand Vision &amp; Strategic Collaborations</h3><p>Clear brand direction and purposeful strategic partnerships.</p></li>
+        </ol>
+        <div class="ticks" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · FOUR PATHS -->
+<section class="ch paths" id="paths" data-scene="2" data-name="Four paths" style="--len:4.5" aria-labelledby="h-paths">
+  <div class="pin">
+    <div class="wrap">
+      <div class="head">
+        <div style="display:grid;gap:1.2rem">
+          <span class="tag">What you can do here</span>
+          <h2 id="h-paths"><span class="rise"><span>Four ways</span></span><span class="rise"><span>to <i class="g">start.</i></span></span></h2>
+        </div>
+        <p>Take a free first look, earn certification for your organization or a product, or simply make your business easier to find. Each path stands on its own.</p>
+      </div>
+      <div class="rail">
+        <div class="track" id="track">
+          <a class="card" href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener">
+            <div><span class="k">Evaluation · No cost</span><h3>Analyze</h3></div>
+            <p>Enter your organization’s name, website and a short description. Our Consciousness Index System (CIS) reviews public information and shows initial strengths and gaps across the six pillars.</p>
+            <span class="go">Analyze for free <span class="arr" aria-hidden="true">→</span></span>
+          </a>
+          <a class="card" href="https://www.cnessworks.com/cness-certification" target="_blank" rel="noopener">
+            <div><span class="k">Certification</span><h3>Organization Certification</h3></div>
+            <p>A full assessment, evidence review and certification decision across six pillars. Certified organizations are recognized at one of three levels: Aspiring, Inspired or Luminary.</p>
+            <span class="go">Explore certification <span class="arr" aria-hidden="true">→</span></span>
+          </a>
+          <a class="card" href="https://www.cnessworks.com/product-certification" target="_blank" rel="noopener">
+            <div><span class="k">Certification</span><h3>Product Certification</h3></div>
+            <p>Place one clearly defined product before a seven-pillar, 700-point assessment. An independent review checks your evidence and decides whether the product is certified.</p>
+            <span class="go">Certify a product <span class="arr" aria-hidden="true">→</span></span>
+          </a>
+          <a class="card" href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener">
+            <div><span class="k">Visibility · Free or Premium</span><h3>Trust Profile &amp; Global Directory</h3></div>
+            <p>One shareable page that brings your recognition and practices together, plus a directory listing that customers and partners can search by industry and location.</p>
+            <span class="go">Browse the directory <span class="arr" aria-hidden="true">→</span></span>
+          </a>
+          <div class="card plain">
+            <div class="neq" aria-hidden="true"><span>Analysis</span><b>≠</b><span>Certification</span><b>≠</b><span>Visibility</span></div>
+            <h3>Analysis, certification and visibility are separate.</h3>
+            <p>A free analysis does not certify you, a directory listing is not a certification, and paying for Premium visibility never changes an assessment score or a certification decision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · FIVE STEPS -->
+<section class="ch" id="journey" data-scene="3" data-name="Five steps" data-hi="1" style="--len:5" aria-labelledby="h-journey">
+  <div class="pin right">
+    <div class="wrap">
+      <div class="col">
+        <span class="tag">How organization certification works</span>
+        <h2 id="h-journey"><span class="rise"><span>A process,</span></span><span class="rise"><span>not a <i class="g">badge.</i></span></span></h2>
+        <ol class="stack" style="--sh:13.5rem;list-style:none;margin:0;padding:0">
+          <li class="step" data-step><span class="n">Step 01 / 05</span><h3>Register</h3><p>Create your organization profile and begin your certification journey. If you are unsure where to begin, the free analysis gives you a first view.</p></li>
+          <li class="step" data-step><span class="n">Step 02 / 05</span><h3>Evaluation</h3><p>Your practices are reviewed against the CNESS framework, its six pillars and the certification standards. Claims need relevant evidence behind them.</p></li>
+          <li class="step" data-step><span class="n">Step 03 / 05</span><h3>Get certified</h3><p>When you meet the required standards, you earn a certification level and your Trust Profile is updated to show it.</p></li>
+          <li class="step" data-step><span class="n">Step 04 / 05</span><h3>Amplify your brand</h3><p>Share your recognition through CNESS platforms, badges and the Global Directory, so customers and partners can check it for themselves.</p></li>
+          <li class="step" data-step><span class="n">Step 05 / 05</span><h3>Grow your impact</h3><p>Keep improving, share best practices with other organizations and keep records that support your renewal.</p></li>
+        </ol>
+        <div class="ticks" aria-hidden="true"></div>
+        <div class="acts fadein">
+          <a class="btn" href="https://www.cnessworks.com/signup?intent=org" target="_blank" rel="noopener">Apply for certification <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener">Book a call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · THREE LEVELS -->
+<section class="ch" id="levels" data-scene="4" data-name="Three levels" data-hi="2" style="--len:4.5" aria-labelledby="h-levels">
+  <div class="pin">
+    <div class="wrap">
+      <div class="col">
+        <span class="tag">Certification levels</span>
+        <h2 id="h-levels" class="mono" style="font:500 .6875rem/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--haze)">Each level shows where you stand and what opens next</h2>
+        <div class="stack" style="--sh:23rem">
+          <article class="lv" data-step><img src="assets/emblem-aspiring.svg" width="92" height="92" alt=""><span class="step"><span class="n">Level 1 · Foundation</span></span><h3>Aspiring</h3><p class="q">Building the foundations of conscious and responsible business.</p></article>
+          <article class="lv" data-step><img src="assets/emblem-inspired.svg" width="92" height="92" alt=""><span class="step"><span class="n">Level 2 · Intermediate</span></span><h3>Inspired</h3><p class="q">Turning conscious intent into impactful practice.</p></article>
+          <article class="lv" data-step><img src="assets/emblem-luminary.svg" width="92" height="92" alt=""><span class="step"><span class="n">Level 3 · Advanced</span></span><h3><i class="g">Luminary</i></h3><p class="q">Pioneering by example and setting the standard for consciousness in business.</p></article>
+          <article class="lv" data-step data-all><span class="step"><span class="n">Beyond Luminary · Two visibility layers</span></span>
+            <ul>
+              <li><b>Luminary Premium</b><span>For Luminary-certified organizations ready for stronger public positioning.</span></li>
+              <li><b>Luminary Pinnacle</b><span>The highest showcase tier for organizations shaping standards and influence.</span></li>
+            </ul>
+            <small>Both are visibility services. They do not change your certification level.</small>
+            <a class="tl" href="https://www.cnessworks.com/cness-certification" target="_blank" rel="noopener">Compare levels in detail →</a>
+          </article>
+        </div>
+        <div class="ticks" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="say" aria-label="On product certification">
+  <div class="wrap">
+    <blockquote id="say">A product is not conscious in the human sense. Yet every decision embedded within it can reflect <span class="gd">awareness, responsibility, dignity, transparency</span> and <span class="gd">long-term care.</span></blockquote>
+    <cite class="mono">CNESS Conscious Product Certification</cite>
+  </div>
+</section>
+
+<!-- 5 · PRODUCTS -->
+<section class="ch" id="products" data-scene="5" data-name="Products" data-hi="3" style="--len:5" aria-labelledby="h-products">
+  <div class="pin right">
+    <div class="wrap">
+      <div class="col">
+        <span class="tag">Product Certification</span>
+        <h2 id="h-products"><span class="rise"><span>Seven pillars.</span></span><span class="rise"><span><i class="g">700</i> points.</span></span></h2>
+        <ol class="stack" style="--sh:13.5rem;list-style:none;margin:0;padding:0">
+          <li class="step" data-step><span class="n">Product pillar 01 / 07</span><h3>Product Integrity &amp; Safety</h3><p>Built to fulfil its intended purpose. Designed to reduce avoidable harm. Governed responsibly as it changes.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 02 / 07</span><h3>Human Value &amp; Wellbeing</h3><p>Created with people in mind. Respectful of dignity, access and wellbeing.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 03 / 07</span><h3>Ethical Sourcing &amp; Responsible Value Chain</h3><p>Know where it comes from. Choose partners with care. Create through fair practice.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 04 / 07</span><h3>Environmental Responsibility &amp; Sustainability</h3><p>Use resources with restraint. Reduce waste and avoidable impact. Consider the whole lifecycle.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 05 / 07</span><h3>Quality Performance &amp; Lifecycle Value</h3><p>Do what it promises. Deliver consistently and reliably. Learn, improve and endure.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 06 / 07</span><h3>Customer Trust &amp; Support</h3><p>Speak clearly and truthfully. Make choice and use understandable. Stand by the customer after the sale.</p></li>
+          <li class="step" data-step><span class="n">Product pillar 07 / 07</span><h3>Utility &amp; Pain-Point Solutions</h3><p>Create value beyond the transaction. Understand the wider consequences. Improve impact with purpose.</p></li>
+        </ol>
+        <div class="ticks" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="flow" aria-label="Product certification details">
+  <div class="wrap g2">
+    <div class="panel founding">
+      <span class="big">108</span>
+      <p><strong>The founding cohort.</strong> Product Certification opens with an inaugural group of 108 Founding Conscious Products, marked on <span class="mono" style="color:var(--gold)">11✦11</span> (11 November 2026), World Consciousness Day for Humanity. Founding status does not lower the assessment threshold or replace evidence requirements.</p>
+    </div>
+    <div class="panel">
+      <h3>Evidence you may be asked for</h3>
+      <div class="chips"><span>Material declarations</span><span>Supplier declarations</span><span>ISO, GMP, HACCP</span><span>Product labels &amp; packaging</span><span>Batch &amp; traceability records</span><span>Support &amp; complaint policies</span><span>Sustainability reports</span><span>Scientific reports for claims</span></div>
+      <p class="fine">CNESSWORKS reviews the transparency, relevance and validity of the documents you submit. It does not carry out laboratory testing. Certified products receive one public status, CNESS Conscious Product Certified™, and a time-bound Product Trust Profile. Products that are not ready yet receive a confidential improvement pathway and can return.</p>
+      <div class="acts">
+        <a class="btn" href="https://www.cnessworks.com/signup?intent=product" target="_blank" rel="noopener">Apply for product certification <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn ghost" href="https://www.cnessworks.com/analyze?track=product" target="_blank" rel="noopener">Analyze a product free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · DIRECTORY -->
+<section class="ch" id="directory" data-scene="6" data-name="Directory" style="--len:2.4" aria-labelledby="h-dir">
+  <div class="pin">
+    <div class="wrap">
+      <div class="col">
+        <span class="tag">Trust and visibility</span>
+        <h2 id="h-dir"><span class="rise"><span>One place</span></span><span class="rise"><span>to <i class="g">check</i></span></span><span class="rise"><span>your business.</span></span></h2>
+        <p class="lede fadein">Customers and partners want to know what has been reviewed before they reach out. A Trust Profile and a Global Directory listing answer that question for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="flow" aria-label="Trust Profile and Global Directory">
+  <div class="wrap g2">
+    <article class="panel">
+      <h3>Trust Profile</h3>
+      <p>Brings your CNESS recognition and business practices together on one page. It shows which areas have been reviewed and your current recognition status.</p>
+      <div class="pstage" id="pstage">
+        <div class="profile" id="profile" role="group" aria-label="Illustrative Trust Profile example">
+          <div class="t"><span class="av" aria-hidden="true">E</span><div><div style="font-weight:600">Example Organization</div><div class="sub">Manufacturing · India</div></div><span class="ill">Illustration</span></div>
+          <div class="st"><span><img src="assets/emblem-inspired.svg" width="18" height="18" alt="">Organization Certified · Inspired</span><span>Time-bound · renews</span></div>
+        </div>
+      </div>
+      <div class="acts"><a class="btn" href="https://www.cnessworks.com/signup?intent=trust_profile" target="_blank" rel="noopener">Create your Trust Profile <span class="arr" aria-hidden="true">→</span></a></div>
+    </article>
+    <article class="panel">
+      <h3>Global Directory</h3>
+      <p>An online directory where people search for organizations by industry, service and location, learn about their work and contact them.</p>
+      <div class="plans">
+        <div><h4>Free</h4><ul><li>Standard assessment with independent review</li><li>Business listing and search visibility</li><li>Website, contact details, shareable link</li><li>Regional listing</li></ul></div>
+        <div><h4>Premium</h4><ul><li>Everything in Free</li><li>CNESS interviews</li><li>Featured placement, expanded profile</li><li>International listing and B2C directory</li></ul></div>
+      </div>
+      <p class="fine"><b>Same standards on every plan.</b> Premium adds help promoting your business. It does not change your assessment score or the decision to award certification.</p>
+      <div class="acts"><a class="btn" href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener">Explore the directory <span class="arr" aria-hidden="true">→</span></a><a class="btn ghost" href="https://www.cnessworks.com/signup" target="_blank" rel="noopener">List your organization</a></div>
+    </article>
+  </div>
+  <div class="wrap" style="margin-top:clamp(4rem,8vw,7rem)"><span class="tag">CNESS Certified Organizations</span></div>
+  <div class="marquee" aria-label="CNESS certified organizations">
+    <ul id="marquee">
+      <li><a href="https://www.cnessworks.com/directory-detail/prasanna-international" target="_blank" rel="noopener">Prasanna International</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/global-speakers-talk" target="_blank" rel="noopener">Global Speakers Talk</a></li>
+      <li><a href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener">India Builders (Chennai) Limited</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/biodynamic-association" target="_blank" rel="noopener">Biodynamic Association of India</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/shriram-capital" target="_blank" rel="noopener">Shriram Capital</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/adyar-ananda-bhavan" target="_blank" rel="noopener">Adyar Ananda Bhavan</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/rajan-eye-care" target="_blank" rel="noopener">Rajan Eye Care Hospital</a></li>
+      <li><a href="https://www.cnessworks.com/directory-detail/sf-enterprises" target="_blank" rel="noopener">SF Enterprises &amp; Engineering</a></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <figure class="quote">
+      <blockquote>“Our company is deeply rooted with value. It’s not just a business built around numbers and profits but about giving back to the society in a very meaningful way.”</blockquote>
+      <figcaption><b>Pooja Srinivasa Raja</b>, Executive Director, Adyar Ananda Bhavan</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="flow" id="partners" aria-labelledby="h-partners">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag">Grow the ecosystem</span><h2 id="h-partners">Help others, and <i class="g">learn</i> from them.</h2></div>
+    <div class="g2">
+      <article class="panel">
+        <span class="tag">Partner Program</span>
+        <h3>Use your experience to help organizations get certified.</h3>
+        <p>Partners help organizations understand and work toward CNESS certification, while building connections of their own. Roles and payment are agreed before you work together.</p>
+        <div class="roles"><span>Referrals &amp; introductions</span><span>Consulting &amp; advisory</span><span>Media &amp; content collaboration</span><span>Community building</span><span>Referral rewards &amp; revenue share</span><span>Co-branded visibility &amp; recognition</span></div>
+        <div class="acts"><a class="btn" href="https://www.cnessworks.com/partner/signup" target="_blank" rel="noopener">Become a partner <span class="arr" aria-hidden="true">→</span></a><a class="btn ghost" href="https://www.cnessworks.com/partner_new" target="_blank" rel="noopener">Program details</a></div>
+      </article>
+      <article class="panel">
+        <span class="tag">Best Practices</span>
+        <h3>Share what works.</h3>
+        <p>Publish examples from your organization, find ideas for areas you want to improve, and see how others take responsibility for their decisions.</p>
+        <div class="acts"><a class="btn ghost" href="https://www.cnessworks.com/best-practices" target="_blank" rel="noopener">Browse best practices <span class="arr" aria-hidden="true">→</span></a></div>
+      </article>
+    </div>
+    <div class="g3" style="margin-top:1.25rem" aria-label="Chamber and council memberships">
+      <div class="panel member"><span class="mono">CNESS is a member of</span><b>IACC</b><p>Indo-American Chamber of Commerce.</p><a class="tl" href="https://www.iaccindia.com/" target="_blank" rel="noopener">iaccindia.com ↗</a></div>
+      <div class="panel member"><span class="mono">CNESS is a member of</span><b>MCCI</b><p>The Madras Chamber of Commerce &amp; Industry.</p><a class="tl" href="https://madraschamber.in/" target="_blank" rel="noopener">madraschamber.in ↗</a></div>
+      <div class="panel member"><span class="mono">CNESS is a member of</span><b>GTTCI</b><p>Global Trade &amp; Technology Council (India).</p><a class="tl" href="https://gttcindia.com/" target="_blank" rel="noopener">gttcindia.com ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="flow" id="faq" aria-labelledby="h-faq">
+  <div class="wrap faq">
+    <div style="display:grid;gap:1.2rem;align-content:start">
+      <span class="tag">Questions</span>
+      <h2 id="h-faq">Before you <i class="g">begin.</i></h2>
+      <p style="color:var(--haze);font-weight:300">Still unsure which path fits? <a class="tl" href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener">Talk to the team</a></p>
+    </div>
+    <div>
+      <details><summary>What is CNESS Certification?<i aria-hidden="true"></i></summary><p>CNESS Certification recognizes who your organization is, what it stands for and how it creates value across six pillars: Conscious Leadership, Human-Centric Value &amp; Team Cohesion, Products &amp; Services, Customers &amp; Clients, Community &amp; Conscious Social Impact, and Brand Vision &amp; Strategic Collaborations.</p></details>
+      <details><summary>Is the free analysis the same as certification?<i aria-hidden="true"></i></summary><p>No. The analysis gives an initial view based on your website and public information. Certification is a separate process with eligibility checks, a complete assessment, evidence review and a certification decision. A low analysis score highlights areas to improve; it does not automatically make you ineligible.</p></details>
+      <details><summary>Do my existing certifications affect eligibility?<i aria-hidden="true"></i></summary><p>No. Existing certifications do not affect your eligibility. They can complement the CNESS framework and add value to your organization’s profile.</p></details>
+      <details><summary>Does a Premium directory plan improve my result?<i aria-hidden="true"></i></summary><p>No. Free and Premium use the same certification standards. Premium adds help promoting your business; it does not change your assessment score or the decision to award certification.</p></details>
+      <details><summary>Does CNESSWORKS test products in a laboratory?<i aria-hidden="true"></i></summary><p>No. CNESSWORKS evaluates the transparency, relevance and validity of the documents you submit, such as supplier declarations, ISO or GMP certificates, traceability records and scientific reports for product claims.</p></details>
+      <details><summary>What can stop an organization from proceeding?<i aria-hidden="true"></i></summary><p>Certification cannot proceed if your organization’s identity or assessment scope cannot be established, legal eligibility cannot be confirmed, claims are unsupported by evidence, the required assessment is declined, or a critical safety or harm concern remains unresolved.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · START -->
+<section class="ch final" id="start" data-scene="7" data-name="Start" style="--len:2.4" aria-labelledby="h-start">
+  <div class="pin">
+    <div class="sunrise">
+      <div class="in">
+        <span class="tag">Find your starting point</span>
+        <h2 id="h-start">Start where <i>you are.</i></h2>
+        <p>Use the free analysis for a first look at where your organization stands. Then decide whether to apply for certification.</p>
+        <div class="acts">
+          <a class="btn dark" href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener">Start your free analysis <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn line-dark" href="https://www.cnessworks.com/signup" target="_blank" rel="noopener">Apply for certification</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="about">
+        <a class="brand" href="#top" aria-label="Back to top"><img src="assets/logo-white.png" width="138" height="34" alt="CNESSWORKS" style="filter:none"></a>
+        <p>Empowering conscious organizations to grow, connect and create meaningful global impact. Part of the <a class="tl" href="https://www.cness.co" target="_blank" rel="noopener">CNESS ecosystem</a>.</p>
+        <address>
+          <span>825 Wilshire Blvd #333, Santa Monica, CA 90401, USA</span>
+          <span class="cp">US +1 888 895-8284 <button type="button" data-copy="+1 888 895-8284">Copy</button></span>
+          <span class="cp">India +91 1800 410 0108 <button type="button" data-copy="+91 1800 410 0108">Copy</button></span>
+        </address>
+      </div>
+      <div><h4>Certification</h4><ul>
+        <li><a href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener">Free analysis</a></li>
+        <li><a href="https://www.cnessworks.com/cness-certification" target="_blank" rel="noopener">Organization Certification</a></li>
+        <li><a href="https://www.cnessworks.com/product-certification" target="_blank" rel="noopener">Product Certification</a></li>
+        <li><a href="https://www.cnessworks.com/cness-standard" target="_blank" rel="noopener">CNESS Standards</a></li>
+        <li><a href="https://www.cnessworks.com/cness-advantage" target="_blank" rel="noopener">CNESS Advantage</a></li>
+      </ul></div>
+      <div><h4>Platform</h4><ul>
+        <li><a href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener">Global Directory</a></li>
+        <li><a href="https://www.cnessworks.com/best-practices" target="_blank" rel="noopener">Best Practices</a></li>
+        <li><a href="https://www.cnessworks.com/partner_new" target="_blank" rel="noopener">Partner Program</a></li>
+        <li><a href="https://www.cnessworks.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener">Contact us</a></li>
+      </ul></div>
+      <div><h4>CNESS ecosystem</h4><ul>
+        <li><a href="https://www.cness.co" target="_blank" rel="noopener">CNESS Inc</a></li>
+        <li><a href="https://cness.io/" target="_blank" rel="noopener">CNESS SuperApp</a></li>
+        <li><a href="https://signdc.org/" target="_blank" rel="noopener">Declaration of Consciousness</a></li>
+        <li><a href="https://voctoday.com/" target="_blank" rel="noopener">Voice of Consciousness</a></li>
+        <li><a href="https://www.linkedin.com/company/cness-inc/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.youtube.com/@CNESSinc" target="_blank" rel="noopener">YouTube</a></li>
+      </ul></div>
+    </div>
+    <div class="legal"><span>© 2026 cnessworks.com</span><div><a href="https://www.cnessworks.com/terms" target="_blank" rel="noopener">Terms</a><a href="https://www.cnessworks.com/privacy" target="_blank" rel="noopener">Privacy</a><a href="https://www.cnessworks.com/sitemap" target="_blank" rel="noopener">Sitemap</a></div></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  const root = document.documentElement; root.classList.add('js');
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const smooth = t => t * t * (3 - 2 * t);
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  /* ---------- Spring (Apple model: response + damping ratio) ---------- */
+  class Spring {
+    constructor(x = 0, response = .5, damping = 1) { this.x = x; this.t = x; this.v = 0; this.r = response; this.d = damping; }
+    snap(x) { this.x = this.t = x; this.v = 0; }
+    step(dt) { const w = 2 * Math.PI / this.r, k = w * w, c = 2 * this.d * w, n = Math.max(1, Math.ceil(dt / .004)), h = dt / n;
+      for (let i = 0; i < n; i++) { this.v += (-k * (this.x - this.t) - c * this.v) * h; this.x += this.v * h; }
+      if (Math.abs(this.x - this.t) < 1e-4 && Math.abs(this.v) < 1e-3) { this.x = this.t; this.v = 0; } }
+    get rest() { return this.x === this.t && this.v === 0; }
+  }
+
+  /* ---------- Shared state ---------- */
+  const mq = matchMedia('(prefers-reduced-motion: reduce)');
+  const CW = window.CW = { still: mq.matches, scene: new Spring(0, .55), sceneT: 0, hi: [-1, -1, -1, -1], time: 3, intro: new Spring(mq.matches ? 1 : 0, 1.8),
+    px: new Spring(0, .9), py: new Spring(0, .9), mouse: [0, 0, 0], has3D: false, dirty: true, Spring };
+
+  /* ---------- Formations: one particle set, eight shapes ---------- */
+  const N = CW.N = innerWidth < 760 ? 14000 : 36000;
+  let sd = 20261111; const R = () => { sd |= 0; sd = sd + 0x6D2B79F5 | 0; let t = Math.imul(sd ^ sd >>> 15, 1 | sd); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const G = () => (R() + R() + R() + R() - 2) * .7;
+  const TAU = Math.PI * 2;
+  const F = CW.forms = Array.from({ length: 8 }, () => new Float32Array(N * 3));
+  const IDX = CW.idx = new Float32Array(N * 4).fill(-1), SEED = CW.seed = new Float32Array(N * 4);
+  const put = (f, i, x, y, z) => { F[f][i * 3] = x; F[f][i * 3 + 1] = y; F[f][i * 3 + 2] = z; };
+  for (let i = 0; i < N; i++) {
+    for (let k = 0; k < 4; k++) SEED[i * 4 + k] = R();
+    { // 0 nebula: three spiral arms
+      const r = .5 + 5.4 * Math.pow(R(), .7), a = r * .75 + (i % 3) * TAU / 3 + G() * .5;
+      put(0, i, Math.cos(a) * r, G() * Math.max(.12, 1 - r * .16), Math.sin(a) * r);
+    }
+    { // 1 hexagonal lens, six facets (one per pillar)
+      const s = i % 6, a0 = (120 - s * 60) * Math.PI / 180, a1 = a0 - Math.PI / 3, am = (a0 + a1) / 2, Rr = 2.25, gap = .09;
+      const V = [[0, 0], [Math.cos(a0) * Rr, Math.sin(a0) * Rr], [Math.cos(a1) * Rr, Math.sin(a1) * Rr]];
+      let x, y;
+      if (R() < .62) { const e = Math.floor(R() * 3), A = V[e], B = V[(e + 1) % 3], t = R(); x = lerp(A[0], B[0], t) + G() * .012; y = lerp(A[1], B[1], t) + G() * .012; }
+      else { let u = R(), v = R(); if (u + v > 1) { u = 1 - u; v = 1 - v; } x = V[1][0] * u + V[2][0] * v; y = V[1][1] * u + V[2][1] * v; }
+      put(1, i, x + Math.cos(am) * gap, y + Math.sin(am) * gap, G() * .07); IDX[i * 4] = s;
+    }
+    { // 2 wave field
+      const x = Math.round((R() - .5) * 17 * 5) / 5, z = Math.round((R() - .5) * 9 * 5) / 5 - 1;
+      put(2, i, x, -2.1 + Math.sin(x * 1.2) * Math.cos(z * 1.1) * .16, z);
+    }
+    { // 3 helix with five nodes (five steps)
+      if (i % 10 < 6) { const t = R(), a = t * TAU * 1.75; put(3, i, Math.cos(a) * 2 + G() * .04, -2.3 + t * 4.6 + G() * .04, Math.sin(a) * 2 + G() * .04); const k = Math.round(t * 4); if (Math.abs(t - k / 4) < .05) IDX[i * 4 + 1] = k; }
+      else { const k = i % 5, t = k / 4, a = t * TAU * 1.75; put(3, i, Math.cos(a) * 2 + G() * .2, -2.3 + t * 4.6 + G() * .2, Math.sin(a) * 2 + G() * .2); IDX[i * 4 + 1] = k; }
+    }
+    { // 4 three rising rings (three levels), denser as they rise
+      const u = R(), k = u < .2 ? 0 : u < .52 ? 1 : 2, Rr = 1.05 + k * .72, a = R() * TAU, g = G() * (.03 + k * .012);
+      put(4, i, Math.cos(a) * (Rr + g), -1.45 + k * 1.3 + G() * (.03 + k * .012), Math.sin(a) * (Rr + g)); IDX[i * 4 + 2] = k;
+    }
+    { // 5 heptagon: seven vertices, edges and spokes
+      const m = i % 7, Rr = 2.3, va = k => (90 - k * 360 / 7) * Math.PI / 180, A = [Math.cos(va(m)) * Rr, Math.sin(va(m)) * Rr], B = [Math.cos(va(m + 1)) * Rr, Math.sin(va(m + 1)) * Rr], u = R();
+      let x, y;
+      if (u < .42) { const t = R(); x = lerp(A[0], B[0], t); y = lerp(A[1], B[1], t); }
+      else if (u < .64) { const t = R(); x = A[0] * t; y = A[1] * t; }
+      else { x = A[0] + G() * .17; y = A[1] + G() * .17; }
+      put(5, i, x + G() * .012, y + G() * .012, G() * .06); IDX[i * 4 + 3] = m;
+    }
+    { // 6 globe
+      let y = 1 - 2 * (i + .5) / N; if (i % 5 < 2) y = Math.round(y * 9) / 9;
+      const r = Math.sqrt(Math.max(0, 1 - y * y)), ph = i * 2.399963; put(6, i, Math.cos(ph) * r * 2.3, y * 2.3, Math.sin(ph) * r * 2.3);
+    }
+    { // 7 sun
+      if (i % 9 === 0) { const a = R() * TAU, rr = 2.6 + R() * 1.6; put(7, i, Math.cos(a) * rr, Math.sin(a) * rr, G() * .05); }
+      else { const a = R() * TAU, c = R() * 2 - 1, s = Math.sqrt(1 - c * c), rr = 1.05 * Math.pow(R(), 2.4); put(7, i, Math.cos(a) * s * rr, c * rr, Math.sin(a) * s * rr); }
+    }
+  }
+  // Per-scene look: two colours, placement (wide / narrow), tilt and spin
+  const hex = h => [(h >> 16 & 255) / 255, (h >> 8 & 255) / 255, (h & 255) / 255];
+  CW.colA = [0x8E86FF, 0xFFC81A, 0x7C6BFF, 0xFF9E5E, 0xFFC81A, 0xFF7A59, 0x5CC8FF, 0xFFE9A8].map(hex);
+  CW.colB = [0xE3E0FF, 0xFFF1C2, 0xFF8FB1, 0xFFE2B8, 0xFFFFFF, 0xFFC81A, 0xE6F7FF, 0xFFFFFF].map(hex);
+  const SKY = [0x060417, 0x0A0730, 0x120A2C, 0x1A0B22, 0x0C0A2E, 0x1B0C14, 0x04111F, 0x1C1306].map(hex);
+  CW.rig = { wide: [[2.3, .2, 1], [2.7, 0, 1], [0, 0, 1], [-2.9, 0, 1], [2.8, -.1, 1], [-2.9, 0, 1], [2.8, 0, 1], [0, -.9, 1]],
+    narrow: [[0, 1.0, .55], [0, 1.5, .56], [0, .2, .6], [0, 1.5, .5], [0, 1.6, .6], [0, 1.6, .55], [0, 1.5, .55], [0, -.9, .7]],
+    tilt: [.95, 0, .12, .1, .42, 0, .2, 0] };
+  CW.spin = (k, t) => [t * .05, Math.sin(t * .25) * .3, 0, t * .14, t * .1, Math.sin(t * .22) * .28, t * .09, 0][k];
+  const wts = CW.wts = (s) => { const w = new Array(8); for (let k = 0; k < 8; k++) w[k] = Math.max(0, 1 - Math.abs(s - k)); return w; };
+  CW.pose = (s, time, wide) => { const w = wts(s), rg = wide ? CW.rig.wide : CW.rig.narrow; let x = 0, y = 0, sc = 0, tilt = 0, rot = 0;
+    for (let k = 0; k < 8; k++) if (w[k]) { x += w[k] * rg[k][0]; y += w[k] * rg[k][1]; sc += w[k] * rg[k][2]; tilt += w[k] * CW.rig.tilt[k]; rot += w[k] * CW.spin(k, time); }
+    return { x, y, sc, tilt, rot }; };
+
+  /* ---------- Motion control ---------- */
+  const motionBtn = $('#motionBtn'), motionLbl = $('#motionLbl');
+  const applyStill = () => { root.classList.toggle('still', CW.still); motionBtn.setAttribute('aria-pressed', String(CW.still)); motionLbl.textContent = CW.still ? 'Play motion' : 'Pause motion'; CW.dirty = true; wake(); };
+  motionBtn.addEventListener('click', () => { CW.still = !CW.still; applyStill(); });
+  mq.addEventListener?.('change', e => { CW.still = e.matches; applyStill(); });
+
+  /* ---------- Hero words ---------- */
+  let wi = 0; const h1 = $('#h-hero');
+  [...h1.childNodes].forEach(n => {
+    if (n.nodeType !== 3) { n.classList.add('w'); n.style.setProperty('--i', wi++); return; }
+    const fr = document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(p => { if (!p) return; if (/^\s+$/.test(p)) return fr.appendChild(document.createTextNode(p)); const s = document.createElement('span'); s.className = 'w'; s.style.setProperty('--i', wi++); s.textContent = p; fr.appendChild(s); });
+    n.replaceWith(fr);
+  });
+
+  /* ---------- Statement words ---------- */
+  const say = $('#say'), words = [];
+  (function wrap(node) { [...node.childNodes].forEach(n => { if (n.nodeType !== 3) return wrap(n); const fr = document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(p => { if (!p) return; if (/^\s+$/.test(p)) return fr.appendChild(document.createTextNode(p)); const s = document.createElement('span'); s.className = 'wd'; s.textContent = p; fr.appendChild(s); words.push(s); }); n.replaceWith(fr); }); })(say);
+
+  /* ---------- Chapters ---------- */
+  const chapters = $$('.ch[data-scene]').map(el => {
+    const steps = $$('[data-step]', el), ticks = $('.ticks', el);
+    if (ticks) steps.forEach(() => ticks.appendChild(document.createElement('i')));
+    return { el, scene: +el.dataset.scene, name: el.dataset.name, hi: el.dataset.hi === undefined ? -1 : +el.dataset.hi, steps, ticks: ticks ? [...ticks.children] : [], step: -2, p: -1 };
+  });
+  const track = $('#track'), bar = $('#bar'), chNo = $('#chNo'), chName = $('#chName'), dots = $$('#dots a'), sky = $('.sky');
+  let curCh = -1, vh = innerHeight;
+  function layout() {
+    vh = innerHeight;
+    const y = scrollY, H = document.documentElement.scrollHeight - vh;
+    bar.style.transform = `scaleX(${H > 0 ? clamp(y / H) : 0})`;
+    let sceneT = 0, active = 0, prev = null;
+    CW.hi = [-1, -1, -1, -1];
+    chapters.forEach((c, i) => {
+      const r = c.el.getBoundingClientRect(), range = Math.max(1, r.height - vh);
+      const p = clamp(-r.top / range);
+      const arrive = clamp(1 - r.top / vh);                       // 0 → 1 while the chapter slides in
+      if (Math.abs(p - c.p) > .0005) { c.p = p; c.el.style.setProperty('--p', p.toFixed(4)); }
+      const a1 = CW.still ? 1 : smooth(clamp((arrive - .35) / .5)), a2 = CW.still ? 1 : smooth(clamp((arrive - .45) / .5)), a3 = CW.still ? 1 : smooth(clamp((arrive - .6) / .4));
+      c.el.style.setProperty('--in', a1.toFixed(3)); c.el.style.setProperty('--in2', a2.toFixed(3)); c.el.style.setProperty('--in3', a3.toFixed(3));
+      if (c.steps.length) {
+        const n = c.steps.length, s = r.top > vh * .5 ? -1 : Math.min(n - 1, Math.floor(clamp((p - .04) / .92) * n));
+        if (s !== c.step) { c.step = s; c.steps.forEach((e, j) => { e.classList.toggle('on', j === Math.max(0, s)); e.classList.toggle('past', j < s); }); c.ticks.forEach((t, j) => t.classList.toggle('on', j === Math.max(0, s))); }
+        if (c.hi >= 0 && s >= 0) CW.hi[c.hi] = c.steps[s].hasAttribute('data-all') ? -1 : s;
+      }
+      // Scene value: plateau while pinned, blend while travelling between chapters
+      if (r.top <= 0) { sceneT = c.scene; active = i; prev = { c, r }; }
+      else if (prev && prev.r.bottom < vh + 1 && sceneT === prev.c.scene) {
+        // Hold the previous shape through any in-between content; morph over the last viewport before the next chapter.
+        const done = vh - prev.r.bottom, tt = done > 0 ? clamp(1 - r.top / vh) : 0;
+        sceneT = lerp(prev.c.scene, c.scene, smooth(tt));
+        if (tt > .5) active = i;
+        prev = null;
+      }
+    });
+    if (active !== curCh) { curCh = active; chNo.textContent = '0' + (active + 1); chName.textContent = chapters[active].name; dots.forEach((d, j) => j === active ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')); }
+    CW.sceneT = sceneT;
+    // horizontal travel
+    const pc = chapters[2], max = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
+    track.style.transform = `translate3d(${(-smooth(clamp((pc.p - .06) / .88)) * max).toFixed(1)}px,0,0)`;
+    // statement
+    const sr = say.getBoundingClientRect(), sp = CW.still ? 1 : clamp((vh * .8 - sr.top) / (sr.height + vh * .3)), lit = sp * words.length * 1.15;
+    words.forEach((w, i) => w.style.setProperty('--o', (.22 + .78 * clamp(lit - i)).toFixed(3)));
+    // daylight chrome once the sunrise covers the header
+    root.classList.toggle('day', chapters[7].p > .22 && chapters[7].el.getBoundingClientRect().bottom > 80);
+    CW.dirty = true;
+  }
+
+  /* ---------- Canvas 2D fallback (same formations, fewer particles) ---------- */
+  const field = $('#field'), c2 = $('#f2d'), ctx = c2.getContext('2d');
+  let W = 0, H = 0, dpr = 1; const STR = Math.max(1, Math.floor(N / 5200));
+  const size2d = () => { dpr = Math.min(1.5, devicePixelRatio || 1); W = field.clientWidth; H = field.clientHeight; c2.width = W * dpr; c2.height = H * dpr; CW.dirty = true; };
+  function draw2d() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H); ctx.globalCompositeOperation = 'lighter';
+    const s0 = CW.scene.x, time = CW.time, wide = W / H > 1.05, pose = CW.pose(s0, time, wide), f = (H / 2) / Math.tan(20 * Math.PI / 180);
+    const cy = Math.cos(pose.rot + CW.px.x * .25), sy = Math.sin(pose.rot + CW.px.x * .25), cx_ = Math.cos(pose.tilt + CW.py.x * .15), sx_ = Math.sin(pose.tilt + CW.py.x * .15), intro = CW.intro.x;
+    for (let i = 0; i < N; i += STR) {
+      const sc = clamp(s0 + (SEED[i * 4] - .5) * (CW.still ? 0 : .5), 0, 7), k = Math.floor(sc), fr = smooth(sc - k), k2 = Math.min(7, k + 1), A = F[k], B = F[k2], j = i * 3;
+      const m = Math.sin(fr * Math.PI) * 1.4;
+      let x = lerp(A[j], B[j], fr) + Math.sin(SEED[i * 4 + 1] * 50 + time * .4) * m, y = lerp(A[j + 1], B[j + 1], fr) + Math.cos(SEED[i * 4 + 2] * 50 + time * .3) * m, z = lerp(A[j + 2], B[j + 2], fr);
+      const sp = 1 + (1 - intro) * 1.8; x *= sp; y *= sp; z *= sp;
+      const x1 = x * cy + z * sy, z1 = -x * sy + z * cy, y1 = y * cx_ - z1 * sx_, z2 = y * sx_ + z1 * cx_;
+      const X = x1 * pose.sc + pose.x, Y = y1 * pose.sc + pose.y, Z = z2 * pose.sc, d = 10 - Z; if (d < .5) continue;
+      const px = W / 2 + X * f / d, py = H / 2 - Y * f / d;
+      let hi = 1; const sceneN = Math.round(sc), map = { 1: 0, 3: 1, 4: 2, 5: 3 }[sceneN];
+      if (map !== undefined && CW.hi[map] >= 0) hi = IDX[i * 4 + map] === CW.hi[map] ? 1.7 : .55;
+      const cA = CW.colA[sceneN], cB = CW.colB[sceneN], t = SEED[i * 4 + 3];
+      ctx.fillStyle = `rgba(${lerp(cA[0], cB[0], t) * 255 | 0},${lerp(cA[1], cB[1], t) * 255 | 0},${lerp(cA[2], cB[2], t) * 255 | 0},${clamp((.35 + .5 * SEED[i * 4 + 2]) * hi * intro)})`;
+      const szz = (1.5 + SEED[i * 4 + 1] * 1.8) * 10 / d * (hi > 1 ? 1.4 : 1); ctx.fillRect(px, py, szz, szz);
+    }
+  }
+  new ResizeObserver(() => { size2d(); wake(); }).observe(field); size2d();
+
+  /* ---------- One loop for the whole page ---------- */
+  let raf = 0, last = 0, scrollDirty = true; const hooks = CW.hooks = new Set();
+  function tick(now) {
+    const dt = Math.min(1 / 30, (now - (last || now)) / 1000 || 1 / 60); last = now;
+    if (scrollDirty) { scrollDirty = false; layout(); }
+    const moving = !CW.still && !document.hidden;
+    if (moving) CW.time += dt;
+    CW.scene.t = CW.sceneT;
+    const springs = [CW.scene, CW.intro, CW.px, CW.py];
+    if (CW.still) { CW.scene.snap(Math.round(CW.sceneT)); CW.intro.snap(1); CW.px.snap(0); CW.py.snap(0); } else springs.forEach(s => s.step(dt));
+    // sky colour follows the scene
+    const w = wts(CW.scene.x); let r = 0, g = 0, b = 0; for (let k = 0; k < 8; k++) { r += w[k] * SKY[k][0]; g += w[k] * SKY[k][1]; b += w[k] * SKY[k][2]; }
+    sky.style.background = `rgb(${r * 255 | 0},${g * 255 | 0},${b * 255 | 0})`;
+    let more = false; hooks.forEach(h => { if (h(dt)) more = true; });
+    if (!CW.has3D && (moving || CW.dirty)) draw2d();
+    CW.dirty = false;
+    raf = (moving || more || springs.some(s => !s.rest) || scrollDirty) ? requestAnimationFrame(tick) : (last = 0, 0);
+  }
+  const wake = CW.wake = () => { if (!raf) raf = requestAnimationFrame(tick); };
+  addEventListener('scroll', () => { scrollDirty = true; wake(); }, { passive: true });
+  addEventListener('resize', () => { scrollDirty = true; wake(); });
+  document.addEventListener('visibilitychange', wake);
+  addEventListener('pointermove', e => { if (e.pointerType !== 'mouse' || CW.still) return; CW.px.t = e.clientX / innerWidth - .5; CW.py.t = e.clientY / innerHeight - .5; CW.pointer = [e.clientX, e.clientY]; wake(); }, { passive: true });
+  CW.intro.t = 1;
+
+  /* ---------- Small interactions ---------- */
+  $$('.card').forEach(p => p.addEventListener('pointermove', e => { const r = p.getBoundingClientRect(); p.style.setProperty('--mx', (e.clientX - r.left) + 'px'); p.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+  const ps = $('#pstage'), prof = $('#profile'), tx = new Spring(0, .45), ty = new Spring(0, .45);
+  const tilt = (dt) => { tx.step(dt); ty.step(dt); prof.style.transform = `rotateX(${ty.x.toFixed(2)}deg) rotateY(${tx.x.toFixed(2)}deg)`; const go = !(tx.rest && ty.rest); if (!go) hooks.delete(tilt); return go; };
+  ps.addEventListener('pointermove', e => { if (CW.still || e.pointerType !== 'mouse') return; const r = ps.getBoundingClientRect(); tx.t = ((e.clientX - r.left) / r.width - .5) * 14; ty.t = -((e.clientY - r.top) / r.height - .5) * 10; hooks.add(tilt); wake(); });
+  ps.addEventListener('pointerleave', () => { tx.t = 0; ty.t = 0; hooks.add(tilt); wake(); });
+  const mql = $('#marquee'); [...mql.children].forEach(li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelector('a').tabIndex = -1; mql.appendChild(c); });
+  $$('[data-copy]').forEach(b => b.addEventListener('click', () => {
+    const done = t => { b.textContent = t; setTimeout(() => b.textContent = 'Copy', 1600); };
+    const fb = () => { const r = document.createRange(); r.selectNodeContents(b.parentNode.firstChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('Copied'), fb); } catch { fb(); }
+  }));
+
+  applyStill();
+})();
+</script>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+const CW = window.CW, host = document.getElementById('field');
+try {
+  const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'high-performance' });
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1)); renderer.setClearColor(0, 0);
+  const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(40, 1, .1, 100); camera.position.z = 10;
+  const rig = new THREE.Group(); scene.add(rig);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(CW.forms[0], 3));
+  for (let k = 1; k < 8; k++) geo.setAttribute('p' + k, new THREE.BufferAttribute(CW.forms[k], 3));
+  geo.setAttribute('aSeed', new THREE.BufferAttribute(CW.seed, 4));
+  geo.setAttribute('aIdx', new THREE.BufferAttribute(CW.idx, 4));
+  const V3 = a => a.map(c => new THREE.Vector3(c[0], c[1], c[2]));
+  const U = { uScene: { value: 0 }, uTime: { value: 0 }, uIntro: { value: 0 }, uPR: { value: renderer.getPixelRatio() }, uStill: { value: 0 }, uScale: { value: 1 },
+    uHi: { value: new THREE.Vector4(-1, -1, -1, -1) }, uMouse: { value: new THREE.Vector3(99, 99, 0) }, uCA: { value: V3(CW.colA) }, uCB: { value: V3(CW.colB) } };
+  const mat = new THREE.ShaderMaterial({
+    uniforms: U, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
+    vertexShader: `
+      attribute vec3 p1, p2, p3, p4, p5, p6, p7; attribute vec4 aSeed, aIdx;
+      uniform float uScene, uTime, uIntro, uPR, uStill, uScale; uniform vec4 uHi; uniform vec3 uMouse; uniform vec3 uCA[8]; uniform vec3 uCB[8];
+      varying vec3 vC; varying float vA;
+      float w(float k, float s){ return max(0., 1. - abs(s - k)); }
+      float hl(float id, float want){ return want < -.5 ? 1. : (abs(id - want) < .5 ? 1.75 : .55); }
+      void main(){
+        float sc = clamp(uScene + (aSeed.x - .5) * .5 * (1. - uStill), 0., 7.);
+        float k = floor(sc), f = fract(sc); f = f * f * (3. - 2. * f); float s = k + f;
+        vec3 p = position * w(0., s) + p1 * w(1., s) + p2 * w(2., s) + p3 * w(3., s) + p4 * w(4., s) + p5 * w(5., s) + p6 * w(6., s) + p7 * w(7., s);
+        float live = 1. - uStill;
+        p.y += w(2., s) * sin(p.x * .9 + p.z * .6 + uTime * .7) * .24 * live;                       // the wave breathes
+        p *= 1. + w(7., s) * sin(uTime * 1.3 + aSeed.y * 6.283) * .05 * live;                       // the sun pulses
+        p += live * .035 * vec3(sin(uTime * .7 + aSeed.y * 40.), cos(uTime * .6 + aSeed.z * 40.), sin(uTime * .5 + aSeed.w * 40.));
+        float m = sin(f * 3.14159);
+        p += vec3(sin(aSeed.y * 50. + uTime * .4), cos(aSeed.z * 50. + uTime * .3), sin(aSeed.w * 50. + uTime * .2)) * m * 1.5; // scatter mid-morph
+        p *= 1. + (1. - uIntro) * 1.8;
+        float hi = mix(1., hl(aIdx.x, uHi.x), w(1., s));
+        hi = mix(hi, hl(aIdx.y, uHi.y), w(3., s)); hi = mix(hi, hl(aIdx.z, uHi.z), w(4., s)); hi = mix(hi, hl(aIdx.w, uHi.w), w(5., s));
+        vec3 c = vec3(0.); for (int i = 0; i < 8; i++) { c += w(float(i), s) * mix(uCA[i], uCB[i], aSeed.w); }
+        vC = c;
+        vec4 wp = modelMatrix * vec4(p, 1.);
+        vec3 d = wp.xyz - uMouse; float dl = length(d.xy);
+        wp.xy += normalize(d.xy + 1e-4) * (1. - smoothstep(0., 1.3, dl)) * .45 * live;              // light parts around the pointer
+        vec4 mv = viewMatrix * wp;
+        gl_Position = projectionMatrix * mv;
+        vA = (.3 + .5 * aSeed.z) * hi * uIntro * (1. + m * .4);
+        gl_PointSize = (1.1 + aSeed.y * 1.9) * (hi > 1.2 ? 1.5 : 1.) * uPR * uScale * (10. / -mv.z);
+      }`,
+    fragmentShader: `varying vec3 vC; varying float vA; void main(){ float d = length(gl_PointCoord - .5); if (d > .5) discard; float g = smoothstep(.5, 0., d); gl_FragColor = vec4(vC * g, vA * g); }`
+  });
+  const pts = new THREE.Points(geo, mat); pts.frustumCulled = false; rig.add(pts);
+
+  let W = 0, H = 0, wide = true;
+  const resize = () => { W = host.clientWidth; H = host.clientHeight; if (!W || !H) return; renderer.setSize(W, H, false); camera.aspect = W / H; camera.updateProjectionMatrix(); wide = W / H > 1.05; U.uScale.value = Math.max(.7, Math.min(1.4, H / 820)); CW.dirty = true; CW.wake(); };
+  const ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), v2 = new THREE.Vector2(), hit = new THREE.Vector3();
+  const render = () => {
+    const pose = CW.pose(CW.scene.x, CW.time, wide);
+    rig.position.set(pose.x, pose.y, 0); rig.scale.setScalar(pose.sc);
+    rig.rotation.set(pose.tilt + CW.py.x * .15, pose.rot + CW.px.x * .25, 0);
+    U.uScene.value = CW.scene.x; U.uTime.value = CW.time; U.uIntro.value = CW.intro.x; U.uStill.value = CW.still ? 1 : 0;
+    U.uHi.value.set(CW.hi[0], CW.hi[1], CW.hi[2], CW.hi[3]);
+    if (CW.pointer && !CW.still) { v2.set(CW.pointer[0] / W * 2 - 1, -(CW.pointer[1] / H) * 2 + 1); ray.setFromCamera(v2, camera); if (ray.ray.intersectPlane(plane, hit)) U.uMouse.value.copy(hit); } else U.uMouse.value.set(99, 99, 0);
+    renderer.render(scene, camera);
+  };
+  renderer.domElement.setAttribute('aria-hidden', 'true');
+  host.appendChild(renderer.domElement);
+  CW.has3D = true; window.__webgl = true; document.getElementById('f2d').style.display = 'none';
+  new ResizeObserver(resize).observe(host); resize();
+  CW.hooks.add(() => { render(); return false; });
+  CW.wake();
+} catch (err) { CW.has3D = false; }
+</script>
