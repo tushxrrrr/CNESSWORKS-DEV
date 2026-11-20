@@ -5,9 +5,13 @@
 //  2. Every approved string in each inventory is rendered somewhere on its own page (no omissions).
 //  3. Tagged elements follow the inventory's reading order.
 //  4. Shared header, footer and quick actions keep the site's labels and destinations.
-// Usage: node tools/verify-certification.js [page.html]  (default certification.html). Exit 1 on any difference.
+// Usage: node tools/verify-certification.js [page.html | URL]  (default certification.html). Exit 1 on any difference.
+// With a URL (e.g. http://localhost:3100, the Next.js export served by npm run serve) each page is checked at its own
+// path (/mother-of-certification, ...) and links between the three pages are expected as /<route> instead of #<route>.
 const { chromium } = require('playwright'); const fs = require('fs'); const path = require('path');
-const ROOT = path.resolve(__dirname, '..'); const PAGE = path.resolve(ROOT, process.argv[2] || 'certification.html');
+const ROOT = path.resolve(__dirname, '..'); const ARG = process.argv[2] || 'certification.html';
+const APP = /^https?:\/\//.test(ARG) ? ARG.replace(/\/$/, '') : null, PAGE = APP ? null : path.resolve(ROOT, ARG);
+const R = r => (APP ? '/' : '#') + r;   // where a link to another certification page points
 const B = 'https://www.cnessworks.com';
 const INV = { moc: 'mother-of-certification', org: 'cness-certification', prd: 'product-certification' };
 const DATA = Object.fromEntries(Object.entries(INV).map(([k, f]) => [k, JSON.parse(fs.readFileSync(path.join(ROOT, 'content', f + '.json'), 'utf8'))]));
@@ -28,7 +32,7 @@ function leaves(o, p = '', out = []) {
   await pg.route('https://cdn.jsdelivr.net/**', r => r.abort());
   const diffs = []; const bad = (m) => diffs.push(m); const report = [];
   for (const [key, route] of Object.entries(INV)) {
-    await pg.goto('file://' + PAGE + '#' + route); await pg.waitForTimeout(500);
+    await pg.goto(APP ? `${APP}/${route}` : 'file://' + PAGE + '#' + route); await pg.waitForTimeout(500);
     const got = await pg.evaluate(k => {
       const txt = el => { const c = el.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(n => n.remove()); return c.textContent.replace(/[\s​]+/g, ' ').trim(); };
       const art = document.querySelector(`.pg[data-page="${k}"]`);
@@ -44,13 +48,13 @@ function leaves(o, p = '', out = []) {
       if (v === undefined) { bad(`${route}: ${p} not in inventory`); continue; }
       if (typeof v === 'string' && /\.url$/.test(p)) {          // whole-card links: destination check
         if (it.prod !== v) bad(`${route}: ${p} links to ${it.prod}, expected ${v}`);
-        if (ROUTES[v] ? it.href !== '#' + ROUTES[v] : it.href !== v) bad(`${route}: ${p} href ${it.href}`);
+        if (ROUTES[v] ? it.href !== R(ROUTES[v]) : it.href !== v) bad(`${route}: ${p} href ${it.href}`);
         covered.add(p); continue;
       }
       if (v && typeof v === 'object' && 'url' in v) {           // labelled links
         if (it.text !== norm(v.text)) bad(`${route}: ${p}.text expected ${JSON.stringify(v.text)} got ${JSON.stringify(it.text)}`);
         if (it.prod !== v.url) bad(`${route}: ${p} production URL ${it.prod}, expected ${v.url}`);
-        if (ROUTES[v.url] ? (it.href !== '#' + ROUTES[v.url] || it.route !== ROUTES[v.url]) : it.href !== v.url) bad(`${route}: ${p} href ${it.href} for ${v.url}`);
+        if (ROUTES[v.url] ? (it.href !== R(ROUTES[v.url]) || it.route !== ROUTES[v.url]) : it.href !== v.url) bad(`${route}: ${p} href ${it.href} for ${v.url}`);
         covered.add(p + '.text'); covered.add(p + '.url'); continue;
       }
       if (typeof v !== 'string') { bad(`${route}: ${p} is not a string`); continue; }
@@ -76,14 +80,14 @@ function leaves(o, p = '', out = []) {
   const H = SITE.header, flat = H.nav.flatMap(n => n.menu ? n.menu : [n]);
   const expNav = flat.map(l => [l.text, l.url]);
   if (JSON.stringify(chrome.nav.map(x => [x[0], x[1]])) !== JSON.stringify(expNav)) bad('header nav labels or destinations differ');
-  chrome.nav.forEach(([t, prod, h]) => { if (ROUTES[prod] && h !== '#' + ROUTES[prod]) bad(`header: ${t} does not route in the preview`); });
+  chrome.nav.forEach(([t, prod, h]) => { if (ROUTES[prod] && h !== R(ROUTES[prod])) bad(`header: ${t} does not route in the preview`); });
   if (JSON.stringify(chrome.sheet.slice(0, flat.length + 1).map(x => [x[0], x[1]])) !== JSON.stringify([[H.mobileOnly[0].text, H.mobileOnly[0].url], ...expNav])) bad('mobile menu labels or destinations differ');
   const F = SITE.footer;
   if (JSON.stringify(chrome.foot) !== JSON.stringify(F.columns.map(c => [c.title, (c.links || c.items).map(l => l.url ? [l.text, l.url] : [l.text])]))) bad('footer columns differ');
   if (JSON.stringify(chrome.social) !== JSON.stringify(F.social.map(s => [s.text, s.url]))) bad('footer social links differ');
   if (chrome.tagline !== F.tagline || chrome.copyright !== F.copyright) bad('footer text differs');
   if (JSON.stringify(chrome.quick) !== JSON.stringify(SITE.quickActions.map(q => [q.text, q.tag, q.url]))) bad('quick actions differ');
-  chrome.routed.forEach(([h, prod]) => { if (h !== '#' + ROUTES[prod]) bad(`routed link ${prod} -> ${h}`); });
+  chrome.routed.forEach(([h, prod]) => { if (h !== R(ROUTES[prod])) bad(`routed link ${prod} -> ${h}`); });
   await b.close();
   console.log(report.join('\n')); console.log(`Shared chrome: ${chrome.nav.length} header links, ${chrome.foot.reduce((n, c) => n + c[1].length, 0)} footer items, ${chrome.routed.length} links routed between the three pages.`);
   if (diffs.length) { console.log(`${diffs.length} difference(s):\n` + diffs.slice(0, 60).join('\n')); process.exit(1); }

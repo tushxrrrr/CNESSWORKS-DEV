@@ -20,11 +20,18 @@ const SOCIAL: Record<string, React.ReactNode> = {
 };
 const slug = (s: string) => s.toLowerCase().replace(/ /g, '-');
 
-function NavLink({ l, current }: { l: Link; current: string }) {
+// routes: production URL -> local route for pages served by this app (the certification pages); such links stay in
+// the app and keep their production URL in data-prod-href. section: the menu that holds the current page.
+export type Routes = Record<string, string>;
+export interface ChromeOpts { current?: string; routes?: Routes; section?: string }
+
+function NavLink({ l, current, routes }: { l: Link; current?: string; routes?: Routes }) {
+  const r = l.url ? routes?.[l.url] : undefined;
+  if (r) return <a href={`/${r}`} data-route={r} data-prod-href={l.url}>{l.text}</a>;
   return <a href={l.url} data-prod-href={l.url} aria-current={l.url === current ? 'page' : undefined}>{l.text}</a>;
 }
 
-export function SiteHeader({ current }: { current: string }) {
+export function SiteHeader({ current, routes, section }: ChromeOpts) {
   const H = SITE.header, nav = H.nav as NavItem[], reg = H.region, [login, start] = H.actions as [Link, Link];
   return (
     <header className="top" id="top">
@@ -33,11 +40,11 @@ export function SiteHeader({ current }: { current: string }) {
         <nav aria-label="Main">
           <ul className="nav">
             {nav.map(n => n.menu ? (
-              <li className="dd" key={n.text}>
+              <li className={n.text === section ? 'dd cur' : 'dd'} key={n.text}>
                 <button type="button" aria-expanded="false" aria-controls={`m-${slug(n.text)}`}>{n.text} <Chev /></button>
-                <div className="menu" id={`m-${slug(n.text)}`}>{n.menu.map(x => <NavLink key={x.text} l={x} current={current} />)}</div>
+                <div className="menu" id={`m-${slug(n.text)}`}>{n.menu.map(x => <NavLink key={x.text} l={x} current={current} routes={routes} />)}</div>
               </li>
-            ) : <li key={n.text}><NavLink l={n} current={current} /></li>)}
+            ) : <li key={n.text}><NavLink l={n} current={current} routes={routes} /></li>)}
           </ul>
         </nav>
         <div className="right-acts">
@@ -65,18 +72,18 @@ function RegionLinks() {
   ))}</>;
 }
 
-export function MobileSheet({ current }: { current: string }) {
+export function MobileSheet({ current, routes, section }: ChromeOpts) {
   const H = SITE.header, nav = H.nav as NavItem[], [login, start] = H.actions as [Link, Link], home = H.mobileOnly[0] as Link;
   return (
     <div className="sheet" id="sheet" hidden>
       <nav className="in" aria-label="Main">
-        <NavLink l={home} current={current} />
+        <NavLink l={home} current={current} routes={routes} />
         {nav.map(n => n.menu ? (
-          <div className="grp" key={n.text}>
-            <button type="button" aria-expanded="false" aria-controls={`s-${slug(n.text)}`}>{n.text} <Chev /></button>
-            <div className="sub" id={`s-${slug(n.text)}`} hidden>{n.menu.map(x => <NavLink key={x.text} l={x} current={current} />)}</div>
+          <div className={n.text === section ? 'grp cur' : 'grp'} key={n.text}>
+            <button type="button" aria-expanded={n.text === section ? 'true' : 'false'} aria-controls={`s-${slug(n.text)}`}>{n.text} <Chev /></button>
+            <div className="sub" id={`s-${slug(n.text)}`} hidden={n.text !== section}>{n.menu.map(x => <NavLink key={x.text} l={x} current={current} routes={routes} />)}</div>
           </div>
-        ) : <NavLink key={n.text} l={n} current={current} />)}
+        ) : <NavLink key={n.text} l={n} current={current} routes={routes} />)}
         <div className="regions" role="group" aria-label="Region"><RegionLinks /></div>
         <div className="acts"><a href={login.url}>{login.text}</a><a className="btn" href={start.url}>{start.text}</a></div>
       </nav>
@@ -85,7 +92,7 @@ export function MobileSheet({ current }: { current: string }) {
 }
 
 // liveHref: where the notes for live-only services point (the Advantage page links back to itself on the live site)
-export function SiteFooter({ liveHref = `${B}/` }: { liveHref?: string } = {}) {
+export function SiteFooter({ liveHref = `${B}/`, routes }: { liveHref?: string; routes?: Routes } = {}) {
   const F = SITE.footer;
   return (
     <footer>
@@ -107,7 +114,7 @@ export function SiteFooter({ liveHref = `${B}/` }: { liveHref?: string } = {}) {
               <h3>{col.title}</h3>
               <ul>
                 {((('links' in col ? col.links : (col as { items: Link[] }).items) ?? []) as Link[]).map(l => l.href ? (
-                  <li key={l.text}><a href={l.url} data-prod-href={l.url} target="_blank" rel="noopener">{l.text}</a></li>
+                  <li key={l.text}>{l.url && routes?.[l.url] ? <NavLink l={l} routes={routes} /> : <a href={l.url} data-prod-href={l.url} target="_blank" rel="noopener">{l.text}</a>}</li>
                 ) : (
                   <li className="pop" key={l.text}>
                     <button type="button" aria-expanded="false" aria-controls={`tip-${slug(l.text)}`}>{l.text}</button>
