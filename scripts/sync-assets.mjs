@@ -4,4 +4,6 @@ import { cpSync, mkdirSync } from 'node:fs';
 mkdirSync('public', { recursive: true });
 cpSync('assets', 'public/assets', { recursive: true });
 cpSync('robots.txt', 'public/robots.txt');
-console.log('synced assets/ and robots.txt into public/');
+// The Global Directory's behaviour script is shared with the static page (src/directory/app.js, one source).
+cpSync('src/directory/app.js', 'public/assets/directory/app.js');
+console.log('synced assets/, robots.txt and the directory script into public/');

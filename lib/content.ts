@@ -2,10 +2,12 @@
 // Never edit the copy here: re-capture the JSON from the live site when the live text changes.
 import site from '@/content/cness-advantage.json';
 import analyze from '@/content/analyze.json';
+import directory from '@/content/global-directory.json';
 import graphic from '@/lib/analyze/graphic.json';
 
 export const SITE = site;
 export const ANALYZE = analyze;
+export const DIRECTORY = directory;
 export const GRAPHIC = graphic;
 
 export type Track = 'organization' | 'product';

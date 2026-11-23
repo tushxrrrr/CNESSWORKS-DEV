@@ -11,7 +11,7 @@ export const BASE_PATH = (process.env.NEXT_PUBLIC_BASE_PATH ?? '').replace(/\/+$
 export const asset = (p: string) => `${BASE_PATH}/${p.replace(/^\/+/, '')}`;
 
 export const APP_PAGES: Record<string, string> = Object.fromEntries(
-  ['cness-advantage', 'analyze', 'mother-of-certification', 'cness-certification', 'product-certification'].map(r => [`${LIVE}/${r}`, r]),
+  ['cness-advantage', 'analyze', 'mother-of-certification', 'cness-certification', 'product-certification', 'globaldirectory'].map(r => [`${LIVE}/${r}`, r]),
 );
 /** Local path for a production URL this app serves, or null for links that stay on the live site. */
 export const appPath = (url: string | undefined) => {

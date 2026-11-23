@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Deployment checks for the Next.js export (run against `npm run serve`, which behaves like a production host):
 //  - every page loads at /route and /route/ with no failed request (images, fonts, scripts) and no console error;
-//  - nothing is requested from a third party at load (fonts are self-hosted; only links point elsewhere);
+//  - nothing is requested from a third party at load (fonts are self-hosted; only links point elsewhere; the directory's
+//    cards load each listing's own image from where its record keeps it, as the live page does);
 //  - favicon, canonical URL and noindex are present;
 //  - the first-screen fonts are preloaded, and each font file is downloaded once (the preload is the file the CSS uses);
 //  - certification pages: no page is prefetched until a visitor shows intent; a page switch jumps to the top of the
@@ -10,7 +11,7 @@
 // Usage: node tools/test-deploy.js [base URL]   (default http://localhost:3100; include the base path if the build used one)
 const { chromium } = require('playwright');
 const BASE = (process.argv[2] || 'http://localhost:3100').replace(/\/$/, ''), ORIGIN = new URL(BASE).origin;
-const PAGES = ['cness-advantage', 'mother-of-certification', 'cness-certification', 'product-certification', 'analyze'];
+const PAGES = ['cness-advantage', 'mother-of-certification', 'cness-certification', 'product-certification', 'analyze', 'globaldirectory'];
 let pass = 0, fail = 0; const ok = (c, m) => { c ? pass++ : fail++; console.log((c ? 'PASS ' : 'FAIL ') + m); };
 
 (async () => {
@@ -21,7 +22,8 @@ let pass = 0, fail = 0; const ok = (c, m) => { c ? pass++ : fail++; console.log(
     p.on('request', r => { if (r.resourceType() === 'font') fontReqs.push(r.url().replace(ORIGIN, '')); });
     p.on('response', r => { if (r.status() >= 400) failed.push(`${r.status()} ${r.url().replace(ORIGIN, '')}`); });
     p.on('requestfailed', r => failed.push(`failed ${r.url().replace(ORIGIN, '')}`));
-    p.on('request', r => { if (!r.url().startsWith(ORIGIN) && !r.url().startsWith('data:')) third.push(r.url()); });
+    // the Global Directory's cards show each listing's own image from where the record keeps it (as on the live page); nothing else may leave
+    p.on('request', r => { if (!r.url().startsWith(ORIGIN) && !r.url().startsWith('data:') && !(route === 'globaldirectory' && r.resourceType() === 'image')) third.push(r.url()); });
     p.on('console', m => m.type() === 'error' && errors.push(m.text())); p.on('pageerror', e => errors.push(e.message));
     await p.goto(`${BASE}/${route}${slash}`, { waitUntil: 'networkidle' });
     await p.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { scrollTo(0, y); await new Promise(r => setTimeout(r, 60)); } });   // lazy images too

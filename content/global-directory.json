@@ -1,0 +1,507 @@
+{
+ "source": "https://www.cnessworks.com/globaldirectory",
+ "captured": "2026-11-23",
+ "service": "https://cness-b2b-emergent.onrender.com (GET /api/global-directory/featured, /listed, /countries; /api/directory/search; /api/industries/hierarchy)",
+ "documentTitle": "Global Company Directory | CNESSWORKS – Global Company Directory",
+ "metaDescription": "Discover conscious business certification with CNESSWORKS. Build credibility through ethical practices, sustainability, responsible business and continuous improvement.",
+ "hero": {
+  "h1": "Global Directory for Conscious Businesses",
+  "lede": "Get listed and connect with a global community that shares your commitment to conscious, responsible business.",
+  "free": "Free",
+  "premium": "Premium"
+ },
+ "plans": {
+  "title": "Choose Your Global Directory Plan",
+  "lead": "Here is what this listing includes. Explore more to log in or create an account and start your listing.",
+  "explore": "Explore more",
+  "disclaimer": "All plans follow the same certification standards. Paid plans support branding and outreach. They do not influence your assessment score or certification decision.",
+  "premiumBadge": "Most Popular",
+  "premiumSupport": "Enhanced Support",
+  "items": [
+   {
+    "id": "free",
+    "title": "Free ",
+    "lead": "Your essential CNESS certification pathway.",
+    "points": [
+     "Standard assessment and independent review.",
+     "Certificate awarded when certification requirements are met.",
+     "No additional branding or promotional services."
+    ],
+    "features": [
+     [
+      "Business Listing",
+      "Establish your organization's presence in the CNESS Global Directory."
+     ],
+     [
+      "Company Introduction",
+      "Present a short description of your business and its activities."
+     ],
+     [
+      "Search Visibility",
+      "Help visitors find your organization by industry and location."
+     ],
+     [
+      "Website and Contact Details",
+      "Give interested visitors a direct route to your business."
+     ],
+     [
+      "Shareable Profile Link",
+      "Share your listing with customers, partners and professional contacts."
+     ],
+     [
+      "Regional Listing",
+      "Listing based on your region."
+     ]
+    ]
+   },
+   {
+    "id": "premium",
+    "title": "Premium",
+    "lead": "Share your story and strengthen your brand presence.",
+    "points": [
+     "Everything in the Free plan.",
+     "CNESS interviews featuring your organization or product.",
+     "Additional branding services to communicate your purpose and value.",
+     "Be showcased in the B2C Global Directory."
+    ],
+    "features": [
+     [
+      "Featured Placement",
+      "Give your organization greater prominence in designated directory sections."
+     ],
+     [
+      "Expanded Business Profile",
+      "Present your mission, leadership, achievements and business story in greater detail."
+     ],
+     [
+      "Products and Services Showcase",
+      "Help visitors understand your offerings through dedicated descriptions and visuals."
+     ],
+     [
+      "Best Practices Highlights",
+      "Share documented initiatives that demonstrate how your organization operates responsibly."
+     ],
+     [
+      "Priority Listing Support",
+      "Receive assistance with profile setup, content updates and listing maintenance."
+     ],
+     [
+      "International Listing",
+      "Listing based on international placement."
+     ]
+    ]
+   }
+  ],
+  "destinations": {
+   "free": {
+    "signedIn": "https://www.cnessworks.com/createtrustprofile/GetStarted?listing=free",
+    "signedOut": "https://www.cnessworks.com/login?redirect=%2Fcreatetrustprofile%2FGetStarted%3Flisting%3Dfree"
+   },
+   "premium": {
+    "signedIn": "https://www.cnessworks.com/createtrustprofile/GetStarted?listing=premium",
+    "signedOut": "https://www.cnessworks.com/login?redirect=%2Fcreatetrustprofile%2FGetStarted%3Flisting%3Dpremium"
+   }
+  }
+ },
+ "search": {
+  "what": {
+   "label": "Industry",
+   "placeholder": "Eg: Company, Businesses, Services"
+  },
+  "where": {
+   "label": "Location",
+   "placeholder": "Eg: San Francisco"
+  },
+  "button": "Search",
+  "error": "Please fill in an industry, service, or location.",
+  "clear": "Clear search",
+  "wherePanel": {
+   "placeholder": "Type to search…",
+   "noMatches": "No matches found",
+   "recent": "Recent Searches"
+  },
+  "whatPanel": {
+   "placeholder": "Type to search industries…",
+   "recent": "Recent Searches",
+   "companies": "Companies",
+   "industries": "Industries",
+   "browseHint": "Browse all industries — type to find sub-industries. Green “Listed” marks ones with companies in the directory.",
+   "unavailable": "Industry list unavailable. Try typing a keyword and searching anyway.",
+   "noMatch": [
+    "No companies or industries match “",
+    "”"
+   ],
+   "anyway": [
+    "Search for “",
+    "” anyway →"
+   ],
+   "listed": "Listed",
+   "loading": "Loading…",
+   "maxChars": [
+    "Maximum ",
+    "100",
+    " characters"
+   ]
+  }
+ },
+ "benefits": [
+  {
+   "title": "Why CNESS?",
+   "items": [
+    "Add a relevant discovery route",
+    "Give listings useful context",
+    "Filters, inquiries and placement"
+   ]
+  },
+  {
+   "title": "Beyond Certification",
+   "items": [
+    "Relevant discovery could add continuing customer value",
+    "Track qualified inquiries; establish value before selling placement"
+   ]
+  },
+  {
+   "title": "Advantage",
+   "items": [
+    "Connect to the global market",
+    "Upgrade your brand value in the global market",
+    "Connect to conscious organizations across 90+ countries"
+   ]
+  }
+ ],
+ "focus": {
+  "label": "Or Browse by Focus Area",
+  "items": [
+   "IT Services",
+   "Restaurants",
+   "Wellness",
+   "Technology",
+   "Sustainability",
+   "Consulting"
+  ],
+  "synonyms": {
+   "IT Services": [
+    "it services",
+    "managed services",
+    "systems integration",
+    "it staffing",
+    "it outsourcing",
+    "technology advisory"
+   ],
+   "Restaurants": [
+    "restaurant",
+    "dining",
+    "café",
+    "cafe",
+    "bakery",
+    "food service",
+    "food delivery",
+    "cloud kitchen",
+    "qsr"
+   ],
+   "Wellness": [
+    "wellness",
+    "fitness",
+    "mental health",
+    "spa",
+    "yoga",
+    "nutrition",
+    "wellbeing"
+   ],
+   "Technology": [
+    "technology",
+    "software",
+    "saas",
+    "cloud",
+    "artificial intelligence",
+    "machine learning",
+    "cyber",
+    "data",
+    "analytics",
+    "e-commerce",
+    "hardware",
+    "semiconductor",
+    "blockchain",
+    "devops",
+    "digital"
+   ],
+   "Sustainability": [
+    "sustainab",
+    "renewable",
+    "environment",
+    "clean energy",
+    "esg",
+    "carbon",
+    "conservation",
+    "circular economy"
+   ],
+   "Consulting": [
+    "consulting",
+    "advisory",
+    "strategy",
+    "professional services"
+   ],
+   "Education": [
+    "education",
+    "school",
+    "university",
+    "college",
+    "edtech",
+    "learning",
+    "curriculum",
+    "vocational",
+    "training",
+    "academic"
+   ],
+   "Healthcare": [
+    "health",
+    "medical",
+    "hospital",
+    "clinic",
+    "diagnostic",
+    "laborator",
+    "rehabilitation",
+    "elder care"
+   ]
+  }
+ },
+ "how": {
+  "heading": "See How It Works",
+  "steps": [
+   {
+    "title": "Search & Filter",
+    "text": "Quickly discover organizations by industry, service, location, or certification focus."
+   },
+   {
+    "title": "Explore Verified Profiles",
+    "text": "Review trust profiles, certification status, and organizational highlights."
+   },
+   {
+    "title": "Connect with Confidence",
+    "text": "Reach out directly to organizations that align with your goals, values, and standards."
+   }
+  ]
+ },
+ "featured": {
+  "heading": "Featured Directory",
+  "empty": "No featured organizations match these filters.",
+  "prev": "Previous companies",
+  "next": "Next companies",
+  "slide": "Go to slide {{n}}"
+ },
+ "listed": {
+  "heading": "Global Business Directory Listing",
+  "empty": "Organizations not found in the Listed Companies section"
+ },
+ "filters": {
+  "badge": {
+   "placeholder": "Badge",
+   "options": [
+    [
+     "Aspiring",
+     "Aspiring"
+    ],
+    [
+     "Inspired",
+     "Inspired"
+    ],
+    [
+     "Luminary",
+     "Luminary"
+    ]
+   ]
+  },
+  "size": {
+   "placeholder": "Size",
+   "options": [
+    [
+     "Micro",
+     "Micro"
+    ],
+    [
+     "Small",
+     "Small"
+    ],
+    [
+     "Medium",
+     "Medium"
+    ],
+    [
+     "Large",
+     "Large"
+    ],
+    [
+     "Enterprise",
+     "Enterprise"
+    ]
+   ]
+  },
+  "industry": {
+   "placeholder": "Industry",
+   "all": "All Industries"
+  },
+  "country": {
+   "placeholder": "Country",
+   "all": "All Countries"
+  },
+  "certified": "Certified only",
+  "clear": "Clear"
+ },
+ "pagination": {
+  "previous": "Previous",
+  "next": "Next",
+  "goTo": "Go to",
+  "page": "page",
+  "goToAria": "Go to page number",
+  "showing": "Showing {from} to {to} of {total} Entries",
+  "prevAria": "Previous page",
+  "nextAria": "Next page",
+  "navAria": "Pagination"
+ },
+ "card": {
+  "bookmark": "Bookmark",
+  "bookmarkTitle": "Log in to bookmark",
+  "ratingTitle": "View rating breakdown",
+  "outOf5": "out of 5",
+  "globalRating": "global rating",
+  "star": "star",
+  "signIn": "Sign in to rate & see all reviews ›",
+  "details": "View {name} details",
+  "tiers": {
+   "aspiring": "Aspiring",
+   "inspired": "Inspired",
+   "luminary": "Luminary"
+  },
+  "profile": "https://www.cnessworks.com/directory-detail/{slug}",
+  "login": "https://www.cnessworks.com/login"
+ },
+ "faq": {
+  "heading": "Have a question ? Look here ...",
+  "sub": "Find answers about the CNESS directory, certification visibility, trust profiles, and organization recognition.",
+  "tabs": [
+   {
+    "name": "Certification",
+    "items": [
+     {
+      "q": "What is CNESS Certification?",
+      "a": {
+       "lead": "CNESS Certification recognizes who your organization is, what it stands for, and how it creates value across six key pillars. It provides a structured pathway to strengthen credibility, amplify growth, and become recognized as a Global Conscious Organization.",
+       "items": []
+      }
+     },
+     {
+      "q": "How do I get certified?",
+      "a": {
+       "lead": "The process is simple. Create your organization profile, complete the required certification steps, and submit your information for evaluation. Through the process of assessing your organization, you also strengthen your practices, build your brand, and advance your organizational growth.",
+       "items": []
+      }
+     },
+     {
+      "q": "Will my existing certifications affect my eligibility?",
+      "a": {
+       "lead": "No. Existing certifications do not affect your eligibility for CNESS Certification. They can complement the CNESS framework, add value to your organization's profile, and contribute positively to its overall recognition.",
+       "items": []
+      }
+     }
+    ]
+   },
+   {
+    "name": "General",
+    "items": [
+     {
+      "q": "What is CNESS?",
+      "a": {
+       "lead": "CNESS is a global Consciousness Ecosystem that connects and recognizes Global Conscious Organizations. It helps organizations:",
+       "items": [
+        "Build credibility and trust",
+        "Strengthen global visibility",
+        "Demonstrate conscious business practices",
+        "Connect with aligned organizations and stakeholders",
+        "Create long-term value and measurable impact"
+       ]
+      }
+     },
+     {
+      "q": "What is CNESSWORKS?",
+      "a": {
+       "lead": "CNESSWORKS is the digital platform where organizations begin their certification journey, create their Trust Profile, and become visible in the Global Directory. It brings certification, recognition, visibility, and access to a global ecosystem together in one platform.",
+       "items": []
+      }
+     },
+     {
+      "q": "Who can use CNESSWORKS?",
+      "a": {
+       "lead": "CNESSWORKS is designed for businesses, institutions, startups, service providers, and organizations of every size. Organizations seeking to become recognized conscious organizations can use the platform to strengthen trust, improve credibility, and showcase their impact.",
+       "items": []
+      }
+     }
+    ]
+   },
+   {
+    "name": "Global Directory",
+    "items": [
+     {
+      "q": "What is the Global Directory?",
+      "a": {
+       "lead": "The CNESSWORKS Global Directory is where organizations showcase their conscious profile, credibility, certification status, and Consciousness Impact Score. Being listed connects your organization to the global community of Global Conscious Organizations (GCO).",
+       "items": []
+      }
+     },
+     {
+      "q": "Why should my organization be listed in the Global Directory?",
+      "a": {
+       "lead": "The Global Directory features organizations recognized for their dependability and conscious practices across the six CNESS pillars. A listing helps your organization:",
+       "items": [
+        "Build greater credibility and visibility",
+        "Connect with the global conscious business community",
+        "Reach new customers across international markets",
+        "Serve conscious customers around the world",
+        "Attract aligned professionals and strengthen talent acquisition",
+        "Enhance brand promotion, discoverability, and business opportunities"
+       ]
+      }
+     },
+     {
+      "q": "Do I need to be certified to appear in the Global Directory?",
+      "a": {
+       "lead": "Organizations may appear in the Global Directory before completing certification. However, certification unlocks greater credibility, enhanced visibility, access to the Consciousness Impact Score, and recognition as a Global Conscious Organization.",
+       "items": []
+      }
+     }
+    ]
+   },
+   {
+    "name": "Partner",
+    "items": [
+     {
+      "q": "What is the CNESSWORKS Partner Program?",
+      "a": {
+       "lead": "The CNESSWORKS Partner Program enables individuals, organizations, institutions, and platforms to support conscious business growth through referrals, media, implementation, and strategic collaboration. It empowers partners to become a meaningful part of the positive change they wish to see in the world.",
+       "items": []
+      }
+     },
+     {
+      "q": "Who can become a CNESSWORKS Partner?",
+      "a": {
+       "lead": "Conscious pioneers, prominent individuals, consultants, advisors, media platforms, institutions, service providers, and organizations creating meaningful impact can apply. The program is designed for those who can introduce, support, promote, or guide organizations within the CNESSWORKS ecosystem.",
+       "items": []
+      }
+     },
+     {
+      "q": "How can I become a partner?",
+      "a": {
+       "lead": "Becoming a partner is a simple process. Select the pathway that best matches your expertise, network, and goals, submit your application, and the CNESSWORKS team will review it and guide you through the next steps.",
+       "items": []
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "cta": {
+  "heading": "Begin your Growth Journey Today",
+  "text": "Start taking intentional steps toward becoming more conscious, purposeful, and impactful.",
+  "button": "Get Started",
+  "url": "https://www.cnessworks.com/signup"
+ }
+}

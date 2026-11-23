@@ -1,0 +1,21 @@
+{
+ "note": "Functional and preview-only strings (not approved live copy): states the live page does not have, and the data-scope note. Used by tools/build-directory.py and components/directory/DirectoryPage.tsx.",
+ "ui": {
+  "loadError": "The directory listings could not be loaded.",
+  "retry": "Try again",
+  "close": "Close",
+  "service": "Directory service results",
+  "local": "Preview match",
+  "serviceNote": "These results are the directory service’s own answer for this selection, as captured on 23 November 2026.",
+  "localNote": "The directory service was not asked this exact search when the snapshot was taken, so this preview matches your words against each listing’s name, industry, description and location. Results on cnessworks.com can differ."
+ },
+ "scope": {
+  "title": "Preview data",
+  "summary": "Snapshot of the CNESS directory service, 23 November 2026",
+  "paragraphs": [
+   "This preview shows the 490 listed and 16 featured organizations that the directory service at cnessworks.com returned on 23 November 2026, in the service’s own order. Counts, pages and filters cover that snapshot, not the live directory.",
+   "Badge, size, country and <i>Certified only</i> filters, the six focus areas and the searches the service answered during the capture show the service’s own results. Any other search or industry is matched in your browser against the snapshot and is marked <i>Preview match</i>; cnessworks.com can return different results.",
+   "Profiles, bookmarks, ratings and the listing plans open on cnessworks.com. Impression and view counting is not connected in this preview, and the rating breakdown (stars by count) is not included."
+  ]
+ }
+}

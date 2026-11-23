@@ -2,7 +2,7 @@
 // (data-prod-href) must stay in the app when the app serves that page (local path, same tab) and go to the live
 // site otherwise. Pages the app serves: lib/site.ts APP_PAGES.
 const LIVE = 'https://www.cnessworks.com';
-const APP = ['cness-advantage', 'analyze', 'mother-of-certification', 'cness-certification', 'product-certification'];
+const APP = ['cness-advantage', 'analyze', 'mother-of-certification', 'cness-certification', 'product-certification', 'globaldirectory'];
 async function checkAppLinks(page, base = '') {
   const links = await page.evaluate(() => [...document.querySelectorAll('a[data-prod-href]')].map(a => ({ prod: a.getAttribute('data-prod-href'), href: a.getAttribute('href'), target: a.getAttribute('target'), text: a.textContent.trim().slice(0, 40) })));
   const bad = []; let inApp = 0;

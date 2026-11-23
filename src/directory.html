@@ -1,0 +1,1407 @@
+<title>CNESS Global Directory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Discover conscious business certification with CNESSWORKS. Build credibility through ethical practices, sustainability, responsible business and continuous improvement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,200..700;1,9..144,200..700&family=Onest:wght@300..700&display=swap">
+<style>
+/* Layout: First Light's night world, re-cut for a reading page. One fixed particle field behind everything
+   re-forms into each offering's emblem as its intro band arrives (stage on alternating sides); the details
+   then slide over it on glass. No pinned chapters: every section is as tall as its content.
+   Single dark world by choice, with daylight only at the closing call to action. */
+:root {
+  --night: #060417;
+  --ink: #0B0824;
+  --pearl: #F6F3FF;
+  --haze: #B9B3E2;
+  --gold: #FFC81A;
+  --dawn: #FFF3D1;
+  --day-ink: #1A1140;
+  --line: rgba(246, 243, 255, .16);
+  --glass: rgba(10, 7, 34, .72);
+  --glass-hi: rgba(20, 14, 58, .78);
+  color-scheme: dark;
+
+  --display: "Fraunces", "Fraunces Fallback", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --text: "Onest", "Onest Fallback", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "DM Mono", "DM Mono Fallback", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --t-mega: clamp(2.75rem, 8.2vw, 8.25rem);
+  --t-big: clamp(2.2rem, 5.2vw, 4.75rem);
+  --t-mid: clamp(1.9rem, 3.6vw, 3.25rem);
+  --t-lede: clamp(1.0625rem, 1.35vw, 1.25rem);
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+  --head: 72px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+@font-face { font-family: "Fraunces Fallback"; src: local("Times New Roman"), local("Liberation Serif"), local("Tinos"), local("Times"); size-adjust: 88%; }
+@font-face { font-family: "Onest Fallback"; src: local("Arial"), local("Liberation Sans"), local("Arimo"), local("Helvetica"); size-adjust: 103%; }
+@font-face { font-family: "DM Mono Fallback"; src: local("Courier New"), local("Liberation Mono"), local("Cousine"); size-adjust: 100%; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--head) + env(safe-area-inset-top, 0px) + 16px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--night); color: var(--pearl); font: 400 1.0625rem/1.6 var(--text); overflow-x: clip; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 70; background: var(--night); }
+img, svg { max-width: 100%; }
+img { height: auto; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4, p, blockquote, figure, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 300; text-wrap: balance; font-optical-sizing: auto; }
+h1, h2 { font-variation-settings: "opsz" 144; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 6px; }
+.skip { position: absolute; left: var(--gl); top: -100px; z-index: 100; background: var(--gold); color: var(--ink); padding: .6rem 1rem; border-radius: 999px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: 100%; max-width: 1280px; margin-inline: auto; padding-left: var(--gl); padding-right: var(--gr); }
+@media (min-width: 760px) { .wrap { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+@media (min-width: 1200px) { .wrap { padding-right: max(84px, env(safe-area-inset-right, 0px)); } }
+
+/* Eyebrows: the live page's labels, set in mono caps */
+.tag { font: 500 .6875rem/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--haze); display: inline-flex; gap: .7rem; align-items: center; }
+.tag::before { content: ""; width: 22px; height: 1px; background: var(--gold); flex: none; }
+.g { font-style: italic; color: var(--gold); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 52px; padding: .8rem 1.5rem; border-radius: 999px; border: 1px solid transparent; background: var(--gold); color: var(--ink); font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 100ms ease-out, box-shadow .35s, border-color .25s, background-color .25s; touch-action: manipulation; text-align: center; }
+.btn:hover { box-shadow: 0 10px 40px -8px rgba(255, 200, 26, .6); }
+.btn:active { transform: scale(.96); transition-duration: 60ms; }
+.btn .arr { transition: transform .3s var(--ease); flex: none; }
+.btn:hover .arr, .btn:focus-visible .arr { transform: translateX(4px); }
+.btn.ghost { background: rgba(246, 243, 255, .05); color: var(--pearl); border-color: var(--line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.btn.ghost:hover { border-color: var(--pearl); box-shadow: none; }
+.btn.dark { background: var(--day-ink); color: var(--dawn); }
+.btn.dark:hover { box-shadow: 0 10px 40px -10px rgba(26, 17, 64, .6); }
+.btn.line-dark { background: transparent; color: var(--day-ink); border-color: rgba(26, 17, 64, .4); }
+.btn.line-dark:hover { border-color: var(--day-ink); box-shadow: none; }
+.btn.sm { min-height: 40px; padding: .45rem 1rem; font-size: .875rem; white-space: nowrap; }
+.acts { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* ---------- The field ---------- */
+.sky { position: fixed; inset: 0; z-index: -3; background: var(--night); }
+.sky::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 40%, transparent 40%, rgba(0, 0, 0, .55) 100%); }
+.field { position: fixed; inset: 0; z-index: -2; transition: opacity .6s; }
+.field canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.grain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E"); }
+@media (max-width: 860px) { .field { opacity: .62; } }
+
+/* ---------- Header ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 60; }
+.top::before { content: ""; position: absolute; inset: 0; background: rgba(6, 4, 23, .55); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); border-bottom: 1px solid transparent; transition: background-color .3s, border-color .3s; }
+.scrolled .top::before { background: rgba(6, 4, 23, .78); border-color: var(--line); }
+.top > .wrap { position: relative; display: flex; align-items: center; gap: .5rem; height: var(--head); max-width: 1440px; }
+@media (min-width: 1200px) { .top > .wrap { padding-right: max(40px, env(safe-area-inset-right, 0px)); } }
+.brand { flex: none; display: block; border-radius: 6px; }
+.brand img { height: 32px; width: auto; display: block; }
+.nav { display: flex; align-items: center; gap: .1rem; margin-left: auto; }
+.nav > li { position: relative; }
+.nav a, .nav .dd > button { display: inline-flex; align-items: center; gap: .3rem; min-height: 40px; padding: .4rem .6rem; border-radius: 999px; font-size: .875rem; font-weight: 500; text-decoration: none; color: var(--haze); background: none; border: 0; cursor: pointer; white-space: nowrap; transition: color .2s, background-color .2s; }
+.nav a:hover, .nav .dd > button:hover, .nav .dd > button[aria-expanded="true"] { color: var(--pearl); background: rgba(246, 243, 255, .07); }
+.nav a[aria-current="page"] { color: var(--ink); background: var(--gold); }
+.chev { width: 9px; height: 9px; transition: transform .3s var(--ease); }
+[aria-expanded="true"] > .chev { transform: rotate(180deg); }
+.menu { position: absolute; top: calc(100% + 8px); left: 0; min-width: 15rem; padding: .45rem; border-radius: 18px; background: rgba(13, 9, 40, .94); border: 1px solid var(--line); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .7); display: grid; gap: .1rem;
+  transform-origin: 20% 0; opacity: 0; transform: translateY(-6px) scale(.96); visibility: hidden; transition: opacity .18s ease, transform .3s var(--ease), visibility 0s .3s; }
+.menu.right { left: auto; right: 0; transform-origin: 80% 0; }
+.open > .menu { opacity: 1; transform: none; visibility: visible; transition: opacity .18s ease, transform .3s var(--ease), visibility 0s; }
+.menu a { display: flex; justify-content: flex-start; width: 100%; border-radius: 12px; padding: .6rem .8rem; color: var(--pearl); font-size: .9375rem; min-height: 44px; }
+.menu a:hover { background: rgba(255, 200, 26, .1); color: var(--gold); }
+.menu .code { font: 500 .6875rem/1 var(--mono); letter-spacing: .08em; color: var(--gold); width: 1.8rem; flex: none; }
+.right-acts { display: flex; align-items: center; gap: .5rem; margin-left: .4rem; }
+.region > button { min-height: 40px; padding: .4rem .7rem; border-radius: 999px; border: 1px solid var(--line); background: none; cursor: pointer; display: inline-flex; gap: .35rem; align-items: center; font: 500 .75rem/1 var(--mono); letter-spacing: .08em; color: var(--pearl); }
+.region { position: relative; }
+.login { color: var(--pearl); text-decoration: none; font-size: .875rem; font-weight: 500; padding: .45rem .9rem; min-height: 40px; display: inline-flex; align-items: center; border-radius: 999px; border: 1px solid var(--line); transition: border-color .2s; white-space: nowrap; }
+.login:hover { border-color: var(--pearl); }
+.motion { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: rgba(9, 6, 32, .4); cursor: pointer; flex: none; transition: border-color .2s, transform 100ms ease-out; }
+.motion:hover { border-color: var(--pearl); }
+.motion:active { transform: scale(.92); }
+.motion svg { width: 11px; height: 11px; }
+.motion .play, .still .motion .pause { display: none; }
+.still .motion .play { display: block; }
+.burger { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(9, 6, 32, .4); cursor: pointer; place-items: center; }
+.burger i, .burger i::before, .burger i::after { display: block; width: 16px; height: 1.5px; background: currentColor; position: relative; transition: transform .35s var(--ease), background-color .2s; }
+.burger i::before, .burger i::after { content: ""; position: absolute; left: 0; }
+.burger i::before { top: -5px; } .burger i::after { top: 5px; }
+.burger[aria-expanded="true"] i { background: transparent; }
+.burger[aria-expanded="true"] i::before { transform: translateY(5px) rotate(45deg); }
+.burger[aria-expanded="true"] i::after { transform: translateY(-5px) rotate(-45deg); }
+@media (max-width: 1239px) {
+  .nav, .right-acts .region, .right-acts .login, .right-acts .btn { display: none; }
+  .right-acts { margin-left: auto; }
+  .burger { display: grid; }
+}
+.bar { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--gold); transform-origin: 0 50%; transform: scaleX(0); }
+
+/* Mobile sheet: drops from the header it belongs to */
+.sheet { position: fixed; inset: calc(var(--head) + env(safe-area-inset-top, 0px)) 0 0; z-index: 59; background: rgba(6, 4, 23, .96); -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 1rem var(--gr) calc(2rem + env(safe-area-inset-bottom, 0px)) var(--gl); transform-origin: 50% 0; transition: opacity .2s ease, transform .35s var(--ease); }
+.sheet[hidden] { display: block !important; opacity: 0; transform: translateY(-12px); pointer-events: none; visibility: hidden; transition: opacity .2s ease, transform .35s var(--ease), visibility 0s .35s; }
+.sheet .in { max-width: 34rem; margin-inline: auto; display: grid; gap: .25rem; }
+.sheet a, .sheet .grp > button { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 52px; padding: .6rem .2rem; border: 0; border-bottom: 1px solid var(--line); background: none; text-decoration: none; font: 400 1.35rem/1.2 var(--display); color: var(--pearl); cursor: pointer; text-align: left; }
+.sheet a[aria-current="page"] { color: var(--gold); }
+.sheet .sub { display: grid; padding: .2rem 0 .6rem 1rem; }
+.sheet .sub a { font: 400 1rem/1.3 var(--text); min-height: 44px; border-bottom: 0; color: var(--haze); }
+.sheet .sub[hidden] { display: none; }
+.sheet .acts { margin-top: 1.4rem; }
+.sheet .acts a { font: 600 1rem/1 var(--text); border: 1px solid var(--line); border-radius: 999px; justify-content: center; padding-inline: 1.2rem; flex: 1 1 10rem; }
+.sheet .acts a.btn { border-color: transparent; color: var(--ink); }
+.sheet .regions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
+.sheet .regions a { font: 500 .8125rem/1 var(--text); border: 1px solid var(--line); border-radius: 999px; min-height: 40px; width: auto; padding: .5rem .8rem; gap: .5rem; }
+.sheet-open { overflow: hidden; }
+
+/* Section dots */
+.dots { position: fixed; z-index: 49; right: max(18px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); display: grid; gap: .1rem; }
+.dots a { display: flex; align-items: center; justify-content: flex-end; gap: .7rem; height: 24px; text-decoration: none; font: 500 .625rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--haze); }
+.dots a span { opacity: 0; transform: translateX(6px); transition: opacity .25s, transform .25s; background: rgba(6, 4, 23, .82); padding: .3rem .5rem; border-radius: 6px; white-space: nowrap; }
+.dots a::after { content: ""; width: 7px; height: 7px; border-radius: 50%; border: 1px solid currentColor; transition: background-color .25s, transform .3s var(--ease); flex: none; }
+.dots a:hover span, .dots a:focus-visible span { opacity: 1; transform: none; }
+.dots a[aria-current="true"] { color: var(--gold); }
+.dots a[aria-current="true"]::after { background: var(--gold); transform: scale(1.5); }
+.day .dots a { color: var(--day-ink); }
+@media (max-width: 1199px) { .dots { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(3rem, 9vh, 6.5rem) clamp(2.5rem, 6vh, 4.5rem); }
+.hero .inner { display: grid; gap: clamp(1.3rem, 2.6vh, 2rem); }
+.hero h1 { font-size: var(--t-mega); line-height: .92; letter-spacing: -.045em; max-width: 9.6em; }
+.hero h1 .w { display: inline-block; }
+.js .hero h1 .w { animation: up 1s cubic-bezier(.16, .9, .2, 1) both; animation-delay: calc(var(--i) * 55ms + 120ms); }
+@keyframes up { from { transform: translateY(.45em); opacity: .18; filter: blur(6px); } }
+.hero .lede { max-width: 37rem; }
+.lede { font-size: var(--t-lede); line-height: 1.6; color: var(--haze); font-weight: 300; }
+.hero .start { font: italic 300 clamp(1.25rem, 2vw, 1.6rem)/1.35 var(--display); color: var(--pearl); max-width: 30rem; padding-left: 1rem; border-left: 1px solid var(--gold); }
+/* Index of the page, built from the page's own labels */
+.idx { margin-top: clamp(1rem, 3vh, 2rem); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.idx li { border-bottom: 1px solid var(--line); }
+.idx li:not(:nth-child(4n)) { border-right: 1px solid var(--line); }
+.idx a { display: grid; gap: .3rem; padding: .9rem 1rem .95rem; min-height: 100%; text-decoration: none; position: relative; overflow: hidden; transition: background-color .25s; }
+.idx a::before { content: ""; position: absolute; inset: auto 0 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s var(--ease); }
+.idx a:hover, .idx a:focus-visible { background: rgba(255, 200, 26, .06); }
+.idx a:hover::before, .idx a:focus-visible::before { transform: scaleX(1); }
+.idx .k { font: 500 .625rem/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.idx .t { font: 400 1.0625rem/1.25 var(--display); color: var(--pearl); }
+@media (max-width: 1000px) { .idx { grid-template-columns: repeat(2, minmax(0, 1fr)); } .idx li:not(:nth-child(4n)) { border-right: 0; } .idx li:nth-child(odd) { border-right: 1px solid var(--line); } }
+@media (max-width: 520px) { .idx { grid-template-columns: minmax(0, 1fr); } .idx li:nth-child(odd) { border-right: 0; } .idx a { padding-inline: .2rem; } }
+
+/* ---------- Offerings ---------- */
+.off { position: relative; padding-block: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 3vw, 2.5rem); }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem clamp(2rem, 6vw, 6rem); align-items: end; min-height: clamp(18rem, 44vh, 27rem); }
+.intro .txt { display: grid; gap: 1.15rem; align-content: end; max-width: 35rem; }
+.off.flip .intro .txt { grid-column: 2; }
+.off h3 { font-size: var(--t-mid); line-height: 1.02; letter-spacing: -.03em; }
+.off .desc { color: var(--haze); font-weight: 300; font-size: var(--t-lede); line-height: 1.55; }
+.off .acts { margin-top: .3rem; }
+.emb { width: 76px; height: 76px; }
+@media (max-width: 860px) {
+  .intro { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: 34vh; position: relative; }
+  .intro::before { content: ""; position: absolute; inset: 22vh calc(-1 * var(--gr)) -2rem calc(-1 * var(--gl)); background: linear-gradient(180deg, transparent, rgba(6, 4, 23, .78) 30%); pointer-events: none; }
+  .intro .txt { position: relative; }
+  .plans-h, .app-h { min-height: 0; padding-top: 30vh; }
+  .off.flip .intro .txt { grid-column: auto; }
+}
+
+/* Details on glass: three lists, then what it means and the use case */
+.det { margin-top: clamp(1.5rem, 3vw, 2.4rem); border-radius: 28px; background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(24px) saturate(150%); backdrop-filter: blur(24px) saturate(150%); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, .7); overflow: hidden; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.col { padding: clamp(1.3rem, 2.4vw, 2rem); display: grid; gap: .9rem; align-content: start; }
+.col + .col { border-left: 1px solid var(--line); }
+.lbl { font: 500 .6875rem/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: .55rem; }
+.lbl svg { width: 15px; height: 15px; flex: none; }
+.col ul { display: grid; gap: .65rem; }
+.col li { position: relative; padding-left: 1.15rem; color: var(--pearl); font-weight: 300; line-height: 1.5; }
+.col li::before { content: ""; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--gold); }
+.col:nth-child(3) li::before { background: var(--gold); }
+.means { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); border-top: 1px solid var(--line); background: var(--glass-hi); }
+.means .m { padding: clamp(1.3rem, 2.4vw, 2rem); display: grid; gap: .7rem; align-content: start; }
+.means .q { font: italic 300 clamp(1.25rem, 1.9vw, 1.6rem)/1.32 var(--display); letter-spacing: -.01em; color: var(--pearl); }
+.use { padding: clamp(1.3rem, 2.4vw, 2rem); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem 1rem; align-content: start; border-left: 1px solid var(--line); }
+.use .ic { grid-row: span 2; width: 44px; height: 44px; border-radius: 14px; border: 1px solid rgba(255, 200, 26, .45); display: grid; place-items: center; color: var(--gold); }
+.use .ic svg { width: 22px; height: 22px; }
+.use h4 { font: 400 1.25rem/1.25 var(--display); letter-spacing: -.01em; }
+.use p { color: var(--haze); font-weight: 300; font-size: .9875rem; }
+.means.solo { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 960px) {
+  .cols { grid-template-columns: minmax(0, 1fr); }
+  .col + .col { border-left: 0; border-top: 1px solid var(--line); }
+  .means { grid-template-columns: minmax(0, 1fr); }
+  .use { border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 420px) { .use { grid-template-columns: minmax(0, 1fr); } .use .ic { grid-row: auto; } }
+
+/* Level track: one rail through the three levels */
+.levels { position: relative; }
+.rail { position: absolute; left: calc(max(16px, env(safe-area-inset-left, 0px)) - 2px); top: 0; bottom: 0; width: 1px; background: var(--line); pointer-events: none; }
+.rail i { position: absolute; inset: 0; background: linear-gradient(var(--gold), #FFE9A8); transform-origin: 50% 0; transform: scaleY(var(--fill, 0)); }
+@media (min-width: 760px) { .rail { left: max(20px, env(safe-area-inset-left, 0px)); } }
+@media (min-width: 1280px) { .rail { left: calc(50% - 640px + 18px); } }
+.lvhead { display: flex; align-items: center; gap: 1rem; }
+.lvn { position: relative; }
+
+/* Statement lines between groups (words lit by scroll, never below 3:1) */
+.say { padding-block: clamp(3rem, 8vw, 6rem) clamp(1rem, 3vw, 2rem); }
+.say h2 { font-size: var(--t-big); line-height: 1.02; letter-spacing: -.035em; max-width: 15em; }
+.js .say .wd { opacity: var(--o, 1); transition: opacity .3s; }
+.say .wd.g { color: var(--gold); }
+
+/* ---------- Plans ---------- */
+.plans-s { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 3vw, 2.5rem); }
+.plans-h, .app-h { display: grid; gap: 1.1rem; max-width: 44rem; margin-bottom: clamp(1.6rem, 3vw, 2.4rem); min-height: clamp(12rem, 30vh, 18rem); align-content: end; }
+.plans-h h2 { font-size: var(--t-big); line-height: 1; letter-spacing: -.035em; }
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: stretch; }
+@media (max-width: 860px) { .plans { grid-template-columns: minmax(0, 1fr); } }
+.plan { position: relative; border-radius: 28px; padding: clamp(1.4rem, 2.6vw, 2.2rem); background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(24px) saturate(150%); backdrop-filter: blur(24px) saturate(150%); display: grid; grid-template-rows: auto auto 1fr auto; gap: 1.1rem; overflow: hidden; transition: border-color .3s, transform .45s var(--ease); }
+.plan::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 200, 26, .14), transparent 60%); }
+.plan:hover::before, .plan:focus-within::before { opacity: 1; }
+.plan:hover, .plan:focus-within { border-color: rgba(255, 200, 26, .55); }
+.plan.pro { background: linear-gradient(165deg, rgba(60, 44, 170, .5), rgba(10, 7, 34, .78) 55%); border-color: rgba(255, 200, 26, .38); }
+.plan h3 { font-size: clamp(2.1rem, 3.6vw, 3rem); line-height: 1; letter-spacing: -.03em; }
+.plan .sum { color: var(--haze); font-weight: 300; }
+.plan ul { display: grid; gap: .6rem; align-content: start; }
+.plan li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: .7rem; font-weight: 300; line-height: 1.5; }
+.plan li svg { width: 18px; height: 18px; margin-top: .15em; color: var(--gold); }
+.plan li b { font-weight: 500; color: var(--pearl); }
+.plan li.cap { color: var(--haze); }
+.plan .btn { width: 100%; }
+.badge { position: absolute; top: clamp(1.4rem, 2.6vw, 2.2rem); right: clamp(1.4rem, 2.6vw, 2.2rem); font: 500 .625rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; padding: .5rem .7rem; border-radius: 999px; background: var(--gold); color: var(--ink); }
+.same { margin-top: 1.25rem; padding: 1.2rem 1.4rem; border-radius: 18px; border: 1px solid rgba(255, 200, 26, .38); background: rgba(255, 200, 26, .06); color: var(--haze); font-weight: 300; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; }
+.same svg { width: 26px; height: 26px; color: var(--gold); }
+.same strong { color: var(--pearl); font-weight: 600; }
+
+/* ---------- SuperApp ---------- */
+.app { padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2rem, 4vw, 3rem); }
+.app-h h2 { font-size: var(--t-big); line-height: 1; letter-spacing: -.035em; }
+.ways { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border-radius: 28px; overflow: hidden; border: 1px solid var(--line); }
+@media (max-width: 960px) { .ways { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ways { grid-template-columns: minmax(0, 1fr); } }
+.way { position: relative; padding: clamp(1.3rem, 2.4vw, 2rem); background: rgba(10, 7, 34, .86); display: grid; gap: .6rem; align-content: start; transition: background-color .3s; outline-offset: -4px; }
+.way::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .4s; background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 200, 26, .14), transparent 65%); }
+.way:hover::before, .way:focus-visible::before, .way.on::before { opacity: 1; }
+.way .ic { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255, 200, 26, .45); color: var(--gold); display: grid; place-items: center; transition: background-color .3s, color .3s, transform .45s var(--ease); }
+.way:hover .ic, .way:focus-visible .ic, .way.on .ic { background: var(--gold); color: var(--ink); transform: scale(1.06); }
+.way .ic svg { width: 22px; height: 22px; }
+.way h3 { font: 400 1.35rem/1.2 var(--display); letter-spacing: -.01em; margin-top: .4rem; }
+.way p { color: var(--haze); font-weight: 300; font-size: .9875rem; }
+.app .acts { margin-top: 1.6rem; }
+
+/* ---------- Closing: daylight ---------- */
+.final { position: relative; min-height: 92vh; min-height: 92svh; display: grid; overflow: hidden; --r: 1; }
+.sunrise { position: relative; display: grid; place-items: center; text-align: center; color: var(--day-ink); padding-block: clamp(4rem, 12vh, 8rem);
+  background: radial-gradient(90% 70% at 50% 55%, #FFFFFF 0%, var(--dawn) 45%, #FFD98A 100%);
+  clip-path: circle(calc(32vmax + var(--r) * 110vmax) at 50% 55%); }
+.sunrise .in { display: grid; gap: 1.5rem; justify-items: center; padding-left: var(--gl); padding-right: var(--gr); max-width: 52rem; transform: scale(calc(.94 + var(--r) * .06)); }
+.sunrise .mk { width: 64px; height: 64px; }
+.sunrise h2 { font-size: var(--t-big); line-height: .98; letter-spacing: -.04em; }
+.sunrise p { max-width: 34rem; font-size: var(--t-lede); font-weight: 300; }
+.sunrise .acts { justify-content: center; }
+.sunrise :focus-visible { outline-color: var(--day-ink); }
+
+/* ---------- Footer ---------- */
+footer { background: var(--night); color: var(--haze); padding-block: 4rem calc(2.5rem + env(safe-area-inset-bottom, 0px)); font-size: .9375rem; position: relative; }
+.foot { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+.foot .about { display: grid; gap: 1.1rem; align-content: start; }
+.foot .about p { max-width: 24rem; }
+.foot address { font-style: normal; display: grid; gap: .5rem; }
+.cp { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.cp a { text-decoration: none; color: var(--pearl); }
+.cp a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cp button { border: 1px solid var(--line); background: transparent; color: var(--pearl); border-radius: 999px; font: 500 .625rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: .45rem .65rem; min-height: 30px; cursor: pointer; transition: border-color .2s; }
+.cp button:hover { border-color: var(--pearl); }
+.soc { display: flex; gap: .5rem; }
+.soc a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--pearl); transition: border-color .2s, color .2s, transform 100ms ease-out; }
+.soc a:hover { border-color: var(--gold); color: var(--gold); }
+.soc a:active { transform: scale(.92); }
+.soc svg { width: 17px; height: 17px; }
+footer h3 { margin: 0 0 1rem; color: var(--pearl); font: 500 .6875rem/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+footer ul { display: grid; gap: .3rem; }
+footer ul a, footer ul button { text-decoration: none; transition: color .2s; background: none; border: 0; padding: .3rem 0; cursor: pointer; color: var(--haze); text-align: left; font-size: .9375rem; min-height: 32px; display: inline-flex; align-items: center; }
+footer ul a:hover, footer ul button:hover { color: var(--pearl); }
+.pop { position: relative; }
+.pop .tip { position: absolute; left: 0; bottom: calc(100% + 6px); z-index: 5; width: min(17rem, 70vw); padding: .8rem .9rem; border-radius: 14px; background: #160F45; border: 1px solid var(--line); color: var(--pearl); font-size: .875rem; box-shadow: 0 20px 40px -15px rgba(0, 0, 0, .8); display: grid; gap: .45rem; transform-origin: 10% 100%; }
+.pop .tip[hidden] { display: none !important; }
+.pop .tip a { color: var(--gold); padding: 0; min-height: 0; }
+.legal { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: .8125rem; }
+@media (max-width: 1000px) { .foot { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot .about { grid-column: 1 / -1; } }
+@media (max-width: 420px) { .foot { grid-template-columns: minmax(0, 1fr); } }
+
+/* Quick actions (the live site's floating shortcuts) and back to top */
+.quick { position: fixed; z-index: 48; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); display: grid; gap: .5rem; justify-items: end; transition: opacity .3s, transform .4s var(--ease); }
+.dock-away .quick, .hide-quick .quick { opacity: 0; transform: translateY(12px); pointer-events: none; visibility: hidden; transition: opacity .3s, transform .4s var(--ease), visibility 0s .4s; }
+.qa { position: relative; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--gold); color: var(--ink); text-decoration: none; box-shadow: 0 14px 34px -14px rgba(0, 0, 0, .85), 0 0 0 1px rgba(6, 4, 23, .35); transition: transform 100ms ease-out, box-shadow .3s; }
+.qa:hover { box-shadow: 0 10px 34px -8px rgba(255, 200, 26, .55); }
+.qa:active { transform: scale(.94); }
+.qa .ic svg { width: 21px; height: 21px; display: block; }
+/* The label slides out of the button it belongs to on hover or keyboard focus */
+.qa .lab { position: absolute; right: calc(100% + 10px); top: 50%; display: grid; line-height: 1.2; text-align: right; white-space: nowrap; padding: .55rem .8rem; border-radius: 12px; background: rgba(13, 9, 40, .94); border: 1px solid var(--line); color: var(--pearl); pointer-events: none;
+  opacity: 0; transform: translate(8px, -50%) scale(.96); transform-origin: 100% 50%; transition: opacity .18s ease, transform .3s var(--ease); }
+.qa .lab b { font-size: .8125rem; font-weight: 600; }
+.qa .lab small { font: 500 .5625rem/1.3 var(--mono); letter-spacing: .14em; color: var(--gold); }
+.qa:focus-visible .lab { opacity: 1; transform: translate(0, -50%); }
+@media (hover: hover) { .qa:hover .lab { opacity: 1; transform: translate(0, -50%); } }
+@media (max-width: 860px) { .qa { width: 46px; height: 46px; } }
+.totop { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(13, 9, 40, .88); color: var(--pearl); cursor: pointer; display: grid; place-items: center; transition: opacity .3s, transform .4s var(--ease), border-color .2s; }
+.totop svg { width: 16px; height: 16px; }
+.totop:hover { border-color: var(--gold); }
+.totop[hidden] { display: grid !important; opacity: 0; transform: translateY(8px) scale(.9); pointer-events: none; visibility: hidden; }
+
+/* Arrival: elements settle into place as they arrive, driven by scroll. Movement only: text is always at full contrast */
+.js [data-in] { transform: translateY(calc((1 - var(--in, 1)) * 28px)); }
+.js .det[data-in] { transform: translateY(calc((1 - var(--in, 1)) * 40px)) scale(calc(.985 + var(--in, 1) * .015)); }
+.still [data-in], .still .det[data-in] { transform: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .12s !important; }
+  html { scroll-behavior: auto; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .det, .plan, .btn.ghost, .motion, .menu, .sheet, .qa, .top::before { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .det, .plan, .menu, .sheet, .qa, .way { background: var(--ink); }
+  .top::before { background: var(--night); }
+}
+@media (prefers-contrast: more) { :root { --line: rgba(246, 243, 255, .5); --haze: #E4E0FF; } .field { opacity: .45; } }
+@media (forced-colors: active) { .btn, .qa, .badge { border: 1px solid CanvasText; } }
+
+/* ===== Global Directory, on the shared CNESSWORKS system (tokens, header, footer, buttons come from
+   src/advantage/style.css). Concept: the discovery lens. Every listing in the data is one point of light,
+   laid out on a sunflower spiral in the directory's own ranking order (first at the centre). Searching,
+   filtering or pointing at a focus area lights exactly the listings that match; the count in the lens is the
+   real number of entries. No map, no invented positions: the graphic is the result set itself.
+   Layout: search first (no intro to scroll past), then featured placement, then the full listing with the
+   lens and filters beside it. Single night world, daylight only for the closing call to action. ===== */
+:root {
+  --t-aspiring: #FF8F80;
+  --t-inspired: #FFC81A;
+  --t-luminary: #AE92FF;
+  --feat: #FFE2A0;
+  --card: rgba(13, 9, 40, .82);
+  --card-hi: rgba(24, 17, 66, .9);
+  --field: rgba(12, 8, 36, .78);
+}
+
+/* Night with a faint index grid (no particle field on this page) */
+.sky .graticule { position: absolute; inset: 0; opacity: .5;
+  background-image: linear-gradient(rgba(185, 179, 226, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(185, 179, 226, .05) 1px, transparent 1px);
+  background-size: 64px 64px; -webkit-mask-image: radial-gradient(90% 70% at 70% 20%, #000 10%, transparent 75%); mask-image: radial-gradient(90% 70% at 70% 20%, #000 10%, transparent 75%); }
+
+/* ---------- Hero: copy and lens, then the search console ---------- */
+.gd-hero { padding-block: clamp(1.5rem, 5vh, 3.5rem) clamp(2rem, 4vw, 3rem); }
+/* one grid: copy and lens side by side, then search, benefits and focus areas across the width.
+   On phones the search comes straight after the copy, then the focus areas, then a compact lens. */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); grid-template-areas: "copy lens" "console console" "benefits benefits" "focus focus"; column-gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.hero-copy { grid-area: copy; display: grid; gap: 1.2rem; align-content: center; min-width: 0; }
+.hero-grid > .lens { grid-area: lens; } .hero-grid > .console { grid-area: console; } .hero-grid > .benefits { grid-area: benefits; } .hero-grid > .focus { grid-area: focus; }
+main [hidden], .pdlg [hidden], .rpop[hidden], .lens-tip[hidden] { display: none !important; }
+.gd-hero h1 { font-size: clamp(2.5rem, 6vw, 5.4rem); line-height: .96; letter-spacing: -.04em; max-width: 11.5em; }
+.gd-hero h1 .w { display: inline-block; }
+.js .gd-hero h1 .w { animation: up .9s cubic-bezier(.16, .9, .2, 1) both; animation-delay: calc(var(--i) * 55ms + 80ms); }
+.gd-hero .lede { max-width: 34rem; }
+.plan-btns .btn { min-width: 7.5rem; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "console" "focus" "lens" "benefits"; } .hero-grid > .lens { max-width: 320px; justify-self: center; width: 100%; margin-top: 1.6rem; } }
+
+/* The lens */
+.lens { margin: 0; display: grid; gap: .8rem; justify-items: center; min-width: 0; }
+.lens-stage { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; max-height: 100%; }
+.lens canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lens-stage::before { content: ""; position: absolute; inset: 6%; border-radius: 50%; border: 1px solid rgba(255, 200, 26, .2); box-shadow: inset 0 0 80px rgba(60, 44, 170, .25); pointer-events: none; }
+.lens-n { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; justify-items: center; gap: .1rem; pointer-events: none; text-align: center; padding: 1.4rem 1.6rem; border-radius: 50%; background: radial-gradient(closest-side, rgba(6, 4, 23, .82), rgba(6, 4, 23, .55) 60%, transparent); }
+.lens-n b { font: 300 clamp(2.4rem, 5vw, 3.6rem)/1 var(--display); letter-spacing: -.03em; color: var(--pearl); font-variant-numeric: tabular-nums; text-shadow: 0 0 30px rgba(6, 4, 23, .95), 0 0 12px rgba(6, 4, 23, .9); }
+.lens-n span { font: 500 .625rem/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--gold); text-shadow: 0 0 10px rgba(6, 4, 23, .9); }
+.lens-tip { position: absolute; z-index: 3; transform: translate(-50%, calc(-100% - 12px)); max-width: 15rem; padding: .45rem .65rem; border-radius: 10px; background: rgba(13, 9, 40, .95); border: 1px solid var(--line); font-size: .8125rem; line-height: 1.3; pointer-events: none; box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .8); }
+.lens-tip b { display: block; font-weight: 600; color: var(--pearl); }
+.lens-tip span { color: var(--haze); font-size: .75rem; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem 1rem; font: 500 .625rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--haze); }
+.legend li { display: inline-flex; align-items: center; gap: .45rem; }
+.lg { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.lg.ring { border: 1.5px solid var(--feat); }
+.lg.t-aspiring { background: var(--t-aspiring); } .lg.t-inspired { background: var(--t-inspired); } .lg.t-luminary { background: var(--t-luminary); }
+.lens.mini .lens-stage { max-width: 236px; }
+.lens.mini .lens-stage::before { inset: 4%; }
+
+/* Search console */
+.console { position: relative; z-index: 20; margin-top: clamp(1.2rem, 3vw, 2rem); display: grid; grid-template-columns: minmax(0, 1.35fr) 1px minmax(0, 1fr) auto; align-items: stretch; gap: 0;
+  padding: .45rem; border-radius: 22px; background: var(--field); border: 1px solid var(--line); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .8); }
+.console .div { background: var(--line); margin-block: .7rem; }
+.fld { position: relative; display: flex; align-items: center; min-width: 0; }
+.fld-btn { flex: 1; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; column-gap: .8rem; align-items: center; text-align: left; padding: .7rem 1rem .7rem 1.1rem; min-height: 64px; border: 0; border-radius: 16px; background: none; cursor: pointer; transition: background-color .2s; }
+.fld-btn:hover, .fld-btn[aria-expanded="true"] { background: rgba(246, 243, 255, .05); }
+.fld .fl { grid-column: 1; font: 500 .6875rem/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.fld .fv { grid-column: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 1rem; color: var(--pearl); }
+.fld .fv .ph { color: var(--haze); }
+.fld-btn .chev { grid-column: 2; grid-row: 1 / span 2; width: 12px; height: 12px; color: var(--haze); transition: transform .3s var(--ease); }
+.fld-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.fld.has .fld-btn { padding-right: 3rem; }
+.fx { position: absolute; right: 2.4rem; top: 50%; transform: translateY(-50%); width: 32px; height: 32px; border-radius: 50%; border: 0; background: rgba(246, 243, 255, .08); display: grid; place-items: center; cursor: pointer; color: var(--pearl); }
+.fx:hover { background: rgba(246, 243, 255, .16); }
+.fx svg { width: 14px; height: 14px; }
+.console .go { align-self: center; min-height: 56px; padding-inline: 1.6rem; border-radius: 16px; margin-left: .35rem; }
+.console .go svg { width: 18px; height: 18px; }
+.err { position: absolute; right: .5rem; bottom: calc(100% + 10px); max-width: 16rem; padding: .55rem .8rem; border-radius: 10px; background: #C2384A; color: #fff; font-size: .8125rem; font-weight: 500; box-shadow: 0 12px 30px -12px rgba(0, 0, 0, .7); }
+.js .err:not([hidden]) { animation: pop .25s var(--ease); }
+@keyframes pop { from { transform: translateY(6px) scale(.96); opacity: 0; } }
+@media (max-width: 760px) {
+  .console { grid-template-columns: minmax(0, 1fr); padding: .4rem; }
+  .console .div { margin: 0 .9rem; height: 1px; }
+  .console .go { margin: .35rem 0 0; width: 100%; }
+  .err { left: .5rem; right: auto; }
+}
+
+/* Search panels (Industry, Location) */
+.panel { position: absolute; z-index: 30; left: 0; top: calc(100% + 10px); width: min(560px, calc(100vw - 2 * var(--gl))); border-radius: 18px; background: #0D0928; border: 1px solid var(--line); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .85); overflow: hidden; }
+.fld[data-field="where"] .panel { width: min(420px, calc(100vw - 2 * var(--gl))); }
+.js .panel:not([hidden]) { animation: drop .22s var(--ease); transform-origin: 30% 0; }
+@keyframes drop { from { opacity: 0; transform: translateY(-6px) scale(.98); } }
+.pin { display: flex; align-items: center; gap: .5rem; padding: .7rem .9rem; border-bottom: 1px solid var(--line); }
+.pin input { flex: 1; min-width: 0; min-height: 40px; border: 0; background: none; color: var(--pearl); font: inherit; font-size: 1rem; outline: none; }
+.pin input::placeholder { color: var(--haze); opacity: 1; }
+.pin .px { width: 30px; height: 30px; border-radius: 50%; border: 0; background: rgba(246, 243, 255, .08); display: grid; place-items: center; cursor: pointer; }
+.pin .px svg { width: 13px; height: 13px; }
+.pin:focus-within { box-shadow: inset 0 -2px 0 var(--gold); }
+.plim { padding: 0 .9rem .5rem; font-size: .75rem; color: #FFB86B; }
+.plist { max-height: min(360px, 50vh); overflow-y: auto; overscroll-behavior: contain; padding-block: .35rem; }
+.pg-l { padding: .65rem 1rem .25rem; font: 500 .625rem/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--haze); }
+.pg-hint, .pg-msg { padding: .5rem 1rem; font-size: .8125rem; color: var(--haze); }
+.opt { display: flex; align-items: center; gap: .55rem; width: 100%; text-align: left; padding: .6rem 1rem; min-height: 44px; border: 0; background: none; cursor: pointer; font-size: .9375rem; color: var(--pearl); }
+.opt.sub { padding-left: 2rem; }
+.opt small { color: var(--haze); font-size: .75rem; }
+.opt:hover, .opt:focus-visible { background: rgba(255, 200, 26, .1); outline: none; }
+.opt:focus-visible { box-shadow: inset 3px 0 0 var(--gold); }
+.opt .listed { font: 600 .5625rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: .3rem .45rem; border-radius: 999px; background: rgba(76, 201, 140, .16); color: #7EE2AE; }
+.opt.anyway { color: var(--gold); font-weight: 500; }
+
+/* Benefit strip (copy as published) */
+.benefits { margin-top: 1rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-radius: 22px; background: var(--glass); border: 1px solid var(--line); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.bcol { padding: 1.1rem 1.3rem 1.2rem; display: grid; gap: .6rem; align-content: start; }
+.bcol + .bcol { border-left: 1px solid var(--line); }
+.bcol h2 { font: 500 .6875rem/1.4 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.bcol ul { display: grid; gap: .4rem; }
+.bcol li { position: relative; padding-left: 1rem; font-size: .9375rem; font-weight: 300; line-height: 1.45; color: var(--pearl); }
+.bcol li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--haze); }
+@media (max-width: 860px) { .benefits { grid-template-columns: minmax(0, 1fr); } .bcol + .bcol { border-left: 0; border-top: 1px solid var(--line); } }
+
+/* Focus areas */
+.focus { margin-top: clamp(1.4rem, 3vw, 2rem); display: grid; gap: .8rem; }
+.focus-l { font: 500 .6875rem/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--haze); }
+.focus ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; }
+.fchip { width: 100%; height: 100%; display: grid; justify-items: center; gap: .55rem; padding: 1rem .6rem .9rem; border-radius: 18px; border: 1px solid var(--line); background: rgba(12, 8, 36, .6); cursor: pointer; font-size: .9375rem; font-weight: 500; color: var(--pearl); text-align: center;
+  transition: border-color .25s, background-color .25s, transform 120ms ease-out; touch-action: manipulation; }
+.fchip .fi { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(255, 200, 26, .4); color: var(--gold); transition: background-color .3s, color .3s, transform .45s var(--ease); }
+.fchip .fi svg { width: 22px; height: 22px; }
+.fchip:hover, .fchip:focus-visible { border-color: rgba(255, 200, 26, .6); background: rgba(30, 21, 80, .7); }
+.fchip:hover .fi, .fchip:focus-visible .fi { transform: translateY(-2px); }
+.fchip:active { transform: scale(.96); }
+.fchip[aria-pressed="true"] { border-color: var(--gold); background: rgba(255, 200, 26, .1); }
+.fchip[aria-pressed="true"] .fi { background: var(--gold); color: var(--ink); }
+@media (max-width: 960px) { .focus ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 420px) { .fchip { font-size: .875rem; padding-inline: .3rem; } }
+
+/* ---------- How it works: one compact row ---------- */
+.how { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.5rem); }
+.how h2 { font-size: var(--t-mid); line-height: 1.04; letter-spacing: -.03em; margin-bottom: 1.4rem; }
+.how ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; border-top: 1px solid var(--line); }
+.how li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem 1rem; padding-top: 1.2rem; }
+.how .n { grid-row: span 2; font: 300 2.2rem/1 var(--display); color: var(--gold); font-variant-numeric: tabular-nums; }
+.how h3 { font: 400 1.3rem/1.2 var(--display); letter-spacing: -.01em; }
+.how p { color: var(--haze); font-weight: 300; font-size: .9875rem; }
+@media (max-width: 860px) { .how ol { grid-template-columns: minmax(0, 1fr); } }
+
+/* Data scope note (preview only) */
+.scope { margin-block: .5rem 0; border-radius: 16px; border: 1px dashed rgba(246, 243, 255, .28); background: rgba(12, 8, 36, .5); }
+.scope summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; padding: .8rem 1rem; min-height: 48px; font-size: .875rem; color: var(--haze); }
+.scope summary::-webkit-details-marker { display: none; }
+.scope summary b { color: var(--pearl); font-weight: 600; }
+.scope summary svg { width: 16px; height: 16px; margin-left: auto; transition: transform .3s var(--ease); }
+.scope[open] summary svg { transform: rotate(45deg); }
+.scope .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(255, 200, 26, .15); }
+.scope-b { display: grid; gap: .6rem; padding: 0 1rem 1rem; max-width: 62rem; font-size: .875rem; color: var(--haze); font-weight: 300; }
+
+/* ---------- Sections and filters ---------- */
+.sec { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 2vw, 1.5rem); }
+.sec-h { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; margin-bottom: 1.4rem; }
+.sec-h h2 { font-size: var(--t-mid); line-height: 1.04; letter-spacing: -.03em; }
+.sec-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .6rem; }
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.sel { position: relative; display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: .5rem .9rem; border-radius: 12px; border: 1px solid var(--line); background: rgba(12, 8, 36, .7); font-size: .875rem; font-weight: 500; color: var(--haze); cursor: pointer; transition: border-color .2s, background-color .2s, color .2s; }
+.sel:hover { border-color: rgba(246, 243, 255, .4); color: var(--pearl); }
+.sel select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font-size: 1rem; }
+.sel .chev { width: 10px; height: 10px; flex: none; }
+.sel:focus-within { outline: 2px solid var(--gold); outline-offset: 2px; }
+.sel.on { border-color: var(--gold); background: rgba(255, 200, 26, .1); color: var(--pearl); }
+.sel .sv { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 14rem; }
+.chk { position: relative; display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .5rem .9rem; border-radius: 12px; border: 1px solid var(--line); background: rgba(12, 8, 36, .7); font-size: .875rem; font-weight: 500; color: var(--haze); cursor: pointer; transition: border-color .2s, background-color .2s, color .2s; }
+.chk input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.chk .box { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--haze); display: grid; place-items: center; transition: background-color .2s, border-color .2s; }
+.chk .box svg { width: 12px; height: 12px; color: var(--ink); transform: scale(0); transition: transform .25s var(--ease); }
+.chk:has(input:checked) { border-color: var(--gold); background: rgba(255, 200, 26, .1); color: var(--pearl); }
+.chk input:checked + .box { background: var(--gold); border-color: var(--gold); }
+.chk input:checked + .box svg { transform: none; }
+.chk:has(input:focus-visible) { outline: 2px solid var(--gold); outline-offset: 2px; }
+.clr { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: .5rem .9rem; border-radius: 12px; border: 1px solid transparent; background: none; font-size: .875rem; font-weight: 500; color: var(--gold); cursor: pointer; }
+.clr:hover { border-color: rgba(255, 200, 26, .4); }
+.clr svg { width: 13px; height: 13px; }
+.arrows { display: flex; gap: .4rem; }
+.arw { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(12, 8, 36, .7); display: grid; place-items: center; cursor: pointer; transition: border-color .2s, opacity .2s, transform 120ms ease-out; }
+.arw svg { width: 18px; height: 18px; }
+.arw:hover:not(:disabled) { border-color: var(--gold); }
+.arw:active:not(:disabled) { transform: scale(.92); }
+.arw:disabled { opacity: .35; cursor: default; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; gap: 1.1rem; }
+.card { position: relative; display: flex; flex-direction: column; min-width: 0; height: 100%; border-radius: 20px; background: var(--card); border: 1px solid var(--line); overflow: hidden;
+  transition: transform .45s var(--ease), border-color .3s, box-shadow .4s; }
+.card:hover { transform: translateY(-3px); border-color: rgba(255, 200, 26, .45); box-shadow: 0 26px 50px -28px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 200, 26, .08); }
+.card:has(.nm:focus-visible) { outline: 2px solid var(--gold); outline-offset: 3px; }
+.media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: radial-gradient(120% 120% at 30% 20%, #241A63, #0B0824 70%); }
+.media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.02); transition: opacity .45s ease, transform .7s var(--ease); }
+.media img.ok { opacity: 1; transform: none; }
+.card:hover .media img.ok { transform: scale(1.045); }
+.media .ini { position: absolute; inset: 0; display: grid; place-items: center; font: 300 4rem/1 var(--display); color: rgba(185, 179, 226, .45); }
+.media.has-img .ini { opacity: 0; }
+.media.loading::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgba(246, 243, 255, .06) 50%, transparent 70%) 0 0 / 220% 100%; animation: shimmer 1.4s linear infinite; }
+@keyframes shimmer { to { background-position: -220% 0; } }
+.ind { position: absolute; left: .7rem; bottom: .7rem; max-width: calc(100% - 1.4rem); padding: .3rem .55rem; border-radius: 8px; background: rgba(6, 4, 23, .8); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: .75rem; font-weight: 500; line-height: 1.3; color: var(--pearl); overflow-wrap: anywhere; }
+.tier { position: absolute; top: .7rem; right: .7rem; display: inline-flex; align-items: center; gap: .35rem; padding: .25rem .6rem .25rem .3rem; border-radius: 999px; background: rgba(6, 4, 23, .82); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font: 600 .75rem/1 var(--text); border: 1px solid; }
+.tier img { width: 20px; height: 20px; }
+.tier.aspiring { color: var(--t-aspiring); } .tier.inspired { color: var(--t-inspired); } .tier.luminary { color: var(--t-luminary); }
+.cbody { flex: 1; display: flex; flex-direction: column; gap: .5rem; padding: 1rem 1.05rem 1.05rem; }
+.cbody h3 { font: 400 1.3rem/1.2 var(--display); letter-spacing: -.015em; overflow-wrap: anywhere; }
+.nm { text-decoration: none; }
+.nm::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.nm:focus-visible { outline: none; }
+.desc { color: var(--haze); font-weight: 300; font-size: .9375rem; line-height: 1.5; overflow-wrap: anywhere; }
+.meta { margin-top: auto; padding-top: .6rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .6rem; }
+.when { width: 100%; font: 400 .75rem/1.4 var(--mono); color: var(--haze); letter-spacing: .02em; }
+.loc { display: inline-flex; align-items: center; gap: .3rem; min-width: 0; max-width: 11rem; min-height: 28px; padding: .2rem .6rem .2rem .45rem; border-radius: 999px; background: rgba(246, 243, 255, .08); font-size: .8125rem; color: var(--pearl); }
+.loc svg { width: 13px; height: 13px; flex: none; color: var(--gold); }
+.loc span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* actions always on their own row, in the same place on every card */
+.acts2 { position: relative; z-index: 2; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: .15rem; margin-top: .25rem; padding-top: .45rem; border-top: 1px solid var(--line); }
+.acts2 .stars { margin-left: -.35rem; }
+.stars { display: inline-flex; align-items: center; gap: 1px; min-height: 36px; padding: .2rem .35rem; border: 0; border-radius: 8px; background: none; cursor: pointer; }
+.stars:hover { background: rgba(246, 243, 255, .07); }
+.stars i { width: 13px; height: 13px; display: block; background: rgba(185, 179, 226, .35); -webkit-mask: var(--star) center / contain no-repeat; mask: var(--star) center / contain no-repeat; }
+.stars i.on { background: var(--gold); }
+.card, .rpop { --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z'/%3E%3C/svg%3E"); }
+.bm { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; padding: .2rem .45rem; border-radius: 8px; text-decoration: none; font-size: .8125rem; font-weight: 500; color: var(--pearl); }
+.bm:hover { background: rgba(246, 243, 255, .07); }
+.bm svg { width: 15px; height: 15px; }
+.cards .skel { border-radius: 20px; min-height: 22rem; background: linear-gradient(100deg, rgba(246, 243, 255, .03) 30%, rgba(246, 243, 255, .07) 50%, rgba(246, 243, 255, .03) 70%) 0 0 / 220% 100%, var(--card); border: 1px solid var(--line); animation: shimmer 1.4s linear infinite; }
+/* arrival of a new result set: the old set fades, the new one settles in order (no reordering of cards in place) */
+.js .cards.swap > li { animation: settle .5s var(--ease) both; animation-delay: calc(min(var(--k, 0), 11) * 30ms); }
+@keyframes settle { from { opacity: 0; transform: translateY(14px); } }
+.cards.out { opacity: 0; transition: opacity .12s ease; }
+
+/* Featured: a native horizontal rail (scroll snap), three to a view on desktop */
+.frail { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -4px; padding: 6px 4px 10px; }
+.frail::-webkit-scrollbar { display: none; }
+.track { grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 1.1rem) / 3); }
+.track > li { scroll-snap-align: start; }
+.feat .card { background: linear-gradient(170deg, rgba(60, 44, 170, .42), var(--card) 55%); }
+@media (max-width: 1000px) { .track { grid-auto-columns: calc((100% - 1.1rem) / 2); } }
+@media (max-width: 640px) { .track { grid-auto-columns: 86%; } }
+.dots-row { display: flex; justify-content: center; gap: .4rem; margin-top: .9rem; min-height: 24px; }
+.dots-row button { width: 24px; height: 24px; display: grid; place-items: center; border: 0; background: none; cursor: pointer; padding: 0; }
+.dots-row button::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: rgba(185, 179, 226, .4); transition: transform .3s var(--ease), background-color .3s; }
+.dots-row button[aria-current="true"]::before { background: var(--gold); transform: scale(1.5); }
+.empty, .state { padding: 2.4rem 1rem; text-align: center; color: var(--haze); border-radius: 20px; border: 1px dashed var(--line); }
+.state .btn { margin-top: 1rem; }
+
+/* Listing: lens and filters beside the results */
+.list-grid { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 1.5rem clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.side { position: sticky; top: calc(var(--head) + env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 1rem; }
+.side .filters { flex-direction: column; align-items: stretch; }
+.side .sel { justify-content: space-between; }
+.side .sel .sv { max-width: none; }
+.side .clr { justify-content: center; }
+.results { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.status { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .9rem; min-height: 32px; }
+.showing { font-size: .875rem; color: var(--haze); }
+.showing b { color: var(--pearl); font-weight: 600; font-variant-numeric: tabular-nums; }
+.prov { display: inline-flex; align-items: center; gap: .4rem; min-height: 32px; padding: .2rem .7rem; border-radius: 999px; border: 1px solid var(--line); background: none; cursor: pointer; font: 500 .625rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--haze); }
+.prov::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #7EE2AE; }
+.prov.local::before { background: var(--haze); box-shadow: 0 0 0 2px rgba(185, 179, 226, .25); }
+.prov-note { width: 100%; font-size: .8125rem; color: var(--haze); max-width: 46rem; }
+.grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1180px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1060px) {
+  .list-grid { grid-template-columns: minmax(0, 1fr); }
+  .side { position: static; }
+  .side .lens { display: none; }
+  .side .filters { flex-direction: row; }
+}
+@media (max-width: 640px) { .grid { grid-template-columns: minmax(0, 1fr); } .side .filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .side .filters .chk, .side .filters .clr { grid-column: span 1; } }
+@media (max-width: 640px) {
+  .feat .sec-tools { width: 100%; flex-wrap: nowrap; }
+  .feat .filters { flex: 1; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 3px; margin: -3px; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  .feat .filters::-webkit-scrollbar { display: none; }
+  .feat .filters > * { flex: none; }
+}
+
+/* Pagination */
+.pager { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: .7rem; margin-top: .6rem; }
+.pg-row { max-width: 100%; min-width: 0; }
+.pg-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem 1rem; }
+.pg-btns { display: inline-flex; max-width: 100%; border-radius: 14px; border: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; background: rgba(12, 8, 36, .7); }
+.pg-btns::-webkit-scrollbar { display: none; }
+.pg-btns button { flex: none; }
+.pg-btns button { min-width: 44px; min-height: 44px; padding: 0 .8rem; border: 0; background: none; color: var(--pearl); font-size: .875rem; font-weight: 500; cursor: pointer; font-variant-numeric: tabular-nums; transition: background-color .2s, color .2s; }
+.pg-btns button + button { border-left: 1px solid var(--line); }
+.pg-btns button:hover:not(:disabled) { background: rgba(246, 243, 255, .07); }
+.pg-btns button[aria-current="page"] { background: var(--gold); color: var(--ink); font-weight: 600; }
+.pg-btns button:disabled { color: rgba(185, 179, 226, .4); cursor: default; }
+.pg-go { display: inline-flex; align-items: center; gap: .5rem; font-size: .875rem; color: var(--haze); }
+.pg-go input { width: 3.6rem; min-height: 44px; border-radius: 12px; border: 1px solid var(--line); background: rgba(12, 8, 36, .7); color: var(--pearl); text-align: center; font: inherit; font-weight: 500; font-variant-numeric: tabular-nums; }
+.pg-go input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (max-width: 480px) { .pg-btns button { min-width: 40px; padding: 0 .55rem; } }
+
+/* Rating popover */
+.rpop { position: absolute; z-index: 80; width: 15rem; padding: .9rem 1rem; border-radius: 14px; background: #0D0928; border: 1px solid var(--line); box-shadow: 0 24px 50px -20px rgba(0, 0, 0, .85); display: grid; gap: .35rem; font-size: .875rem; }
+.rpop .stars { padding: 0; cursor: default; min-height: 0; }
+.rpop .stars i { width: 15px; height: 15px; }
+.rpop b { font-weight: 600; }
+.rpop span { color: var(--haze); font-size: .8125rem; }
+.rpop a { color: var(--gold); text-decoration: none; font-weight: 500; margin-top: .3rem; }
+.rpop a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- FAQ ---------- */
+.faq { padding-block: clamp(3rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem); }
+.faq-h { display: grid; gap: .8rem; max-width: 46rem; margin-bottom: 1.6rem; }
+.faq-h h2 { font-size: var(--t-mid); line-height: 1.04; letter-spacing: -.03em; }
+.faq-h p { color: var(--haze); font-weight: 300; font-size: var(--t-lede); }
+.faq-body { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.5rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.faq-tabs { display: grid; gap: .3rem; position: relative; }
+.faq-tabs button { text-align: left; min-height: 48px; padding: .6rem 1rem; border: 0; border-radius: 12px; background: none; color: var(--haze); font-size: 1rem; font-weight: 500; cursor: pointer; transition: background-color .2s, color .2s; }
+.faq-tabs button:hover { color: var(--pearl); background: rgba(246, 243, 255, .05); }
+.faq-tabs button[aria-selected="true"] { color: var(--ink); background: var(--gold); }
+.faq-p { display: grid; }
+.js .faq-p:not([hidden]) { animation: settle .4s var(--ease); }
+.qa-i { border-top: 1px solid var(--line); }
+.qa-i:last-child { border-bottom: 1px solid var(--line); }
+.qa-i h3 { margin: 0; }
+.qa-q { width: 100%; display: flex; align-items: center; gap: 1rem; text-align: left; padding: 1.15rem 0; min-height: 56px; border: 0; background: none; cursor: pointer; font: 400 clamp(1.1rem, 1.7vw, 1.4rem)/1.3 var(--display); letter-spacing: -.01em; color: var(--pearl); }
+.qa-q .pm { flex: none; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line); position: relative; transition: transform .4s var(--ease), background-color .25s, border-color .25s; }
+.qa-q .pm::before, .qa-q .pm::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.5px; margin: -.75px 0 0 -5.5px; background: currentColor; transition: transform .4s var(--ease); }
+.qa-q .pm::after { transform: rotate(90deg); }
+.qa-q[aria-expanded="true"] .pm { transform: rotate(180deg); background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.qa-q[aria-expanded="true"] .pm::after { transform: none; }
+.qa-a > div { padding: 0 0 1.3rem calc(30px + 1rem); display: grid; gap: .6rem; color: var(--haze); font-weight: 300; max-width: 44rem; }
+.qa-a ul { display: grid; gap: .35rem; }
+.qa-a li { position: relative; padding-left: 1rem; }
+.qa-a li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.js .qa-a:not([hidden]) > div { animation: settle .35s var(--ease); }
+@media (max-width: 860px) {
+  .faq-body { grid-template-columns: minmax(0, 1fr); }
+  .faq-tabs { display: flex; overflow-x: auto; scrollbar-width: none; gap: .4rem; }
+  .faq-tabs button { flex: none; border: 1px solid var(--line); }
+  .qa-a > div { padding-left: 0; }
+}
+
+/* ---------- Closing: daylight band ---------- */
+.dawnband { padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 6vw, 5rem); }
+.dawn-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 2rem; padding: clamp(1.8rem, 4vw, 3rem); border-radius: 28px; color: var(--day-ink);
+  background: radial-gradient(120% 140% at 85% 30%, #FFFFFF 0%, var(--dawn) 45%, #FFD98A 100%); }
+.dawn-in h2 { font-size: var(--t-mid); line-height: 1.02; letter-spacing: -.03em; }
+.dawn-in p { margin-top: .6rem; max-width: 34rem; font-weight: 300; }
+.dawn-in :focus-visible { outline-color: var(--day-ink); }
+
+/* ---------- Plan dialog ---------- */
+.pdlg { width: min(640px, calc(100vw - 2rem)); max-height: min(88vh, 880px); padding: 0; border-radius: 26px; border: 1px solid var(--line); background: #0E0A2C; color: var(--pearl); box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); overflow: hidden; }
+.pdlg[open] { display: flex; flex-direction: column; }
+.js .pdlg[open] { animation: dlg .35s var(--ease); }
+@keyframes dlg { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+.pdlg::backdrop { background: rgba(3, 2, 12, .72); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.pd-h { position: relative; padding: 1.5rem 4rem 1.1rem 1.5rem; border-bottom: 1px solid var(--line); display: grid; gap: .5rem; }
+.pd-h h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.1; letter-spacing: -.02em; }
+.pd-h p { color: var(--haze); font-size: .9375rem; }
+.pd-x { position: absolute; top: 1rem; right: 1rem; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: none; display: grid; place-items: center; cursor: pointer; }
+.pd-x svg { width: 16px; height: 16px; }
+.pd-x:hover { border-color: var(--pearl); }
+.pd-b { overflow-y: auto; padding: 1.4rem 1.5rem; display: grid; gap: 1.1rem; }
+.pd-b:focus-visible { outline-offset: -4px; }
+.plan-card { position: relative; border-radius: 20px; padding: 1.3rem 1.3rem 1.2rem; border: 1px solid var(--line); background: rgba(246, 243, 255, .04); display: grid; gap: .5rem; }
+.plan-card.premium { border-color: rgba(174, 146, 255, .55); background: linear-gradient(165deg, rgba(90, 64, 200, .35), rgba(14, 10, 44, .6) 60%); }
+.plan-card h3 { font: 400 1.6rem/1.1 var(--display); }
+.plead { color: var(--haze); font-size: .9375rem; }
+.plan-card ul { display: grid; gap: .55rem; margin-top: .4rem; }
+.plan-card li { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: .6rem; font-size: .9375rem; font-weight: 300; }
+.plan-card li svg { width: 16px; height: 16px; margin-top: .2em; color: #7EE2AE; }
+.plan-card li b { display: block; font-weight: 600; color: var(--pearl); }
+.plan-card li span span { display: block; color: var(--haze); font-size: .8125rem; }
+.pbadge { position: absolute; top: -.7rem; right: 1.1rem; padding: .35rem .7rem; border-radius: 999px; background: #7A5CFF; color: #fff; font-size: .75rem; font-weight: 600; }
+.psup { justify-self: start; padding: .3rem .65rem; border-radius: 999px; background: rgba(174, 146, 255, .18); color: #D5C8FF; font-size: .75rem; font-weight: 600; }
+.pd-disc { font-size: .8125rem; color: var(--haze); text-align: center; }
+.pd-f { padding: 1rem 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; }
+
+/* Arrivals settle from a visible resting state; still / reduced motion keeps everything in place */
+.still .gd-hero h1 .w, .still .cards.swap > li, .still .panel, .still .err, .still .faq-p, .still .qa-a > div, .still .pdlg[open] { animation: none !important; }
+.still .card, .still .media img { transition: none; }
+.still .card:hover { transform: none; }
+@media (prefers-reduced-transparency: reduce) { .console, .benefits, .panel, .ind, .tier { -webkit-backdrop-filter: none; backdrop-filter: none; } .console, .benefits { background: var(--ink); } }
+@media (forced-colors: active) { .fchip, .card, .sel, .chk, .prov { border: 1px solid CanvasText; } }
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="sky" aria-hidden="true"><i class="graticule"></i></div>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.cnessworks.com/"><img src="assets/logo-white.png" width="130" height="32" alt="CNESSWORKS home"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="https://www.cnessworks.com/cness-advantage" data-prod-href="https://www.cnessworks.com/cness-advantage">CNESS Advantage</a></li><li class="dd"><button type="button" aria-expanded="false" aria-controls="m-certification">Certification <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="menu" id="m-certification"><a href="https://www.cnessworks.com/mother-of-certification" data-prod-href="https://www.cnessworks.com/mother-of-certification">Mother of Certification</a><a href="https://www.cnessworks.com/cness-certification" data-prod-href="https://www.cnessworks.com/cness-certification">Organization Certification</a><a href="https://www.cnessworks.com/product-certification" data-prod-href="https://www.cnessworks.com/product-certification">Product Certification</a></div></li><li><a href="https://www.cnessworks.com/analyze" data-prod-href="https://www.cnessworks.com/analyze">Analyze</a></li><li><a href="https://www.cnessworks.com/globaldirectory" data-prod-href="https://www.cnessworks.com/globaldirectory" aria-current="page">Global Directory</a></li><li><a href="https://www.cnessworks.com/best-practices" data-prod-href="https://www.cnessworks.com/best-practices">Best Practices</a></li><li class="dd"><button type="button" aria-expanded="false" aria-controls="m-about-us">About Us <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="menu" id="m-about-us"><a href="https://www.cnessworks.com/aboutus" data-prod-href="https://www.cnessworks.com/aboutus">CNESS</a><a href="https://www.cnessworks.com/blog" data-prod-href="https://www.cnessworks.com/blog">Blog</a><a href="https://www.cnessworks.com/cness-action" data-prod-href="https://www.cnessworks.com/cness-action">Gallery</a></div></li><li class="dd"><button type="button" aria-expanded="false" aria-controls="m-partner">Partner <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="menu" id="m-partner"><a href="https://www.cnessworks.com/partner_new" data-prod-href="https://www.cnessworks.com/partner_new">Partner Program</a><a href="https://www.cnessworks.com/cness-gttci" data-prod-href="https://www.cnessworks.com/cness-gttci">GTTCI</a></div></li><li><a href="https://www.cnessworks.com/contact-us" data-prod-href="https://www.cnessworks.com/contact-us">Contact Us</a></li><li><a href="https://www.cnessworks.com/sitemap" data-prod-href="https://www.cnessworks.com/sitemap">Sitemap</a></li></ul></nav>
+    <div class="right-acts">
+      <div class="region dd"><button type="button" aria-expanded="false" aria-controls="m-region" aria-label="Region: US">US <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="menu right" id="m-region"><a href="https://www.cnessworks.com/en-in" lang="en"><span class="code">IN</span>English (India)</a><a href="https://www.cnessworks.com/en-ca" lang="en"><span class="code">CA</span>English (Canada)</a><a href="https://www.cnessworks.com/en-us" lang="en"><span class="code">US</span>English (US)</a><a href="https://www.cnessworks.com/en-eu" lang="en"><span class="code">EU</span>English (Europe)</a><a href="https://www.cnessworks.com/en-au" lang="en"><span class="code">AU</span>English (Australia)</a><a href="https://www.cnessworks.com/ja-jp" lang="ja"><span class="code">JA</span>日本語 (Japanese)</a></div></div>
+      <a class="login" href="https://www.cnessworks.com/login?redirect=%2Fcness-advantage">Log In</a>
+      <a class="btn sm" href="https://www.cnessworks.com/signup">Start Journey</a>
+      <button class="motion" id="motionBtn" type="button" aria-pressed="false" aria-label="Pause motion" title="Pause motion">
+        <svg class="pause" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 2v8M9 2v8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+        <svg class="play" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5l7 4.5-7 4.5z" fill="currentColor"/></svg>
+      </button>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Open navigation menu"><i></i></button>
+    </div>
+  </div>
+  <div class="bar" id="bar" aria-hidden="true"></div>
+</header>
+<div class="sheet" id="sheet" hidden><nav class="in" aria-label="Main"><a href="https://www.cnessworks.com/" data-prod-href="https://www.cnessworks.com/">Home</a><a href="https://www.cnessworks.com/cness-advantage" data-prod-href="https://www.cnessworks.com/cness-advantage">CNESS Advantage</a><div class="grp"><button type="button" aria-expanded="false" aria-controls="s-certification">Certification <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="sub" id="s-certification" hidden><a href="https://www.cnessworks.com/mother-of-certification" data-prod-href="https://www.cnessworks.com/mother-of-certification">Mother of Certification</a><a href="https://www.cnessworks.com/cness-certification" data-prod-href="https://www.cnessworks.com/cness-certification">Organization Certification</a><a href="https://www.cnessworks.com/product-certification" data-prod-href="https://www.cnessworks.com/product-certification">Product Certification</a></div></div><a href="https://www.cnessworks.com/analyze" data-prod-href="https://www.cnessworks.com/analyze">Analyze</a><a href="https://www.cnessworks.com/globaldirectory" data-prod-href="https://www.cnessworks.com/globaldirectory" aria-current="page">Global Directory</a><a href="https://www.cnessworks.com/best-practices" data-prod-href="https://www.cnessworks.com/best-practices">Best Practices</a><div class="grp"><button type="button" aria-expanded="false" aria-controls="s-about-us">About Us <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="sub" id="s-about-us" hidden><a href="https://www.cnessworks.com/aboutus" data-prod-href="https://www.cnessworks.com/aboutus">CNESS</a><a href="https://www.cnessworks.com/blog" data-prod-href="https://www.cnessworks.com/blog">Blog</a><a href="https://www.cnessworks.com/cness-action" data-prod-href="https://www.cnessworks.com/cness-action">Gallery</a></div></div><div class="grp"><button type="button" aria-expanded="false" aria-controls="s-partner">Partner <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="sub" id="s-partner" hidden><a href="https://www.cnessworks.com/partner_new" data-prod-href="https://www.cnessworks.com/partner_new">Partner Program</a><a href="https://www.cnessworks.com/cness-gttci" data-prod-href="https://www.cnessworks.com/cness-gttci">GTTCI</a></div></div><a href="https://www.cnessworks.com/contact-us" data-prod-href="https://www.cnessworks.com/contact-us">Contact Us</a><a href="https://www.cnessworks.com/sitemap" data-prod-href="https://www.cnessworks.com/sitemap">Sitemap</a>
+  <div class="regions" role="group" aria-label="Region"><a href="https://www.cnessworks.com/en-in" lang="en"><span class="code">IN</span>English (India)</a><a href="https://www.cnessworks.com/en-ca" lang="en"><span class="code">CA</span>English (Canada)</a><a href="https://www.cnessworks.com/en-us" lang="en"><span class="code">US</span>English (US)</a><a href="https://www.cnessworks.com/en-eu" lang="en"><span class="code">EU</span>English (Europe)</a><a href="https://www.cnessworks.com/en-au" lang="en"><span class="code">AU</span>English (Australia)</a><a href="https://www.cnessworks.com/ja-jp" lang="ja"><span class="code">JA</span>日本語 (Japanese)</a></div>
+  <div class="acts"><a href="https://www.cnessworks.com/login?redirect=%2Fcness-advantage">Log In</a><a class="btn" href="https://www.cnessworks.com/signup">Start Journey</a></div>
+</nav></div>
+
+<main id="main" data-gd data-src="assets/directory/data.json">
+
+<section class="gd-hero" aria-labelledby="h-gd">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 id="h-gd" data-k="gd:hero.h1"><span class="w" style="--i:0">Global</span> <span class="w" style="--i:1">Directory</span> <span class="w" style="--i:2">for</span> <span class="w" style="--i:3">Conscious</span> <span class="w" style="--i:4">Businesses</span></h1>
+      <p class="lede" data-k="gd:hero.lede">Get listed and connect with a global community that shares your commitment to conscious, responsible business.</p>
+      <div class="acts plan-btns">
+        <button type="button" class="btn ghost" data-plan="free" data-k="gd:hero.free">Free</button>
+        <button type="button" class="btn" data-plan="premium" data-k="gd:hero.premium">Premium</button>
+      </div>
+    </div>
+    <figure class="lens" data-lens="hero" aria-hidden="true">
+      <div class="lens-stage"><canvas></canvas><div class="lens-n"><b data-lens-n>&nbsp;</b><span>Entries</span></div><div class="lens-tip" hidden></div></div>
+      <ul class="legend"><li><i class="lg ring" aria-hidden="true"></i><span data-k="gd:featured.heading">Featured Directory</span></li><li><i class="lg t-aspiring" aria-hidden="true"></i><span>Aspiring</span></li><li><i class="lg t-inspired" aria-hidden="true"></i><span>Inspired</span></li><li><i class="lg t-luminary" aria-hidden="true"></i><span>Luminary</span></li></ul>
+    </figure>
+    <form class="console" role="search" aria-label="Choose what you want to search" novalidate>
+      <div class="fld" data-field="what">
+        <button type="button" class="fld-btn" id="f-what" aria-expanded="false" aria-controls="p-what" aria-haspopup="dialog">
+          <span class="fl" data-k="gd:search.what.label">Industry</span>
+          <span class="fv" data-ph="Eg: Company, Businesses, Services"><span class="ph" data-k="gd:search.what.placeholder">Eg: Company, Businesses, Services</span></span>
+          <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <button type="button" class="fx" data-clear="what" aria-label="Clear search" data-k="gd:search.clear" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div class="panel" id="p-what" role="dialog" aria-label="Industry" hidden></div>
+      </div>
+      <span class="div" aria-hidden="true"></span>
+      <div class="fld" data-field="where">
+        <button type="button" class="fld-btn" id="f-where" aria-expanded="false" aria-controls="p-where" aria-haspopup="dialog">
+          <span class="fl" data-k="gd:search.where.label">Location</span>
+          <span class="fv" data-ph="Eg: San Francisco"><span class="ph" data-k="gd:search.where.placeholder">Eg: San Francisco</span></span>
+          <svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+        <button type="button" class="fx" data-clear="where" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div class="panel" id="p-where" role="dialog" aria-label="Location" hidden></div>
+      </div>
+      <button type="submit" class="btn go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg><span data-k="gd:search.button">Search</span></button>
+      <p class="err" role="alert" hidden><span data-k="gd:search.error">Please fill in an industry, service, or location.</span></p>
+    </form>
+    <section class="benefits" aria-label="Global Directory benefits"><div class="bcol"><h2 data-k="gd:benefits.0.title">Why CNESS?</h2><ul><li data-k="gd:benefits.0.items.0">Add a relevant discovery route</li><li data-k="gd:benefits.0.items.1">Give listings useful context</li><li data-k="gd:benefits.0.items.2">Filters, inquiries and placement</li></ul></div><div class="bcol"><h2 data-k="gd:benefits.1.title">Beyond Certification</h2><ul><li data-k="gd:benefits.1.items.0">Relevant discovery could add continuing customer value</li><li data-k="gd:benefits.1.items.1">Track qualified inquiries; establish value before selling placement</li></ul></div><div class="bcol"><h2 data-k="gd:benefits.2.title">Advantage</h2><ul><li data-k="gd:benefits.2.items.0">Connect to the global market</li><li data-k="gd:benefits.2.items.1">Upgrade your brand value in the global market</li><li data-k="gd:benefits.2.items.2">Connect to conscious organizations across 90+ countries</li></ul></div></section>
+    <div class="focus">
+      <p class="focus-l" data-k="gd:focus.label">Or Browse by Focus Area</p>
+      <ul><li><button type="button" class="fchip" data-focus="IT Services"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4.5" width="16" height="5.5" rx="1.4"/><rect x="4" y="14" width="16" height="5.5" rx="1.4"/><path d="M7.5 7.25h.01M7.5 16.75h.01M11 7.25h5M11 16.75h5M12 10v4"/></svg></span><span data-k="gd:focus.items.0">IT Services</span></button></li><li><button type="button" class="fchip" data-focus="Restaurants"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3.5v7.5M4.8 3.5v4.2a2.2 2.2 0 0 0 4.4 0V3.5M7 11v9.5"/><path d="M17 20.5v-17c-2.2 1-3.4 3.6-3.4 6.6 0 2 .9 3.2 3.4 3.4"/></svg></span><span data-k="gd:focus.items.1">Restaurants</span></button></li><li><button type="button" class="fchip" data-focus="Wellness"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20c-4.6-2.3-7.5-5.6-7.5-9.4A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7.5 2c0 3.8-2.9 7.1-7.5 9.4z"/><path d="M8.5 13h2l1-2.2 1.6 4 .9-1.8h1.5"/></svg></span><span data-k="gd:focus.items.2">Wellness</span></button></li><li><button type="button" class="fchip" data-focus="Technology"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><rect x="9.6" y="9.6" width="4.8" height="4.8" rx=".8"/><path d="M9.5 3.5v3M14.5 3.5v3M9.5 17.5v3M14.5 17.5v3M3.5 9.5h3M3.5 14.5h3M17.5 9.5h3M17.5 14.5h3"/></svg></span><span data-k="gd:focus.items.3">Technology</span></button></li><li><button type="button" class="fchip" data-focus="Sustainability"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.5v-7"/><path d="M12 13.5c0-4 2.6-6.6 7-6.8.1 4.3-2.7 6.8-7 6.8z"/><path d="M12 15.5C12 12.2 9.9 10 6 10c0 3.4 2.2 5.5 6 5.5z"/><path d="M4.5 20.5h15"/></svg></span><span data-k="gd:focus.items.4">Sustainability</span></button></li><li><button type="button" class="fchip" data-focus="Consulting"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h7A2.5 2.5 0 0 1 16 6.5v4a2.5 2.5 0 0 1-2.5 2.5H9l-3.5 3v-3.2A2.5 2.5 0 0 1 4 10.5z"/><path d="M18.2 9.2A2.4 2.4 0 0 1 20 11.5v3.8a2.4 2.4 0 0 1-1.6 2.3V20l-3-2.5h-3"/></svg></span><span data-k="gd:focus.items.5">Consulting</span></button></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="h-how">
+  <div class="wrap">
+    <h2 id="h-how" data-k="gd:how.heading">See How It Works</h2>
+    <ol><li><span class="n" aria-hidden="true">01</span><h3 data-k="gd:how.steps.0.title">Search &amp; Filter</h3><p data-k="gd:how.steps.0.text">Quickly discover organizations by industry, service, location, or certification focus.</p></li><li><span class="n" aria-hidden="true">02</span><h3 data-k="gd:how.steps.1.title">Explore Verified Profiles</h3><p data-k="gd:how.steps.1.text">Review trust profiles, certification status, and organizational highlights.</p></li><li><span class="n" aria-hidden="true">03</span><h3 data-k="gd:how.steps.2.title">Connect with Confidence</h3><p data-k="gd:how.steps.2.text">Reach out directly to organizations that align with your goals, values, and standards.</p></li></ol>
+  </div>
+</section>
+
+<div class="wrap">
+  <details class="scope" data-preview>
+    <summary><span class="dot" aria-hidden="true"></span><b>Preview data</b><span>Snapshot of the CNESS directory service, 23 November 2026</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></summary>
+    <div class="scope-b"><p>This preview shows the 490 listed and 16 featured organizations that the directory service at cnessworks.com returned on 23 November 2026, in the service’s own order. Counts, pages and filters cover that snapshot, not the live directory.</p><p>Badge, size, country and <i>Certified only</i> filters, the six focus areas and the searches the service answered during the capture show the service’s own results. Any other search or industry is matched in your browser against the snapshot and is marked <i>Preview match</i>; cnessworks.com can return different results.</p><p>Profiles, bookmarks, ratings and the listing plans open on cnessworks.com. Impression and view counting is not connected in this preview, and the rating breakdown (stars by count) is not included.</p></div>
+  </details>
+</div>
+
+<section class="sec feat" id="featured-companies-section" aria-labelledby="h-feat">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 id="h-feat" data-k="gd:featured.heading">Featured Directory</h2>
+      <div class="sec-tools"><div class="filters" data-inst="feat">
+      <label class="sel" data-f="badge"><span class="sv">Badge</span><select aria-label="Badge" data-f="badge"><option value="All">All Badges</option><option value="Aspiring">Aspiring</option><option value="Inspired">Inspired</option><option value="Luminary">Luminary</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="size"><span class="sv">Size</span><select aria-label="Size" data-f="size"><option value="All">All Sizes</option><option value="Micro">Micro</option><option value="Small">Small</option><option value="Medium">Medium</option><option value="Large">Large</option><option value="Enterprise">Enterprise</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="industry"><span class="sv">Industry</span><select aria-label="Industry" data-f="industry"><option value="All">All Industries</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="country"><span class="sv">Country</span><select aria-label="Country" data-f="country"><option value="All">All Countries</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="chk"><input type="checkbox" data-f="certified"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Certified only</span></label>
+      <button type="button" class="clr" data-clear-filters hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Clear</span></button>
+    </div>
+        <div class="arrows"><button type="button" class="arw" data-step="-1" aria-label="Previous companies" data-k="gd:featured.prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="arw" data-step="1" aria-label="Next companies" data-k="gd:featured.next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </div>
+    <div class="frail" data-rail><ul class="cards track" data-featured aria-labelledby="h-feat"></ul></div>
+    <p class="empty" data-feat-empty hidden></p>
+    <div class="dots-row" data-dots></div>
+  </div>
+</section>
+
+<section class="sec list" id="listed-companies-section" aria-labelledby="h-list">
+  <div class="wrap">
+    <div class="sec-h"><h2 id="h-list" data-k="gd:listed.heading">Global Business Directory Listing</h2></div>
+    <div class="list-grid">
+      <div class="side">
+        <figure class="lens mini" data-lens="mini" aria-hidden="true"><div class="lens-stage"><canvas></canvas><div class="lens-tip" hidden></div></div></figure>
+        <div class="filters" data-inst="list">
+      <label class="sel" data-f="badge"><span class="sv" data-k="gd:filters.badge.placeholder">Badge</span><select aria-label="Badge" data-f="badge"><option value="All">All Badges</option><option value="Aspiring">Aspiring</option><option value="Inspired">Inspired</option><option value="Luminary">Luminary</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="size"><span class="sv" data-k="gd:filters.size.placeholder">Size</span><select aria-label="Size" data-f="size"><option value="All">All Sizes</option><option value="Micro">Micro</option><option value="Small">Small</option><option value="Medium">Medium</option><option value="Large">Large</option><option value="Enterprise">Enterprise</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="industry"><span class="sv" data-k="gd:filters.industry.placeholder">Industry</span><select aria-label="Industry" data-f="industry"><option value="All">All Industries</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="sel" data-f="country"><span class="sv" data-k="gd:filters.country.placeholder">Country</span><select aria-label="Country" data-f="country"><option value="All">All Countries</option></select><svg class="chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5L5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></label>
+      <label class="chk"><input type="checkbox" data-f="certified"><span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span data-k="gd:filters.certified">Certified only</span></label>
+      <button type="button" class="clr" data-clear-filters hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg><span data-k="gd:filters.clear">Clear</span></button>
+    </div>
+      </div>
+      <div class="results">
+        <div class="status"><p class="showing" data-showing aria-live="polite"></p><button type="button" class="prov" data-prov aria-expanded="false" aria-controls="prov-note" hidden></button><p class="prov-note" id="prov-note" hidden></p></div>
+        <ul class="cards grid" data-listed aria-labelledby="h-list"></ul>
+        <div class="state" data-state hidden></div>
+        <nav class="pager" data-pager aria-label="Pagination" hidden></nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="faq-h"><h2 id="h-faq" data-k="gd:faq.heading">Have a question ? Look here ...</h2><p data-k="gd:faq.sub">Find answers about the CNESS directory, certification visibility, trust profiles, and organization recognition.</p></div>
+    <div class="faq-body">
+      <div class="faq-tabs" role="tablist" aria-labelledby="h-faq"><button type="button" role="tab" id="faq-t0" aria-controls="faq-p0" aria-selected="true" tabindex="0" data-k="gd:faq.tabs.0.name">Certification</button><button type="button" role="tab" id="faq-t1" aria-controls="faq-p1" aria-selected="false" tabindex="-1" data-k="gd:faq.tabs.1.name">General</button><button type="button" role="tab" id="faq-t2" aria-controls="faq-p2" aria-selected="false" tabindex="-1" data-k="gd:faq.tabs.2.name">Global Directory</button><button type="button" role="tab" id="faq-t3" aria-controls="faq-p3" aria-selected="false" tabindex="-1" data-k="gd:faq.tabs.3.name">Partner</button></div>
+      <div class="faq-panels"><div class="faq-p" role="tabpanel" id="faq-p0" aria-labelledby="faq-t0"><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a0-0" id="faq-q0-0"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.0.items.0.q">What is CNESS Certification?</span></button></h3><div class="qa-a" id="faq-a0-0" role="region" aria-labelledby="faq-q0-0" hidden><div><p data-k="gd:faq.tabs.0.items.0.a.lead">CNESS Certification recognizes who your organization is, what it stands for, and how it creates value across six key pillars. It provides a structured pathway to strengthen credibility, amplify growth, and become recognized as a Global Conscious Organization.</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a0-1" id="faq-q0-1"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.0.items.1.q">How do I get certified?</span></button></h3><div class="qa-a" id="faq-a0-1" role="region" aria-labelledby="faq-q0-1" hidden><div><p data-k="gd:faq.tabs.0.items.1.a.lead">The process is simple. Create your organization profile, complete the required certification steps, and submit your information for evaluation. Through the process of assessing your organization, you also strengthen your practices, build your brand, and advance your organizational growth.</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a0-2" id="faq-q0-2"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.0.items.2.q">Will my existing certifications affect my eligibility?</span></button></h3><div class="qa-a" id="faq-a0-2" role="region" aria-labelledby="faq-q0-2" hidden><div><p data-k="gd:faq.tabs.0.items.2.a.lead">No. Existing certifications do not affect your eligibility for CNESS Certification. They can complement the CNESS framework, add value to your organization&#x27;s profile, and contribute positively to its overall recognition.</p></div></div></div></div><div class="faq-p" role="tabpanel" id="faq-p1" aria-labelledby="faq-t1" hidden><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a1-0" id="faq-q1-0"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.1.items.0.q">What is CNESS?</span></button></h3><div class="qa-a" id="faq-a1-0" role="region" aria-labelledby="faq-q1-0" hidden><div><p data-k="gd:faq.tabs.1.items.0.a.lead">CNESS is a global Consciousness Ecosystem that connects and recognizes Global Conscious Organizations. It helps organizations:</p><ul><li data-k="gd:faq.tabs.1.items.0.a.items.0">Build credibility and trust</li><li data-k="gd:faq.tabs.1.items.0.a.items.1">Strengthen global visibility</li><li data-k="gd:faq.tabs.1.items.0.a.items.2">Demonstrate conscious business practices</li><li data-k="gd:faq.tabs.1.items.0.a.items.3">Connect with aligned organizations and stakeholders</li><li data-k="gd:faq.tabs.1.items.0.a.items.4">Create long-term value and measurable impact</li></ul></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a1-1" id="faq-q1-1"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.1.items.1.q">What is CNESSWORKS?</span></button></h3><div class="qa-a" id="faq-a1-1" role="region" aria-labelledby="faq-q1-1" hidden><div><p data-k="gd:faq.tabs.1.items.1.a.lead">CNESSWORKS is the digital platform where organizations begin their certification journey, create their Trust Profile, and become visible in the Global Directory. It brings certification, recognition, visibility, and access to a global ecosystem together in one platform.</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a1-2" id="faq-q1-2"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.1.items.2.q">Who can use CNESSWORKS?</span></button></h3><div class="qa-a" id="faq-a1-2" role="region" aria-labelledby="faq-q1-2" hidden><div><p data-k="gd:faq.tabs.1.items.2.a.lead">CNESSWORKS is designed for businesses, institutions, startups, service providers, and organizations of every size. Organizations seeking to become recognized conscious organizations can use the platform to strengthen trust, improve credibility, and showcase their impact.</p></div></div></div></div><div class="faq-p" role="tabpanel" id="faq-p2" aria-labelledby="faq-t2" hidden><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a2-0" id="faq-q2-0"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.2.items.0.q">What is the Global Directory?</span></button></h3><div class="qa-a" id="faq-a2-0" role="region" aria-labelledby="faq-q2-0" hidden><div><p data-k="gd:faq.tabs.2.items.0.a.lead">The CNESSWORKS Global Directory is where organizations showcase their conscious profile, credibility, certification status, and Consciousness Impact Score. Being listed connects your organization to the global community of Global Conscious Organizations (GCO).</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a2-1" id="faq-q2-1"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.2.items.1.q">Why should my organization be listed in the Global Directory?</span></button></h3><div class="qa-a" id="faq-a2-1" role="region" aria-labelledby="faq-q2-1" hidden><div><p data-k="gd:faq.tabs.2.items.1.a.lead">The Global Directory features organizations recognized for their dependability and conscious practices across the six CNESS pillars. A listing helps your organization:</p><ul><li data-k="gd:faq.tabs.2.items.1.a.items.0">Build greater credibility and visibility</li><li data-k="gd:faq.tabs.2.items.1.a.items.1">Connect with the global conscious business community</li><li data-k="gd:faq.tabs.2.items.1.a.items.2">Reach new customers across international markets</li><li data-k="gd:faq.tabs.2.items.1.a.items.3">Serve conscious customers around the world</li><li data-k="gd:faq.tabs.2.items.1.a.items.4">Attract aligned professionals and strengthen talent acquisition</li><li data-k="gd:faq.tabs.2.items.1.a.items.5">Enhance brand promotion, discoverability, and business opportunities</li></ul></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a2-2" id="faq-q2-2"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.2.items.2.q">Do I need to be certified to appear in the Global Directory?</span></button></h3><div class="qa-a" id="faq-a2-2" role="region" aria-labelledby="faq-q2-2" hidden><div><p data-k="gd:faq.tabs.2.items.2.a.lead">Organizations may appear in the Global Directory before completing certification. However, certification unlocks greater credibility, enhanced visibility, access to the Consciousness Impact Score, and recognition as a Global Conscious Organization.</p></div></div></div></div><div class="faq-p" role="tabpanel" id="faq-p3" aria-labelledby="faq-t3" hidden><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a3-0" id="faq-q3-0"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.3.items.0.q">What is the CNESSWORKS Partner Program?</span></button></h3><div class="qa-a" id="faq-a3-0" role="region" aria-labelledby="faq-q3-0" hidden><div><p data-k="gd:faq.tabs.3.items.0.a.lead">The CNESSWORKS Partner Program enables individuals, organizations, institutions, and platforms to support conscious business growth through referrals, media, implementation, and strategic collaboration. It empowers partners to become a meaningful part of the positive change they wish to see in the world.</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a3-1" id="faq-q3-1"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.3.items.1.q">Who can become a CNESSWORKS Partner?</span></button></h3><div class="qa-a" id="faq-a3-1" role="region" aria-labelledby="faq-q3-1" hidden><div><p data-k="gd:faq.tabs.3.items.1.a.lead">Conscious pioneers, prominent individuals, consultants, advisors, media platforms, institutions, service providers, and organizations creating meaningful impact can apply. The program is designed for those who can introduce, support, promote, or guide organizations within the CNESSWORKS ecosystem.</p></div></div></div><div class="qa-i"><h3><button type="button" class="qa-q" aria-expanded="false" aria-controls="faq-a3-2" id="faq-q3-2"><span class="pm" aria-hidden="true"></span><span data-k="gd:faq.tabs.3.items.2.q">How can I become a partner?</span></button></h3><div class="qa-a" id="faq-a3-2" role="region" aria-labelledby="faq-q3-2" hidden><div><p data-k="gd:faq.tabs.3.items.2.a.lead">Becoming a partner is a simple process. Select the pathway that best matches your expertise, network, and goals, submit your application, and the CNESSWORKS team will review it and guide you through the next steps.</p></div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dawnband" aria-labelledby="h-cta">
+  <div class="wrap"><div class="dawn-in">
+    <div><h2 id="h-cta" data-k="gd:cta.heading">Begin your Growth Journey Today</h2><p data-k="gd:cta.text">Start taking intentional steps toward becoming more conscious, purposeful, and impactful.</p></div>
+    <a class="btn dark" href="https://www.cnessworks.com/signup" data-prod-href="https://www.cnessworks.com/signup" target="_blank" rel="noopener"><span data-k="gd:cta.button">Get Started</span> <span class="arr" aria-hidden="true">→</span></a>
+  </div></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="about">
+        <a class="brand" href="https://www.cnessworks.com/" target="_blank" rel="noopener"><img src="assets/logo-white.png" width="130" height="32" alt="CNESSWORKS home"></a>
+        <p>Empowering conscious organizations to grow, connect, and create meaningful global impact.</p>
+        <address><span>825 Wilshire Blvd #333, Santa Monica, CA 90401, USA</span><span class="cp"><a href="tel:+18888958284">US +1 888 895-8284</a> <button type="button" data-copy="+1 888 895-8284" aria-label="Copy US +1 888 895-8284">Copy</button></span><span class="cp"><a href="tel:+918004100108">India +91 1800 410 0108</a> <button type="button" data-copy="+91 1800 410 0108" aria-label="Copy India +91 1800 410 0108">Copy</button></span></address>
+        <div class="soc"><a href="https://www.facebook.com/profile.php?id=61567141033015" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a><a href="https://www.youtube.com/@CNESSinc" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a><a href="https://www.instagram.com/cness.inc?igsh=MTI5cWdzdnY1eTRybw%3D%3D" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/cness-inc/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4.5 9h3v11h-3zM6 3.8A1.8 1.8 0 1 1 6 7.4a1.8 1.8 0 0 1 0-3.6zM10 9h2.9v1.5c.4-.8 1.4-1.7 3-1.7 3.1 0 3.6 2 3.6 4.7V20h-3v-5.8c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V20H10z"/></svg></a></div>
+      </div>
+      <div><h3>Certification</h3><ul><li><a href="https://www.cnessworks.com/cness-standard" data-prod-href="https://www.cnessworks.com/cness-standard" target="_blank" rel="noopener">CNESS Standards</a></li></ul></div><div><h3>Global Directory</h3><ul><li><a href="https://www.cnessworks.com/signup" data-prod-href="https://www.cnessworks.com/signup" target="_blank" rel="noopener">List your Organization</a></li><li><a href="https://www.cnessworks.com/globaldirectory" data-prod-href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener">Directory</a></li></ul></div><div><h3>Company</h3><ul><li><a href="https://www.cnessworks.com/aboutus" data-prod-href="https://www.cnessworks.com/aboutus" target="_blank" rel="noopener">About Us</a></li><li><a href="https://www.cnessworks.com/blog" data-prod-href="https://www.cnessworks.com/blog" target="_blank" rel="noopener">Company Blog</a></li><li><a href="https://www.cnessworks.com/cness-advantage" data-prod-href="https://www.cnessworks.com/cness-advantage" target="_blank" rel="noopener">CNESS Advantage</a></li><li><a href="https://www.cnessworks.com/terms" data-prod-href="https://www.cnessworks.com/terms" target="_blank" rel="noopener">Terms and Conditions</a></li><li><a href="https://www.cnessworks.com/privacy" data-prod-href="https://www.cnessworks.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li><li><a href="https://www.cnessworks.com/contact-us" data-prod-href="https://www.cnessworks.com/contact-us" target="_blank" rel="noopener">Contact Us</a></li></ul></div><div><h3>Support</h3><ul><li class="pop"><button type="button" aria-expanded="false" aria-controls="tip-online-chat">Online Chat</button><span class="tip" id="tip-online-chat" role="status" hidden>Online Chat opens on the live cnessworks.com site. <a href="https://www.cnessworks.com/" target="_blank" rel="noopener">Open cnessworks.com</a></span></li><li class="pop"><button type="button" aria-expanded="false" aria-controls="tip-whatsapp">WhatsApp</button><span class="tip" id="tip-whatsapp" role="status" hidden>WhatsApp opens on the live cnessworks.com site. <a href="https://www.cnessworks.com/" target="_blank" rel="noopener">Open cnessworks.com</a></span></li><li><a href="https://www.cnessworks.com/partner/signup" data-prod-href="https://www.cnessworks.com/partner/signup" target="_blank" rel="noopener">Partner with us</a></li></ul></div>
+    </div>
+    <p class="legal">Copyright © 2026, cnessworks.com</p>
+  </div>
+</footer>
+<div class="quick">
+  <button class="totop" id="totop" type="button" aria-label="Scroll to top" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+  <a class="qa" href="https://www.cnessworks.com/analyze" target="_blank" rel="noopener"><span class="lab"><b>Analyze Organization / Product</b><small>NO COST</small></span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M7.5 12l2-2.5 1.8 1.5 2.2-3"/></svg></span></a>
+  <a class="qa" href="https://www.cnessworks.com/globaldirectory" target="_blank" rel="noopener"><span class="lab"><b>Global Directory Listing</b><small>FREE / PREMIUM</small></span><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg></span></a>
+</div>
+
+<dialog class="pdlg" id="plan-dialog" aria-labelledby="pd-title">
+  <div class="pd-h">
+    <h2 id="pd-title" data-k="gd:plans.title">Choose Your Global Directory Plan</h2>
+    <p data-k="gd:plans.lead">Here is what this listing includes. Explore more to log in or create an account and start your listing.</p>
+    <button type="button" class="pd-x" data-close aria-label="Close" data-ui><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="pd-b" tabindex="0" role="region" aria-labelledby="pd-title">
+    <article class="plan-card free" data-plan-card="free" hidden>
+        
+        <h3 data-k="gd:plans.free.title">Free</h3>
+        <p class="plead" data-k="gd:plans.free.lead">Your essential CNESS certification pathway.</p>
+        <ul><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.free.points.0">Standard assessment and independent review.</span></li><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.free.points.1">Certificate awarded when certification requirements are met.</span></li><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.free.points.2">No additional branding or promotional services.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.0.0">Business Listing</b><span data-k="gd:plans.free.features.0.1">Establish your organization&#x27;s presence in the CNESS Global Directory.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.1.0">Company Introduction</b><span data-k="gd:plans.free.features.1.1">Present a short description of your business and its activities.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.2.0">Search Visibility</b><span data-k="gd:plans.free.features.2.1">Help visitors find your organization by industry and location.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.3.0">Website and Contact Details</b><span data-k="gd:plans.free.features.3.1">Give interested visitors a direct route to your business.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.4.0">Shareable Profile Link</b><span data-k="gd:plans.free.features.4.1">Share your listing with customers, partners and professional contacts.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.free.features.5.0">Regional Listing</b><span data-k="gd:plans.free.features.5.1">Listing based on your region.</span></span></li></ul>
+      </article><article class="plan-card premium" data-plan-card="premium" hidden>
+        <span class="pbadge" data-k="gd:plans.premiumBadge">Most Popular</span><span class="psup" data-k="gd:plans.premiumSupport">Enhanced Support</span>
+        <h3 data-k="gd:plans.premium.title">Premium</h3>
+        <p class="plead" data-k="gd:plans.premium.lead">Share your story and strengthen your brand presence.</p>
+        <ul><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.premium.points.0">Everything in the Free plan.</span></li><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.premium.points.1">CNESS interviews featuring your organization or product.</span></li><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.premium.points.2">Additional branding services to communicate your purpose and value.</span></li><li class="pt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span data-k="gd:plans.premium.points.3">Be showcased in the B2C Global Directory.</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.0.0">Featured Placement</b><span data-k="gd:plans.premium.features.0.1">Give your organization greater prominence in designated directory sections.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.1.0">Expanded Business Profile</b><span data-k="gd:plans.premium.features.1.1">Present your mission, leadership, achievements and business story in greater detail.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.2.0">Products and Services Showcase</b><span data-k="gd:plans.premium.features.2.1">Help visitors understand your offerings through dedicated descriptions and visuals.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.3.0">Best Practices Highlights</b><span data-k="gd:plans.premium.features.3.1">Share documented initiatives that demonstrate how your organization operates responsibly.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.4.0">Priority Listing Support</b><span data-k="gd:plans.premium.features.4.1">Receive assistance with profile setup, content updates and listing maintenance.</span></span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b data-k="gd:plans.premium.features.5.0">International Listing</b><span data-k="gd:plans.premium.features.5.1">Listing based on international placement.</span></span></li></ul>
+      </article>
+    <p class="pd-disc" data-k="gd:plans.disclaimer">All plans follow the same certification standards. Paid plans support branding and outreach. They do not influence your assessment score or certification decision.</p>
+  </div>
+  <div class="pd-f"><a class="btn" data-explore href="https://www.cnessworks.com/login?redirect=%2Fcreatetrustprofile%2FGetStarted%3Flisting%3Dfree" target="_blank" rel="noopener"><span data-k="gd:plans.explore">Explore more</span> <span class="arr" aria-hidden="true">→</span></a></div>
+</dialog>
+<div class="rpop" id="rpop" role="dialog" aria-label="View rating breakdown" hidden></div>
+<p class="sr" id="gd-live" aria-live="polite"></p>
+
+<script type="application/json" id="gd-strings">{"search": {"what": {"label": "Industry", "placeholder": "Eg: Company, Businesses, Services"}, "where": {"label": "Location", "placeholder": "Eg: San Francisco"}, "button": "Search", "error": "Please fill in an industry, service, or location.", "clear": "Clear search", "wherePanel": {"placeholder": "Type to search…", "noMatches": "No matches found", "recent": "Recent Searches"}, "whatPanel": {"placeholder": "Type to search industries…", "recent": "Recent Searches", "companies": "Companies", "industries": "Industries", "browseHint": "Browse all industries — type to find sub-industries. Green “Listed” marks ones with companies in the directory.", "unavailable": "Industry list unavailable. Try typing a keyword and searching anyway.", "noMatch": ["No companies or industries match “", "”"], "anyway": ["Search for “", "” anyway →"], "listed": "Listed", "loading": "Loading…", "maxChars": ["Maximum ", "100", " characters"]}}, "focus": {"label": "Or Browse by Focus Area", "items": ["IT Services", "Restaurants", "Wellness", "Technology", "Sustainability", "Consulting"], "synonyms": {"IT Services": ["it services", "managed services", "systems integration", "it staffing", "it outsourcing", "technology advisory"], "Restaurants": ["restaurant", "dining", "café", "cafe", "bakery", "food service", "food delivery", "cloud kitchen", "qsr"], "Wellness": ["wellness", "fitness", "mental health", "spa", "yoga", "nutrition", "wellbeing"], "Technology": ["technology", "software", "saas", "cloud", "artificial intelligence", "machine learning", "cyber", "data", "analytics", "e-commerce", "hardware", "semiconductor", "blockchain", "devops", "digital"], "Sustainability": ["sustainab", "renewable", "environment", "clean energy", "esg", "carbon", "conservation", "circular economy"], "Consulting": ["consulting", "advisory", "strategy", "professional services"], "Education": ["education", "school", "university", "college", "edtech", "learning", "curriculum", "vocational", "training", "academic"], "Healthcare": ["health", "medical", "hospital", "clinic", "diagnostic", "laborator", "rehabilitation", "elder care"]}}, "filters": {"badge": {"placeholder": "Badge", "options": [["Aspiring", "Aspiring"], ["Inspired", "Inspired"], ["Luminary", "Luminary"]]}, "size": {"placeholder": "Size", "options": [["Micro", "Micro"], ["Small", "Small"], ["Medium", "Medium"], ["Large", "Large"], ["Enterprise", "Enterprise"]]}, "industry": {"placeholder": "Industry", "all": "All Industries"}, "country": {"placeholder": "Country", "all": "All Countries"}, "certified": "Certified only", "clear": "Clear"}, "pagination": {"previous": "Previous", "next": "Next", "goTo": "Go to", "page": "page", "goToAria": "Go to page number", "showing": "Showing {from} to {to} of {total} Entries", "prevAria": "Previous page", "nextAria": "Next page", "navAria": "Pagination"}, "card": {"bookmark": "Bookmark", "bookmarkTitle": "Log in to bookmark", "ratingTitle": "View rating breakdown", "outOf5": "out of 5", "globalRating": "global rating", "star": "star", "signIn": "Sign in to rate & see all reviews ›", "details": "View {name} details", "tiers": {"aspiring": "Aspiring", "inspired": "Inspired", "luminary": "Luminary"}, "profile": "https://www.cnessworks.com/directory-detail/{slug}", "login": "https://www.cnessworks.com/login"}, "featured": {"heading": "Featured Directory", "empty": "No featured organizations match these filters.", "prev": "Previous companies", "next": "Next companies", "slide": "Go to slide {{n}}"}, "listed": {"heading": "Global Business Directory Listing", "empty": "Organizations not found in the Listed Companies section"}, "plans": {"destinations": {"free": {"signedIn": "https://www.cnessworks.com/createtrustprofile/GetStarted?listing=free", "signedOut": "https://www.cnessworks.com/login?redirect=%2Fcreatetrustprofile%2FGetStarted%3Flisting%3Dfree"}, "premium": {"signedIn": "https://www.cnessworks.com/createtrustprofile/GetStarted?listing=premium", "signedOut": "https://www.cnessworks.com/login?redirect=%2Fcreatetrustprofile%2FGetStarted%3Flisting%3Dpremium"}}}, "ui": {"loadError": "The directory listings could not be loaded.", "retry": "Try again", "close": "Close", "service": "Directory service results", "local": "Preview match", "serviceNote": "These results are the directory service’s own answer for this selection, as captured on 23 November 2026.", "localNote": "The directory service was not asked this exact search when the snapshot was taken, so this preview matches your words against each listing’s name, industry, description and location. Results on cnessworks.com can differ."}}</script>
+<script>
+(() => {
+  'use strict';
+  /* Global Directory. Search, filter and paging rules follow the live page (cnessworks.com/globaldirectory):
+     - no search: the listing endpoint with badge, size, industry, country and certified filters; the featured
+       row (paid placement) is filtered by the same selections;
+     - Industry or Location set: the search endpoint, where the Country filter replaces the typed location;
+     - focus areas search for the area with its synonym list; any change returns to page 1 and the first slide;
+     - 24 entries a page, ordered by the directory's ranking score (highest first), as every service answer is.
+     Data: a snapshot of the service (assets/directory/data.json). Each selection uses the service's own captured
+     answer, or the overlap of the captured answers for its parts (checked against the captured combinations);
+     only selections with no captured part are matched in the browser, and the status line says so. */
+  const root = document.documentElement; root.classList.add('js');
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const T = JSON.parse($('#gd-strings').textContent);
+  const mq = matchMedia('(prefers-reduced-motion: reduce)');
+  const CW = window.CW = { still: mq.matches };
+  const main = $('[data-gd]');
+  // data-chrome="app": the Next.js route, where components/site/ChromeBehaviour runs the shared chrome and the pause
+  // button; this script then only follows the "still" class. data-assets: prefix for asset paths (base path).
+  const appChrome = main.dataset.chrome === 'app', AS = main.dataset.assets || '';
+  const store = { get(k, d) { try { const v = sessionStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch {} }, del(k) { try { sessionStorage.removeItem(k); } catch {} } };
+  const recent = { get(k) { try { const v = JSON.parse(localStorage.getItem('cnw-recent-' + k) || '[]'); return Array.isArray(v) ? v.filter(x => typeof x === 'string') : []; } catch { return []; } },
+    add(k, v) { v = v.trim(); if (!v) return; try { localStorage.setItem('cnw-recent-' + k, JSON.stringify([v, ...recent.get(k).filter(x => x.toLowerCase() !== v.toLowerCase())].slice(0, 6))); } catch {} } };
+  const cut100 = s => s.slice(0, 100);
+  const headOff = () => ($('#top')?.getBoundingClientRect().height || 72) + 16;
+  const scrollToId = id => { const el = document.getElementById(id); if (!el) return; scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + scrollY - headOff()), behavior: CW.still ? 'auto' : 'smooth' }); };
+
+  /* ---------- Motion control and shared chrome (as on the other subpages; on the static page only) ---------- */
+  new MutationObserver(() => { const s = root.classList.contains('still'); if (s !== CW.still) { CW.still = s; lenses.forEach(L => L.wake()); } }).observe(root, { attributes: true, attributeFilter: ['class'] });
+  let applyStill = () => {};
+  if (!appChrome) {
+  const motionBtn = $('#motionBtn');
+  applyStill = () => { root.classList.toggle('still', CW.still); motionBtn.setAttribute('aria-pressed', String(CW.still)); const l = CW.still ? 'Play motion' : 'Pause motion'; motionBtn.setAttribute('aria-label', l); motionBtn.title = l; lenses.forEach(L => L.wake()); };
+  motionBtn.addEventListener('click', () => { CW.still = !CW.still; applyStill(); });
+  mq.addEventListener?.('change', e => { CW.still = e.matches; applyStill(); });
+  const bar = $('#bar'), totop = $('#totop'), quickEl = $('.quick');
+  let pending = false, lastY = scrollY;
+  const frame = () => { pending = false; const y = scrollY, H = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${H > 0 ? clamp(y / H) : 0})`; root.classList.toggle('scrolled', y > 8); const tt = y < innerHeight; if (totop.hidden !== tt) totop.hidden = tt; };
+  addEventListener('scroll', () => { if (!pending) { pending = true; requestAnimationFrame(frame); } const y = scrollY, dy = y - lastY; lastY = y;
+    if (innerWidth >= 1200 || quickEl.contains(document.activeElement)) root.classList.remove('dock-away');
+    else if (dy > 6 && y > 240) root.classList.add('dock-away'); else if (dy < -6 || y < 240) root.classList.remove('dock-away'); }, { passive: true });
+  quickEl.addEventListener('focusin', () => root.classList.remove('dock-away'));
+  const dds = $$('.dd');
+  const closeAll = except => dds.forEach(d => { if (d !== except && d.classList.contains('open')) { d.classList.remove('open'); $('button', d).setAttribute('aria-expanded', 'false'); } });
+  const openDd = (d, focusFirst) => { closeAll(d); d.classList.add('open'); $('button', d).setAttribute('aria-expanded', 'true'); if (focusFirst) ($('.menu a[aria-current]', d) || $('.menu a', d))?.focus(); };
+  dds.forEach(d => { const b = $('button', d); let t;
+    b.addEventListener('click', () => d.classList.contains('open') ? closeAll() : openDd(d));
+    b.addEventListener('keydown', e => { if (e.key === 'ArrowDown') { e.preventDefault(); openDd(d, true); } });
+    d.addEventListener('pointerenter', e => { if (e.pointerType !== 'mouse') return; clearTimeout(t); t = setTimeout(() => openDd(d), 80); });
+    d.addEventListener('pointerleave', e => { if (e.pointerType !== 'mouse') return; clearTimeout(t); t = setTimeout(() => { if (!d.contains(document.activeElement)) { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } }, 220); });
+    d.addEventListener('keydown', e => { const links = $$('.menu a', d), k = links.indexOf(document.activeElement);
+      if (e.key === 'Escape') { closeAll(); b.focus(); } else if (k >= 0 && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) { e.preventDefault(); links[(k + (e.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length].focus(); } });
+    d.addEventListener('focusout', () => setTimeout(() => { if (!d.contains(document.activeElement)) { d.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } }, 0)); });
+  document.addEventListener('pointerdown', e => { if (!e.target.closest('.dd')) closeAll(); });
+  const burger = $('#burger'), sheet = $('#sheet');
+  const setSheet = open => { sheet.hidden = !open; burger.setAttribute('aria-expanded', String(open)); burger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu'); root.classList.toggle('sheet-open', open); if (open) ($('a[aria-current]', sheet) || $('a', sheet)).focus(); };
+  burger.addEventListener('click', () => setSheet(sheet.hidden));
+  sheet.addEventListener('click', e => { if (e.target.closest('a')) setSheet(false); });
+  $$('.grp > button', sheet).forEach(b => b.addEventListener('click', () => { const s = $('#' + b.getAttribute('aria-controls')), o = s.hidden; s.hidden = !o; b.setAttribute('aria-expanded', String(o)); }));
+  matchMedia('(min-width: 1240px)').addEventListener?.('change', e => { if (e.matches) setSheet(false); });
+  $$('[data-copy]').forEach(b => b.addEventListener('click', () => { const done = t => { b.textContent = t; setTimeout(() => b.textContent = 'Copy', 1600); };
+    const fb = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
+    try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('Copied'), fb); } catch { fb(); } }));
+  $$('.pop > button').forEach(b => { const tip = $('#' + b.getAttribute('aria-controls'));
+    b.addEventListener('click', () => { const o = tip.hidden; $$('.pop .tip').forEach(t => t.hidden = true); $$('.pop > button').forEach(x => x.setAttribute('aria-expanded', 'false')); tip.hidden = !o; b.setAttribute('aria-expanded', String(o)); }); });
+  document.addEventListener('pointerdown', e => { if (!e.target.closest('.pop')) { $$('.pop .tip').forEach(t => t.hidden = true); $$('.pop > button').forEach(x => x.setAttribute('aria-expanded', 'false')); } });
+  totop.addEventListener('click', () => { scrollTo({ top: 0, behavior: CW.still ? 'auto' : 'smooth' }); $('#top .brand').focus({ preventScroll: true }); });
+  }
+
+  /* ---------- State (kept for the visit: paging, opening a profile and coming back, reloads) ---------- */
+  const DEF = { what: null, where: null, badge: 'All', size: 'All', industry: 'All', country: 'All', certified: false, page: 1 };
+  const S = Object.assign({}, DEF, store.get('cnw-gd-state', {}));
+  const save = () => store.set('cnw-gd-state', S);
+  const searching = () => !!(S.what || S.where);
+  const expand = w => { const syn = T.focus.synonyms[w]; return syn ? [w, ...syn].join('|') : w; };   // focus areas carry their synonyms, as on the live page
+
+  /* ---------- Data and matching ---------- */
+  let D = null, BY = null, ALL = [];
+  const key = (kind, q) => kind + '|' + JSON.stringify(Object.entries(q).sort((a, b) => a[0] < b[0] ? -1 : 1));
+  const local = {
+    badge_type: (r, v) => r.b === v, size: (r, v) => r.z.startsWith(v.toLowerCase()), certified: r => !!r.b, country: (r, v) => r.co === v,
+    industry: (r, v) => [r.c, ...r.s].some(x => x.toLowerCase() === v.toLowerCase()),
+    what: (r, v) => { const h = [r.n, r.c, ...r.s, r.d].join(' ').toLowerCase(); return v.split('|').map(t => t.trim().toLowerCase()).filter(Boolean).some(t => h.includes(t)); },
+    where: (r, v) => [r.co, r.cr, r.cf].join(' ').toLowerCase().includes(v.toLowerCase()) };
+  function params() {
+    const q = {}, s = searching();
+    if (S.what) q.what = expand(S.what);
+    const where = S.country !== 'All' ? S.country : (S.where || '');
+    if (where) q[s ? 'where' : 'country'] = where;
+    if (S.badge !== 'All') q.badge_type = S.badge.toLowerCase();
+    if (S.size !== 'All') q.size = S.size;
+    if (S.industry !== 'All') q.industry = S.industry;
+    if (S.certified) q.certified = 'true';
+    return { kind: s ? 'search' : 'listed', q };
+  }
+  function membership(kind, k, v) {   // a captured service answer for this one selection, else the local rule
+    const a = D.answers[key(kind === 'search' && (k === 'what' || k === 'where') ? 'search' : 'listed', { [k]: v })];
+    if (a) return { set: new Set([...a.o, ...a.f]), service: true };
+    return { set: new Set(ALL.filter(r => local[k](r, v)).map(r => r.x)), service: false };
+  }
+  function resolve() {
+    const { kind, q } = params(), ks = Object.keys(q);
+    if (!ks.length) return { featured: ALL.filter(r => r.f), listed: ALL.filter(r => !r.f), service: true };
+    const exact = D.answers[key(kind, q)];
+    if (exact) return { featured: exact.f.map(x => BY.get(x)), listed: exact.o.map(x => BY.get(x)), service: true };   // the service's own answer, in its order
+    let set, service;
+    { const parts = ks.map(k => membership(kind, k, q[k])); service = parts.every(p => p.service); set = parts.reduce((acc, p) => acc ? new Set([...acc].filter(x => p.set.has(x))) : p.set, null); }
+    const hits = ALL.filter(r => set.has(r.x));   // ALL is in ranking order
+    return { featured: hits.filter(r => r.f), listed: hits.filter(r => !r.f), service };
+  }
+
+  /* ---------- Images: the live image URL, or in the hosted preview a bundled copy ---------- */
+  const imgBase = main.dataset.img || '';
+  const chunks = new Map();
+  const chunk = c => { if (!chunks.has(c)) chunks.set(c, fetch(imgBase + c + '.json').then(r => r.ok ? r.json() : {}).catch(() => ({}))); return chunks.get(c); };
+  function loadImg(box, r) {
+    const img = $('img', box);
+    const done = ok => { box.classList.remove('loading'); box.classList.toggle('has-img', ok); img.classList.toggle('ok', ok); if (!ok) img.remove(); };
+    img.addEventListener('load', () => done(true), { once: true }); img.addEventListener('error', () => done(false), { once: true });
+    if (!r.im) return done(false);
+    if (!imgBase) { img.src = r.im; return; }
+    chunk(r.ic).then(m => m[r.x] ? (img.src = m[r.x]) : done(false));
+  }
+
+  /* ---------- Cards ---------- */
+  const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>';
+  const BMK = '<svg viewBox="0 0 14 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 1h12v16l-6-4-6 4V1z"/></svg>';
+  const strip = s => (s || '').replace(/\*/g, '').trim();
+  function place(r) {   // the live card's location rule (city, state, country; else the region text)
+    const full = strip(r.cf || r.cr), parts = [strip(r.co)].filter(Boolean);
+    if (parts.length) return [parts.join(', '), full || parts.join(', ')];
+    const o = strip(r.cr); return [o, full || o];
+  }
+  const short = d => d.length <= 158 ? d : d.slice(0, 158) + '…';
+  const stars = n => Array.from({ length: 5 }, (_, i) => `<i class="${i < n ? 'on' : ''}"></i>`).join('');
+  const ratingText = r => `${r.ra.toFixed(1)} ${T.card.outOf5}, ${r.rc} ${T.card.globalRating}${r.rc === 1 ? '' : 's'}`;
+  const profile = r => T.card.profile.replace('{slug}', encodeURIComponent(r.k));
+  function card(r, i) {
+    const [loc, locFull] = place(r), tier = r.b ? `<span class="tier ${r.b}"><img src="${AS}assets/emblem-${r.b}.svg" width="20" height="20" alt="">${esc(T.card.tiers[r.b])}</span>` : '';
+    const when = r.a ? `<time class="when" datetime="${esc(r.a.slice(0, 10))}">${esc(new Date(r.a).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }))}</time>` : '';
+    return `<li style="--k:${i}"><article class="card" data-x="${r.x}">
+      <div class="media loading"><img alt="" loading="lazy" decoding="async"><span class="ini" aria-hidden="true">${esc((r.n || '?').charAt(0).toUpperCase())}</span>${r.c ? `<span class="ind">${esc(r.c)}</span>` : ''}${tier}</div>
+      <div class="cbody"><h3><a class="nm" href="${esc(profile(r))}" data-prod-href="${esc(profile(r))}" target="_blank" rel="noopener" aria-label="${esc(T.card.details.replace('{name}', r.n))}">${esc(r.n)}</a></h3>
+        ${r.d ? `<p class="desc">${esc(short(r.d))}</p>` : ''}
+        <div class="meta">${when}${loc ? `<span class="loc" title="${esc(locFull)}">${PIN}<span>${esc(loc)}</span></span>` : ''}
+          <span class="acts2"><button type="button" class="stars" data-rate="${r.x}" title="${esc(T.card.ratingTitle)}" aria-label="${esc(ratingText(r))}" aria-haspopup="dialog">${stars(Math.round(r.ra))}</button>
+          <a class="bm" href="${esc(T.card.login)}" target="_blank" rel="noopener" title="${esc(T.card.bookmarkTitle)}">${esc(T.card.bookmark)}${BMK}</a></span></div></div>
+    </article></li>`;
+  }
+  function fill(ul, rows, animate) {
+    ul.innerHTML = rows.map(card).join('');
+    $$('.media', ul).forEach((box, i) => loadImg(box, rows[i]));
+    ul.classList.remove('swap'); if (animate && !CW.still) { void ul.offsetWidth; ul.classList.add('swap'); }
+  }
+  const skel = n => Array.from({ length: n }, () => '<li><div class="skel"></div></li>').join('');
+
+  /* ---------- Render ---------- */
+  const featUl = $('[data-featured]'), listUl = $('[data-listed]'), rail = $('[data-rail]'), dotsEl = $('[data-dots]'), featEmpty = $('[data-feat-empty]');
+  const pager = $('[data-pager]'), showing = $('[data-showing]'), stateEl = $('[data-state]'), prov = $('[data-prov]'), provNote = $('#prov-note'), live = $('#gd-live');
+  showing.removeAttribute('aria-live');
+  let R = null, prevSig = '', announceT;
+  const PER = 24;
+  function showingHtml(from, to, total) { return esc(T.pagination.showing).replace('{from}', `<b>${from}</b>`).replace('{to}', `<b>${to}</b>`).replace('{total}', `<b>${total}</b>`); }
+  function render(opts = {}) {
+    R = resolve();
+    const total = R.listed.length, pages = Math.max(1, Math.ceil(total / PER));
+    S.page = Math.min(Math.max(1, S.page), pages); save();
+    const items = R.listed.slice((S.page - 1) * PER, S.page * PER);
+    const sig = JSON.stringify(params()) + '|' + S.page;
+    const changed = sig !== prevSig; prevSig = sig;
+    // featured (paid placement), filtered by the same selections
+    if (changed || opts.force) {
+      featUl.classList.add('out'); listUl.classList.add('out');
+      const swap = () => { featUl.classList.remove('out'); listUl.classList.remove('out');
+        fill(featUl, R.featured, !opts.first); fill(listUl, items, !opts.first); rail.scrollLeft = 0; railState(); };
+      opts.first || CW.still ? swap() : setTimeout(swap, 120);
+    }
+    const bothEmpty = searching() && !R.featured.length && !R.listed.length;
+    featEmpty.hidden = R.featured.length > 0; featEmpty.textContent = bothEmpty ? T.listed.empty : T.featured.empty;
+    stateEl.hidden = total > 0; stateEl.textContent = T.listed.empty;
+    showing.innerHTML = total ? showingHtml((S.page - 1) * PER + 1, Math.min(S.page * PER, total), total) : '';
+    prov.hidden = false; prov.classList.toggle('local', !R.service); prov.textContent = R.service ? T.ui.service : T.ui.local; provNote.textContent = R.service ? T.ui.serviceNote : T.ui.localNote;
+    renderPager(total, pages);
+    syncFilters(items);
+    syncSearch();
+    lenses.forEach(L => L.update(R, items));
+    if (changed && !opts.first) { clearTimeout(announceT); announceT = setTimeout(() => { live.textContent = total ? showing.textContent : T.listed.empty; }, 500); }
+  }
+  function renderPager(total, pages) {
+    pager.hidden = total <= 0; if (total <= 0) { pager.innerHTML = ''; return; }
+    const P = T.pagination, p = S.page;
+    let s = Math.max(1, p - 2), e = s + 4; if (e > pages) { e = pages; s = Math.max(1, e - 4); }
+    const nums = []; for (let k = s; k <= e; k++) nums.push(`<button type="button" data-go="${k}"${k === p ? ' aria-current="page"' : ''}>${k}</button>`);
+    pager.innerHTML = (pages > 1 ? `<div class="pg-row"><div class="pg-btns"><button type="button" data-go="${p - 1}" aria-label="${esc(P.prevAria)}"${p <= 1 ? ' disabled' : ''}>${esc(P.previous)}</button>${nums.join('')}<button type="button" data-go="${p + 1}" aria-label="${esc(P.nextAria)}"${p >= pages ? ' disabled' : ''}>${esc(P.next)}</button></div>
+      <label class="pg-go"><span>${esc(P.goTo)}</span><input id="pg-go" type="text" inputmode="numeric" pattern="[0-9]*" value="${p}" aria-label="${esc(P.goToAria)}"><span>${esc(P.page)}</span></label></div>` : '');
+  }
+  function goPage(n) {
+    const pages = Math.max(1, Math.ceil(R.listed.length / PER)); n = Math.max(1, Math.min(pages, n | 0));
+    if (n === S.page) { const i = $('#pg-go'); if (i) i.value = n; return; }
+    S.page = n; render(); scrollToId('listed-companies-section');
+  }
+  pager.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b && !b.disabled) goPage(+b.dataset.go); });
+  pager.addEventListener('keydown', e => { if (e.target.id === 'pg-go' && e.key === 'Enter') { e.preventDefault(); goPage(parseInt(e.target.value.replace(/\D/g, ''), 10) || S.page); } });
+  pager.addEventListener('input', e => { if (e.target.id === 'pg-go') e.target.value = e.target.value.replace(/[^\d]/g, '').slice(0, 4); });
+  pager.addEventListener('focusout', e => { if (e.target.id === 'pg-go') { const n = parseInt(e.target.value, 10); Number.isFinite(n) ? goPage(n) : (e.target.value = S.page); } });
+  prov.addEventListener('click', () => { const o = provNote.hidden; provNote.hidden = !o; prov.setAttribute('aria-expanded', String(o)); });
+
+  /* Featured rail: native scrolling with snap; arrows move one view, dots show where the view is */
+  const arrows = $$('.arw');
+  function perView() { const li = $('li', featUl); return li ? Math.max(1, Math.round(rail.clientWidth / (li.getBoundingClientRect().width + 16))) : 3; }
+  function railState() {
+    const n = R ? R.featured.length : 0, pv = perView(), slides = Math.max(1, Math.ceil(n / pv)), max = rail.scrollWidth - rail.clientWidth;
+    const idx = max > 4 ? Math.round((rail.scrollLeft / max) * (slides - 1)) : 0;
+    arrows[0].disabled = rail.scrollLeft <= 4; arrows[1].disabled = rail.scrollLeft >= max - 4;
+    if (dotsEl.childElementCount !== (n ? slides : 0)) dotsEl.innerHTML = n ? Array.from({ length: slides }, (_, i) => `<button type="button" data-slide="${i}" aria-label="${esc(T.featured.slide.replace('{{n}}', i + 1))}"></button>`).join('') : '';
+    $$('button', dotsEl).forEach((b, i) => b.setAttribute('aria-current', String(i === idx)));
+  }
+  let railRaf = 0; rail.addEventListener('scroll', () => { if (!railRaf) railRaf = requestAnimationFrame(() => { railRaf = 0; railState(); }); }, { passive: true });
+  arrows.forEach(b => b.addEventListener('click', () => rail.scrollBy({ left: +b.dataset.step * rail.clientWidth, behavior: CW.still ? 'auto' : 'smooth' })));
+  dotsEl.addEventListener('click', e => { const b = e.target.closest('[data-slide]'); if (!b) return; const n = dotsEl.childElementCount, max = rail.scrollWidth - rail.clientWidth;
+    rail.scrollTo({ left: n > 1 ? max * (+b.dataset.slide / (n - 1)) : 0, behavior: CW.still ? 'auto' : 'smooth' }); });
+  addEventListener('resize', () => R && railState());
+
+  /* ---------- Filters: two bars (featured and listing) share one set of selections ---------- */
+  const FILTERS = $$('.filters');
+  function setOptions(sel, values, allLabel) {
+    const cur = sel.value, want = ['All', ...values];
+    if (sel.options.length === want.length && want.every((v, i) => sel.options[i].value === v)) return;
+    sel.innerHTML = `<option value="All">${esc(allLabel)}</option>` + values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+    sel.value = want.includes(cur) ? cur : 'All';
+  }
+  function syncFilters(items) {
+    // Industry choices: the industries of the listings on screen (featured and this page), as on the live page
+    const inds = [...new Set([...R.featured, ...items].map(r => r.c).filter(Boolean))].sort();
+    if (S.industry !== 'All' && !inds.includes(S.industry)) inds.push(S.industry);
+    const any = S.badge !== 'All' || S.size !== 'All' || S.certified || S.industry !== 'All' || S.country !== 'All';
+    FILTERS.forEach(f => {
+      setOptions($('select[data-f="industry"]', f), inds, T.filters.industry.all);
+      const cs = $('select[data-f="country"]', f); setOptions(cs, D.countries, T.filters.country.all); $('label[data-f="country"]', f).hidden = !D.countries.length;
+      for (const [k, ph] of [['badge', T.filters.badge.placeholder], ['size', T.filters.size.placeholder], ['industry', T.filters.industry.placeholder], ['country', T.filters.country.placeholder]]) {
+        const sel = $(`select[data-f="${k}"]`, f); sel.value = S[k]; const lab = sel.closest('.sel'), on = S[k] !== 'All';
+        lab.classList.toggle('on', on); $('.sv', lab).textContent = on ? sel.options[sel.selectedIndex].text : ph; }
+      $('input[data-f="certified"]', f).checked = S.certified;
+      $('[data-clear-filters]', f).hidden = !any;
+    });
+  }
+  FILTERS.forEach(f => {
+    f.addEventListener('change', e => { const k = e.target.dataset.f; if (!k) return; S[k] = k === 'certified' ? e.target.checked : e.target.value; S.page = 1; render(); });
+    $('[data-clear-filters]', f).addEventListener('click', () => { Object.assign(S, { badge: 'All', size: 'All', industry: 'All', country: 'All', certified: false, page: 1 }); render(); });
+  });
+
+  /* ---------- Search: Industry and Location panels ---------- */
+  const form = $('.console'), err = $('.err', form), FX = s => `<button type="button" class="px" aria-label="${esc(T.search.clear)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>`;
+  const fields = { what: $('[data-field="what"]'), where: $('[data-field="where"]') };
+  let openKey = null;
+  function syncSearch() {
+    for (const k of ['what', 'where']) { const f = fields[k], v = S[k], fv = $('.fv', f);
+      fv.innerHTML = v ? esc(v) : `<span class="ph" data-k="gd:search.${k}.placeholder">${esc(fv.dataset.ph)}</span>`; fv.title = v || ''; $('.fx', f).hidden = !v; f.classList.toggle('has', !!v); }
+    $$('.fchip').forEach(b => b.setAttribute('aria-pressed', String(S.what === b.dataset.focus)));
+  }
+  function setWhat(v) { S.what = v ? cut100(v) : null; S.page = 1; render(); }
+  function setWhere(v) { S.where = v ? cut100(v) : null; S.page = 1; render(); }
+  function closePanel(focusBack) { if (!openKey) return; const f = fields[openKey]; $('.panel', f).hidden = true; $('.fld-btn', f).setAttribute('aria-expanded', 'false'); if (focusBack) $('.fld-btn', f).focus(); openKey = null; }
+  function openPanel(k) {
+    closePanel(); openKey = k; const f = fields[k], p = $('.panel', f);
+    $('.fld-btn', f).setAttribute('aria-expanded', 'true'); p.hidden = false;
+    const P = k === 'what' ? T.search.whatPanel : T.search.wherePanel;
+    p.innerHTML = `<div class="pin"><input type="text" id="pin-${k}" maxlength="100" autocomplete="off" placeholder="${esc(P.placeholder)}" aria-label="${esc(T.search[k].label)}">${FX()}</div><p class="plim" hidden>${esc((T.search.whatPanel.maxChars || []).join(''))}</p><div class="plist" role="group"></div>`;
+    const input = $('input', p); input.value = k === 'what' ? (S.what || '') : '';
+    const draw = () => { $('.plim', p).hidden = input.value.length < 100; $('.px', p).hidden = !input.value; $('.plist', p).innerHTML = k === 'what' ? whatList(input.value) : whereList(input.value); };
+    input.addEventListener('input', () => { input.value = cut100(input.value); draw(); });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { e.preventDefault(); const v = input.value.trim(); if (!v) return;
+        if (k === 'what') { const co = companies(v.toLowerCase()).find(n => n.toLowerCase() === v.toLowerCase()); const val = cut100(co || v); recent.add('industry', val); closePanel(true); setWhat(val); scrollToId('listed-companies-section'); }
+        else { recent.add('location', v); closePanel(true); setWhere(v); scrollToId('listed-companies-section'); } }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); $('.opt', p)?.focus(); } });
+    $('.px', p).addEventListener('click', () => { input.value = ''; draw(); input.focus(); });
+    p.addEventListener('click', e => { const o = e.target.closest('.opt'); if (!o) return; const v = o.dataset.v;
+      if (k === 'what') { recent.add('industry', v); setWhat(v); openPanel('where'); }   // as on the live page, choosing an industry moves on to Location
+      else { recent.add('location', v); closePanel(true); setWhere(v); scrollToId('listed-companies-section'); } });
+    p.addEventListener('keydown', e => { const opts = $$('.opt', p), i = opts.indexOf(document.activeElement);
+      if (e.key === 'Escape') { e.preventDefault(); closePanel(true); }
+      else if (i >= 0 && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) { e.preventDefault(); const n = i + (e.key === 'ArrowDown' ? 1 : -1); n < 0 ? input.focus() : opts[Math.min(n, opts.length - 1)].focus(); } });
+    draw(); input.focus();
+  }
+  // Industry panel: recent searches, companies on the current page, and the industry list (as built by the live page)
+  const pageItems = () => R ? R.listed.slice((S.page - 1) * PER, S.page * PER) : [];
+  const companies = v => pageItems().filter(r => r.n && (r.n.toLowerCase().includes(v) || (r.d || '').toLowerCase().includes(v))).map(r => r.n).slice(0, 8);
+  const near = (a, list) => { const x = a.toLowerCase().trim(); return !!x && list.some(y => { y = y.toLowerCase().trim(); return !!y && (y.includes(x) || x.includes(y)); }); };
+  function industryRows(q, avail) {
+    const L = D.industries, has = n => avail.length > 0 && near(n, avail), byName = (a, b) => a.name.localeCompare(b.name);
+    const sortBy = (arr, f) => avail.length ? [...arr].sort((a, b) => f(a) !== f(b) ? (f(a) ? -1 : 1) : byName(a, b)) : [...arr].sort(byName);
+    const out = [], v = q.trim().toLowerCase();
+    if (!v) {
+      const cats = sortBy(L.filter(e => e.level === 1), c => has(c.name) || L.some(e => e.level > 1 && e.category === c.name && has(e.name)));
+      const prim = sortBy(L.filter(e => e.level === 2), e => has(e.name));
+      for (const c of cats) { const kids = prim.filter(e => e.category === c.name); if (!kids.length) continue; out.push({ type: 'category', e: c }); kids.forEach(e => out.push({ type: 'primary', e, listed: has(e.name) })); }
+      return out;
+    }
+    for (const e of sortBy(L.filter(e => e.level > 1 && (e.name.toLowerCase().includes(v) || e.category.toLowerCase().includes(v) || (e.primaryParent || '').toLowerCase().includes(v))), e => has(e.name)))
+      out.push({ type: e.level === 2 ? 'primary' : 'sub', e, listed: has(e.name) });
+    return out;
+  }
+  function whatList(q) {
+    const P = T.search.whatPanel, v = q.trim().toLowerCase(), rec = recent.get('industry'), avail = [...new Set(pageItems().map(r => r.c).filter(Boolean))];
+    const C = industryRows(q, avail), co = v ? companies(v) : [], short = v.length > 60 ? v.slice(0, 60) + '…' : v;
+    const btn = (val, inner, cls = '') => `<button type="button" class="opt ${cls}" data-v="${esc(val)}">${inner}</button>`;
+    let h = '';
+    if (!v && rec.length) h += `<p class="pg-l">${esc(P.recent)}</p>` + rec.map(x => btn(x, esc(x))).join('');
+    if (!v && C.length) h += `<p class="pg-hint">${esc(P.browseHint)}</p>`;
+    if (!C.length && !co.length && !v) h += `<p class="pg-msg">${esc(P.unavailable)}</p>`;
+    if (!C.length && !co.length && v) h += `<p class="pg-msg">${esc(P.noMatch[0] + short + P.noMatch[1])}</p>` + btn(cut100(v), esc(P.anyway[0] + short + P.anyway[1]), 'anyway');
+    if (co.length) h += `<p class="pg-l">${esc(P.companies)}</p>` + co.map(n => btn(n, esc(n))).join('') + (C.length ? `<p class="pg-l">${esc(P.industries)}</p>` : '');
+    for (const { type, e, listed } of C) {
+      if (type === 'category') { h += `<p class="pg-l">${esc(e.name)}</p>`; continue; }
+      h += btn(e.name, `<span>${esc(e.name)}${type === 'sub' ? ` <small>(${esc(e.primaryParent || e.category)})</small>` : ''}</span>${listed ? `<span class="listed">${esc(P.listed)}</span>` : ''}`, type === 'sub' ? 'sub' : '');
+    }
+    return h;
+  }
+  function whereList(q) {
+    const P = T.search.wherePanel, v = q.trim().toLowerCase(), rec = recent.get('location'), opts = v ? D.countries.filter(c => c.toLowerCase().includes(v)) : D.countries;
+    let h = '';
+    if (!v && rec.length) h += `<p class="pg-l">${esc(P.recent)}</p>` + rec.map(x => `<button type="button" class="opt" data-v="${esc(x)}">${esc(x)}</button>`).join('');
+    if (!opts.length) h += `<p class="pg-msg">${esc(P.noMatches)}</p>`;
+    return h + opts.map(c => `<button type="button" class="opt" data-v="${esc(c)}">${esc(c)}</button>`).join('');
+  }
+  for (const k of ['what', 'where']) {
+    const f = fields[k];
+    $('.fld-btn', f).addEventListener('click', () => { if (!D) return; openKey === k ? closePanel() : openPanel(k); });
+    $('.fx', f).addEventListener('click', () => { k === 'what' ? setWhat(null) : setWhere(null); $('.fld-btn', f).focus(); });
+    f.addEventListener('focusout', () => setTimeout(() => { if (openKey === k && !f.contains(document.activeElement)) closePanel(); }, 0));
+  }
+  document.addEventListener('pointerdown', e => { if (openKey && !e.target.closest('.fld')) closePanel(); });
+  let errT;
+  form.addEventListener('submit', e => { e.preventDefault();
+    if (!S.what && !S.where) { err.hidden = false; clearTimeout(errT); errT = setTimeout(() => err.hidden = true, 2500); return; }
+    err.hidden = true; scrollToId('listed-companies-section'); });
+
+  /* Focus areas: search for the area (with its synonyms) and move to the featured row; pointing at one previews its matches in the lens */
+  $$('.fchip').forEach(b => {
+    b.addEventListener('click', () => { if (!D) return; setWhat(b.dataset.focus); scrollToId('featured-companies-section'); });
+    const prev = on => { if (!D) return; const a = on && D.answers[key('search', { what: expand(b.dataset.focus) })]; lenses[0].preview(a ? new Set([...a.o, ...a.f]) : null); };
+    b.addEventListener('pointerenter', e => e.pointerType === 'mouse' && prev(true)); b.addEventListener('pointerleave', e => e.pointerType === 'mouse' && prev(false));
+    b.addEventListener('focus', () => prev(true)); b.addEventListener('blur', () => prev(false));
+  });
+
+  /* ---------- Plan dialog (Free / Premium): what each listing includes; Explore more continues on cnessworks.com ---------- */
+  const dlg = $('#plan-dialog'), explore = $('[data-explore]', dlg);
+  $$('[data-plan]').forEach(b => b.addEventListener('click', () => { const id = b.dataset.plan;
+    $$('[data-plan-card]', dlg).forEach(c => c.hidden = c.dataset.planCard !== id); explore.href = T.plans.destinations[id].signedOut;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); }));
+  $('[data-close]', dlg).addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  explore.addEventListener('click', () => setTimeout(() => dlg.close(), 0));
+
+  /* ---------- Rating popover ---------- */
+  const rpop = $('#rpop'); let rFor = null;
+  function closeR() { if (rpop.hidden) return; rpop.hidden = true; rFor?.setAttribute('aria-expanded', 'false'); rFor = null; }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-rate]');
+    if (b) { e.preventDefault(); if (rFor === b) return closeR(); closeR(); const r = BY.get(+b.dataset.rate); rFor = b; b.setAttribute('aria-expanded', 'true');
+      rpop.innerHTML = `<span class="stars" aria-hidden="true">${stars(Math.round(r.ra))}</span><p><b>${r.ra.toFixed(1)}</b> ${esc(T.card.outOf5)}</p><span>${r.rc} ${esc(T.card.globalRating)}${r.rc === 1 ? '' : 's'}</span><a href="${esc(T.card.login)}" target="_blank" rel="noopener">${esc(T.card.signIn)}</a>`;
+      rpop.hidden = false; const br = b.getBoundingClientRect(), w = rpop.offsetWidth;
+      rpop.style.top = (br.bottom + scrollY + 8) + 'px'; rpop.style.left = Math.max(8, Math.min(document.documentElement.clientWidth - w - 8, br.right + scrollX - w)) + 'px'; $('a', rpop).focus({ preventScroll: true }); return; }
+    if (!e.target.closest('#rpop')) closeR();
+  });
+  rpop.addEventListener('keydown', e => { if (e.key === 'Escape') { const b = rFor; closeR(); b?.focus(); } });
+  rpop.addEventListener('focusout', () => setTimeout(() => { if (!rpop.contains(document.activeElement) && document.activeElement !== rFor) closeR(); }, 0));
+  // opening a profile: remember where the visitor was, to come back to the same place
+  document.addEventListener('click', e => { if (e.target.closest('a.nm')) store.set('cnw-gd-scroll', scrollY); });
+
+  /* ---------- FAQ: tabs, one answer open at a time ---------- */
+  const tabs = $$('.faq-tabs [role="tab"]');
+  const selectTab = (t, focus) => { tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; $('#' + x.getAttribute('aria-controls')).hidden = !on; });
+    $$('.qa-q').forEach(q => { q.setAttribute('aria-expanded', 'false'); $('#' + q.getAttribute('aria-controls')).hidden = true; }); if (focus) t.focus(); };
+  tabs.forEach((t, i) => { t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', e => { const n = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]; if (n) { e.preventDefault(); selectTab(tabs[(i + n + tabs.length) % tabs.length], true); }
+      if (e.key === 'Home') { e.preventDefault(); selectTab(tabs[0], true); } if (e.key === 'End') { e.preventDefault(); selectTab(tabs[tabs.length - 1], true); } }); });
+  $$('.qa-q').forEach(q => q.addEventListener('click', () => { const open = q.getAttribute('aria-expanded') === 'true';
+    $$('.qa-q', q.closest('.faq-p')).forEach(x => { x.setAttribute('aria-expanded', 'false'); $('#' + x.getAttribute('aria-controls')).hidden = true; });
+    if (!open) { q.setAttribute('aria-expanded', 'true'); $('#' + q.getAttribute('aria-controls')).hidden = false; } }));
+
+  /* ---------- The discovery lens ---------- */
+  // One point per listing, on a sunflower spiral in ranking order (first at the centre). Lit points are the current
+  // results; rings mark featured (paid) placement, colours mark certification levels from the records. A change of
+  // selection travels outward from the centre once; at rest only a very slow turn remains (none when paused).
+  const GOLD = 2.399963229728653, TIER = { aspiring: '#FF8F80', inspired: '#FFC81A', luminary: '#AE92FF' }, REST = .6;   // REST: every listing, nothing selected
+  class Lens {
+    constructor(fig, mini) {
+      this.fig = fig; this.mini = mini; this.cv = $('canvas', fig); this.ctx = this.cv.getContext('2d'); this.tip = $('.lens-tip', fig); this.nEl = $('[data-lens-n]', fig);
+      this.pts = []; this.lit = null; this.prevLit = null; this.page = new Set(); this.hot = null; this.rot = 0; this.t0 = 0; this.intro = 0; this.vis = true; this.raf = 0; this.last = 0; this.n = 0; this.nShown = 0; this.hover = -1;
+      new ResizeObserver(() => this.size()).observe(fig);
+      new IntersectionObserver(es => { this.vis = es[0].isIntersecting; this.wake(); }, { rootMargin: '60px' }).observe(fig);
+      this.cv.addEventListener('pointermove', e => this.pick(e)); this.cv.addEventListener('pointerleave', () => this.pick(null));
+      this.cv.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') { this.pick(e); clearTimeout(this.tt); this.tt = setTimeout(() => this.pick(null), 2200); } });
+    }
+    size() { const r = this.cv.getBoundingClientRect(), d = Math.min(2, devicePixelRatio || 1); this.w = r.width; this.cv.width = Math.round(r.width * d); this.cv.height = Math.round(r.height * d); this.ctx.setTransform(d, 0, 0, d, 0, 0); this.wake(); }
+    data(all) { const N = all.length; this.pts = all.map((r, i) => ({ r, i, ang: i * GOLD, rad: Math.sqrt((i + .5) / N), l: REST, from: REST, to: REST, t: 0 })); this.index = new Map(all.map((r, i) => [r.x, i])); this.intro = CW.still ? 1 : 0; this.t0 = performance.now(); this.wake(); }
+    setLit(set) { const now = performance.now();
+      for (const p of this.pts) { const to = set ? (set.has(p.r.x) ? 1 : 0) : REST; if (to !== p.to) { p.from = p.l; p.to = to; p.t = now + (CW.still ? 0 : p.rad * 420); } }
+      this.wake(); }
+    update(R, items) { const set = new Set([...R.featured, ...R.listed].map(r => r.x)); const all = set.size === this.pts.length;
+      this.lit = all ? null : set; if (!this.previewing) this.setLit(this.lit); this.page = new Set(items.map(r => r.x)); this.n = R.listed.length; if (CW.still || !this.vis || !this.nEl) { this.nShown = this.n; if (this.nEl) this.nEl.textContent = this.n; } this.wake(); }
+    preview(set) { this.previewing = !!set; this.setLit(set || this.lit); }
+    focusCard(x) { this.hot = x != null && this.index.has(x) ? this.index.get(x) : null; this.wake(); }
+    wake() { if (!this.raf && this.vis) this.raf = requestAnimationFrame(t => this.draw(t)); }
+    pos(p, R0) { const a = p.ang + this.rot, rr = p.rad * R0 * (this.intro < 1 ? clamp(this.intro * 1.6 - p.rad * .6) : 1); return [this.w / 2 + Math.cos(a) * rr, this.w / 2 + Math.sin(a) * rr]; }
+    pick(e) { if (!e || !this.pts.length) { this.hover = -1; if (this.tip) this.tip.hidden = true; this.wake(); return; }
+      const b = this.cv.getBoundingClientRect(), x = e.clientX - b.left, y = e.clientY - b.top, R0 = this.w * .44; let best = -1, bd = 14 * 14;
+      for (const p of this.pts) { const [px, py] = this.pos(p, R0), d = (px - x) ** 2 + (py - y) ** 2; if (d < bd) { bd = d; best = p.i; } }
+      this.hover = best; if (this.tip) { if (best < 0) this.tip.hidden = true; else { const p = this.pts[best], [px, py] = this.pos(p, R0); this.tip.innerHTML = `<b>${esc(p.r.n)}</b>${p.r.c ? `<span>${esc(p.r.c)}</span>` : ''}`; this.tip.style.left = px + 'px'; this.tip.style.top = py + 'px'; this.tip.hidden = false; } }
+      this.wake(); }
+    draw(now) {
+      this.raf = 0; if (!this.vis || !this.w) return;
+      const dt = this.last ? Math.min(.05, (now - this.last) / 1000) : 0; this.last = now;
+      const c = this.ctx, W = this.w, R0 = W * .44; let busy = false;
+      if (this.intro < 1) { this.intro = CW.still ? 1 : clamp((now - this.t0) / 1400); busy = true; }
+      if (!CW.still) { this.rot += dt * .012; busy = true; }
+      if (this.nEl && this.nShown !== this.n) { const d = this.n - this.nShown; this.nShown = CW.still || Math.abs(d) < 1 ? this.n : this.nShown + d * Math.min(1, dt * 9); this.nEl.textContent = Math.round(this.nShown); busy = true; }
+      c.clearRect(0, 0, W, W);
+      const base = this.mini ? 1 : 1.25, grow = this.mini ? 1.2 : 1.7;
+      for (const p of this.pts) {
+        if (p.l !== p.to) { const k = clamp((now - p.t) / 520); const e = 1 - Math.pow(1 - k, 3); p.l = k >= 1 ? p.to : p.from + (p.to - p.from) * e; busy = true; }
+        const [x, y] = this.pos(p, R0), L = p.l, r = base + L * grow * (1 - p.rad * .35), tier = p.r.b;
+        const lit = clamp((L - REST) / (1 - REST)), a = .14 + L * .86;
+        if (lit > 0 && !this.mini) { c.fillStyle = tier ? TIER[tier] : '#FFC81A'; c.globalAlpha = lit * .22; c.beginPath(); c.arc(x, y, r * 3, 0, 6.283); c.fill(); }
+        c.globalAlpha = a; c.fillStyle = tier ? TIER[tier] : lit > .5 ? '#FFF1C4' : '#CFC9F2'; c.beginPath(); c.arc(x, y, r, 0, 6.283); c.fill();
+        if (p.r.f) { c.strokeStyle = '#FFE2A0'; c.lineWidth = 1; c.beginPath(); c.arc(x, y, r + 2.2, 0, 6.283); c.stroke(); }
+        if (this.mini && this.page.has(p.r.x)) { c.globalAlpha = .9; c.strokeStyle = '#FFC81A'; c.lineWidth = 1.2; c.beginPath(); c.arc(x, y, r + 2.6, 0, 6.283); c.stroke(); }
+      }
+      const hot = this.hover >= 0 ? this.hover : this.hot;
+      if (hot != null && this.pts[hot]) { const [x, y] = this.pos(this.pts[hot], R0), ph = CW.still ? 0 : (now / 900) % 1;
+        c.globalAlpha = 1; c.strokeStyle = '#FFC81A'; c.lineWidth = 1.5; c.beginPath(); c.arc(x, y, 6, 0, 6.283); c.stroke();
+        if (!CW.still) { c.globalAlpha = 1 - ph; c.beginPath(); c.arc(x, y, 6 + ph * 12, 0, 6.283); c.stroke(); busy = true; } }
+      c.globalAlpha = 1;
+      if (busy) this.wake(); else this.last = 0;
+    }
+  }
+  const lenses = $$('[data-lens]').map(f => new Lens(f, f.dataset.lens === 'mini'));
+  // the listing's lens follows the card under the pointer or keyboard focus
+  const hotCard = e => { const c = e.target.closest?.('.card'); lenses[1]?.focusCard(c && c.closest('[data-listed]') ? +c.dataset.x : null); };
+  listUl.addEventListener('pointerover', hotCard); listUl.addEventListener('focusin', hotCard); listUl.addEventListener('pointerleave', () => lenses[1]?.focusCard(null));
+
+  /* ---------- Load ---------- */
+  featUl.innerHTML = skel(3); listUl.innerHTML = skel(6);
+  function load() {
+    stateEl.hidden = true;
+    fetch(main.dataset.src).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+      D = d; d.records.forEach((r, i) => r.x = i); ALL = [...d.records].sort((a, b) => b.rf - a.rf); BY = new Map(ALL.map(r => [r.x, r]));
+      lenses.forEach(L => L.data(ALL)); render({ first: true });
+      const y = store.get('cnw-gd-scroll', null); if (y != null) { store.del('cnw-gd-scroll'); requestAnimationFrame(() => scrollTo({ top: y, behavior: 'instant' })); }
+    }).catch(() => {
+      featUl.innerHTML = ''; listUl.innerHTML = ''; stateEl.hidden = false;
+      stateEl.innerHTML = `<p data-ui>${esc(T.ui.loadError)}</p><button type="button" class="btn ghost" data-ui data-retry>${esc(T.ui.retry)}</button>`;
+      $('[data-retry]', stateEl).addEventListener('click', () => { featUl.innerHTML = skel(3); listUl.innerHTML = skel(6); load(); });
+    });
+  }
+  if (appChrome) CW.still = root.classList.contains('still'); else applyStill();
+  syncSearch(); load();
+})();
+</script>

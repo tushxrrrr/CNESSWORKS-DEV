@@ -14,7 +14,7 @@ const APP = /^https?:\/\//.test(ARG) ? ARG.replace(/\/$/, '') : null, PAGE = APP
 const BASE = APP ? new URL(APP).pathname.replace(/\/$/, '') : '';
 const R = r => (APP ? BASE + '/' : '#') + r;   // where a link to another certification page points
 const { checkAppLinks } = require('./lib/app-links');   // URL mode: links to pages the app serves stay in the app
-const IN_APP = ['cness-advantage', 'analyze'].map(r => 'https://www.cnessworks.com/' + r);
+const IN_APP = ['cness-advantage', 'analyze', 'globaldirectory'].map(r => 'https://www.cnessworks.com/' + r);
 const want = url => ROUTES[url] ? R(ROUTES[url]) : APP && IN_APP.includes(url) ? `${BASE}/${url.slice('https://www.cnessworks.com/'.length)}` : url;
 const B = 'https://www.cnessworks.com';
 const INV = { moc: 'mother-of-certification', org: 'cness-certification', prd: 'product-certification' };
