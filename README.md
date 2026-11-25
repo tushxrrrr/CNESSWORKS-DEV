@@ -10,6 +10,7 @@ repository (tushxrrrr/cnessworks) keeps the full design history, including the u
 | CNESS Advantage | `advantage.html` | `src/advantage.html` (generated) | 20 Nov 2026 |
 | Certification (Mother of Certification, Organization, Product) | `certification.html` | `src/certification.html` (generated) | 20 Nov 2026 |
 | Analyze (Organization and Product paths) | `analyze.html` | `src/analyze.html` (generated) | 20 Nov 2026 |
+| Global landing page (`/global`, revision) | `global.html` | `src/global.html` + `global-template.html` | Not yet; revision of 25 Nov 2026 |
 
 Each approved version was compared with its source file at seeding: all four are identical.
 
@@ -117,12 +118,31 @@ The hosted preview is the same page with the listing images bundled beside it, b
 - **Differences from the live page, by design.** Card dates: only the record's award date is shown (8 records); the live page shows a date made up from the listing's name for the 498 records without one. Descriptions: a record without one stays empty; the live page shows a generic sentence. Ratings: the summary shows the record's average and count; the breakdown by stars comes from a separate review service that is not connected. Live image hosts that fail (yodley.in, republic-tv's image, a 403 from shriramcapital.com) show the listing's initial, as the live page does.
 - **Live-site data to review (kept as served).** The “Why CNESS?” and “Beyond Certification” strip reads like internal notes (“Track qualified inquiries; establish value before selling placement”). The country list includes “che” and “Chennai”, and Country, Industry and search match on profile data that the listing does not show (e.g. “che” returns organizations listed as India). Two slugs name two records each (`shriram-capital`: Shriram Capital Private Limited and Shriram Capital; `prestige-estates`: a listed and a featured record), so both cards of a pair open the same profile. Some records mix two organizations (e.g. Lupin: a television series description with a company headquarters photo; Astral Limited: a Canadian media description with a pipes manufacturer photo). Listing images are full-size originals (about 1.4 MB each, 699 MB for all 506); thumbnails would make the live page much lighter. The Industry filter's choices come from the listings on screen, so they change with the page and narrow to the chosen industry (live behaviour, kept).
 
+## Global landing page (`global.html`)
+The `/global` landing page as the CNESS site renders it, with the Global landing revision of 25 Nov 2026 applied.
+On the site, `/global` is a Site Template (stored in MongoDB, set live in admin → CMS → Site Templates) shown in a
+frame under the site header. This page does the same:
+- `global-template.html` is the Site Template itself: the revised "cnessworks-first-light" template. Its source and
+  the script that produces it live in the app repository, `site-templates/global-first-light/` (`baseline.html`, the
+  live template on 24 Nov 2026; `revise.py`; `README.md` with the sources). Here its image paths point to `assets/`.
+- `src/global.html` is the site header (the app's `SiteHeader` in its `/global` form, and the mobile menu) with
+  the header rules copied from the app's `marketing/styles/advantage.css`. `./build.sh` builds it into `global.html`.
+- `assets/members/` holds the IACC, MCCI and GTTCI logos, resized from the CDN files the classic homepage uses.
+
+What the revision changes: no pause button, chapter readout or floating actions; the hero has one button; MCCI,
+GTTCI and IACC cards (logo, name, subtitle) with **Read more** popups holding the approved homepage copy;
+certification levels as three cards whose rings light in turn as you scroll; the logo rail links each company's
+official website; a two-card testimonial slider; a larger CNESSWORKS lockup (58px; 48px at 1440–1535px and on
+phones; the menu button below 1440px, where the full bar no longer fits). It keeps the `noindex` tag.
+`dist/cnessworks-global.html` is the single-file version, with the template inline and every image embedded.
+
 ## Standalone HTML files (`dist/`)
 Single-file versions of the pages, ready to hand over or open directly in a browser:
 - `dist/cnessworks-first-light.html`: First Light.
 - `dist/cnessworks-advantage.html`: the CNESS Advantage subpage.
 - `dist/cnessworks-certification.html`: the Certification section (three pages).
 - `dist/cnessworks-analyze.html`: the Analyze page (Organization and Product paths).
+- `dist/cnessworks-global.html`: the Global landing page, with the template inline in its frame.
 
 Each file is a complete HTML document with every image (logo, level emblems, CNESS mark) embedded as a data URI, so it needs no `assets/` folder. Two things still load from the internet: the Google Fonts stylesheet, and three.js from jsDelivr for the WebGL particles (not used by the Certification file, which has no WebGL). Without three.js the pages fall back to the Canvas 2D drawing; without the fonts they use the fallback faces.
 
