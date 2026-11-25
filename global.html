@@ -132,7 +132,8 @@ html,body{margin:0;background:#060417;color-scheme:dark}
 .pv .sheet .sub[hidden] { display: none; }
 .pv .sheet .acts { margin-top: 1.4rem; }
 .pv .sheet .acts a { font: 600 1rem/1 var(--text); border: 1px solid var(--line); border-radius: 999px; justify-content: center; padding-inline: 1.2rem; flex: 1 1 10rem; }
-.pv .sheet .acts a.btn { border-color: transparent; color: var(--ink); }
+/* `.sheet a` above clears backgrounds; the menu's Start Journey keeps its gold fill */
+.pv .sheet .acts a.btn { border-color: transparent; background: var(--gold); color: var(--ink); }
 .pv .sheet .regions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
 .pv .sheet .regions a { font: 500 .8125rem/1 var(--text); border: 1px solid var(--line); border-radius: 999px; min-height: 40px; width: auto; padding: .5rem .8rem; gap: .5rem; }
 .sheet-open:has(.pv) { overflow: hidden; }
